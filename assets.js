@@ -10,9 +10,31 @@ const LIB_PL = { lucide: 'Lucide', tabler: 'Tabler', 'tabler-filled': 'Tabler fi
 let toastT;
 function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 1800); }
 async function copy(text, label) {
-  try { await navigator.clipboard.writeText(text); toast(label || 'Skopiowano'); }
-  catch { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); toast(label || 'Skopiowano'); }
+  try {
+    if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('clipboard unavailable');
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const ta = document.createElement('textarea'); ta.value = text; ta.style.cssText = 'position:fixed;left:-9999px'; document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand('copy'); } catch {} finally { ta.remove(); }
+    if (!ok) { toast('Nie udało się skopiować. Sprawdź uprawnienia schowka.'); return false; }
+  }
+  toast(label || 'Skopiowano'); return true;
 }
+const standalone = value => value.replace(/var\(--gradient-space\)/g, '').replace(/var\(--shadow-color\)/g, '220 15% 30%').replace(/var\(--shadow-strength-(\d+)\)/g, (_, n) => String(Number(n) / 100));
+function cssRules(match) {
+  const sheet = [...document.styleSheets].find(x => x.href && new URL(x.href).pathname.endsWith('/assets.css'));
+  return [...sheet.cssRules].filter(match).map(r => r.cssText).join('\n');
+}
+function refreshFilters() {
+  const query = $('#q').value.trim().toLowerCase();
+  document.querySelectorAll('#sections > .sec').forEach(sec => {
+    const items = [...sec.querySelectorAll('[data-s]')]; let count = 0;
+    items.forEach(c => { const ok = (!query || c.dataset.s.includes(query)) && c.dataset.filtered !== '1'; c.classList.toggle('hide', !ok); if (ok) count++; });
+    sec.classList.toggle('hide', !!query && count === 0);
+    if (items.length && sec.querySelector('.n')) sec.querySelector('.n').textContent = count;
+  });
+}
+
 
 const TEXTURES = [
   ['Grain · ziarno filmowe', `background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");background-color:#EDEAE3`],
@@ -73,7 +95,7 @@ const COMPONENTS = [
   --ink: #17191D;
 }</code></pre>`]
 ];
-const SKINS = [['minimal', 'Minimal'], ['glass', 'Glass'], ['brut', 'Neo-brutal']];
+const SKINS = [['min', 'Minimal'], ['glass', 'Glass'], ['brut', 'Neo-brutal']];
 
 const SECTIONS = [];
 function section(id, title, sub, count) {
@@ -96,7 +118,7 @@ function iconsSection(A, S) {
     c.title = `${i.name} · ${LABP(i.lib)} · klik = kopiuj SVG, Alt = pobierz`;
     c.innerHTML = `<img src="${i.src}" alt="" loading="lazy" width="24" height="24"><span>${esc(i.name)}</span>`;
     c.addEventListener('click', async e => {
-      const r = await fetch(i.src), svg = await r.text();
+      let svg; try { const r = await fetch(i.src); if (!r.ok) throw new Error(r.status); svg = await r.text(); if (!svg.includes('<svg')) throw new Error('invalid SVG'); } catch { toast('Nie udało się pobrać ikony: ' + i.name); return; }
       if (e.altKey) { const a = document.createElement('a'); a.href = i.src; a.download = i.name + '.svg'; a.click(); toast('Pobrano ' + i.name + '.svg'); }
       else copy(svg, 'Skopiowano SVG: ' + i.name);
     });
@@ -104,9 +126,9 @@ function iconsSection(A, S) {
   }
   s.appendChild(grid);
   let lib = 'all', cat = 'all';
-  const apply = () => { let n = 0; grid.querySelectorAll('.ic').forEach(c => { const ok = (lib === 'all' || c.dataset.lib === lib) && (cat === 'all' || c.dataset.cat === cat); c.classList.toggle('hide', !ok); if (ok) n++; }); s.querySelector('.n').textContent = n; };
-  s.querySelectorAll('[data-lib]').forEach(b => b.onclick = () => { lib = b.dataset.lib; s.querySelectorAll('[data-lib]').forEach(x => x.classList.toggle('on', x === b)); apply(); });
-  s.querySelectorAll('[data-cat]').forEach(b => b.onclick = () => { cat = b.dataset.cat; s.querySelectorAll('[data-cat]').forEach(x => x.classList.toggle('on', x === b)); apply(); });
+  const apply = () => { let n = 0; grid.querySelectorAll('.ic').forEach(c => { const ok = (lib === 'all' || c.dataset.lib === lib) && (cat === 'all' || c.dataset.cat === cat); c.dataset.filtered = ok ? '0' : '1'; if (ok) n++; }); refreshFilters(); };
+  s.querySelectorAll('.chip[data-lib]').forEach(b => b.onclick = () => { lib = b.dataset.lib; s.querySelectorAll('.chip[data-lib]').forEach(x => x.classList.toggle('on', x === b)); apply(); });
+  s.querySelectorAll('.chip[data-cat]').forEach(b => b.onclick = () => { cat = b.dataset.cat; s.querySelectorAll('.chip[data-cat]').forEach(x => x.classList.toggle('on', x === b)); apply(); });
   return { s, apply: () => { } };
 }
 const LABP = l => LIB_PL[l] || l;
@@ -143,9 +165,9 @@ function gradientSection(A) {
   const g = el('div', 'grid g-grad');
   A.gradients.forEach(x => {
     const c = el('button', 'gr'); c.dataset.s = ('gradient ' + x.name).toLowerCase();
-    c.style.backgroundImage = x.value;
+    c.style.backgroundImage = standalone(x.value);
     c.innerHTML = `<b>${esc(x.name)}</b>`;
-    c.onclick = () => copy('background-image:' + x.value + ';', 'Skopiowano ' + x.name);
+    c.onclick = () => copy('background-image:' + standalone(x.value) + ';', 'Skopiowano ' + x.name);
     g.appendChild(c);
   });
   s.appendChild(g);
@@ -170,8 +192,8 @@ function tokenSection(A) {
   const g1 = el('div', 'grid g-three');
   A.shadows.forEach(x => {
     const c = el('button', 'card tok'); c.dataset.s = ('cien shadow ' + x.name).toLowerCase();
-    c.innerHTML = `<span class="sw" style="box-shadow:${x.value};background:#fff"></span><div><b>${esc(x.name)}</b><code>${esc(x.value.slice(0, 78))}…</code></div>`;
-    c.onclick = () => copy('box-shadow:' + x.value + ';', 'Skopiowano ' + x.name);
+    c.innerHTML = `<span class="sw" style="box-shadow:${standalone(x.value)};background:#fff"></span><div><b>${esc(x.name)}</b><code>${esc(x.value.slice(0, 78))}…</code></div>`;
+    c.onclick = () => copy('box-shadow:' + standalone(x.value) + ';', 'Skopiowano ' + x.name);
     g1.appendChild(c);
   });
   s.appendChild(g1);
@@ -233,15 +255,17 @@ function fontSection(FONTS) {
   FONTS.forEach(f => {
     const c = el('button', 'card fo'); c.dataset.f = f.name; c.dataset.cat = f.category; c.dataset.s = (f.name + ' ' + f.category + ' ' + f.use).toLowerCase();
     c.innerHTML = `<div class="m"><b>${esc(f.name)}</b><span>${esc(f.category)}</span></div><div class="sp" style="font-family:'${f.name}',sans-serif">Aa Bb Ćć Ęę Łł Ńń Óó Śś Źź Żż</div><div class="use">${esc(f.use)}</div><div class="pair">${esc(f.pairing || '')}</div>`;
-    c.onclick = () => copy(`font-family:'${f.name}',sans-serif;`, 'Skopiowano ' + f.name);
+    c.onclick = () => copy(`@import url('https://fonts.googleapis.com/css2?family=${encodeURIComponent(f.name).replace(/%20/g, '+')}&display=swap');\n.element { font-family:'${f.name}',${f.category === 'serif' ? 'serif' : f.category === 'mono' ? 'monospace' : 'sans-serif'}; }`, 'Skopiowano ' + f.name);
     io.observe(c);
     g.appendChild(c);
   });
   s.appendChild(g);
+  const fit = () => g.querySelectorAll('.sp').forEach(x => { x.style.fontSize = '34px'; while (x.scrollWidth > x.clientWidth && parseFloat(x.style.fontSize) > 12) x.style.fontSize = (parseFloat(x.style.fontSize) - 1) + 'px'; });
+  document.fonts.ready.then(fit); addEventListener('resize', fit);
   s.querySelectorAll('[data-fc]').forEach(b => b.onclick = () => {
     const k = b.dataset.fc; s.querySelectorAll('[data-fc]').forEach(x => x.classList.toggle('on', x === b));
-    let n = 0; g.querySelectorAll('.fo').forEach(c => { const ok = k === 'all' || c.dataset.cat === k; c.classList.toggle('hide', !ok); if (ok) n++; });
-    s.querySelector('.n').textContent = n;
+    let n = 0; g.querySelectorAll('.fo').forEach(c => { const ok = k === 'all' || c.dataset.cat === k; c.dataset.filtered = ok ? '0' : '1'; if (ok) n++; });
+    refreshFilters();
   });
 }
 
@@ -261,8 +285,8 @@ function paletteSection(A) {
   s.appendChild(g);
   s.querySelectorAll('[data-pg]').forEach(b => b.onclick = () => {
     const k = b.dataset.pg; s.querySelectorAll('[data-pg]').forEach(x => x.classList.toggle('on', x === b));
-    let n = 0; g.querySelectorAll('.pal').forEach(c => { const ok = k === 'all' || c.dataset.g === k; c.classList.toggle('hide', !ok); if (ok) n++; });
-    s.querySelector('.n').textContent = n;
+    let n = 0; g.querySelectorAll('.pal').forEach(c => { const ok = k === 'all' || c.dataset.g === k; c.dataset.filtered = ok ? '0' : '1'; if (ok) n++; });
+    refreshFilters();
   });
 }
 
@@ -277,7 +301,12 @@ function kitSection() {
     SKINS.forEach(([sk, lab]) => {
       const c = el('div', 'card cmp sk-' + sk); c.dataset.s = (name + ' komponent ui ' + sk).toLowerCase();
       c.innerHTML = `<div class="hd"><b>${esc(name)}</b><span>${esc(lab)}</span></div><div class="box">${html()}</div>`;
-      c.onclick = () => copy(`<!-- ${name} · ${sk} -->\n<div class="ui-${key}">${html()}</div>`, 'Skopiowano ' + name);
+      const button = el('button', 'chip copy-component', 'Kopiuj HTML + CSS');
+      button.onclick = () => {
+        const rules = cssRules(r => r.selectorText && (/\.u-|\.sk-|\.cmp \.box/.test(r.selectorText) || r.selectorText === ':root'));
+        copy(`<style>\n${rules}\n</style>\n<div class="cmp sk-${sk}"><div class="box">${html()}</div></div>`, 'Skopiowano ' + name);
+      };
+      c.appendChild(button);
       (i < 3 ? g : more).appendChild(c);
     });
   });
@@ -289,12 +318,16 @@ function kitSection() {
 /* ---------- effects ---------- */
 function effectSection() {
   const E = [['Aurora', 'eff-aurora'], ['Spotlight', 'eff-spot'], ['Grid beam', 'eff-grid'], ['Shimmer', 'eff-shimmer'], ['Glassmorphism', 'eff-glass'], ['Grain / noise', 'eff-noise light'], ['Halftone', 'eff-halftone'], ['Mesh gradient', 'eff-mesh light'], ['Gradient border', 'eff-gradborder light'], ['Duotone', 'eff-duotone']];
-  const s = section('efekty', 'Efekty premium', 'Dziesięć efektów, które natychmiast podnoszą jakość interfejsu — wszystko w czystym CSS. Klik kopiuje nazwę klasy i kluczowe reguły.', E.length);
+  const s = section('efekty', 'Efekty premium', 'Efekty CSS z podglądem. Klik kopiuje HTML i reguły CSS do samodzielnego użycia.', E.length);
   const g = el('div', 'grid g-eff');
   E.forEach(([n, cls]) => {
-    const c = el('div', 'eff ' + cls); c.dataset.s = (n + ' efekt effect').toLowerCase();
+    const c = el('button', 'eff ' + cls); c.type = 'button'; c.dataset.s = (n + ' efekt effect').toLowerCase();
     c.innerHTML = `<b>${esc(n)}</b>`;
-    c.onclick = () => copy('/* efekt: ' + n + ' */\n.' + n.toLowerCase().replace(/\s+/g, '-') + '{ … }  /* patrz assets.css → .' + cls.split(' ')[0] + ' */', 'Skopiowano: ' + n);
+    c.onclick = () => {
+      const selector = '.' + cls.split(' ')[0];
+      const rules = cssRules(r => (r.selectorText && (r.selectorText.includes(selector) || r.selectorText === ':root')) || (r.type === CSSRule.KEYFRAMES_RULE && /^(drift|shim)$/.test(r.name)));
+      copy(`<style>\n${rules}\n</style>\n<div class="${cls}" style="width:240px;height:160px;position:relative"></div>`, 'Skopiowano: ' + n);
+    };
     g.appendChild(c);
   });
   s.appendChild(g);
@@ -334,14 +367,7 @@ function liquidSection() {
 /* ---------- filter + boot ---------- */
 function setupSearch() {
   const q = $('#q');
-  q.addEventListener('input', () => {
-    const v = q.value.trim().toLowerCase();
-    document.querySelectorAll('.sec').forEach(sec => {
-      let n = 0;
-      sec.querySelectorAll('[data-s]').forEach(c => { const ok = !v || (c.dataset.s || '').includes(v); c.classList.toggle('hide', !ok); if (ok) n++; });
-      if (v) sec.classList.toggle('hide', n === 0);
-    });
-  });
+  q.addEventListener('input', refreshFilters);
 }
 function setupNav() {
   const nav = $('#nav');

@@ -195,7 +195,13 @@ a{color:inherit}
 .foot a{color:var(--tx2);text-decoration:none}
 .hide{display:none!important}
 .empty{padding:30px;text-align:center;color:var(--tx3);font-size:14px}
-@media(max-width:1000px){.wrap{grid-template-columns:1fr}.side{display:none}.nav{display:none}}
+@media(max-width:1000px){.wrap{grid-template-columns:minmax(0,1fr);gap:0}.side{min-width:0;position:static;height:auto;padding:12px 0;overflow:visible}.side ul{display:flex;overflow-x:auto;gap:4px;padding-bottom:5px}.side li{flex:none}.side-f{display:none}.nav{display:none}.side a{white-space:nowrap}.side-t{margin-bottom:6px}}
+@media(max-width:600px){.top{flex-wrap:wrap;gap:8px;padding:8px 12px}.brand{flex:1}.find{order:3;flex:1 0 100%;max-width:none}.wrap{padding:0 12px}.g-comp,.g-font,.g-pal{grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr))}html{scroll-padding-top:140px}}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--act);outline-offset:2px}
+[data-theme=dark] .ic img{filter:invert(1)}
+.copy-component{margin-top:12px;min-height:44px}
+.gr b{background:rgba(0,0,0,.75);padding:5px 8px;border-radius:5px}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 /* liquid glass section */

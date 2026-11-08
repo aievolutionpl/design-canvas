@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Otwarta biblioteka stylów i narzędzi projektowych AI Evolution Polska.">
+<title>Design Studio — AI Evolution Polska</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="studio-shell.css"><link rel="stylesheet" href="studio.css">
+<script src="studio-shell.js" defer></script><script src="studio.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Przejdź do treści</a>
+<div data-studio-shell data-active="studio"></div>
+<main id="main" class="workspace">
+ <header class="intro"><div><p class="eyebrow">AI Evolution Polska / narzędzia open source</p><h1>Design Studio</h1><p class="lead">Znajdź kierunek wizualny i przekaż go swojemu agentowi.</p></div><div class="stats" aria-label="Zawartość biblioteki"><div><strong id="style-count">—</strong><span>stylów</span></div><div><strong id="source-count">—</strong><span>źródła stylów</span></div><div><strong id="fav-count">—</strong><span>ulubionych</span></div></div></header>
+ <section class="library" aria-labelledby="library-title"><div class="section-heading"><div><h2 id="library-title">Biblioteka stylów</h2><p>Przeglądaj przykłady, palety i wskazówki projektowe.</p></div><a href="assets.html">Otwórz bibliotekę assetów</a></div>
+ <div class="filters"><label class="search-label" for="search">Szukaj stylu<input id="search" type="search" placeholder="Nazwa, zastosowanie, słowo kluczowe" autocomplete="off"></label><label for="source">Źródło<select id="source"><option value="">Wszystkie źródła</option></select></label><label for="category">Kategoria<select id="category"><option value="">Wszystkie kategorie</option></select></label><button id="only-favourites" type="button" aria-pressed="false">☆ Ulubione</button></div>
+ <p id="results" class="results" role="status" aria-live="polite">Wczytywanie biblioteki…</p><div id="grid" class="grid"></div><p id="empty" class="empty" hidden>Brak wyników. Zmień wyszukiwanie lub filtry.</p>
+ </section>
+</main>
+<footer class="footer">AI Evolution Polska <span>Otwarte narzędzia do projektowania</span><a href="https://github.com/aievolutionpl/design-canvas">Repozytorium GitHub</a></footer>
+<dialog id="detail" aria-labelledby="detail-title"><div class="dialog-top"><span>Szczegóły stylu</span><button id="close-detail" aria-label="Zamknij szczegóły">×</button></div><div id="detail-content"></div></dialog>
+<div id="notice" role="status" aria-live="polite" class="notice" hidden></div>
+</body></html>

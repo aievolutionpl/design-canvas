@@ -1,0 +1,127 @@
+{
+  "description": "Evidence for original style curation, bundled files, and newly verified fonts. Reference repositories are not copied style systems.",
+  "repositories": [
+    {
+      "repo": "https://github.com/phosphor-icons/core",
+      "revision": "2b75f3ad12b420c9504ef05df8d2564a28f8500e",
+      "license_path": "LICENSE",
+      "license_url": "https://raw.githubusercontent.com/phosphor-icons/core/2b75f3ad12b420c9504ef05df8d2564a28f8500e/LICENSE",
+      "license_spdx": "MIT",
+      "license_sha256": "b5b1f1da112d18ea2147decfd48ddc1bf2b5aeb6c265381579340e95b15a2bb2",
+      "role": "redistributed MIT icons",
+      "files": [
+        {
+          "source": "assets/regular/arrow-right.svg",
+          "local": "assets/vendor/phosphor/arrow-right.svg",
+          "sha256": "e45bc4a12592b8723110db42c6deffdf177e4fe7704cf50324963fa0a59b2d74"
+        },
+        {
+          "source": "assets/regular/chart-bar.svg",
+          "local": "assets/vendor/phosphor/chart-bar.svg",
+          "sha256": "d161e503af4f5386a370ffd742d19d85e98625fd6d6eadbabbdb36d58dcca22c"
+        },
+        {
+          "source": "assets/regular/globe.svg",
+          "local": "assets/vendor/phosphor/globe.svg",
+          "sha256": "3b53d207c09fc72de699c8b2149892e065b570b3ae144412ae53244b0a0f7977"
+        },
+        {
+          "source": "assets/regular/magnifying-glass.svg",
+          "local": "assets/vendor/phosphor/magnifying-glass.svg",
+          "sha256": "f9fa2561978a9a3291e8ae0ebfcb651104f5069fade8f84871627bca68889cde"
+        }
+      ],
+      "local_license": "assets/vendor/phosphor/LICENSE"
+    },
+    {
+      "repo": "https://github.com/uswds/uswds",
+      "revision": "029d6d792241b3b4107a630590a27ee951a152b5",
+      "license_path": "LICENSE.md",
+      "license_url": "https://raw.githubusercontent.com/uswds/uswds/029d6d792241b3b4107a630590a27ee951a152b5/LICENSE.md",
+      "license_spdx": "NOASSERTION",
+      "license_sha256": "536b003a2c541c5c9c00d9c715b9e2007591c3d2653f13dd53634d3de773ea09",
+      "role": "research reference; no source files redistributed"
+    },
+    {
+      "repo": "https://github.com/material-components/material-web",
+      "revision": "d872455c4be56022da2095349b30ef46e0b55bc3",
+      "license_path": "LICENSE",
+      "license_url": "https://raw.githubusercontent.com/material-components/material-web/d872455c4be56022da2095349b30ef46e0b55bc3/LICENSE",
+      "license_spdx": "Apache-2.0",
+      "license_sha256": "295cdb4364b782931c914f5ca8c47fac87c732fa7e448b788a47aa5b25728212",
+      "role": "research reference; no source files redistributed"
+    },
+    {
+      "repo": "https://github.com/visgl/deck.gl",
+      "revision": "79e29fc6a30840256b9131975016b86dd81aa149",
+      "license_path": "LICENSE",
+      "license_url": "https://raw.githubusercontent.com/visgl/deck.gl/79e29fc6a30840256b9131975016b86dd81aa149/LICENSE",
+      "license_spdx": "MIT",
+      "license_sha256": "e499a2c2ba3b9faabe91fdfddf43e329439263264b7148e5548d0ec605cce9f2",
+      "role": "research reference; no source files redistributed"
+    },
+    {
+      "repo": "https://github.com/system-fonts/modern-font-stacks",
+      "revision": "76f973110be618cb6a443abc4ae5964182d1fd58",
+      "license_path": "LICENSE",
+      "license_url": "https://raw.githubusercontent.com/system-fonts/modern-font-stacks/76f973110be618cb6a443abc4ae5964182d1fd58/LICENSE",
+      "license_spdx": "CC0-1.0",
+      "license_sha256": "6d489af6292662d9e36d34ce49423784984a5f6e41d7b58f49b01264df59fa03",
+      "role": "research reference; no source files redistributed"
+    }
+  ],
+  "original_style_ids": [
+    "AIE-01",
+    "AIE-02",
+    "AIE-03",
+    "AIE-04",
+    "AIE-05",
+    "AIE-06",
+    "AIE-07",
+    "AIE-08"
+  ],
+  "google_fonts": {
+    "verification": "Google Fonts CSS2 Chrome user-agent; latin-ext block and U+0100 required",
+    "families": [
+      "Alegreya",
+      "Alegreya Sans",
+      "BioRhyme",
+      "Cardo",
+      "Commissioner",
+      "DM Serif Text",
+      "Encode Sans",
+      "Exo 2",
+      "Fira Sans",
+      "Fira Sans Condensed",
+      "Gelasio",
+      "IBM Plex Serif",
+      "Libre Franklin",
+      "Merriweather Sans",
+      "Petrona",
+      "Roboto Condensed",
+      "Sometype Mono",
+      "Vollkorn"
+    ],
+    "css_urls": [
+      "https://fonts.googleapis.com/css2?family=Alegreya:wght@400",
+      "https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400",
+      "https://fonts.googleapis.com/css2?family=BioRhyme:wght@400",
+      "https://fonts.googleapis.com/css2?family=Cardo:wght@400",
+      "https://fonts.googleapis.com/css2?family=Commissioner:wght@400",
+      "https://fonts.googleapis.com/css2?family=DM+Serif+Text:wght@400",
+      "https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400",
+      "https://fonts.googleapis.com/css2?family=Exo+2:wght@400",
+      "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400",
+      "https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400",
+      "https://fonts.googleapis.com/css2?family=Gelasio:wght@400",
+      "https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400",
+      "https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400",
+      "https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400",
+      "https://fonts.googleapis.com/css2?family=Petrona:wght@400",
+      "https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400",
+      "https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400",
+      "https://fonts.googleapis.com/css2?family=Vollkorn:wght@400"
+    ],
+    "note": "Google Fonts are linked rather than bundled; consult each family licence before redistribution."
+  }
+}

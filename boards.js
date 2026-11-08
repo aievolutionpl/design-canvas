@@ -37,7 +37,7 @@ function fromDT(st) {
   if (cr(bg, ink) < 4.5) ink = onC(bg);
   const rest = p.filter(h => h !== byL[0] && h !== byL[byL.length - 1]).sort((a, b) => sat(b) - sat(a));
   const acc = rest.find(h => cr(h, bg) >= 1.8) || rest[0] || ink, acc2 = rest.find(h => h !== acc) || byL[1] || acc;
-  return { id: st.id, grp: 'dt', name: st.name, tag: st.tagline || '', desc: st.description, when: st.whenToUse, src: 'design-trends-2027', cat: st.category,
+  return { id: st.id, grp: st.source === 'aie-original' ? 'aie' : 'dt', name: st.name, tag: st.tagline || '', desc: st.description, when: st.whenToUse, src: st.source === 'aie-original' ? 'AI Evolution Polska · autorska kompozycja' : 'design-trends-2027', cat: st.category,
     bg, surf: `color-mix(in srgb, ${bg} 82%, ${ink})`, paper: bg, ink, acc, acc2,
     pal: p.map(h => ({ h, n: 'próbka' })), disp: st.fonts.display || 'Inter', body: st.fonts.sans || 'Inter', mono: 'JetBrains Mono',
     img: st.image, imgSm: st.image && st.image.replace('.webp', '-sm.webp'), url: st.sourceUrl, extra: [st.composition, st.typographyText].filter(Boolean).join(' · ') };
@@ -228,7 +228,7 @@ function phHTML(T) {
 
 /* ---------- layout ---------- */
 function layout(list) {
-  const G = [['lg', 'Liquid Glass', 'materiał · refrakcja Snella · rim Fresnela · dyspersja'], ['dos', 'Designer OS v3', '14 palet · palettes.json · fonty display + body · kontrast WCAG'], ['adt', 'Style UI', 'agent-design-taste · 17 stylów z tokenami'], ['dt', 'Trendy 2027', 'design-trends-2027 · 30 kierunków z wizualizacjami']];
+  const G = [['aie', 'AI Evolution Polska', 'autorskie kompozycje · źródła i tokeny w Design Studio'], ['lg', 'Liquid Glass', 'materiał · refrakcja Snella · rim Fresnela · dyspersja'], ['dos', 'Designer OS v3', '14 palet · palettes.json · fonty display + body · kontrast WCAG'], ['adt', 'Style UI', 'agent-design-taste · 17 stylów z tokenami'], ['dt', 'Trendy 2027', 'design-trends-2027 · 30 kierunków z wizualizacjami']];
   let y = 0;
   for (const [g, title, sub] of G) {
     const items = list.filter(t => t.grp === g); if (!items.length) continue;
@@ -278,7 +278,11 @@ function cull() {
 function zoomAt(f, sx, sy) { const s2 = clamp(cam.s * f, MIN, MAX), k = s2 / cam.s; cam.x = sx - (sx - cam.x) * k; cam.y = sy - (sy - cam.y) * k; cam.s = s2; apply(); }
 let anim = 0;
 function flyTo(R, pad = .06, instant = false) {
-  const r = vr(), top = 70, H = r.height - top - 40;
+  const r = vr();
+  // Reserve the actual toolbar height: wrapped controls must not cover board actions.
+  const chromeBottom = Math.max(0, ...[...document.querySelectorAll('.bar, .studio-shell')]
+    .map(e => e.getBoundingClientRect().bottom - r.top));
+  const top = Math.max(70, chromeBottom + 16), H = Math.max(120, r.height - top - 40);
   const s2 = clamp(Math.min(r.width * (1 - 2 * pad) / R.w, H * (1 - 2 * pad) / R.h), MIN, MAX);
   const tx = r.width / 2 - (R.x + R.w / 2) * s2, ty = top + H / 2 - (R.y + R.h / 2) * s2;
   cancelAnimationFrame(anim);

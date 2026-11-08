@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brand Boards — tablice stylów · Design Canvas · AI Evolution Polska</title>
+<meta name="description" content="Tablice brandingowe na nieskończonym płótnie: każdy styl jako board — koncepcja, typografia, kolor, mockupy (wizytówki, plakat, broszury, billboard, aplikacja), logo i warianty slajdów.">
+<meta name="theme-color" content="#18191C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Brand Boards — tablice stylów na jednym płótnie">
+<meta property="og:description" content="61 tablic brandingowych: Designer OS, agent-design-taste i trendy 2027. Koncepcja, typografia, kolor, mockupy, logo, slajdy.">
+<meta property="og:image" content="https://aievolutionpl.github.io/design-canvas/assets/og-boards.jpg">
+<meta property="og:url" content="https://aievolutionpl.github.io/design-canvas/boards.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="boards.css">
+</head>
+<body>
+<header class="bar" role="toolbar" aria-label="Sterowanie">
+  <a class="logo" href="./" title="Wróć do Design Canvas"><img src="assets/favicon.svg" alt="" width="24" height="24"><span><b>Brand Boards</b><small>Design Canvas</small></span></a>
+  <label class="find"><span class="sr">Szukaj tablicy</span><input id="q" type="search" placeholder="Szukaj stylu…" autocomplete="off" list="names"></label>
+  <datalist id="names"></datalist>
+  <div class="grp" role="group" aria-label="Filtr">
+    <button class="chip on" data-f="all">Wszystko</button>
+    <button class="chip" data-f="dos">Designer OS</button>
+    <button class="chip" data-f="adt">Style UI</button>
+    <button class="chip" data-f="dt">Trendy 2027</button>
+    <button class="chip" data-f="fav">♥ <span id="favN">0</span></button>
+  </div>
+  <div class="grp right">
+    <button class="ib" id="zOut" aria-label="Oddal">−</button>
+    <button class="zv" id="zVal" aria-label="Zoom">100%</button>
+    <button class="ib" id="zIn" aria-label="Przybliż">+</button>
+    <button class="tb" id="fit" title="Całość (0)">Całość</button>
+    <button class="tb" id="pres" title="Prezentacja (P)">▶ Prezentacja</button>
+    <button class="ib" id="theme" aria-label="Jasny / ciemny">◐</button>
+    <a class="tb ghost" href="./">Biblioteka →</a>
+  </div>
+</header>
+<main id="vp" class="vp" aria-label="Płótno z tablicami"><div id="world" class="world"></div></main>
+<div id="hud" class="hud" hidden><button class="ib" id="prev" aria-label="Poprzednia">←</button><span id="hudT"></span><button class="ib" id="next" aria-label="Następna">→</button><button class="tb" id="presX">Zakończ</button></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<p class="hint">Przeciągnij = przesuń · kółko / szczypanie = zoom · klik w tablicę = przybliż · <kbd>P</kbd> prezentacja · <kbd>0</kbd> całość · klik w HEX = kopiuj</p>
+<footer class="ai">Serwis prowadzony przez agenta AI — treści mogą zawierać błędy, weryfikuj sam. · <a href="https://github.com/aievolutionpl/design-canvas">GitHub</a></footer>
+<script src="boards.js"></script>
+</body>
+</html>

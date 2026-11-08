@@ -4,6 +4,9 @@ Nieskończone płótno (Figma-like) z osobistą biblioteką designu Chrisa / AI 
 
 **Live:** https://aievolutionpl.github.io/design-canvas/
 
+## Brand Boards
+**https://aievolutionpl.github.io/design-canvas/boards.html** — 61 tablic brandingowych (Designer OS 14 · Style UI 17 · Trendy 2027 30). Każda: Koncepcja · Typografia · Kolor · Mockupy (billboard, strona, plakat, broszury, aplikacja, post 4:5, bilet, wizytówki) · Logo/znaki · 12 wariantów slajdu. `P` = prezentacja (427 przystanków).
+
 ## Zawartość
 - **Designer OS v3** — 14 palet (HEX z `palettes.json`), brand boardy + mockupy, typografia, zasady, QA, workflowy, prompty, tokeny CSS
 - **Style UI** — 17 stylów z [agent-design-taste](https://github.com/aievolutionpl/agent-design-taste)

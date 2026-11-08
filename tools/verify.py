@@ -23,13 +23,13 @@ with sync_playwright() as p:
 
         pg.goto(U, wait_until="load"); pg.wait_for_selector("body[data-ready='1']", timeout=60000)
         c = pg.evaluate("DC.counts()")
-        need(f"{name} library counts {c}", c["dosPalettes"] == 14 and c["styles"] == 47 and c["fonts"] == 129 and c["backgrounds"] == 24)
+        need(f"{name} library counts {c}", c["dosPalettes"] == 14 and c["styles"] == 48 and c["fonts"] == 129 and c["backgrounds"] == 24 and c["palettes"] == 50)
         need(f"{name} library h-scroll", not pg.evaluate("document.documentElement.scrollWidth>innerWidth+2"))
         need(f"{name} library assets link", pg.evaluate("!!document.querySelector('a[href=\"assets.html\"]')"))
 
         pg.goto(U + "boards.html", wait_until="load"); pg.wait_for_selector("body[data-ready='1']", timeout=60000)
         k = pg.evaluate("BB.count()")
-        need(f"{name} boards counts {k}", (k["boards"], k["dos"], k["adt"], k["dt"], k["stops"], k["icons"]) == (61, 14, 17, 30, 610, 50))
+        need(f"{name} boards counts {k}", (k["boards"], k["dos"], k["lg"], k["adt"], k["dt"], k["stops"], k["icons"]) == (62, 14, 1, 17, 30, 620, 50))
         need(f"{name} hud hidden", pg.evaluate("getComputedStyle(document.getElementById('hud')).display") == "none")
         if name == "desktop":
             for bid in ["DOS-01", "ADT-03", "DT27-07"]:
@@ -46,7 +46,7 @@ with sync_playwright() as p:
             pg.mouse.click(box["x"] + box["width"] / 2, box["y"] + box["height"] / 2); pg.wait_for_timeout(300)
             need("fav click", pg.inner_text("#favN") == "1")
             pg.keyboard.press("p"); pg.wait_for_timeout(300); pg.keyboard.press("ArrowRight"); pg.wait_for_timeout(300)
-            need("presentation", "/ 610" in pg.inner_text("#hudT"))
+            need("presentation", "/ 620" in pg.inner_text("#hudT"))
 
         pg.goto(U + "assets.html", wait_until="load"); pg.wait_for_selector("body[data-ready='1']", timeout=90000)
         pg.wait_for_timeout(800)

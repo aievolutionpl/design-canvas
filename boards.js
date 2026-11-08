@@ -42,6 +42,13 @@ function fromDT(st) {
     pal: p.map(h => ({ h, n: 'próbka' })), disp: st.fonts.display || 'Inter', body: st.fonts.sans || 'Inter', mono: 'JetBrains Mono',
     img: st.image, imgSm: st.image && st.image.replace('.webp', '-sm.webp'), url: st.sourceUrl, extra: [st.composition, st.typographyText].filter(Boolean).join(' · ') };
 }
+function fromLG(st) {
+  return { id: st.id, grp: 'lg', name: st.name, tag: st.tagline || '', desc: st.description, when: st.whenToUse,
+    src: 'quickLiquid (MIT) → liquid.js', cat: st.category,
+    bg: '#EAF2FF', surf: '#F4F8FF', paper: '#FFFFFF', ink: '#0B1220', acc: '#2457D6', acc2: '#7AA2FF',
+    pal: st.palette.map(h => ({ h, n: 'próbka' })), disp: st.fonts.display, body: st.fonts.sans, mono: st.fonts.mono,
+    img: null, url: st.sourceUrl, extra: st.composition };
+}
 function fromDOS(p) {
   const pr = p.primary, se = p.secondary;
   return { id: 'DOS-' + p.id, grp: 'dos', name: p.name, tag: p.mood, desc: `${p.mood}. Zastosowanie: ${p.use}.`, when: p.use, src: 'Designer OS v3 · palettes.json', cat: 'Designer OS · ' + p.category,
@@ -97,6 +104,12 @@ const grainCss = T => `background-color:${T.paper.startsWith('color') ? '#EDEAE3
 const tile = (x, y, w, h, inner, cls = '', st = '') => `<div class="t ${cls}" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;${st}">${inner}</div>`;
 const sec = (x, y, w, h, title, sub, body) => `<section class="sec" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px"><div class="sh"><b>${title}</b>${sub ? `<span>${esc(sub)}</span>` : ''}</div><div class="sb">${body}</div></section>`;
 function img(T, kind, pos = '50% 50%', zoom = 1, seed = 1) {
+  if (!T.img && T.grp === 'lg') {
+    const g = [['#BBD4FF', '#FFD1E3', '#7AA2FF'], ['#EAF2FF', '#2457D6', '#BBD4FF'], ['#7AA2FF', '#EAF2FF', '#FFD1E3'], ['#0B1220', '#2457D6', '#EAF2FF']][seed % 4];
+    return `<div style="position:absolute;inset:0;background:radial-gradient(70% 90% at 25% 20%,${g[0]},transparent 60%),radial-gradient(60% 80% at 80% 70%,${g[1]},transparent 60%),linear-gradient(140deg,${g[2]},${g[0]})"></div>
+      <div style="position:absolute;left:12%;top:14%;width:56%;height:52%;border-radius:24px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.55);backdrop-filter:blur(8px)"></div>
+      <div style="position:absolute;right:10%;bottom:12%;width:44%;height:40%;border-radius:20px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(6px)"></div>`;
+  }
   if (!T.img) return pattern(kind, T, hash(T.id) + seed);
   return `<img src="${zoom > 1.2 ? T.img : T.imgSm || T.img}" alt="" loading="lazy" decoding="async" style="object-position:${pos};transform:scale(${zoom});transform-origin:${pos}">`;
 }
@@ -215,7 +228,7 @@ function phHTML(T) {
 
 /* ---------- layout ---------- */
 function layout(list) {
-  const G = [['dos', 'Designer OS v3', '14 palet · palettes.json · fonty display + body · kontrast WCAG'], ['adt', 'Style UI', 'agent-design-taste · 17 stylów z tokenami'], ['dt', 'Trendy 2027', 'design-trends-2027 · 30 kierunków z wizualizacjami']];
+  const G = [['lg', 'Liquid Glass', 'materiał · refrakcja Snella · rim Fresnela · dyspersja'], ['dos', 'Designer OS v3', '14 palet · palettes.json · fonty display + body · kontrast WCAG'], ['adt', 'Style UI', 'agent-design-taste · 17 stylów z tokenami'], ['dt', 'Trendy 2027', 'design-trends-2027 · 30 kierunków z wizualizacjami']];
   let y = 0;
   for (const [g, title, sub] of G) {
     const items = list.filter(t => t.grp === g); if (!items.length) continue;
@@ -354,7 +367,7 @@ async function boot() {
   const get = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });
   const [STY, DOS, FC, ICO] = await Promise.all([get('data/styles.json'), get('data/designer-os.json'), get('data/font-check.json'), get('data/icon-inline.json').catch(() => ({}))]);
   ICONS = ICO; INAMES = Object.keys(ICO);
-  const list = [...DOS.palettes.map(fromDOS), ...STY.filter(s => s.source === 'agent-design-taste').map(fromADT), ...STY.filter(s => s.source !== 'agent-design-taste').map(fromDT)];
+  const list = [...DOS.palettes.map(fromDOS), ...STY.filter(s => s.source === 'agent-design-taste').map(fromADT), ...STY.filter(s => s.source !== 'agent-design-taste' && s.source !== 'liquid-glass').map(fromDT), ...STY.filter(s => s.source === 'liquid-glass').map(fromLG)];
   const fams = [...new Set(list.flatMap(T => [T.disp, T.body, T.mono]))];
   const specs = [...FC.specs, ...DOS.fontSpecs];
   const q = fams.map(f => specs.find(s => s.split(':')[0] === f) || f).map(s => 'family=' + s.replace(/ /g, '+'));
@@ -362,7 +375,7 @@ async function boot() {
   layout(list); setupInput(); setupUI(); buildStops();
   const h = decodeURIComponent(location.hash.slice(1)); const hb = boards.find(b => b.T.id === h);
   if (hb) flyTo(hb, .03, true); else fitAll(true);
-  window.BB = { cam, boards, stops, flyTo, fitAll, toggleFav, count: () => ({ boards: boards.length, full: boards.filter(b => b.full).length, dos: boards.filter(b => b.T.grp === 'dos').length, adt: boards.filter(b => b.T.grp === 'adt').length, dt: boards.filter(b => b.T.grp === 'dt').length, stops: stops.length, fonts: fams.length, icons: INAMES.length }) };
+  window.BB = { cam, boards, stops, flyTo, fitAll, toggleFav, count: () => ({ boards: boards.length, full: boards.filter(b => b.full).length, dos: boards.filter(b => b.T.grp === 'dos').length, lg: boards.filter(b => b.T.grp === 'lg').length, adt: boards.filter(b => b.T.grp === 'adt').length, dt: boards.filter(b => b.T.grp === 'dt').length, stops: stops.length, fonts: fams.length, icons: INAMES.length }) };
   document.body.dataset.ready = '1';
 }
 boot().catch(e => { console.error(e); document.body.insertAdjacentHTML('beforeend', `<p style="position:fixed;inset:45% 0 auto;text-align:center">Błąd ładowania: ${esc(e.message)}</p>`); });

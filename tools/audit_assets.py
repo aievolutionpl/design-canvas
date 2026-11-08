@@ -61,6 +61,14 @@ with sync_playwright() as pw:
         check(f'{width}: font import and family', '@import' in font and 'font-family:' in font,font)
         isolated.set_content(component); check(f'{width}: component has applied CSS',isolated.locator('.u-btn').count()>0 and isolated.locator('.u-btn').first.evaluate("e=>getComputedStyle(e).backgroundColor")!='rgba(0, 0, 0, 0)')
         isolated.set_content(effect); check(f'{width}: effect has applied CSS',isolated.locator('.eff-spot').evaluate("e=>getComputedStyle(e).backgroundImage")!='none')
+        effect_checks=[]
+        for idx in range(page.locator('#efekty .eff').count()):
+            page.locator('#efekty .eff').nth(idx).click(); payload=page.evaluate('window.__clip'); isolated.set_content(payload)
+            visual=isolated.locator('div').last
+            effect_checks.append(visual.evaluate("e=>{let s=getComputedStyle(e),p=getComputedStyle(e,':before');return s.backgroundImage!=='none'||s.backgroundColor!=='rgba(0, 0, 0, 0)'||p.backgroundImage!=='none'||p.backgroundColor!=='rgba(0, 0, 0, 0)'}"))
+        check(f'{width}: each copied effect renders',all(effect_checks),effect_checks)
+        page.locator('#gradienty .gr').first.focus(); page.keyboard.press('Enter')
+        check(f'{width}: keyboard Enter copies',page.evaluate("window.__clip.startsWith('background-image:')"))
         page.locator('#theme').click(); check(f'{width}: dark icons visible',page.locator('#ikony img').first.evaluate("e=>getComputedStyle(e).filter")!='none')
         page.evaluate("Object.defineProperty(navigator,'clipboard',{value:{writeText:async()=>{throw Error('denied')}},configurable:true});document.execCommand=()=>false")
         page.locator('#gradienty .gr').first.click(); check(f'{width}: clipboard denial reported', 'Nie udało się' in page.locator('#toast').inner_text())

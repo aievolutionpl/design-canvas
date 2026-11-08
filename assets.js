@@ -141,7 +141,7 @@ function illuSection() {
   files.forEach(f => {
     const c = el('button', 'il card'); c.dataset.s = ('ilustracja ' + f).toLowerCase();
     c.innerHTML = `<img src="assets/illustrations/${f}" alt="" loading="lazy"><span>${esc(f.replace('.svg', ''))}</span>`;
-    c.onclick = async () => copy(await (await fetch('assets/illustrations/' + f)).text(), 'Skopiowano ilustrację SVG');
+    c.onclick = async () => { try { const r = await fetch('assets/illustrations/' + f); if (!r.ok) throw new Error(r.status); const svg = await r.text(); if (!svg.includes('<svg')) throw new Error('invalid SVG'); await copy(svg, 'Skopiowano ilustrację SVG'); } catch { toast('Nie udało się pobrać ilustracji.'); } };
     g.appendChild(c);
   });
   s.appendChild(g);
@@ -155,7 +155,7 @@ function patternSection(A) {
     const c = el('button', 'pat'); c.dataset.s = (p.name + ' wzór pattern').toLowerCase();
     c.style.cssText = `background-image:${p.light};background-color:#F7F7F5`;
     c.innerHTML = `<b>${esc(p.name)}</b>`;
-    c.onclick = () => copy(`background-image:${p.light};`, 'Skopiowano CSS wzoru: ' + p.name);
+    c.onclick = () => copy(`background-color:#F7F7F5;background-image:${p.light};background-size:32px 32px;`, 'Skopiowano CSS wzoru: ' + p.name);
     g.appendChild(c);
   });
   s.appendChild(g);
@@ -200,9 +200,10 @@ function tokenSection(A) {
   s.appendChild(el('h3', null, '<span style="font:600 15px Inter;display:block;margin:22px 0 10px">Promienie · 24 wartości</span>'));
   const g2 = el('div', 'grid g-icons'); g2.style.gridTemplateColumns = 'repeat(auto-fill,minmax(110px,1fr))';
   A.radii.forEach(x => {
+    const radius = x.value.replace(/var\(--radius-(\d+)\)/g, (_, n) => A.radii.find(r => r.name === n)?.value || '0px').replace(/calc\(100vw - 100%\) \* 1e5/g, '(100vw - 100%) * 100000');
     const c = el('button', 'ic'); c.dataset.s = ('radius promien ' + x.name).toLowerCase();
-    c.innerHTML = `<div style="width:40px;height:34px;background:var(--tx);border-radius:${x.value};opacity:.85"></div><span>${esc(x.name)}</span>`;
-    c.onclick = () => copy('border-radius:' + x.value + ';', 'Skopiowano promień ' + x.name);
+    c.innerHTML = `<div style="width:40px;height:34px;background:var(--tx);border-radius:${radius};opacity:.85"></div><span>${esc(x.name)}</span>`;
+    c.onclick = () => copy('border-radius:' + radius + ';', 'Skopiowano promień ' + x.name);
     g2.appendChild(c);
   });
   s.appendChild(g2);
@@ -219,7 +220,7 @@ function tokenSection(A) {
 
 /* ---------- motion ---------- */
 function motionSection(A) {
-  const s = section('ruch', 'Ruch i easing', 'Krzywe easing z Open Props (MIT) narysowane jako wykresy oraz 8 gotowych presetów animacji. Klik kopiuje CSS.', A.easings.length + MOTION.length);
+  const s = section('ruch', 'Ruch i easing', 'Krzywe easing z Open Props (MIT) narysowane jako wykresy oraz 8 gotowych presetów animacji. Klik kopiuje CSS.', Math.min(A.easings.length, 24) + MOTION.length);
   const g = el('div', 'grid g-three');
   A.easings.slice(0, 24).forEach(x => {
     const m = x.value.match(/cubic-bezier\(([^)]+)\)/); const pts = m ? m[1].split(',').map(Number) : [.25, .1, .25, 1];
@@ -278,7 +279,7 @@ function paletteSection(A) {
   const g = el('div', 'grid g-pal');
   A.palettes.forEach(p => {
     const c = el('div', 'card pal'); c.dataset.g = p.group; c.dataset.s = (p.name + ' ' + p.group + ' paleta kolory').toLowerCase();
-    c.innerHTML = `<div class="m"><b>${esc(p.name)}</b><span>${p.colors.length} kolorów</span></div><div class="st">${p.colors.slice(0, 14).map(x => `<button data-hex="${esc(x.hex)}" style="background:${x.hex}" aria-label="${esc(x.name + ' ' + x.hex)}"></button>`).join('')}</div><div class="nm">${p.colors.slice(0, 14).map(x => `<span>${esc(x.name)} · ${esc(x.hex)}</span>`).join('')}</div>`;
+    c.innerHTML = `<div class="m"><b>${esc(p.name)}</b><span>${p.colors.length} kolorów</span></div><div class="st">${p.colors.map(x => `<button data-hex="${esc(x.hex)}" style="background:${x.hex}" aria-label="${esc(x.name + ' ' + x.hex)}"></button>`).join('')}</div><div class="nm">${p.colors.map(x => `<span>${esc(x.name)} · ${esc(x.hex)}</span>`).join('')}</div>`;
     c.querySelectorAll('[data-hex]').forEach(b => b.onclick = () => copy(b.dataset.hex, 'Skopiowano ' + b.dataset.hex));
     g.appendChild(c);
   });
@@ -390,6 +391,9 @@ async function boot() {
     fetch('data/illustrations.json').then(r => r.json()).catch(() => [])
   ]);
   window.__ILLU = ILL;
+  $('.hero h1').textContent = 'Biblioteka assetów do projektowania';
+  $('.hero .lead').textContent = `Ikony, ilustracje, wzory, gradienty, ${FONTS.length} fontów, palety i komponenty. Wybierz element, aby skopiować kod; źródła znajdziesz w sekcji Licencje.`;
+  $('#q').placeholder = 'Szukaj assetu…';
   const totalColors = A.palettes.reduce((n, p) => n + p.colors.length, 0);
   $('#stats').innerHTML = [['Ikony', A.icons.length], ['Fonty', FONTS.length], ['Palety', A.palettes.length], ['Kolory', totalColors], ['Wzory', A.patterns.length], ['Ilustracje', ILL.length], ['Komponenty', COMPONENTS.length], ['Efekty', 10]]
     .map(([k, v]) => `<div class="stat"><b>${v.toLocaleString('pl-PL')}</b><span>${k}</span></div>`).join('');

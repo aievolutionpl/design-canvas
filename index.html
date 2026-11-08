@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design Canvas — biblioteka assetów projektowych · AI Evolution Polska</title>
+<meta name="description" content="Nieskończone płótno z 47 stylami (brand boardy), 45 fontami Google z polskimi znakami, paletami, tłami CSS i komponentami UI. Osobista biblioteka assetów projektowych.">
+<meta name="theme-color" content="#F5F6F8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Design Canvas — biblioteka assetów projektowych">
+<meta property="og:description" content="47 brand boardów stylów, 45 fontów z polskimi znakami, palety, 24 tła CSS i komponenty UI na jednym płótnie w stylu Figmy.">
+<meta property="og:image" content="https://aievolutionpl.github.io/design-canvas/assets/og.jpg">
+<meta property="og:url" content="https://aievolutionpl.github.io/design-canvas/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="designer-os.css">
+</head>
+<body>
+<a class="skip" href="#sidebar">Przejdź do nawigacji</a>
+
+<aside id="sidebar" class="sidebar" aria-label="Nawigacja po płótnie">
+  <div class="sb-head">
+    <div class="brand"><img src="assets/favicon.svg" alt="" width="28" height="28"><div><strong>Design Canvas</strong><span>biblioteka assetów</span></div></div>
+    <button class="icon-btn sb-close" id="sbClose" aria-label="Zamknij panel">✕</button>
+  </div>
+  <label class="search"><span class="sr">Szukaj</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input id="q" type="search" placeholder="Szukaj stylu, fontu, tła…" autocomplete="off">
+  </label>
+  <div class="chips" id="chips" role="group" aria-label="Filtr kategorii"></div>
+  <nav class="sb-sec">
+    <h2>Sekcje</h2>
+    <ul id="sections"></ul>
+  </nav>
+  <div class="sb-sec sb-results">
+    <h2 id="resTitle">Style</h2>
+    <ul id="results"></ul>
+  </div>
+  <p class="sb-hint">Przeciągnij, aby przesuwać · kółko / szczypanie = zoom · <kbd>P</kbd> prezentacja · <kbd>0</kbd> całość</p>
+</aside>
+
+<main id="viewport" class="viewport" aria-label="Płótno z assetami">
+  <div id="world" class="world"></div>
+</main>
+
+<div class="toolbar" role="toolbar" aria-label="Sterowanie płótnem">
+  <button class="icon-btn sb-open" id="sbOpen" aria-label="Otwórz nawigację">☰</button>
+  <button class="icon-btn" id="zOut" aria-label="Oddal">−</button>
+  <button class="zoom-val" id="zVal" aria-label="Zoom 100%">100%</button>
+  <button class="icon-btn" id="zIn" aria-label="Przybliż">+</button>
+  <button class="tb-btn" id="fitAll" title="Pokaż całość (0)">Całość</button>
+  <button class="tb-btn" id="presBtn" title="Tryb prezentacji (P)">Prezentacja</button>
+  <button class="tb-btn fav-tb" id="favBtn" title="Ulubione">♥ <span id="favCount">0</span></button>
+  <button class="icon-btn" id="themeBtn" aria-label="Przełącz tryb ciemny">◐</button>
+</div>
+
+<canvas id="minimap" class="minimap" width="220" height="220" aria-label="Minimapa — kliknij, aby przejść"></canvas>
+
+<div id="presHud" class="pres-hud" hidden>
+  <button class="icon-btn" id="presPrev" aria-label="Poprzedni artboard">←</button>
+  <span id="presInfo">1 / 1</span>
+  <button class="icon-btn" id="presNext" aria-label="Następny artboard">→</button>
+  <button class="tb-btn" id="presExit">Zakończ (P)</button>
+</div>
+
+<aside id="detail" class="panel detail" aria-label="Szczegóły" hidden>
+  <div class="panel-head"><h2 id="dTitle">Szczegóły</h2><button class="icon-btn" data-close="detail" aria-label="Zamknij">✕</button></div>
+  <div id="dBody" class="panel-body"></div>
+</aside>
+
+<aside id="favs" class="panel favs" aria-label="Ulubione" hidden>
+  <div class="panel-head"><h2>Ulubione</h2><button class="icon-btn" data-close="favs" aria-label="Zamknij">✕</button></div>
+  <div class="panel-body">
+    <div class="fav-actions">
+      <button class="tb-btn" id="expMd">Kopiuj moodboard (Markdown)</button>
+      <button class="tb-btn" id="expJson">Kopiuj JSON</button>
+      <button class="tb-btn ghost" id="favClear">Wyczyść</button>
+    </div>
+    <ul id="favList" class="fav-list"></ul>
+  </div>
+</aside>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<footer class="ai-bar">Serwis prowadzony przez agenta AI — treści mogą zawierać błędy. · <a href="https://github.com/aievolutionpl/design-canvas" target="_blank" rel="noopener">GitHub</a></footer>
+
+<noscript><p style="padding:2rem">Płótno wymaga JavaScript.</p></noscript>
+<script src="designer-os.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>

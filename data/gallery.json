@@ -1,0 +1,65 @@
+[
+ {
+  "id": "analog",
+  "name": "Analog",
+  "image": "assets/styles/trends-analog.webp",
+  "w": 1536,
+  "h": 1024
+ },
+ {
+  "id": "biomorphic",
+  "name": "Biomorphic",
+  "image": "assets/styles/trends-biomorphic.webp",
+  "w": 1536,
+  "h": 1024
+ },
+ {
+  "id": "data-poetry",
+  "name": "Data poetry",
+  "image": "assets/styles/trends-data-poetry.webp",
+  "w": 1536,
+  "h": 1024
+ },
+ {
+  "id": "monochrome",
+  "name": "Monochrome",
+  "image": "assets/styles/trends-monochrome.webp",
+  "w": 1536,
+  "h": 1024
+ },
+ {
+  "id": "ornamental-maximalism",
+  "name": "Ornamental maximalism",
+  "image": "assets/styles/trends-ornamental-maximalism.webp",
+  "w": 1536,
+  "h": 1024
+ },
+ {
+  "id": "playful-geometry",
+  "name": "Playful geometry",
+  "image": "assets/styles/trends-playful-geometry.webp",
+  "w": 1536,
+  "h": 1024
+ },
+ {
+  "id": "quiet-editorial",
+  "name": "Quiet editorial",
+  "image": "assets/styles/trends-quiet-editorial.webp",
+  "w": 1536,
+  "h": 1024
+ },
+ {
+  "id": "retro-computing",
+  "name": "Retro computing",
+  "image": "assets/styles/trends-retro-computing.webp",
+  "w": 1536,
+  "h": 1024
+ },
+ {
+  "id": "surreal-type",
+  "name": "Surreal type",
+  "image": "assets/styles/trends-surreal-type.webp",
+  "w": 1536,
+  "h": 1024
+ }
+]

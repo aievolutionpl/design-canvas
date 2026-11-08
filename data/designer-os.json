@@ -1,0 +1,1361 @@
+{
+ "source": "Designer OS v3 (skills/designer-os)",
+ "files": [
+  "creative-workflows.md",
+  "design-principles.md",
+  "implementation.md",
+  "palettes.json",
+  "prompts.md",
+  "qa-checklist.md",
+  "type-system.md"
+ ],
+ "paletteNotes": "01–05 exact initial reference pairs; 06–10 original proposed extensions; 11–14 exact user-provided reference pairs from second set. Supporting text colors are recommendations, not copied from references. Check contrast on all actual surfaces, text, images and overlays.",
+ "palettes": [
+  {
+   "id": "01",
+   "name": "Butter & Terracotta",
+   "primary": "#F6E3A1",
+   "secondary": "#C8553D",
+   "mood": "warm editorial, retro premium",
+   "display": "Anton",
+   "body": "DM Sans",
+   "use": "fashion carousel, lifestyle promotion",
+   "category": "warm",
+   "recommended_text_on_primary": "#302018",
+   "recommended_text_on_secondary": "#000000",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#C8553D",
+     "bg": "#F6E3A1",
+     "ratio": 3.4,
+     "grade": "AA duży"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#302018",
+     "bg": "#F6E3A1",
+     "ratio": 12.2,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#000000",
+     "bg": "#C8553D",
+     "ratio": 4.82,
+     "grade": "AA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "02",
+   "name": "Cloud White & Teal",
+   "primary": "#F0EEE9",
+   "secondary": "#1F5F5B",
+   "mood": "calm, credible, clean",
+   "display": "Space Grotesk",
+   "body": "Inter",
+   "use": "SaaS dashboard, consultancy, education",
+   "category": "cool",
+   "recommended_text_on_primary": "#172D2A",
+   "recommended_text_on_secondary": "#FFFFFF",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#1F5F5B",
+     "bg": "#F0EEE9",
+     "ratio": 6.36,
+     "grade": "AA"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#172D2A",
+     "bg": "#F0EEE9",
+     "ratio": 12.53,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#FFFFFF",
+     "bg": "#1F5F5B",
+     "ratio": 7.38,
+     "grade": "AAA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "03",
+   "name": "Acid Green & Industrial Black",
+   "primary": "#B6F500",
+   "secondary": "#1C1C1C",
+   "mood": "bold, high-energy, typographic",
+   "display": "Archivo Black",
+   "body": "DM Sans",
+   "use": "tech product launch, youth campaign",
+   "category": "bold",
+   "recommended_text_on_primary": "#1C1C1C",
+   "recommended_text_on_secondary": "#B6F500",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#1C1C1C",
+     "bg": "#B6F500",
+     "ratio": 13.02,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#1C1C1C",
+     "bg": "#B6F500",
+     "ratio": 13.02,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#B6F500",
+     "bg": "#1C1C1C",
+     "ratio": 13.02,
+     "grade": "AAA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "04",
+   "name": "Mint & Burgundy",
+   "primary": "#BDE6D1",
+   "secondary": "#6D1A2A",
+   "mood": "soft editorial with elegant tension",
+   "display": "Syne",
+   "body": "Manrope",
+   "use": "beauty, fashion, editorial brand",
+   "category": "editorial",
+   "recommended_text_on_primary": "#6D1A2A",
+   "recommended_text_on_secondary": "#BDE6D1",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#6D1A2A",
+     "bg": "#BDE6D1",
+     "ratio": 8.41,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#6D1A2A",
+     "bg": "#BDE6D1",
+     "ratio": 8.41,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#BDE6D1",
+     "bg": "#6D1A2A",
+     "ratio": 8.41,
+     "grade": "AAA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "05",
+   "name": "Saffron Gold & Midnight Navy",
+   "primary": "#FCA311",
+   "secondary": "#14213D",
+   "mood": "dynamic, premium, trustworthy",
+   "display": "Barlow Condensed",
+   "body": "Manrope",
+   "use": "sports, e-commerce, high-impact CTA",
+   "category": "high-contrast",
+   "recommended_text_on_primary": "#14213D",
+   "recommended_text_on_secondary": "#FFFFFF",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#14213D",
+     "bg": "#FCA311",
+     "ratio": 7.9,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#14213D",
+     "bg": "#FCA311",
+     "ratio": 7.9,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#FFFFFF",
+     "bg": "#14213D",
+     "ratio": 15.97,
+     "grade": "AAA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "06",
+   "name": "Peach & Ink",
+   "primary": "#FFCCB3",
+   "secondary": "#232B35",
+   "mood": "human, inviting, sophisticated",
+   "display": "Fraunces",
+   "body": "DM Sans",
+   "use": "premium retail, beauty",
+   "category": "warm",
+   "recommended_text_on_primary": "#232B35",
+   "recommended_text_on_secondary": "#FFFFFF",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#232B35",
+     "bg": "#FFCCB3",
+     "ratio": 9.9,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#232B35",
+     "bg": "#FFCCB3",
+     "ratio": 9.9,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#FFFFFF",
+     "bg": "#232B35",
+     "ratio": 14.3,
+     "grade": "AAA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "07",
+   "name": "Stone & Cobalt",
+   "primary": "#EDEBE5",
+   "secondary": "#2146A0",
+   "mood": "editorial-tech, decisive, clean",
+   "display": "Space Grotesk",
+   "body": "Inter",
+   "use": "founder brand, agency deck",
+   "category": "cool",
+   "recommended_text_on_primary": "#17213A",
+   "recommended_text_on_secondary": "#FFFFFF",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#2146A0",
+     "bg": "#EDEBE5",
+     "ratio": 7.19,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#17213A",
+     "bg": "#EDEBE5",
+     "ratio": 13.4,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#FFFFFF",
+     "bg": "#2146A0",
+     "ratio": 8.58,
+     "grade": "AAA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "08",
+   "name": "Coral & Forest",
+   "primary": "#FF8C74",
+   "secondary": "#284B3C",
+   "mood": "organic, optimistic, modern",
+   "display": "Bricolage Grotesque",
+   "body": "Manrope",
+   "use": "food, travel, lifestyle",
+   "category": "warm",
+   "recommended_text_on_primary": "#2A2A26",
+   "recommended_text_on_secondary": "#FFFFFF",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#284B3C",
+     "bg": "#FF8C74",
+     "ratio": 4.28,
+     "grade": "AA duży"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#2A2A26",
+     "bg": "#FF8C74",
+     "ratio": 6.35,
+     "grade": "AA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#FFFFFF",
+     "bg": "#284B3C",
+     "ratio": 9.71,
+     "grade": "AAA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "09",
+   "name": "Lavender & Espresso",
+   "primary": "#D9CAEB",
+   "secondary": "#2D2037",
+   "mood": "expressive, artistic, quiet",
+   "display": "Instrument Serif",
+   "body": "DM Sans",
+   "use": "culture, boutique, fashion",
+   "category": "editorial",
+   "recommended_text_on_primary": "#2D2037",
+   "recommended_text_on_secondary": "#F0EEE9",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#2D2037",
+     "bg": "#D9CAEB",
+     "ratio": 9.9,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#2D2037",
+     "bg": "#D9CAEB",
+     "ratio": 9.9,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#F0EEE9",
+     "bg": "#2D2037",
+     "ratio": 13.19,
+     "grade": "AAA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "10",
+   "name": "Ice & Electric Blue",
+   "primary": "#D7EBEA",
+   "secondary": "#203FAD",
+   "mood": "futurist but restrained",
+   "display": "Unbounded",
+   "body": "Inter",
+   "use": "digital products, AI technology",
+   "category": "cool",
+   "recommended_text_on_primary": "#203FAD",
+   "recommended_text_on_secondary": "#FFFFFF",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#203FAD",
+     "bg": "#D7EBEA",
+     "ratio": 7.14,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#203FAD",
+     "bg": "#D7EBEA",
+     "ratio": 7.14,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#FFFFFF",
+     "bg": "#203FAD",
+     "ratio": 8.84,
+     "grade": "AAA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "11",
+   "name": "Turmeric & Malt",
+   "primary": "#FFBE0B",
+   "secondary": "#2A2312",
+   "mood": "golden bold, artisanal, warm tactile",
+   "display": "Archivo Black",
+   "body": "DM Sans",
+   "use": "artisanal food, warm premium product, campaigns with bold headline",
+   "category": "warm",
+   "recommended_text_on_primary": "#2A2312",
+   "recommended_text_on_secondary": "#FFBE0B",
+   "source": "user screenshot, pair labeled Turmeric/Malt",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#2A2312",
+     "bg": "#FFBE0B",
+     "ratio": 9.37,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#2A2312",
+     "bg": "#FFBE0B",
+     "ratio": 9.37,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#FFBE0B",
+     "bg": "#2A2312",
+     "ratio": 9.37,
+     "grade": "AAA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "12",
+   "name": "Vulcanico & Noturno",
+   "primary": "#FF4103",
+   "secondary": "#001621",
+   "mood": "energetic signal orange against dark cinematic navy",
+   "display": "Unbounded",
+   "body": "Inter",
+   "use": "technology, nightlife, performance launches, standout CTA",
+   "category": "bold",
+   "recommended_text_on_primary": "#001621",
+   "recommended_text_on_secondary": "#FF4103",
+   "source": "user screenshot, pair labeled Vulcanico/Noturno",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#001621",
+     "bg": "#FF4103",
+     "ratio": 5.29,
+     "grade": "AA"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#001621",
+     "bg": "#FF4103",
+     "ratio": 5.29,
+     "grade": "AA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#FF4103",
+     "bg": "#001621",
+     "ratio": 5.29,
+     "grade": "AA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "13",
+   "name": "Cyprus & Sand",
+   "primary": "#004741",
+   "secondary": "#F0EDE4",
+   "mood": "composed, organic, clean understated luxury",
+   "display": "Space Grotesk",
+   "body": "Manrope",
+   "use": "premium hospitality, interiors, agency and B2B web/UI",
+   "category": "cool",
+   "recommended_text_on_primary": "#F0EDE4",
+   "recommended_text_on_secondary": "#004741",
+   "source": "user screenshot, pair labeled Cyprus/Sand",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#F0EDE4",
+     "bg": "#004741",
+     "ratio": 9.07,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#F0EDE4",
+     "bg": "#004741",
+     "ratio": 9.07,
+     "grade": "AAA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#004741",
+     "bg": "#F0EDE4",
+     "ratio": 9.07,
+     "grade": "AAA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  },
+  {
+   "id": "14",
+   "name": "Xanthous & Burgundy",
+   "primary": "#F7B538",
+   "secondary": "#780116",
+   "mood": "warm editorial punch, elegant fashion energy",
+   "display": "Syne",
+   "body": "DM Sans",
+   "use": "fashion, culture, lifestyle, limited collection ads",
+   "category": "editorial",
+   "recommended_text_on_primary": "#780116",
+   "recommended_text_on_secondary": "#F7B538",
+   "source": "user screenshot, pair labeled Xanthous/Burgundy",
+   "contrast": [
+    {
+     "label": "primary ↔ secondary",
+     "fg": "#780116",
+     "bg": "#F7B538",
+     "ratio": 6.4,
+     "grade": "AA"
+    },
+    {
+     "label": "tekst na primary",
+     "fg": "#780116",
+     "bg": "#F7B538",
+     "ratio": 6.4,
+     "grade": "AA"
+    },
+    {
+     "label": "tekst na secondary",
+     "fg": "#F7B538",
+     "bg": "#780116",
+     "ratio": 6.4,
+     "grade": "AA"
+    }
+   ],
+   "contrastSource": "computed (WCAG 2.x relative luminance)"
+  }
+ ],
+ "sevenRules": [
+  {
+   "n": 1,
+   "title": "Problem i komunikat przed ozdobnikami.",
+   "text": "Określ: co to jest, dla kogo, dlaczego ma znaczenie i co użytkownik ma zrobić dalej. Nie projektuj pustej dekoracji."
+  },
+  {
+   "n": 2,
+   "title": "Dobieraj kierunek do zadania.",
+   "text": "Jeden spójny koncept z paletą, typografią, układem i detalami. Treść i otoczenie wyznaczają styl. Zachowuj istniejącą identyfikację marki, jeśli została określona."
+  },
+  {
+   "n": 3,
+   "title": "Kompozycja pod kontrolą.",
+   "text": "Mocny punkt skupienia, jasna siatka, kontrolowana przestrzeń negatywna, wyrównanie i świadomy rytm. Proporcja 60/30/10 to przydatny start, nie matematyczny obowiązek."
+  },
+  {
+   "n": 4,
+   "title": "Typografia jest elementem obrazu.",
+   "text": "Zwykle maksymalnie 2 główne rodziny; krótki mocny nagłówek, widoczne 3 poziomy hierarchii w reklamie. Nie używaj stylizowanych fontów do długich tekstów."
+  },
+  {
+   "n": 5,
+   "title": "Kolor znaczy coś.",
+   "text": "Kolor dominujący, uzupełniający i akcent mają konkretne funkcje. Nie mnoż przypadkowych gradientów. Akcent prowadzi wzrok do oferty, argumentu lub CTA."
+  },
+  {
+   "n": 6,
+   "title": "Realizm i wykonanie.",
+   "text": "Fotografie i produkty: wiarygodna geometria, światło, materiały, proporcje, cienie i detale. Obrazy generowane nie gwarantują wiernej typografii; krytyczny tekst składaj fontem w edytorze/kodzie."
+  },
+  {
+   "n": 7,
+   "title": "Test odbiorcy i poprawki.",
+   "text": "W 3 sekundy powinno być jasne: co to jest, dlaczego mnie obchodzi, co dalej. Kontroluj kontrast, spójność, krój, diakrytyki, tekst, crop i mobile. Poprawiaj przed oddaniem."
+  }
+ ],
+ "colourRules": [
+  "references/palettes.json zawiera 14 stałych kierunków: 01–05 pierwsze referencje, 06–10 autorskie, 11–14 nowe pary użytkownika.",
+  "Używaj 60% dominującego / 30% drugorzędnego / 10% akcentu jako łatwego szkicu; biel, czarny i funkcjonalne neutrals dopuszczalne. Nie musi istnieć dokładne pokrycie pikseli.",
+  "Dla tekstu normalnego celuj w WCAG AA ≥4.5:1, dużego ≥3:1, interaktywnych elementów i niezbędnych ikon ≥3:1. W razie niespełnienia popraw kolor pisma lub tła, nie psuj wybranej palety. Testuj rzeczywiste kombinacje i warstwy, nie tylko dwie próbki palety.",
+  "Pamiętaj o symbolice i kulturowym kontekście, naturalnych kolorach ludzi/produktów oraz identyfikacji istniejącej marki."
+ ],
+ "typeRulesSkill": [
+  "Nagłówek / display: mocny charakter, czytelny rytm, kontrolowane łamanie wierszy.",
+  "Body / UI: bardzo dobra czytelność, polskie znaki, rozmiar i interlinia adekwatne do urządzenia.",
+  "Reguła „2 fonty / 7 słów w nagłówku” to domyślna heurystyka dla reklamy lub rolki, a nie zakaz dla dokumentu, dostępności czy złożonego UI.",
+  "Nigdy nie zapewniaj, że model obrazu wygenerował konkretny font 1:1; dla precyzji zrób kompozycję fotograficzną osobno i nanieś edytowalny tekst."
+ ],
+ "brandSafety": [
+  "Nie zastępuj oficjalnego logo, nie twórz go zmyślonego. Jeśli brand guide koliduje z Designer OS, jest on warstwą aranżacji, a nie rebrandingiem bez zgody.",
+  "Nie kopiuj cudzych referencyjnych plakatów 1:1. Wyodrębnij zasady, stwórz oryginalny wynik.",
+  "Nie wymyślaj liczb marketingowych, wyników, cen ani rzekomo naukowych statystyk z infografiki. „90/10 kreatywności” jest hasłem opiniotwórczym, nie empirycznym wskaźnikiem.",
+  "Nie generuj zbędnych elementów AI: pseudo-dashboardów, fake-glassmorphism, fioletowej łuny, przypadkowych 3D kulek, tekstu zapychającego każdą przestrzeń."
+ ],
+ "procedure": [
+  {
+   "title": "Brief",
+   "text": "ustal z kontekstu cel, medium i proporcje, treść, odbiorcę, markę, klimat, materiały referencyjne. Pytaj tylko o brak krytyczny; nie blokuj wykonania, gdy możesz sensownie wybrać."
+  },
+  {
+   "title": "Direction lock",
+   "text": "wybierz ID palety lub wariant i zapisz role background / surface / text / secondary / accent / CTA, parę fontów display / body oraz 1 zdanie koncepcji. Dla nowej marki, jeśli prosi o opcje, pokaż maks. 3 rzeczywiście różne kierunki; w pozostałych przypadkach pracuj na jednym."
+  },
+  {
+   "title": "Layout",
+   "text": "zaprojektuj hero, kolumny, światło, zdjęcie, marginesy i hierarchię przed dodawaniem drobiazgów. Reguła wielkości nagłówka ×3 oraz margines 8–10% dla social mogą służyć jako punkty startowe, nie sztywne wartości dla każdego formatu."
+  },
+  {
+   "title": "Production",
+   "text": "twórz właściwy artefakt: grafikę, infografikę, zdjęcie z miejscem na tytuł, prompt, kod z tokenami CSS lub rozpisany system wizualny. Nie udawaj działania narzędzi, których nie użyto."
+  },
+  {
+   "title": "Refinement",
+   "text": "zastosuj checklistę 3-second, kontrast WCAG, test thumbnail/squint, safe-area, korektę mikrotypografii oraz brand QA. Jeśli coś nie przechodzi, popraw lub jasno powiedz co wymaga dalszej edycji."
+  }
+ ],
+ "designRules": [
+  {
+   "n": "01",
+   "title": "Prompt like a designer",
+   "paras": [
+    "Poor: coffee shop poster, fancy AI advertisement, modern SaaS website.",
+    "Directed: Hero photo of an iced coffee on a dark walnut café table, soft diffused morning light from frame left, tactile condensation, warm understated editorial styling, leave the upper third clean for the 5-word headline, visible beverage and naturally grounded shadows, vertical 4:5.",
+    "Prompt formula: SUBJECT + AUDIENCE/GOAL + MOOD + LIGHT + STYLE/MATERIAL + COMPOSITION & SPACE FOR TEXT + FORMAT + PRESERVATION CONSTRAINTS.",
+    "For advertisements, specify the single offer, visual hook, evidence and CTA. For product photography, specify correct shape, material, color, logo and realistic optics. For code, specify interaction states and accessible design tokens, not vague adjectives."
+   ]
+  },
+  {
+   "n": "02",
+   "title": "Only 3 meaningful type sizes in a simple ad",
+   "paras": [
+    "Create a hierarchy that survives being seen at phone-feed scale:\n1. BIG — the one core message (hero/headline). Can be ~3× the visual weight/size of body text as a starting point.\n2. MEDIUM — product, proof, subtitle or concrete benefit.\n3. SMALL — metadata, opening times, legal info or supporting details.",
+    "For real UI and long-form editorial, use a richer responsive type scale when usability requires it. Keep the *perceived* hierarchy simple even when five CSS sizes exist. Avoid bolding everything. Control line length and break lines intentionally; stress 1–2 words only when they anchor the message."
+   ]
+  },
+  {
+   "n": "03",
+   "title": "The 60 / 30 / 10 color principle",
+   "paras": [
+    "As a starting allocation: ~60% anchor background/surface, ~30% supporting surface/image or panel, ~10% attention accent (CTA, proof, number, one keyword). Can be 70/20/10 or 80/15/5 if the layout is better. Do not rigidly count pixels; photographic colors may be mixed.",
+    "- 60%: dominant background, large blocks, calm space.\n- 30%: cards, text panels, photography regions, secondary shape.\n- 10%: one accent used intentionally to guide reading order.",
+    "Never rely on a color alone to communicate meaning. Contrast check actual text on actual surface. For photographs, sample useful colors from the product/environment, but do not change product identity."
+   ]
+  },
+  {
+   "n": "04",
+   "title": "Empty space looks expensive",
+   "paras": [
+    "Start an Instagram 4:5 artwork with approximate 8–10% safe margins around primary content (adjust for real creative placement and platform crop). Group connected elements closely. Separate unrelated sections generously. Align edges to a grid. Make one focal element dominate.",
+    "Before sign-off, remove decorative extras that do not improve communication. Don't mechanically make everything sparse: data-heavy dashboards need density that is organized, not arbitrarily empty.",
+    "Compare two variants: overcrowded coupon layout vs restrained hero offer with readable proof. Favor the one that can be understood in 3 seconds without losing truthful details."
+   ]
+  },
+  {
+   "n": "05",
+   "title": "2 fonts, ~7-word headline",
+   "paras": [
+    "For posters/reels/social ads, prefer up to 2 font families and a hero phrase ideally seven words or fewer. The actual limit depends on language and copy quality, and is not a law. Use one characterful display face, one readable text face; allow monospace metadata as a rare accent. Use 2–4 deliberate weights, not seven random sizes. Confirm Polish glyph coverage; don't choose a face solely because its sample image looks cool.",
+    "Copy edit example:\n- Too long: Niesamowita okazja zakupowa, której absolutnie nie możesz przegapić tego weekendu\n- Better: Weekend. Lepsza cena. Tylko teraz. (the claim and actual offer must be verified)"
+   ]
+  },
+  {
+   "n": "06",
+   "title": "The 3-second test",
+   "paras": [
+    "A viewer of the finished ad should quickly know:\n1. What is it? Brand/product/event/category.\n2. Why should I care? Benefit/offer/reason.\n3. What do I do next? A simple CTA when the medium requires one.",
+    "At thumbnail size, squint/blur-test the hierarchy. Check whether the CTA is seen after the headline. If these answers are missing, rewrite/resize/rearrange; adding more icons is not the solution."
+   ]
+  }
+ ],
+ "editorialPolish": [
+  "Start from content and grid. Choose 1 hero, a supporting detail and a clear destination for the eyes.",
+  "Use large modern type, tuned optical kerning, strong rhythm and deliberate line breaks. Avoid orphan words, Polish diacritic clipping and ultra-tight letters.",
+  "For product photographs, preserve product correctness, natural shadows, specular highlights and texture; no cheap glow or plastic rendering. Leave negative space for exact type.",
+  "Be selective with boxes, borders and corner radius; if everything is boxed and rounded, nothing feels special.",
+  "Use neutral backgrounds to let accent colors work. Warm cream + teal, charcoal + acid, mint + burgundy, gold + navy etc are examples, not universal templates.",
+  "Editorial shapes may be bold but should support rather than interrupt reading. A good concept beats generic decoration.",
+  "In coding, prioritize keyboard focus, readable labels, actual UI states, responsive touch targets and color contrast.",
+  "Build a small expressive signature (layout choice, type treatment, one signature shape or image angle), not a collage of trends."
+ ],
+ "judgment": [
+  "For a luxury audience: fewer accents, more whitespace, precise alignment and natural materials.",
+  "For young energetic brands: aggressive color blocking, short type, tighter composition, but preserve readability.",
+  "For B2B SaaS: strong card hierarchy, restrained motion, clear states and consistent tokenization.",
+  "For carousels: one idea per slide, consistent header/number/CTA and readable mobile type.",
+  "For explainers/infographics: facts first, simple sequence, diagrams consistent in units and scale; avoid visualizing invented data.",
+  "For UI: respect brand and access needs ahead of poster-style gimmicks."
+ ],
+ "darkEditorial": "Creative direction: near-black / ink field, giant clear white grotesk headings, controlled vivid orange-red signal accent, small warm-yellow detail when purposeful, low-contrast dotted texture only in truly empty regions, spare rules and dark bordered cards. Treat reference poster claims (e.g. 90% vs 10%) as rhetorical copy, not independently measured facts. This visual direction can combine with the 14 palettes but does not replace their exact HEX values.",
+ "qaIntro": "Apply internally to each deliverable. A high score is not a substitute for fixing critical errors. Critical blockers: incorrect product/logo, misspelled key text, invented factual claim, unreadable CTA, broken interactions, important WCAG contrast failure, unusable mobile crop.",
+ "qaGates": [
+  {
+   "title": "3-second test",
+   "text": "what is it, why should I care, what action next? All three should be clear when relevant to the format."
+  },
+  {
+   "title": "Thumbnail / squint test",
+   "text": "at small screen, is the hero dominant? If all text has similar weight, revise."
+  },
+  {
+   "title": "Type system",
+   "text": "ideally 2 families, 3 clear sizes for simple poster, meaningful weights, correct kerning/line breaks, no clipping or typos; Polish `Zażółć gęślą jaźń`, `ŁÓDŹ` validated."
+  },
+  {
+   "title": "Color system",
+   "text": "one consistent palette, useful neutrals, deliberate 60/30/10-inspired distribution, single meaningful accent; no unrelated colored chips."
+  },
+  {
+   "title": "Contrast",
+   "text": "measure actual text/ground, WCAG AA normal ≥4.5:1, large ≥3:1, meaningful controls ≥3:1; inspect photos and overlays separately. Avoid treating thin light type as sufficiently accessible merely because the pair passes numerically."
+  },
+  {
+   "title": "Spacing",
+   "text": "8–10% poster safe-margin as starting point, clear grid, even alignments, consistent section spacing; respect platform overlays and responsive layouts."
+  },
+  {
+   "title": "Realism",
+   "text": "coherent light, subject anatomy, geometry, material and shadow; original supplied products and identity remain intact."
+  },
+  {
+   "title": "Brand",
+   "text": "official logo/color where provided; no fake mark, no renamed product, no made-up proof. If an asset is absent, keep brand neutral."
+  },
+  {
+   "title": "Originality",
+   "text": "not a traced source; no filler glow, unnecessary icons, 3D blobs, fake metrics, stock-looking randomness."
+  },
+  {
+   "title": "Production",
+   "text": "correct dimensions, readable exported text, working links/keyboard navigation when coded, correct file/format and truthful completion status."
+  }
+ ],
+ "qaScore": [
+  {
+   "aspect": "Clarity and message",
+   "points": 20
+  },
+  {
+   "aspect": "Hierarchy and focal point",
+   "points": 15
+  },
+  {
+   "aspect": "Palette and meaningful contrast",
+   "points": 15
+  },
+  {
+   "aspect": "Typography and copy",
+   "points": 15
+  },
+  {
+   "aspect": "Whitespace, grid, visual rhythm",
+   "points": 10
+  },
+  {
+   "aspect": "Material/light/detail craft",
+   "points": 10
+  },
+  {
+   "aspect": "Accessibility and responsiveness",
+   "points": 10
+  },
+  {
+   "aspect": "Brand fidelity and originality",
+   "points": 5
+  }
+ ],
+ "qaScoreNote": "Aim 85+/100 for polished deliverables. If below, fix the highest-impact issues. Any critical blocker requires repair regardless of score. Avoid telling the user a score unless they requested an audit.",
+ "qaRepair": [
+  {
+   "title": "Confusing hero",
+   "text": "cut headline to a single claim, enlarge it, move secondary explanation below."
+  },
+  {
+   "title": "Too many colors",
+   "text": "reduce to 1 primary, 1 secondary, 1 accent; assign text neutrals for contrast."
+  },
+  {
+   "title": "Looks AI-generated",
+   "text": "replace vague dramatic light with practical scene direction, remove excessive glow, repair materials and natural shadows."
+  },
+  {
+   "title": "Too dense",
+   "text": "remove redundant copy, use clear section grouping and negative space."
+  },
+  {
+   "title": "Weak CTA",
+   "text": "move to natural reading endpoint, contrast against background, make a real action clear."
+  },
+  {
+   "title": "Wrong font vibe",
+   "text": "use reference type traits and verify available installable families; don't fake exact matches."
+  },
+  {
+   "title": "Mobile fail",
+   "text": "reflow into one column, adjust clamp sizes, controls and 9:16 placement."
+  }
+ ],
+ "antiSlop": [
+  {
+   "text": "Nie zastępuj oficjalnego logo, nie twórz go zmyślonego. Jeśli brand guide koliduje z Designer OS, jest on warstwą aranżacji, a nie rebrandingiem bez zgody.",
+   "src": "SKILL.md · Brand safety i oryginalność"
+  },
+  {
+   "text": "Nie kopiuj cudzych referencyjnych plakatów 1:1. Wyodrębnij zasady, stwórz oryginalny wynik.",
+   "src": "SKILL.md · Brand safety i oryginalność"
+  },
+  {
+   "text": "Nie wymyślaj liczb marketingowych, wyników, cen ani rzekomo naukowych statystyk z infografiki. „90/10 kreatywności” jest hasłem opiniotwórczym, nie empirycznym wskaźnikiem.",
+   "src": "SKILL.md · Brand safety i oryginalność"
+  },
+  {
+   "text": "Nie generuj zbędnych elementów AI: pseudo-dashboardów, fake-glassmorphism, fioletowej łuny, przypadkowych 3D kulek, tekstu zapychającego każdą przestrzeń.",
+   "src": "SKILL.md · Brand safety i oryginalność"
+  },
+  {
+   "text": "not a traced source; no filler glow, unnecessary icons, 3D blobs, fake metrics, stock-looking randomness.",
+   "src": "qa-checklist.md · Originality"
+  },
+  {
+   "text": "Looks AI-generated: replace vague dramatic light with practical scene direction, remove excessive glow, repair materials and natural shadows.",
+   "src": "qa-checklist.md · Quality repair playbook"
+  },
+  {
+   "text": "AVOID: fake logos, incoherent glyphs, unverified claims, purple glows, plastic AI look, irrelevant UI widgets, cluttered text.",
+   "src": "prompts.md · Image / ad generation prompt"
+  },
+  {
+   "text": "Do not create generic purple AI gradients, excessive shadows, giant background glyphs or placeholder logos.",
+   "src": "prompts.md · UI implementation brief"
+  }
+ ],
+ "typeIntro": "Typography directions are font pairings, not claims that a screenshot uses these exact typefaces. If the user presents a new font image, inspect its letterforms and compare features before naming an accessible match. Exact proprietary font ID requires source file/name or reliable matching; without it, report visual match, not confirmed original.",
+ "typeStyles": [
+  {
+   "style": "Poster Condensed",
+   "displayRaw": "Anton regular or Barlow Condensed 800/900",
+   "display": [
+    "Anton",
+    "Barlow Condensed"
+   ],
+   "body": "DM Sans 400/500",
+   "direction": "Large ALL CAPS, tight tracking -0.02em to -0.04em, leading 0.9–1.0",
+   "use": "Loud social posters, bold promotions; not long body copy"
+  },
+  {
+   "style": "Tall Editorial",
+   "displayRaw": "Bebas Neue 400, or Oswald 600/700",
+   "display": [
+    "Bebas Neue",
+    "Oswald"
+   ],
+   "body": "Inter 400/500",
+   "direction": "Tall headlines, leading 0.95, short lines",
+   "use": "Titles on 4:5, covers; check non-ASCII glyphs and narrow density"
+  },
+  {
+   "style": "Brutalist Block",
+   "displayRaw": "Archivo Black 400 or Unbounded 700–900",
+   "display": [
+    "Archivo Black",
+    "Unbounded"
+   ],
+   "body": "DM Sans 400/500",
+   "direction": "Solid geometric slabs, uppercase, compact headlines",
+   "use": "Acid/black, bold modern campaigns; expensive in width on mobile"
+  },
+  {
+   "style": "Technical Premium",
+   "displayRaw": "Space Grotesk 600/700",
+   "display": [
+    "Space Grotesk"
+   ],
+   "body": "Inter 400/500",
+   "direction": "Controlled tracking -0.025em, 1.08–1.15 heading leading",
+   "use": "SaaS, agency, fintech, cards, charts"
+  },
+  {
+   "style": "Soft Human",
+   "displayRaw": "Syne 700/800 or Sora 700",
+   "display": [
+    "Syne",
+    "Sora"
+   ],
+   "body": "Manrope 400/500",
+   "direction": "Friendly geometric, restrained case",
+   "use": "Mint/Burgundy, retail, beauty, expressive brands"
+  },
+  {
+   "style": "Quiet Luxury",
+   "displayRaw": "Instrument Serif 400, italic accent (or Fraunces 600)",
+   "display": [
+    "Instrument Serif"
+   ],
+   "body": "DM Sans 400/500",
+   "direction": "Editorial contrast, more spacious negative space",
+   "use": "Boutique/elegance; not entire dashboard UI"
+  },
+  {
+   "style": "Professional Compact",
+   "displayRaw": "Barlow Condensed 700 for big stats",
+   "display": [
+    "Barlow Condensed"
+   ],
+   "body": "Manrope 400/500",
+   "direction": "Strong vertical headings with neutral UI text",
+   "use": "Saffron/Navy, data-adjacent layouts"
+  },
+  {
+   "style": "Mono Accent",
+   "displayRaw": "JetBrains Mono 500",
+   "display": [
+    "JetBrains Mono"
+   ],
+   "body": "pair with the current body sans",
+   "direction": "Use only in codes, HEX labels, numbers, metadata",
+   "use": "Avoid setting the whole UI in mono"
+  }
+ ],
+ "typeRules": [
+  "Never use more than 2 main families per visual, except an occasional small mono accent, and use no more than 3–4 meaningful weights.",
+  "Headings 4:5 static ad (1080×1350): H1 approx 90–155 px (content-dependent, safe margins), subhead 35–56 px, CTA 28–40 px. Don't squeeze a long sentence in display caps. Maintain 65–100 px safe margins subject to placement.",
+  "Web desktop: H1 clamp(2.75rem, 5vw, 5.5rem); H2 clamp(1.8rem, 3vw, 3.2rem); body 1rem–1.125rem; UI label 0.875rem minimum as space allows. Web mobile: use clamp and reflow rather than tiny text.",
+  "Poster display headlines: line-height 0.88–1.06; letter-spacing -0.01 to -0.045em for tight modern serif/sans, but evaluate visually. Bebas Neue often benefits from 0 to +0.02em. Polish diacritics must not clip; allow line-height adjustments.",
+  "Body paragraph: line-height 1.45–1.65, ideal 45–75 characters line width on web. Avoid uppercase body blocks, arbitrary ultra-thin type and forced justified alignment.",
+  "On photographs, add a deliberate contrast zone, solid typographic panel or subtle overlay; never put pale letters over uncontrolled bright subjects.",
+  "Font color, weights and letterspacing must be tuned to size and background, not blindly tied to palette names.",
+  "For PDF/print raster artwork, render exact font with layout software, do not embed private fonts without rights. Do not supply font binaries to users.",
+  "Verify Polish Zażółć gęślą jaźń, ŁÓDŹ, Ź, Ż, Ą, Ę before approving a font selection."
+ ],
+ "typeTemplate": [
+  "Heading: [font, weight, size, line height, tracking]",
+  "Body: [font, weight, size, line height]",
+  "CTA: [font, weight, case]",
+  "Hierarchy: hero first, subhead second, proof third, CTA fourth.",
+  "### Layout mood previews",
+  "- A: Retro Modern = Butter/Terracotta + Anton / DM Sans, bold stacked 2-line hero and fine stroke tags.",
+  "- B: Clean Tech = Cloud White/Teal + Space Grotesk / Inter, open whitespace and precise grid.",
+  "- C: Neo-Brutalist = Acid/Black + Archivo Black / DM Sans, stark type and minimal chrome.",
+  "- D: Soft Contrast = Mint/Burgundy + Syne / Manrope, editorial hierarchy and soft supporting shapes.",
+  "- E: Gold Navy = Saffron/Navy + Barlow Condensed / Manrope, sharp grid and high-performing CTA.",
+  "---"
+ ],
+ "layoutMoods": [
+  {
+   "id": "A",
+   "name": "Retro Modern",
+   "paletteA": "Butter",
+   "paletteB": "Terracotta",
+   "display": "Anton",
+   "body": "DM Sans",
+   "desc": "bold stacked 2-line hero and fine stroke tags.",
+   "paletteId": "01"
+  },
+  {
+   "id": "B",
+   "name": "Clean Tech",
+   "paletteA": "Cloud White",
+   "paletteB": "Teal",
+   "display": "Space Grotesk",
+   "body": "Inter",
+   "desc": "open whitespace and precise grid.",
+   "paletteId": "02"
+  },
+  {
+   "id": "C",
+   "name": "Neo-Brutalist",
+   "paletteA": "Acid",
+   "paletteB": "Black",
+   "display": "Archivo Black",
+   "body": "DM Sans",
+   "desc": "stark type and minimal chrome.",
+   "paletteId": "03"
+  },
+  {
+   "id": "D",
+   "name": "Soft Contrast",
+   "paletteA": "Mint",
+   "paletteB": "Burgundy",
+   "display": "Syne",
+   "body": "Manrope",
+   "desc": "editorial hierarchy and soft supporting shapes.",
+   "paletteId": "04"
+  },
+  {
+   "id": "E",
+   "name": "Gold Navy",
+   "paletteA": "Saffron",
+   "paletteB": "Navy",
+   "display": "Barlow Condensed",
+   "body": "Manrope",
+   "desc": "sharp grid and high-performing CTA.",
+   "paletteId": "05"
+  }
+ ],
+ "shotIntro": "The user's six screenshot labels describe desired visual character. Neither their original foundry identity nor the licensed availability of the exact downloadable files is verified by a raster specimen. The accessible families below are similar working substitutes, not proof of the screenshot's actual font. Do not package commercial font files.",
+ "shotRefs": [
+  {
+   "label": "PolySans",
+   "traits": "Wide geometric grotesk, open counterforms, rounded modern high-impact form",
+   "substitutes": [
+    "Manrope 800",
+    "Space Grotesk 700"
+   ],
+   "substitutesRaw": "Manrope 800, Space Grotesk 700",
+   "use": "Creative-agency hero, tech poster"
+  },
+  {
+   "label": "Delight",
+   "traits": "Heavy human/soft grotesk, compact, smooth contours",
+   "substitutes": [
+    "Sora 800",
+    "DM Sans 800"
+   ],
+   "substitutesRaw": "Sora 800, DM Sans 800",
+   "use": "Editorial cover, friendly product ad"
+  },
+  {
+   "label": "COUTURE",
+   "traits": "All-caps geometric block, disciplined proportions and wide optical balance",
+   "substitutes": [
+    "Archivo Black",
+    "League Spartan 800"
+   ],
+   "substitutesRaw": "Archivo Black, League Spartan 800 (verify character coverage)",
+   "use": "Fashion, sophisticated graphic headlines"
+  },
+  {
+   "label": "Archivo",
+   "traits": "Distinct full-weight neo-grotesk letterforms and compact wordshape",
+   "substitutes": [
+    "Archivo Black",
+    "Archivo 800"
+   ],
+   "substitutesRaw": "Archivo Black, Archivo 800",
+   "use": "03 Acid + Black, performance ad"
+  },
+  {
+   "label": "Lecturis",
+   "traits": "Experimental, sharp detail, expressive construction and editorial energy",
+   "substitutes": [
+    "Syne 800",
+    "Unbounded 800"
+   ],
+   "substitutesRaw": "Syne 800, Unbounded 800",
+   "use": "Short text art, culture and avant-garde"
+  },
+  {
+   "label": "NeuQis",
+   "traits": "Rounded, stylized high-density bold display letters",
+   "substitutes": [
+    "Unbounded 800",
+    "Sora 800"
+   ],
+   "substitutesRaw": "Unbounded 800, Sora 800",
+   "use": "Youth, playful bold hero"
+  }
+ ],
+ "combos": [
+  {
+   "paletteId": "11",
+   "name": "Turmeric & Malt",
+   "display": "Archivo Black",
+   "displayW": "400",
+   "body": "DM Sans",
+   "bodyW": "400–600",
+   "use": "editorial food / product"
+  },
+  {
+   "paletteId": "12",
+   "name": "Vulcanico & Noturno",
+   "display": "Unbounded",
+   "displayW": "700–800",
+   "body": "Inter",
+   "bodyW": "400–600",
+   "use": "signals / tech"
+  },
+  {
+   "paletteId": "13",
+   "name": "Cyprus & Sand",
+   "display": "Space Grotesk",
+   "displayW": "600–700",
+   "body": "Manrope",
+   "bodyW": "400–600",
+   "use": "calm premium UI"
+  },
+  {
+   "paletteId": "14",
+   "name": "Xanthous & Burgundy",
+   "display": "Syne",
+   "displayW": "700–800",
+   "body": "DM Sans",
+   "bodyW": "400–600",
+   "use": "warm fashion editorial"
+  }
+ ],
+ "hierarchyTest": [
+  "For social ads, aim for 3 perceived text size groups: H1/hero, secondary information, supporting details. One-line hero around 7 words is a useful *copy constraint*, never a demand that pushes factual information off-screen. On websites, adapt a proper typography scale for body, caption, section title, H1–H6 and controls. Line breaks are an art decision; measure text width, optical rhythm and Polish diacritics instead of forcing absolute percentage rules.",
+  "Ad examples: strong 1–2 line title, one line benefit, action. UI examples: functional legible body and visible states. Do not combine multiple competing decorative display fonts. Avoid a decorative font family for long form controls, footnotes, charts or accessible body text."
+ ],
+ "workflows": [
+  {
+   "n": "1",
+   "title": "New advertisement, poster, cover or social graphic",
+   "text": "1. Infer user goal, actual offer, audience, placement, crop (4:5, 9:16, 1:1 etc.), mandatory product/brand content.\n2. Select one palette ID, type pairing and signature compositional concept. Prepare the visual hierarchy: headline, visual subject, proof/subheading and CTA.\n3. Pick a starting 60/30/10 allocation. Use 2 main font families and 3 perceivable type sizes where possible. Reserve 8–10% safe margins as appropriate.\n4. Apply the `SUBJECT + MOOD + LIGHT + STYLE + SPACE FOR TEXT` scene formula, with correct camera, natural shadows and reference fidelity. Separate exact critical typography from generated image when necessary.\n5. Deliver the requested image or file when tools allow; don't claim a flat reference mockup is an editable source. Include the selected palette and fonts in a concise note.\n6. Check 3-second test, contrast, typo errors, product/logo accuracy and mobile crop; repair errors."
+  },
+  {
+   "n": "2",
+   "title": "Product photo or lifestyle image",
+   "text": "Do not recolor a branded product or change its design. Use color pair in background, physical props, wardrobe and lighting. Start with authentic photo cues: natural optics, plausible ambient light/reflection, imperfection in materials, varied focus, cohesive shadows. Define a hero product and camera path/angle. Make space for an overlay only when the user requested ad copy. Avoid all-in-one scene clutter."
+  },
+  {
+   "n": "3",
+   "title": "Infographic or multi-slide carousel",
+   "text": "Use a clear visual narrative rather than 12 icon boxes. One key idea per slide, 1 clear headline, supporting data/step, 1 designed illustration or comparison, useful CTA if appropriate. Use consistent numbered labels, shapes, card templates, backgrounds and same type roles across slides. Any number/statistic must be user-supplied or verifiable; use neutral labels rather than inventing performance figures. Make text editable where exactness matters. Deliver in requested aspect ratio. Avoid small fine print that fails at 400px preview."
+  },
+  {
+   "n": "4",
+   "title": "Landing page, app and coded UI",
+   "text": "Read the existing code/brand first when available. Pick token colors for background, elevated surface, foreground, primary action, secondary action, borders, success/warning/error and hover/focus. Import only actually used typefaces. Build a responsive scale and semantic layout. Provide accessible contrast and intuitive keyboard focus. Use a design system that survives additional pages and components rather than custom hexes in every element. Preserve product functionality, navigation, permissions and component architecture. Check narrow/mobile layout and interactions. Do not respond with only a mood board when asked for implementation."
+  },
+  {
+   "n": "5",
+   "title": "Refresh/redesign and critique",
+   "text": "Describe the current hierarchy and biggest 1–3 problems. Prioritize changes by impact (comprehension > hierarchy > contrast > font fit > texture). Preserve the source project's constraints and user-specified immutable features. Produce an improved version and a brief changelog. Do not invent a new logo or claim exact proprietary font identification from a screenshot. The user should be able to compare what improved concretely."
+  },
+  {
+   "n": "6",
+   "title": "Designer OS in auto mode",
+   "text": "Choose palette based on audience, brand constraints, energy, medium and purpose. Examples:\n- Quiet premium business / education → 02 Cloud White + Teal or 13 Cyprus + Sand.\n- Youth/technology statement → 03 Acid + Black or 12 Vulcanico + Noturno.\n- Lifestyle fashion / warmth → 01 Yellow + Terracotta or 14 Xanthous + Burgundy.\n- Boutique/beauty/editorial → 04 Mint + Burgundy or 09 Lavender + Espresso.\n- Sport/strong CTA → 05 Saffron + Navy or 11 Turmeric + Malt.\n\nProposals are defaults, not rigid industry-color mappings. If the company already has brand colors, adapt their use instead of replacing them."
+  },
+  {
+   "n": "7",
+   "title": "Handoff formats",
+   "text": "Provide the actual request-specific deliverable: final artwork, code patch, style tokens, prompt, brand mini-spec or a targeted critique. When useful, append a compact implementation note: palette ID and HEX, display/body font, hero hierarchy, grid and QA caveats. Do not flood the user with every palette when they asked for one finished design."
+  }
+ ],
+ "prompts": [
+  {
+   "title": "Image / ad generation prompt",
+   "text": "Design an original editorial commercial image in a premium modern graphic design style.\nPALETTE: [ID and exact hex values]. Use [primary] as [backdrop/prop], [secondary] as [contrast panel/wardrobe/accent], plus neutral [hex] for readable text. Intentional color blocking, limited surfaces, not generic gradient.\nTYPOGRAPHY DIRECTION: [display family] [weight] [case], paired with [body family]. Hero title exact text \"[headline]\" with [line-breaks]; subhead \"[copy]\"; CTA \"[copy]\". This is an art-direction reference: for guaranteed correct typography apply real fonts in an editor after image generation.\nART DIRECTION: [photo realism level], [lighting], [subject], [wardrobe], [product geometry], [environment], [camera angle], [materials], [texture], [grid], [negative space].\nCOMPOSITION: [4:5 / 9:16 / 1:1 / 16:9], reserve clear readable typography zones, protect product focus and CTA, dynamic but uncluttered. Editorial typography as composition; clean margins, high intentional contrast.\nAVOID: fake logos, incoherent glyphs, unverified claims, purple glows, plastic AI look, irrelevant UI widgets, cluttered text."
+  },
+  {
+   "title": "Photo-only prompt for later compositing",
+   "text": "Photorealistic premium fashion/product campaign shot in Designer OS [ID] visual direction. [Scene and subject], [practical light direction and softness], [camera and lens notes], [material cues], background in [color] and restrained styling accents in [contrast color]. Preserve natural skin, fabrics, products and reflections. Place hero at [region] leaving uncluttered negative space at [region] for real editorial type added later. No text, logos, watermarks or artificial UI."
+  },
+  {
+   "title": "UI implementation brief",
+   "text": "Implement a responsive premium UI using Designer OS [ID]. Apply semantic tokens, display font [X], body font [Y], proper font weights and `clamp` sizing. Use the exact palette pair plus functional surfaces, states and accessible text contrast. Build a purposeful layout with clean spacing, restrained borders, predictable buttons, tabs and inputs. Do not create generic purple AI gradients, excessive shadows, giant background glyphs or placeholder logos. Include a concise list of tokens and a mobile QA checklist."
+  },
+  {
+   "title": "Commercial social poster",
+   "text": "Goal: [desired audience action, verified claim/offer]. One clear core message: [5–7 word hero if useful].\nDirection: DESIGNER OS [ID] [exact HEX palette]. Primary occupies most background surfaces; secondary is the supporting large surface; use one high-contrast accent only where necessary for CTA.\nTypography: [installable display font] + [legible body font]; 3 perceived size levels with deliberate line breaks; primary headline visually dominant, subline concise, meta minimal.\nSubject: [genuine product/person and nonnegotiable visual fidelity].\nPhotography: [mood, natural light direction, camera viewpoint, focal length aesthetic, material realism, shadows].\nLayout: [composition and 8–10% safe margins as a starting point], [negative space specifically for text], [CTA/eye path], responsive crop in [aspect ratio].\nVisual guardrails: no fake logo, no made-up metrics or irrelevant decoration, no generic violet neon, no unreadable small text, no plastic skin/product, do not reproduce a reference composition 1:1.\nQuality review: 3-second what/why/next; phone-size hierarchy; accurate Polish spelling; actual text contrast."
+  },
+  {
+   "title": "Minimal premium dark infographic",
+   "text": "Create a coherent editorial infographic with an ink-dark base, soft warm-white headlines, one controlled red-orange accent, restrained cards and subtle dotted texture only in empty regions. Use the actual Designer OS [ID] palette as the system or label a documented variant. One idea per frame. Design hierarchy: dominant headline, visible evidence/diagram, short support line and clear next step. Only include verifiable numbers. No ornamental dashboard widgets. 3-second test and mobile crop check."
+  },
+  {
+   "title": "Art direction for image-only hero",
+   "text": "Preserve the supplied subject/product exact geometry and brand details; scene in Designer OS [ID] with palette represented through background, props and natural light rather than overlay filters. Select [camera angle], [lighting], [material quality], [subject placement], [natural imperfections]. Keep the [top-left/top-right] zone visually quiet for separately typeset headline. No rendered words or fake logos."
+  }
+ ],
+ "promptFormula": "subject and offer + audience + palette and functional roles + camera/view + mood + source of light + materials + layout + copy zones + format + brand truth + exclusions.",
+ "miniCases": [
+  "Fashion Holiday campaign → P01 + Anton / DM Sans: large stacked title, warm yellow typography panel, terracotta styled product still-life, dark ink for fine print.",
+  "AI product announcement → P03 + Archivo Black / DM Sans: high-impact acid headline area and industrial black UI accent, no multicolor rainbow.",
+  "Premium B2B landing → P02 + Space Grotesk / Inter: calm teal buttons, warm light background, readable product screenshots and purposeful whitespace.",
+  "Boutique editorial promo → P04 + Syne / Manrope: mint product scene with burgundy typography and soft directional light.",
+  "Energetic sports advert → P05 + Barlow Condensed / Manrope: navy structure, saffron headline/CTA, controlled 2-tone photography."
+ ],
+ "tokens": [
+  {
+   "title": "Designer OS 02 · Cloud White / Teal — tokeny CSS",
+   "lang": "css",
+   "code": "/* Load only the necessary families and weights, or self-host with valid licenses. */\n@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');\n:root {\n  --color-bg: #F0EEE9;\n  --color-surface: #FFFFFF;\n  --color-text: #1D2928;\n  --color-brand: #1F5F5B;\n  --color-brand-ink: #FFFFFF;\n  --color-border: #B8CCC8;\n  --font-display: 'Space Grotesk', 'Arial', sans-serif;\n  --font-body: 'Inter', 'Arial', sans-serif;\n  --radius-md: 14px;\n}\nbody { background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); line-height: 1.55; }\nh1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.035em; }\nh1 { font-weight: 700; font-size: clamp(2.6rem,5vw,5.5rem); line-height: 1.05; }\nh2 { font-size: clamp(1.7rem,3vw,3.1rem); line-height: 1.1; }\n.btn-primary { background: var(--color-brand); color: var(--color-brand-ink); font: 600 1rem var(--font-body); padding: 0.85rem 1.25rem; border-radius: 999px; }\n.btn-primary:hover { filter: brightness(.92); }\n.btn-primary:focus-visible { outline: 3px solid #14213D; outline-offset: 3px; }"
+  },
+  {
+   "title": "Architektura ról (semantic roles)",
+   "lang": "text",
+   "code": "background / foreground / surface / surface-foreground\nprimary / primary-foreground / secondary / secondary-foreground\naccent / accent-foreground / border / muted / muted-foreground\nfocus / danger / success\nfont-display / font-body / radius / spacing scale"
+  },
+  {
+   "title": "P13 Cyprus & Sand — dostępny CSS",
+   "lang": "css",
+   "code": "@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');\n:root {\n  --background: #F0EDE4;\n  --foreground: #004741;\n  --surface: #FFFFFF;\n  --primary: #004741;\n  --primary-foreground: #F0EDE4;\n  --accent: #004741; /* P13 uses its own green for actions; avoid accidental palette mixing */\n  --border: #B6CAC4;\n  --font-display: 'Space Grotesk', Arial, sans-serif;\n  --font-body: 'Manrope', Arial, sans-serif;\n}\nbody { background: var(--background); color: var(--foreground); font-family: var(--font-body); line-height: 1.55; }\nh1, h2, h3 { font-family: var(--font-display); letter-spacing: -.025em; }\nh1 { font-size: clamp(2.4rem, 5vw, 5.2rem); line-height: 1.04; }\nbutton, input, textarea { font: inherit; }\na:focus-visible, button:focus-visible { outline: 3px solid var(--foreground); outline-offset: 3px; }\n@media (max-width: 640px) { .hero-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; } }"
+  }
+ ],
+ "contrastPractice": [
+  "Use relative luminance: sRGB channel <= 0.04045 ? channel/12.92 : ((channel+0.055)/1.055)^2.4; L=.2126R+.7152G+.0722B; ratio (Llighter+.05)/(Ldarker+.05).",
+  "At Designer OS 01, the exact pair #F6E3A1 / #C8553D is approximately 3.40:1, so do not place regular size terracotta text on pale yellow and claim WCAG AA. Choose #302018 on cream for paragraph text, and test other actual overlaps.",
+  "At Designer OS 02, original pair #F0EEE9 / #1F5F5B is approximately 6.36:1; 03: 13.02:1; 04: 8.41:1; 05: 7.90:1. Ratios refer to these exact pairings, not necessarily text variants in palettes.json.",
+  "Test disabled states, overlays, nav, footer, borders and dark mode independently. Contrast under image overlays depends on the image underneath."
+ ],
+ "implRules": [
+  "For 4:5 poster / 9:16 story, preserve adequate safe areas and 3 clear type size roles, 2 fonts, one visual hero.",
+  "For complex apps, hierarchy needs more than 3 CSS sizes, responsive layout, distinct disabled/error/focus states and accessible colors; never force poster density rules into a UI.",
+  "For product imagery, make the palette through environment/props/light rather than repainting an existing branded product.",
+  "For Designer OS Auto, output actual palette ID, HEX roles, font family stack, grid principles and usable code, not color adjectives only.",
+  "Finish with UI and accessibility checks. If an action was not executed, do not claim it was deployed or tested."
+ ],
+ "rubric": [
+  "Palette coherence and neutral support",
+  "Headline readability and line breaking",
+  "Typeface fit with content and audience",
+  "CTA visibility, hierarchy, accessibility",
+  "Originality and avoidance of AI design clichés"
+ ],
+ "fontSpecs": [
+  "Anton:wght@400;500;600;700;800;900",
+  "Archivo:wght@400;500;600;700;800;900",
+  "Archivo Black:wght@400;500;600;700;800;900",
+  "Barlow Condensed:wght@400;500;600;700;800;900",
+  "Bebas Neue:wght@400;500;600;700;800;900",
+  "Bricolage Grotesque:wght@400;500;600;700;800;900",
+  "DM Sans:wght@400;500;600;700;800;900",
+  "Fraunces:wght@400;500;600;700;800;900",
+  "Instrument Serif:wght@400;500;600;700;800;900",
+  "Inter:wght@400;500;600;700;800;900",
+  "JetBrains Mono:wght@400;500;600;700;800;900",
+  "League Spartan:wght@400;500;600;700;800;900",
+  "Manrope:wght@400;500;600;700;800;900",
+  "Oswald:wght@400;500;600;700;800;900",
+  "Sora:wght@400;500;600;700;800;900",
+  "Space Grotesk:wght@400;500;600;700;800;900",
+  "Syne:wght@400;500;600;700;800;900",
+  "Unbounded:wght@400;500;600;700;800;900"
+ ],
+ "fontWeights": {
+  "Anton": [
+   400
+  ],
+  "Anton_latinExt": true,
+  "Archivo": [
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "Archivo_latinExt": true,
+  "Archivo Black": [
+   400
+  ],
+  "Archivo Black_latinExt": true,
+  "Barlow Condensed": [
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "Barlow Condensed_latinExt": true,
+  "Bebas Neue": [
+   400
+  ],
+  "Bebas Neue_latinExt": true,
+  "Bricolage Grotesque": [
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "Bricolage Grotesque_latinExt": true,
+  "DM Sans": [
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "DM Sans_latinExt": true,
+  "Fraunces": [
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "Fraunces_latinExt": true,
+  "Instrument Serif": [
+   400
+  ],
+  "Instrument Serif_latinExt": true,
+  "Inter": [
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "Inter_latinExt": true,
+  "JetBrains Mono": [
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "JetBrains Mono_latinExt": true,
+  "League Spartan": [
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "League Spartan_latinExt": true,
+  "Manrope": [
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "Manrope_latinExt": true,
+  "Oswald": [
+   400,
+   500,
+   600,
+   700
+  ],
+  "Oswald_latinExt": true,
+  "Sora": [
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "Sora_latinExt": true,
+  "Space Grotesk": [
+   400,
+   500,
+   600,
+   700
+  ],
+  "Space Grotesk_latinExt": true,
+  "Syne": [
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "Syne_latinExt": true,
+  "Unbounded": [
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "Unbounded_latinExt": true
+ },
+ "icon": "assets/designer-os-icon.webp"
+}

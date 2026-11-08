@@ -1,0 +1,284 @@
+{
+ "families": [
+  "Anton",
+  "Archivo",
+  "Archivo Black",
+  "Baloo 2",
+  "Barlow",
+  "Barlow Condensed",
+  "Bebas Neue",
+  "Bricolage Grotesque",
+  "Caveat",
+  "Chivo Mono",
+  "Cormorant Garamond",
+  "DM Sans",
+  "DM Serif Display",
+  "Dancing Script",
+  "Figtree",
+  "Fraunces",
+  "Fredoka",
+  "Geist Mono",
+  "Gloock",
+  "IBM Plex Mono",
+  "IBM Plex Sans",
+  "Instrument Sans",
+  "Instrument Serif",
+  "Inter",
+  "Inter Tight",
+  "JetBrains Mono",
+  "Kalam",
+  "Karla",
+  "Libre Caslon Text",
+  "Lora",
+  "Manrope",
+  "Newsreader",
+  "Nunito Sans",
+  "Orbitron",
+  "Pacifico",
+  "Patrick Hand",
+  "Playfair Display",
+  "Plus Jakarta Sans",
+  "Rubik Mono One",
+  "Source Serif 4",
+  "Space Grotesk",
+  "Space Mono",
+  "Syne",
+  "Unbounded",
+  "Work Sans",
+  "Young Serif"
+ ],
+ "check": {
+  "Anton": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Archivo": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Archivo Black": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Baloo 2": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Barlow": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Barlow Condensed": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Bebas Neue": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Bricolage Grotesque": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Caveat": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Chivo Mono": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Cormorant Garamond": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "DM Sans": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "DM Serif Display": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Dancing Script": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Figtree": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Fraunces": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Fredoka": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Geist Mono": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Gloock": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "IBM Plex Mono": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "IBM Plex Sans": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Instrument Sans": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Instrument Serif": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Inter": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Inter Tight": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "JetBrains Mono": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Kalam": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Karla": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Libre Caslon Text": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Lora": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Manrope": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Newsreader": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Nunito Sans": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Orbitron": {
+   "latinExt": false,
+   "status": "ok"
+  },
+  "Pacifico": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Patrick Hand": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Playfair Display": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Plus Jakarta Sans": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Rubik Mono One": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Source Serif 4": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Space Grotesk": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Space Mono": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Syne": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Unbounded": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Work Sans": {
+   "latinExt": true,
+   "status": "ok"
+  },
+  "Young Serif": {
+   "latinExt": true,
+   "status": "ok"
+  }
+ },
+ "specs": [
+  "Anton:wght@400;700",
+  "Archivo:wght@400;700",
+  "Archivo Black:wght@400;700",
+  "Baloo 2:wght@400;700",
+  "Barlow:wght@400;700",
+  "Barlow Condensed:wght@400;700",
+  "Bebas Neue:wght@400;700",
+  "Bricolage Grotesque:wght@400;700",
+  "Caveat:wght@400;700",
+  "Chivo Mono:wght@400;700",
+  "Cormorant Garamond:wght@400;700",
+  "DM Sans:wght@400;700",
+  "DM Serif Display:wght@400;700",
+  "Dancing Script:wght@400;700",
+  "Figtree:wght@400;700",
+  "Fraunces:wght@400;700",
+  "Fredoka:wght@400;700",
+  "Geist Mono:wght@400;700",
+  "Gloock:wght@400;700",
+  "IBM Plex Mono:wght@400;700",
+  "IBM Plex Sans:wght@400;700",
+  "Instrument Sans:wght@400;700",
+  "Instrument Serif:wght@400;700",
+  "Inter:wght@400;700",
+  "Inter Tight:wght@400;700",
+  "JetBrains Mono:wght@400;700",
+  "Kalam:wght@400;700",
+  "Karla:wght@400;700",
+  "Libre Caslon Text:wght@400;700",
+  "Lora:wght@400;700",
+  "Manrope:wght@400;700",
+  "Newsreader:wght@400;700",
+  "Nunito Sans:wght@400;700",
+  "Orbitron:wght@400;700",
+  "Pacifico:wght@400;700",
+  "Patrick Hand:wght@400;700",
+  "Playfair Display:wght@400;700",
+  "Plus Jakarta Sans:wght@400;700",
+  "Rubik Mono One:wght@400;700",
+  "Source Serif 4:wght@400;700",
+  "Space Grotesk:wght@400;700",
+  "Space Mono:wght@400;700",
+  "Syne:wght@400;700",
+  "Unbounded:wght@400;700",
+  "Work Sans:wght@400;700",
+  "Young Serif:wght@400;700"
+ ]
+}

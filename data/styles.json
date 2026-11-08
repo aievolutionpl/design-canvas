@@ -1,0 +1,2922 @@
+[
+ {
+  "id": "ADT-01",
+  "num": "01",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/01-minimalism",
+  "name": "Minimalism",
+  "tagline": "Less, but better.",
+  "aliases": [
+   "minimal",
+   "minimalist",
+   "clean",
+   "less-is-more",
+   "rams",
+   "swiss-lite"
+  ],
+  "category": "UI / web",
+  "description": "Less but better. Every element earns its place through function; whitespace, type and one accent color do all the expressive work.",
+  "principles": "extreme restraint · generous whitespace · one accent color · typography-led hierarchy · invisible chrome · content is the interface.",
+  "signature": "One accent color, reserved exclusively for actions, on an otherwise achromatic page — so the single blue thing on screen is the thing to click. Use it for the primary action and nothing else.",
+  "whenToUse": "SaaS, fintech, health, corporate, enterprise, premium/luxury-adjacent, dev docs. Audience expects clarity and trust.",
+  "recommendedFor": [
+   "b2b-saas",
+   "fintech",
+   "health",
+   "corporate",
+   "enterprise",
+   "premium",
+   "developer-docs"
+  ],
+  "supporting": [
+   "ADT-10",
+   "ADT-15",
+   "ADT-08",
+   "ADT-14"
+  ],
+  "incompatible": [
+   "ADT-13"
+  ],
+  "do": [
+   "One accent color, used for actions only",
+   "Whitespace at section level (96px+)",
+   "Real photography, single treatment",
+   "Hairline borders, flat surfaces"
+  ],
+  "dont": [
+   "Gradients \"for depth\"",
+   "Three font families",
+   "Decorative illustration",
+   "Colored info-box sections"
+  ],
+  "colors": {
+   "bg": "#FFFFFF",
+   "surface": "#F7F7F5",
+   "text": "#111111",
+   "text-secondary": "#555555",
+   "border": "#E5E5E2",
+   "primary": "#111111",
+   "primary-contrast": "#FFFFFF",
+   "accent": "#2563EB",
+   "accent-contrast": "#FFFFFF",
+   "success": "#16A34A",
+   "warning": "#D97706",
+   "error": "#DC2626"
+  },
+  "colorsDark": {
+   "bg": "#0A0A0A",
+   "surface": "#161616",
+   "text": "#F5F5F4",
+   "text-secondary": "#A3A3A3",
+   "border": "#262626",
+   "primary": "#F5F5F4",
+   "primary-contrast": "#0A0A0A"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Inter",
+   "display": "Archivo",
+   "mono": "IBM Plex Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Text/Sans: Inter, Instrument Sans, Jakarta Sans. Grotesk: Archivo. Serif accent (optional): Newsreader. Mono: IBM Plex Mono.",
+  "fontSizes": {
+   "h1": "56px",
+   "h2": "40px",
+   "h3": "28px",
+   "h4": "22px",
+   "h5": "18px",
+   "h6": "16px",
+   "body": "17px",
+   "small": "14px",
+   "label": "12px"
+  },
+  "radius": {
+   "sm": "6px",
+   "md": "8px",
+   "lg": "12px"
+  },
+  "shadows": {
+   "none": "none",
+   "focus": "0 0 0 3px var(--color-accent)"
+  },
+  "tokensCss": "/* 01 · Minimalism — design tokens (canonical) */\n:root {\n  --color-bg: #FFFFFF;\n  --color-surface: #F7F7F5;\n  --color-text: #111111;\n  --color-text-secondary: #555555;\n  --color-border: #E5E5E2;\n  --color-primary: #111111;\n  --color-primary-contrast: #FFFFFF;\n  --color-accent: #2563EB;\n  --color-accent-contrast: #FFFFFF;\n  --color-success: #16A34A;\n  --color-warning: #D97706;\n  --color-error: #DC2626;\n\n  --font-sans: 'Inter', system-ui, sans-serif;\n  --font-display: 'Archivo', 'Inter', sans-serif;\n  --font-mono: 'IBM Plex Mono', monospace;\n\n  --font-size-h1: 56px;\n  --font-size-h2: 40px;\n  --font-size-h3: 28px;\n  --font-size-h4: 22px;\n  --font-size-h5: 18px;\n  --font-size-h6: 16px;\n  --font-size-body: 17px;\n  --font-size-small: 14px;\n  --font-size-label: 12px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px;\n  --shadow-none: none;\n  --shadow-focus: 0 0 0 3px var(--color-accent);\n\n  --border-default: 1px solid var(--color-border);\n  --border-strong: 1px solid var(--color-text);\n\n  --container-width: 1200px;\n\n  --motion-fast: 150ms;\n  --motion-normal: 250ms;\n  --motion-slow: 400ms;\n  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);\n}\n[data-theme=\"dark\"] {\n  --color-bg: #0A0A0A;\n  --color-surface: #161616;\n  --color-text: #F5F5F4;\n  --color-text-secondary: #A3A3A3;\n  --color-border: #262626;\n  --color-primary: #F5F5F4;\n  --color-primary-contrast: #0A0A0A;\n}\n",
+  "prompt": "Design a minimal, typography-led landing page for Ledgerly, a bookkeeping\ntool for freelancers. Decide hierarchy first: H1 → primary CTA → screenshot\n→ proof. Use Archivo + Inter + IBM Plex Mono, a single blue accent\n(#2563EB), hairline borders instead of shadows, 96px+ section spacing.\nEvery element must justify its existence; if a section doesn't add trust\nor clarity, remove it. Deliver as one self-contained HTML file with dark\nmode via prefers-color-scheme and a reduced-motion reset. Do not add\ngradients, glass, illustrations, or invented numbers.",
+  "image": "assets/styles/adt-01.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-02",
+  "num": "02",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/02-glassmorphism",
+  "name": "Glassmorphism",
+  "tagline": "Translucent. Layered. Modern.",
+  "aliases": [
+   "glass",
+   "frosted",
+   "frosted-glass",
+   "blur",
+   "acrylic"
+  ],
+  "category": "UI / web",
+  "description": "Frosted translucent surfaces floating over a vivid, colorful background. Depth comes from blur + light borders, not shadows. One hard rule governs everything: readability first, glass second — never more than 2 glass surfaces per view.",
+  "principles": "frosted translucency · colorful gradient backdrop · light borders (white alpha) · soft elevation · airy spacing · glass is a highlight, not a layout system.",
+  "signature": "One frosted panel over a vivid, deliberately blurred background — where the blur lets the color beneath show through just enough to prove the panel is in front of something real. One panel. Not thirty.",
+  "whenToUse": "Music/media apps, weather, fintech dashboards, creative tools, design-agency sites, event/hospitality brands — anywhere a colorful brand moment + one floating highlight panel reads as premium.",
+  "recommendedFor": [
+   "dev-tools",
+   "dashboards",
+   "web3",
+   "consumer-app"
+  ],
+  "supporting": [
+   "ADT-04"
+  ],
+  "incompatible": [
+   "ADT-12",
+   "ADT-11"
+  ],
+  "do": [
+   "Cap at 2 glass surfaces per view — count them",
+   "Put vivid, simple gradients behind glass; solid color behind body text",
+   "Use 1px white-alpha border on every glass surface",
+   "blur(16–24px) + saturate(160%) minimum for legibility"
+  ],
+  "dont": [
+   "Glass cards stacked in grids",
+   "Glass buttons, inputs, or table rows",
+   "Light font weights on glass",
+   "Text directly over the busy background (glass exists to fix that — use it)"
+  ],
+  "colors": {
+   "bg": "#F4F4FB",
+   "surface": "#FFFFFF",
+   "text": "#111111",
+   "text-secondary": "#555555",
+   "border": "#E4E4EF",
+   "primary": "#111111",
+   "primary-contrast": "#FFFFFF",
+   "accent": "#7C3AED",
+   "accent-contrast": "#FFFFFF",
+   "success": "#16A34A",
+   "warning": "#D97706",
+   "error": "#DC2626"
+  },
+  "colorsDark": {
+   "bg": "#0F172A",
+   "surface": "#1E293B",
+   "text": "#F8FAFC",
+   "text-secondary": "#94A3B8",
+   "border": "rgb(255 255 255 / 0.10)",
+   "primary": "#F8FAFC",
+   "primary-contrast": "#0F172A",
+   "accent": "#A78BFA",
+   "accent-contrast": "#111111"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Inter",
+   "display": "Plus Jakarta Sans",
+   "mono": "JetBrains Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Text/Sans: Inter, Plus Jakarta Sans, Outfit. Display: Plus Jakarta Sans. Mono: JetBrains Mono.",
+  "fontSizes": {
+   "h1": "56px",
+   "h2": "40px",
+   "h3": "28px",
+   "h4": "22px",
+   "h5": "18px",
+   "h6": "16px",
+   "body": "17px",
+   "small": "14px",
+   "label": "12px"
+  },
+  "radius": {
+   "sm": "8px",
+   "md": "12px",
+   "lg": "16px",
+   "xl": "24px"
+  },
+  "shadows": {
+   "card": "0 8px 32px rgb(0 0 0 / 0.12)",
+   "focus": "0 0 0 3px var(--color-accent)"
+  },
+  "tokensCss": "/* 02 · Glassmorphism — design tokens (canonical) */\n:root {\n  --color-bg: #F4F4FB;\n  --color-surface: #FFFFFF;\n  --color-text: #111111;\n  --color-text-secondary: #555555;\n  --color-border: #E4E4EF;\n  --color-primary: #111111;\n  --color-primary-contrast: #FFFFFF;\n  --color-accent: #7C3AED;\n  --color-accent-contrast: #FFFFFF;\n  --color-success: #16A34A;\n  --color-warning: #D97706;\n  --color-error: #DC2626;\n\n  /* Vivid backdrop glass needs something to blur */\n  --backdrop-gradient: linear-gradient(135deg, #6366F1 0%, #A855F7 45%, #EC4899 100%);\n  --backdrop-glow-1: rgb(99 102 241 / 0.35);\n  --backdrop-glow-2: rgb(236 72 153 / 0.28);\n\n  /* Glass recipe — max 2 surfaces per view */\n  --glass-bg-light: rgb(255 255 255 / 0.62);\n  --glass-bg-dark: rgb(255 255 255 / 0.12);\n  --glass-border: rgb(255 255 255 / 0.25);\n  --glass-blur: 20px;\n  --glass-saturation: 160%;\n  --glass-shadow: 0 8px 32px rgb(0 0 0 / 0.12);\n  --glass-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));\n\n  --font-sans: 'Inter', system-ui, sans-serif;\n  --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;\n  --font-mono: 'JetBrains Mono', monospace;\n\n  --font-size-h1: 56px;\n  --font-size-h2: 40px;\n  --font-size-h3: 28px;\n  --font-size-h4: 22px;\n  --font-size-h5: 18px;\n  --font-size-h6: 16px;\n  --font-size-body: 17px;\n  --font-size-small: 14px;\n  --font-size-label: 12px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px;\n  --shadow-card: 0 8px 32px rgb(0 0 0 / 0.12);\n  --shadow-focus: 0 0 0 3px var(--color-accent);\n\n  --border-default: 1px solid var(--color-border);\n  --border-glass: 1px solid var(--glass-border);\n\n  --container-width: 1200px;\n\n  --motion-fast: 150ms;\n  --motion-normal: 200ms;\n  --motion-slow: 400ms;\n  --motion-ambient: 60s;\n  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);\n}\n\n/* Glass is fragile under motion preferences — freeze ambient drift */\n@media (prefers-reduced-motion: reduce) {\n  :root { --motion-ambient: 0s; --motion-fast: 0ms; --motion-normal: 0ms; --motion-slow: 0ms;\n}\n}\n[data-theme=\"dark\"] {\n  --color-bg: #0F172A;\n  --color-surface: #1E293B;\n  --color-text: #F8FAFC;\n  --color-text-secondary: #94A3B8;\n  --color-border: rgb(255 255 255 / 0.10);\n  --color-primary: #F8FAFC;\n  --color-primary-contrast: #0F172A;\n  --glass-bg: var(--glass-bg-dark);\n  --color-accent: #A78BFA;\n  --color-accent-contrast: #111111;\n}\n\n/* Required usage guard */\n.glass {\n  background: var(--glass-bg-light);\n  border: var(--border-glass);\n  box-shadow: var(--glass-shadow);\n  -webkit-backdrop-filter: var(--glass-filter);\n  backdrop-filter: var(--glass-filter);\n}\n[data-theme=\"dark\"] .glass { background: var(--glass-bg-dark); }\n@supports not (backdrop-filter: blur(1px)) {\n  .glass { background: var(--color-surface); border: var(--border-default); }\n}",
+  "prompt": "Design a glassmorphism landing page for Pulse, a music-streaming app.\nConstraint first: readability beats decoration — count the glass surfaces,\ncap at 2 (navbar + hero panel), all other surfaces solid with 1px borders.\nVivid indigo→magenta gradient backdrop; glass = blur(20px) saturate(160%),\nwhite-alpha border, 20px radius. Type: Plus Jakarta Sans headings, Inter\nbody, JetBrains Mono labels; near-white text, one accent for solid CTAs.\nEvery text-on-glass pairing must pass AA contrast against the worst spot\nof the gradient behind it. Deliver one self-contained HTML file, dark\ntheme, responsive (solid fallbacks on small screens), reduced-motion\nreset. Do not use glass buttons, inputs, or card grids — that's slop.",
+  "image": "assets/styles/adt-02.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-03",
+  "num": "03",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/03-liquid-glass",
+  "name": "Liquid Glass",
+  "tagline": "Fluid light and motion.",
+  "aliases": [
+   "liquid",
+   "fluid-glass",
+   "refraction",
+   "spatial-glass"
+  ],
+  "category": "UI / web",
+  "description": "Apple's Liquid Glass language (2025): a translucent material that behaves like real glass — it bends and refracts light from what's beneath it, carries a moving specular highlight, and adapts its tint to surrounding content. The interface feels alive: fluid springy motion, floating layers over rich content. Built for consumer apps.",
+  "principles": "refractive translucency (not flat frost) · specular highlight on the top edge · fluid, springy motion · floating layered controls over rich media · dynamic adaptation (glass picks up the color under it) · playful but physically grounded.",
+  "signature": "A floating pill-shaped control cluster whose edges bend the content behind them and that visibly reflows as its contents change size. The material responds; that response is the identity.",
+  "whenToUse": "Consumer products: music, fitness, smart home, wearables, camera/photo apps, social, travel booking, consumer hardware marketing (Apple-adjacent brands). Youthful, tactile, premium-consumer positioning.",
+  "recommendedFor": [
+   "consumer-app",
+   "creative-tools",
+   "mobile-app",
+   "media"
+  ],
+  "supporting": [
+   "ADT-04"
+  ],
+  "incompatible": [
+   "ADT-11",
+   "ADT-10"
+  ],
+  "do": [
+   "Reserve glass for controls and floating chrome — content on solid surfaces",
+   "Give every glass element the specular top highlight",
+   "Use spring easing (slight overshoot) for all interaction",
+   "Keep radius continuous/pill — softness is the material's identity"
+  ],
+  "dont": [
+   "Glass content cards, grids, or tables",
+   "Static gray backdrop",
+   "Linear/robotic easing (kills the \"liquid\")",
+   "Sharp corners or 1px hard borders on floating elements"
+  ],
+  "colors": {
+   "bg": "#0B1120",
+   "surface": "#141C2F",
+   "text": "#FFFFFF",
+   "text-secondary": "rgb(255 255 255 / 0.62)",
+   "border": "rgb(255 255 255 / 0.12)",
+   "primary": "#0A74E0",
+   "primary-contrast": "#FFFFFF",
+   "accent": "#0A74E0",
+   "accent-contrast": "#FFFFFF",
+   "success": "#30D158",
+   "warning": "#FFD60A",
+   "error": "#FF453A"
+  },
+  "colorsDark": {},
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Inter",
+   "display": "Figtree",
+   "mono": "Geist Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Text/Sans: Inter (closest to SF), Manrope, Figtree. Display: Figtree (rounded warmth) or Manrope. Mono: Geist Mono or JetBrains Mono.",
+  "fontSizes": {
+   "h1": "56px",
+   "h2": "40px",
+   "h3": "28px",
+   "h4": "22px",
+   "h5": "18px",
+   "h6": "16px",
+   "body": "17px",
+   "small": "14px",
+   "label": "12px"
+  },
+  "radius": {
+   "sm": "12px",
+   "md": "24px",
+   "lg": "32px",
+   "pill": "999px"
+  },
+  "shadows": {
+   "float": "var(--lg-shadow)",
+   "focus": "0 0 0 4px var(--color-accent)"
+  },
+  "tokensCss": "/* 03 · Liquid Glass — design tokens (canonical) */\n:root {\n  --color-bg: #0B1120;\n  --color-surface: #141C2F;\n  --color-text: #FFFFFF;\n  --color-text-secondary: rgb(255 255 255 / 0.62);\n  --color-border: rgb(255 255 255 / 0.12);\n  --color-primary: #0A74E0;\n  --color-primary-contrast: #FFFFFF;\n  --color-accent: #0A74E0;\n  --color-accent-contrast: #FFFFFF;\n  --color-success: #30D158;\n  --color-warning: #FFD60A;\n  --color-error: #FF453A;\n\n  /* Rich, moving media beneath — glass needs changing light */\n  --media-mesh: radial-gradient(60% 80% at 20% 20%, rgb(14 165 233 / 0.5), transparent 60%),\n                radial-gradient(50% 70% at 80% 30%, rgb(139 92 246 / 0.45), transparent 60%),\n                radial-gradient(60% 60% at 50% 90%, rgb(244 114 182 / 0.35), transparent 60%),\n                linear-gradient(180deg, #0B1120, #101A33);\n\n  /* Liquid glass recipe — controls & floating chrome only */\n  --lg-bg: rgb(255 255 255 / 0.14);\n  --lg-border: rgb(255 255 255 / 0.22);\n  --lg-blur: 14px;\n  --lg-saturation: 180%;\n  --lg-brightness: 1.08;\n  --lg-specular: inset 0 1px 0 rgb(255 255 255 / 0.40), inset 0 -1px 0 rgb(255 255 255 / 0.06);\n  --lg-shadow: 0 12px 40px rgb(0 0 0 / 0.18);\n  --lg-filter: blur(var(--lg-blur)) saturate(var(--lg-saturation)) brightness(var(--lg-brightness));\n  --lg-surface: rgb(255 255 255 / 0.72); /* solid fallback */\n\n  --font-sans: 'Inter', system-ui, sans-serif;\n  --font-display: 'Figtree', 'Inter', sans-serif;\n  --font-mono: 'Geist Mono', 'JetBrains Mono', monospace;\n\n  --font-size-h1: 56px;\n  --font-size-h2: 40px;\n  --font-size-h3: 28px;\n  --font-size-h4: 22px;\n  --font-size-h5: 18px;\n  --font-size-h6: 16px;\n  --font-size-body: 17px;\n  --font-size-small: 14px;\n  --font-size-label: 12px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  /* Continuous curves & capsules — the material's identity */\n  --radius-sm: 12px; --radius-md: 24px; --radius-lg: 32px; --radius-pill: 999px;\n  --shadow-float: var(--lg-shadow);\n  --shadow-focus: 0 0 0 4px var(--color-accent);\n\n  --border-default: 1px solid var(--color-border);\n\n  --container-width: 1200px;\n\n  /* Springy motion — liquid, never linear */\n  --motion-fast: 200ms;\n  --motion-normal: 350ms;\n  --motion-slow: 500ms;\n  --motion-ambient: 90s;\n  --motion-ease: cubic-bezier(0.32, 0.72, 0, 1);\n  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);\n  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);\n  --ease-spring-soft: cubic-bezier(0.34, 1.3, 0.5, 1);\n}\n[data-theme=\"light\"] {\n  --color-bg: #F5F7FA;\n  --color-surface: #FFFFFF;\n  --color-text: #0B1120;\n  --color-text-secondary: rgb(11 17 32 / 0.6);\n  --color-border: rgb(11 17 32 / 0.10);\n  --lg-surface: rgb(11 17 32 / 0.72); /* dark-glass fallback on light bg */\n}\n\n/* Required usage guard */\n.liquid {\n  background: var(--lg-tint, rgb(255 255 255 / 0.14));\n  border: 1px solid var(--lg-border);\n  box-shadow: var(--lg-specular), var(--lg-shadow);\n  -webkit-backdrop-filter: var(--lg-filter);\n  backdrop-filter: var(--lg-filter);\n}\n[data-theme=\"light\"] .liquid { --lg-tint: rgb(255 255 255 / 0.55); }\n@supports not (backdrop-filter: blur(1px)) {\n  .liquid { background: var(--lg-surface); }\n}\n@media (prefers-reduced-motion: reduce) {\n  :root { --motion-ambient: 0s;\n}\n  * { transition-duration: 0ms !important; animation-duration: 0ms !important; }\n}",
+  "prompt": "Design a Liquid Glass (Apple 2025) landing page for Halo, a smart-home\napp. Understand the material: glass bends light from the moving media\nbeneath it — so give every glass element a top specular highlight and\nspringy, physical motion. Glass is for floating controls (nav pill,\naction dock, segmented control); feature content sits on solid rounded\nsurfaces over the rich background. Dark scene with drifting color\nglows, Figtree/Inter/Geist Mono, one iOS-blue accent, solid primary\nCTA. Every interaction uses spring easing with slight overshoot; press\nfeedback scales to 0.97. Deliver one self-contained HTML file,\nresponsive, with solid fallbacks where backdrop-filter is unsupported\nand a full prefers-reduced-motion path. Do not clone iOS chrome (no\nfake notch/status bar) and do not put long-form text on glass.",
+  "image": "assets/styles/adt-03.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-04",
+  "num": "04",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/04-bento-grid",
+  "name": "Bento Grid",
+  "tagline": "Modular, organised blocks.",
+  "aliases": [
+   "bento",
+   "grid-tiles",
+   "modular",
+   "tiles",
+   "dashboard-grid"
+  ],
+  "category": "UI / web",
+  "description": "Information as a tiled wall of modular cards — asymmetric cells of different sizes pack one dense, scannable surface. Every tile is a self-contained unit; the grid itself is the composition.",
+  "principles": "asymmetric modular grid · varied tile spans · dense but ordered · one tile always dominates · visible cell boundaries · dashboard-like scanability.",
+  "signature": "One tile spanning 2×2 carrying the headline capability, surrounded by quieter unit tiles. The asymmetry is the hierarchy — equal tiles are a table, not a bento.",
+  "whenToUse": "Product features overview, dashboards/analytics, AI/developer tools, changelogs, personal link-hubs, portfolio walls, pricing+features combo pages. Anything where many equal-importance facts must be scanned fast.",
+  "recommendedFor": [
+   "feature-rich-products",
+   "landing-pages",
+   "ecommerce",
+   "dev-tools",
+   "analytics"
+  ],
+  "supporting": [
+   "ADT-02",
+   "ADT-05",
+   "ADT-03"
+  ],
+  "incompatible": [
+   "ADT-06",
+   "ADT-11"
+  ],
+  "do": [
+   "Vary tile sizes deliberately — one dominant, one accent, rest neutral",
+   "Keep gaps tight and consistent (12–16px)",
+   "Give every tile one job: metric, visual, text, or action",
+   "Use mono labels + real numbers in stat tiles"
+  ],
+  "dont": [
+   "Rainbow pastel tiles (5 tile colors)",
+   "Same-size tiles everywhere (that's a card grid, not a bento)",
+   "Gradient or glass tiles",
+   "Centered text inside tiles"
+  ],
+  "colors": {
+   "bg": "#F4F4F2",
+   "surface": "#FFFFFF",
+   "surface-strong": "#111111",
+   "text": "#111111",
+   "text-secondary": "#5C5C58",
+   "border": "#E2E2DE",
+   "primary": "#111111",
+   "primary-contrast": "#FFFFFF",
+   "accent": "#0C857A",
+   "accent-contrast": "#FFFFFF",
+   "success": "#16A34A",
+   "warning": "#D97706",
+   "error": "#DC2626"
+  },
+  "colorsDark": {
+   "bg": "#0C0C0B",
+   "surface": "#161615",
+   "surface-strong": "#F4F4F2",
+   "text": "#F4F4F2",
+   "text-secondary": "#A1A19B",
+   "border": "#262624",
+   "primary": "#F4F4F2",
+   "primary-contrast": "#0C0C0B",
+   "accent": "#2DD4BF",
+   "accent-contrast": "#111111"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Inter",
+   "display": "Space Grotesk",
+   "mono": "IBM Plex Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Text/Sans: Inter, Jakarta Sans. Display: Space Grotesk. Mono (labels, metrics): IBM Plex Mono, JetBrains Mono.",
+  "fontSizes": {
+   "h1": "52px",
+   "h2": "36px",
+   "h3": "24px",
+   "h4": "20px",
+   "h5": "17px",
+   "body": "16px",
+   "tile-body": "15px",
+   "small": "13px",
+   "label": "11px"
+  },
+  "radius": {
+   "sm": "8px",
+   "md": "12px",
+   "lg": "16px"
+  },
+  "shadows": {
+   "tile-hover": "0 2px 0 0 var(--color-border)",
+   "focus": "0 0 0 3px var(--color-accent)"
+  },
+  "tokensCss": "/* 04 · Bento Grid — design tokens (canonical) */\n:root {\n  --color-bg: #F4F4F2;\n  --color-surface: #FFFFFF;          /* tile surface */\n  --color-surface-strong: #111111;   /* featured dark tile */\n  --color-text: #111111;\n  --color-text-secondary: #5C5C58;\n  --color-border: #E2E2DE;\n  --color-primary: #111111;\n  --color-primary-contrast: #FFFFFF;\n  --color-accent: #0C857A;\n  --color-accent-contrast: #FFFFFF;\n  --color-success: #16A34A;\n  --color-warning: #D97706;\n  --color-error: #DC2626;\n\n  --font-sans: 'Inter', system-ui, sans-serif;\n  --font-display: 'Space Grotesk', 'Inter', sans-serif;\n  --font-mono: 'IBM Plex Mono', monospace;\n\n  --font-size-h1: 52px;\n  --font-size-h2: 36px;\n  --font-size-h3: 24px;\n  --font-size-h4: 20px;\n  --font-size-h5: 17px;\n  --font-size-body: 16px;\n  --font-size-tile-body: 15px;\n  --font-size-small: 13px;\n  --font-size-label: 11px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --grid-gap: 16px;\n\n  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px;\n  --shadow-tile-hover: 0 2px 0 0 var(--color-border);\n  --shadow-focus: 0 0 0 3px var(--color-accent);\n\n  --border-default: 1px solid var(--color-border);\n  --border-strong: 2px solid var(--color-text);\n\n  --container-width: 1240px;\n\n  --motion-fast: 180ms;\n  --motion-normal: 250ms;\n  --motion-slow: 400ms;\n  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);\n  --motion-stagger: 40ms;\n}\n[data-theme=\"dark\"] {\n  --color-bg: #0C0C0B;\n  --color-surface: #161615;\n  --color-surface-strong: #F4F4F2;\n  --color-text: #F4F4F2;\n  --color-text-secondary: #A1A19B;\n  --color-border: #262624;\n  --color-primary: #F4F4F2;\n  --color-primary-contrast: #0C0C0B;\n  --color-accent: #2DD4BF;\n  --color-accent-contrast: #111111;\n}",
+  "prompt": "Design a bento-grid landing page for Pulseboard, an analytics tool for\nindie SaaS founders. The whole page is one asymmetric CSS grid: decide\ntile hierarchy first — one dominant tile (headline + CTA), one accent\ntile, stat tiles with real mono numbers, the rest neutral. Space Grotesk\nheadings, Inter body, IBM Plex Mono labels. White tiles on #F4F4F2, 1px\n#E2E2DE borders, 16px radius, tight 16px gaps, single teal accent #0D9488.\nEvery tile has exactly one job and real content (metrics, chart, copy) —\nno filler tiles. One self-contained HTML file, dark mode via\nprefers-color-scheme, reduced-motion reset. No gradients, no glass, no\nemoji tiles, no invented statistics.",
+  "image": "assets/styles/adt-04.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-05",
+  "num": "05",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/05-neo-brutalism",
+  "name": "Neo-Brutalism",
+  "tagline": "Bold, raw, unconventional.",
+  "aliases": [
+   "neubrutalism",
+   "neo-brutalist",
+   "hard-shadow",
+   "bold-borders"
+  ],
+  "category": "UI / web",
+  "description": "Raw, loud and deliberately unpolished — hard black borders, flat saturated color blocks, chunky type and solid offset shadows that mimic physical paper cutouts. It looks like a zine, behaves like a design system.",
+  "principles": "hard 2–3px borders everywhere · solid offset shadows (no blur) · bold oversized type · flat saturated color blocks · high contrast · intentional imperfection.",
+  "signature": "A hard, un-blurred offset shadow (4px 4px 0 var(--color-text)) that collapses to zero on press, so the element visibly slams into the page. No blur radius, ever.",
+  "whenToUse": "Youth brands, indie tools, dev/hacker communities, events, merch/ecommerce drops, portfolios with attitude, crypto/web3-adjacent. Audience expects energy and anti-corporate honesty.",
+  "recommendedFor": [
+   "youth-brands",
+   "creator-tools",
+   "creative-studios",
+   "gen-z-apps"
+  ],
+  "supporting": [
+   "ADT-04"
+  ],
+  "incompatible": [
+   "ADT-08",
+   "ADT-07"
+  ],
+  "do": [
+   "2px black borders on every interactive surface",
+   "Solid offset shadows: 4px 4px 0 #111, shrink on press",
+   "Oversized ALL-CAPS Archivo Black headlines",
+   "Flat saturated blocks, max 3–4 colors per page"
+  ],
+  "dont": [
+   "Blurred or translucent shadows",
+   "Gradients anywhere",
+   "Thin 1px hairline borders",
+   "Light-weight body fonts"
+  ],
+  "colors": {
+   "bg": "#FFFDF5",
+   "surface": "#FFFFFF",
+   "surface-yellow": "#FFD02F",
+   "surface-pink": "#FF90E8",
+   "surface-blue": "#4D7CFE",
+   "surface-green": "#23C55E",
+   "surface-orange": "#FF6B35",
+   "text": "#111111",
+   "text-secondary": "#3D3D3A",
+   "border": "#111111",
+   "primary": "#FFD02F",
+   "primary-contrast": "#111111",
+   "accent": "#FF90E8",
+   "accent-contrast": "#111111",
+   "success": "#23C55E",
+   "warning": "#FF6B35",
+   "error": "#E11D48"
+  },
+  "colorsDark": {
+   "bg": "#111111",
+   "surface": "#1E1E1E",
+   "text": "#FFFDF5",
+   "text-secondary": "#B8B8B0",
+   "border": "#FFFDF5",
+   "primary": "#E6B800",
+   "accent": "#E879C7",
+   "surface-blue": "#3D6BE0"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Space Grotesk",
+   "display": "Archivo Black",
+   "mono": "Space Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Display: Archivo Black, Space Grotesk 700, Anton. Text: Space Grotesk, Archivo, Jakarta Sans. Mono (labels, stamps): Space Mono, IBM Plex Mono.",
+  "fontSizes": {
+   "h1": "64px",
+   "h2": "44px",
+   "h3": "26px",
+   "h4": "20px",
+   "body": "16px",
+   "small": "14px",
+   "label": "12px"
+  },
+  "radius": {
+   "none": "0px",
+   "sm": "2px",
+   "md": "4px"
+  },
+  "shadows": {
+   "offset-sm": "3px 3px 0 var(--color-border)",
+   "offset-md": "6px 6px 0 var(--color-border)",
+   "offset-lg": "10px 10px 0 var(--color-border)",
+   "focus": "4px 4px 0 var(--color-text)"
+  },
+  "tokensCss": "/* 05 · Neo-Brutalism — design tokens (canonical) */\n:root {\n  --color-bg: #FFFDF5;               /* paper */\n  --color-surface: #FFFFFF;\n  --color-surface-yellow: #FFD02F;   /* primary action block */\n  --color-surface-pink: #FF90E8;\n  --color-surface-blue: #4D7CFE;\n  --color-surface-green: #23C55E;\n  --color-surface-orange: #FF6B35;\n  --color-text: #111111;\n  --color-text-secondary: #3D3D3A;\n  --color-border: #111111;           /* borders ARE black */\n  --color-primary: #FFD02F;\n  --color-primary-contrast: #111111;\n  --color-accent: #FF90E8;\n  --color-accent-contrast: #111111;\n  --color-success: #23C55E;\n  --color-warning: #FF6B35;\n  --color-error: #E11D48;\n\n  --font-sans: 'Space Grotesk', system-ui, sans-serif;\n  --font-display: 'Archivo Black', 'Space Grotesk', sans-serif;\n  --font-mono: 'Space Mono', monospace;\n\n  --font-size-h1: 64px;\n  --font-size-h2: 44px;\n  --font-size-h3: 26px;\n  --font-size-h4: 20px;\n  --font-size-body: 16px;\n  --font-size-small: 14px;\n  --font-size-label: 12px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-none: 0px; --radius-sm: 2px; --radius-md: 4px;\n  --shadow-offset-sm: 3px 3px 0 var(--color-border);\n  --shadow-offset-md: 6px 6px 0 var(--color-border);\n  --shadow-offset-lg: 10px 10px 0 var(--color-border);\n  --shadow-focus: 4px 4px 0 var(--color-text);\n\n  --border-default: 2px solid var(--color-border);\n  --border-thick: 3px solid var(--color-border);\n\n  --container-width: 1200px;\n\n  --motion-fast: 120ms;\n  --motion-normal: 200ms;\n  --motion-ease: steps(4, end);      /* mechanical, not buttery */\n  --motion-press: translate(3px, 3px);\n}\n[data-theme=\"dark\"] {\n  --color-bg: #111111;\n  --color-surface: #1E1E1E;\n  --color-text: #FFFDF5;\n  --color-text-secondary: #B8B8B0;\n  --color-border: #FFFDF5;\n  --color-primary: #E6B800;\n  --color-accent: #E879C7;\n  --color-surface-blue: #3D6BE0;\n}",
+  "prompt": "Design a neo-brutalist landing page for Rampart, an uptime monitor for\nindie hackers. The look: hard 2px black borders on everything, solid\noffset shadows (Xpx Ypx 0 #111, never blurred), flat saturated color\nblocks (yellow #FFD02F for actions, pink/blue accents — max 3), Archivo\nBlack uppercase headlines at 64px, Space Grotesk body, Space Mono stamps.\nThe signature interaction: buttons translate into their shadow on hover\n(120ms). Structure it rigorously — the aggression sits on top of a strict\ngrid, blocks may rotate ±1deg only. Sections: color-band hero, 3 feature\nblocks, pricing stickers, marquee strip, huge footer. One self-contained\nHTML file, dark mode via prefers-color-scheme (invert border to paper\ncolor), reduced-motion reset. No gradients, no glass, no soft shadows, no\nmore than 3 block colors.",
+  "image": "assets/styles/adt-05.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-06",
+  "num": "06",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/06-brutalist-anti-grid",
+  "name": "Brutalist / Anti-Grid",
+  "tagline": "Break the grid on purpose.",
+  "aliases": [
+   "brutalist",
+   "anti-grid",
+   "raw",
+   "web-brutalism",
+   "deconstructed"
+  ],
+  "category": "UI / web",
+  "description": "Deliberate disorder with intent. The grid exists to be broken: columns bleed past their edges, cards overlap, elements rotate a few degrees, and heavy borders + hard offset shadows replace softness. Loud, raw, unapologetic — but every break is choreographed, never accidental.",
+  "principles": "intentional broken grid · overlaps with z-index play · heavy 2–4px borders · hard offset shadows (solid, no blur) · acid accent · raw utility surfaces · tilt and misalignment as composition · typography as image.",
+  "signature": "One element rotated 2–4° and overlapping its neighbour on a page whose other elements sit precisely on a grid. The exception proves there is a rule — without the rule, it is just noise.",
+  "whenToUse": "Streetwear/fashion drops, music labels, event sites, portfolios, indie tools, studios, zines. Audience expects attitude; brand is confident enough to look unfinished on purpose.",
+  "recommendedFor": [
+   "portfolios",
+   "agencies",
+   "art-culture",
+   "experimental"
+  ],
+  "supporting": [
+   "ADT-11",
+   "ADT-15"
+  ],
+  "incompatible": [
+   "ADT-08",
+   "ADT-07",
+   "ADT-04"
+  ],
+  "do": [
+   "Plan the grid, then break exactly 2–3 places per screen",
+   "Overlap with a z-index ladder, not random z-indexes",
+   "Hard offset shadows in the text color only",
+   "One acid accent for CTAs and stickers"
+  ],
+  "dont": [
+   "Rotate everything (\"chaos mode\")",
+   "Soft shadows, rounded corners, pastels — wrong universe",
+   "Center the layout",
+   "Gradients or glow"
+  ],
+  "colors": {
+   "bg": "#F4F1EA",
+   "surface": "#FFFFFF",
+   "text": "#111111",
+   "text-secondary": "#444444",
+   "border": "#111111",
+   "primary": "#111111",
+   "primary-contrast": "#FFFFFF",
+   "accent": "#CCFF00",
+   "accent-contrast": "#111111",
+   "success": "#16A34A",
+   "warning": "#D97706",
+   "error": "#DC2626"
+  },
+  "colorsDark": {
+   "bg": "#141414",
+   "surface": "#1E1E1E",
+   "text": "#F2F2F2",
+   "text-secondary": "#B3B3B3",
+   "border": "#F2F2F2",
+   "primary": "#F2F2F2",
+   "primary-contrast": "#141414"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Space Grotesk",
+   "display": "Archivo Black",
+   "mono": "Space Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Display: Archivo Black, Anton, Space Grotesk. Text: Space Grotesk, Inter. Mono: Space Mono, JetBrains Mono.",
+  "fontSizes": {
+   "h1": "72px",
+   "h2": "48px",
+   "h3": "28px",
+   "h4": "22px",
+   "h5": "18px",
+   "h6": "16px",
+   "body": "16px",
+   "small": "14px",
+   "label": "12px"
+  },
+  "radius": {
+   "sm": "0",
+   "md": "0",
+   "lg": "0"
+  },
+  "shadows": {
+   "hard": "8px 8px 0 var(--color-text)",
+   "hard-sm": "4px 4px 0 var(--color-text)",
+   "hard-accent": "8px 8px 0 var(--color-accent)",
+   "focus": "0 0 0 3px var(--color-text)"
+  },
+  "tokensCss": "/* 06 · Brutalist Anti-Grid — design tokens (canonical) */\n:root {\n  --color-bg: #F4F1EA;\n  --color-surface: #FFFFFF;\n  --color-text: #111111;\n  --color-text-secondary: #444444;\n  --color-border: #111111;\n  --color-primary: #111111;\n  --color-primary-contrast: #FFFFFF;\n  --color-accent: #CCFF00;\n  --color-accent-contrast: #111111;\n  --color-success: #16A34A;\n  --color-warning: #D97706;\n  --color-error: #DC2626;\n\n  --font-sans: 'Space Grotesk', 'Inter', system-ui, sans-serif;\n  --font-display: 'Archivo Black', 'Space Grotesk', sans-serif;\n  --font-mono: 'Space Mono', monospace;\n\n  --font-size-h1: 72px;\n  --font-size-h2: 48px;\n  --font-size-h3: 28px;\n  --font-size-h4: 22px;\n  --font-size-h5: 18px;\n  --font-size-h6: 16px;\n  --font-size-body: 16px;\n  --font-size-small: 14px;\n  --font-size-label: 12px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-sm: 0; --radius-md: 0; --radius-lg: 0;\n\n  --border-default: 2px solid var(--color-border);\n  --border-heavy: 3px solid var(--color-border);\n\n  --shadow-hard: 8px 8px 0 var(--color-text);\n  --shadow-hard-sm: 4px 4px 0 var(--color-text);\n  --shadow-hard-accent: 8px 8px 0 var(--color-accent);\n  --shadow-focus: 0 0 0 3px var(--color-text);\n\n  --tilt-min: -2.5deg;\n  --tilt-max: 2.5deg;\n\n  --container-width: 1200px;\n\n  --motion-fast: 120ms;\n  --motion-normal: 200ms;\n  --motion-slow: 400ms;\n  --motion-ease: linear;\n}\n[data-theme=\"dark\"] {\n  --color-bg: #141414;\n  --color-surface: #1E1E1E;\n  --color-text: #F2F2F2;\n  --color-text-secondary: #B3B3B3;\n  --color-border: #F2F2F2;\n  --color-primary: #F2F2F2;\n  --color-primary-contrast: #141414;\n  --shadow-hard: 8px 8px 0 #000000;\n  --shadow-hard-sm: 4px 4px 0 #000000;\n}",
+  "prompt": "Design a brutalist anti-grid landing page for RIFTZINE, an indie music label\nselling limited drops. First define the underlying 12-col grid, then break\nit on purpose in exactly 2–3 places per screen: intentional overlaps, a\ncouple of slight rotations, headlines that cross their column. Depth comes\nonly from hard offset shadows and 2px borders — no blur, no gradients, no\nrounded corners. Archivo Black + Space Grotesk + Space Mono, paper-white bg,\nsingle acid accent #CCFF00. Body copy and form fields stay in tidy columns;\nthe chaos lives in composition, not readability. Deliver one self-contained\nHTML file with dark mode via prefers-color-scheme and reduced-motion reset.\nRandom chaos without the underlying grid is a failure — choreograph it.",
+  "image": "assets/styles/adt-06.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-07",
+  "num": "07",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/07-neumorphism",
+  "name": "Neumorphism (Soft UI)",
+  "tagline": "Soft extruded surfaces.",
+  "aliases": [
+   "soft-ui",
+   "neumorphic",
+   "extruded",
+   "soft-shadow"
+  ],
+  "category": "UI / web",
+  "description": "Surfaces extruded from a single background color. Depth comes from a matched pair of soft shadows — one light (top-left) and one dark (bottom-right) — on elements that share the background's hue. Tactile, quiet, almost physical. It is also the style with the worst accessibility record in modern UI — read the a11y section before using it.",
+  "principles": "single-hue surfaces · dual soft shadows (light + dark) · extruded \"pushable\" components · inset pressed states · minimal color, shape does the work · rounded, plush geometry.",
+  "signature": "A control that switches from raised (outset dual shadow) to pressed (inset) on activation, appearing to physically depress into the surface. Pair it with a real border so it is still findable.",
+  "whenToUse": "Smart-home controls, ambient/wellness apps, gadget companion apps, decorative hero widgets, concept showcases. Audience: consumer, relaxed, tactile.",
+  "recommendedFor": [
+   "decorative-marketing-surfaces",
+   "iot-companion-apps",
+   "ambience-widgets"
+  ],
+  "supporting": [
+   "ADT-01"
+  ],
+  "incompatible": [
+   "ADT-05",
+   "ADT-06",
+   "ADT-10",
+   "ADT-12"
+  ],
+  "do": [
+   "Match surface and background hue (that's the aesthetic)",
+   "Always pair shadows: light top-left + dark bottom-right",
+   "Use inset for pressed/active and input wells",
+   "One filled accent CTA — your guaranteed-contrast control"
+  ],
+  "dont": [
+   "Rely on shadow alone to mark a button",
+   "Put gray text below 4.5:1 contrast",
+   "Use it in dark-heavy data UIs or compliance contexts",
+   "Hard shadows, sharp corners, heavy borders"
+  ],
+  "colors": {
+   "bg": "#ECF0F3",
+   "surface": "#ECF0F3",
+   "text": "#111827",
+   "text-secondary": "#4B5563",
+   "border": "#C8D0E0",
+   "primary": "#4F6AF0",
+   "primary-contrast": "#FFFFFF",
+   "accent": "#4F6AF0",
+   "accent-contrast": "#FFFFFF",
+   "success": "#16A34A",
+   "warning": "#D97706",
+   "error": "#DC2626"
+  },
+  "colorsDark": {
+   "bg": "#23272E",
+   "surface": "#23272E",
+   "text": "#E5E7EB",
+   "text-secondary": "#9CA3AF",
+   "border": "#3B424D"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Nunito Sans",
+   "display": "Manrope"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Rounded-friendly sans: Nunito Sans, Jakarta Sans, Manrope. Accent: Poppins (600–700).",
+  "fontSizes": {
+   "h1": "48px",
+   "h2": "36px",
+   "h3": "24px",
+   "h4": "20px",
+   "h5": "17px",
+   "h6": "15px",
+   "body": "16px",
+   "small": "14px",
+   "label": "11px"
+  },
+  "radius": {
+   "sm": "12px",
+   "md": "18px",
+   "lg": "24px"
+  },
+  "shadows": {
+   "dark": "#C8D0E0",
+   "light": "#FFFFFF",
+   "raised": "6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light)",
+   "raised-lg": "10px 10px 20px var(--shadow-dark), -10px -10px 20px var(--shadow-light)",
+   "inset": "inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light)",
+   "focus": "0 0 0 3px var(--color-accent)"
+  },
+  "tokensCss": "/* 07 · Neumorphism (Soft UI) — design tokens (canonical) */\n:root {\n  --color-bg: #ECF0F3;\n  --color-surface: #ECF0F3;            /* matches bg by design */\n  --color-text: #111827;\n  --color-text-secondary: #4B5563;      /* ≥ 4.5:1 on bg */\n  --color-border: #C8D0E0;              /* fallback boundary for a11y */\n  --color-primary: #4F6AF0;\n  --color-primary-contrast: #FFFFFF;\n  --color-accent: #4F6AF0;\n  --color-accent-contrast: #FFFFFF;\n  --color-success: #16A34A;\n  --color-warning: #D97706;\n  --color-error: #DC2626;\n\n  --shadow-dark: #C8D0E0;\n  --shadow-light: #FFFFFF;\n\n  --font-sans: 'Nunito Sans', system-ui, sans-serif;\n  --font-display: 'Manrope', 'Nunito Sans', sans-serif;\n\n  --font-size-h1: 48px;\n  --font-size-h2: 36px;\n  --font-size-h3: 24px;\n  --font-size-h4: 20px;\n  --font-size-h5: 17px;\n  --font-size-h6: 15px;\n  --font-size-body: 16px;\n  --font-size-small: 14px;\n  --font-size-label: 11px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-sm: 12px; --radius-md: 18px; --radius-lg: 24px;\n\n  /* The signature pair — light top-left + dark bottom-right */\n  --shadow-raised: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);\n  --shadow-raised-lg: 10px 10px 20px var(--shadow-dark), -10px -10px 20px var(--shadow-light);\n  --shadow-inset: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);\n  --shadow-focus: 0 0 0 3px var(--color-accent);\n\n  --container-width: 1100px;\n\n  --border-default: 1px solid var(--color-border);\n  --border-strong: 2px solid var(--color-accent);\n\n  --motion-fast: 150ms;\n  --motion-normal: 200ms;\n  --motion-slow: 400ms;\n  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);\n}\n[data-theme=\"dark\"] {\n  --color-bg: #23272E;\n  --color-surface: #23272E;\n  --color-text: #E5E7EB;\n  --color-text-secondary: #9CA3AF;\n  --color-border: #3B424D;\n  --shadow-dark: #14161B;\n  --shadow-light: #3B424D;\n}",
+  "prompt": "Design a soft neumorphic landing page for HavenPod, a smart-home companion.\nThe core mechanic: UI surfaces extruded from one background color via dual\nsoft shadows (light top-left, dark bottom-right); pressed = inset. Manrope +\nNunito Sans, near-monochrome palette with a single #4F6AF0 accent on the\nprimary CTA. IMPORTANT: neumorphism has a built-in accessibility problem —\nsurface≈background means component boundaries can fail WCAG 1.4.11 (3:1).\nCompensate: all interactive elements get a visible focus ring and a contrast\nfallback (border or filled state), body text ≥ 4.5:1, and the design must\nsurvive losing its shadows entirely. Sections: hero with extruded widget,\n3 feature cards, inset control demo, simple pricing. One self-contained\nHTML file, dark mode via prefers-color-scheme, reduced-motion reset. Do not\nuse it for anything resembling banking or dense data — keep it ambient.",
+  "image": "assets/styles/adt-07.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-08",
+  "num": "08",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/08-claymorphism",
+  "name": "Claymorphism",
+  "tagline": "Playful puffy 3D.",
+  "aliases": [
+   "clay",
+   "claymorphic",
+   "puffy",
+   "soft-3d"
+  ],
+  "category": "UI / web",
+  "description": "Puffy, touchable 3D. Elements look like soft clay or marshmallow — inflated shapes with dual shadows (inner highlight + soft outer drop) on pastel backgrounds. Playful, friendly, toy-like but still structured.",
+  "principles": "puffy inflated surfaces · large radii (24–40px) · dual shadow trick (light inner top + colored soft outer) · soft pastel base with one saturated accent · chunky everything · flat pastel bg, no texture.",
+  "signature": "A button with an inset bottom shadow that compresses on press, as if the clay is being squashed by a finger. The squash is the whole personality.",
+  "whenToUse": "Kids/education apps, habit & wellness apps, consumer fintech for young audiences (pocket money apps), playful SaaS (design tools for beginners), game landing pages, NFT/web3 consumer products.",
+  "recommendedFor": [
+   "kids",
+   "education",
+   "wellness",
+   "friendly-consumer-apps"
+  ],
+  "supporting": [
+   "ADT-01",
+   "ADT-12"
+  ],
+  "incompatible": [
+   "ADT-05",
+   "ADT-06",
+   "ADT-10"
+  ],
+  "do": [
+   "Dual-shadow recipe on every elevated surface",
+   "24px+ radius minimum, pills for buttons",
+   "Pastel bg with ONE saturated CTA hue",
+   "Round fonts (Baloo 2 / Fredoka / Nunito)"
+  ],
+  "dont": [
+   "Hairline borders + flat cards (that's minimalism, not clay)",
+   "Sharp corners anywhere",
+   "Thin/light font weights",
+   "Neon saturation on large fields"
+  ],
+  "colors": {
+   "bg": "#F5F1FA",
+   "surface": "#FFFFFF",
+   "surface-tint": "#FBF9FE",
+   "text": "#2D2438",
+   "text-secondary": "#6B5E7F",
+   "border": "rgba(45, 36, 56, 0.08)",
+   "primary": "#7052E8",
+   "primary-soft": "#E6DEFF",
+   "primary-contrast": "#FFFFFF",
+   "accent": "#FF8FA3",
+   "accent-soft": "#FFE3E9",
+   "success": "#4ADE80",
+   "warning": "#FBBF24",
+   "error": "#F87171"
+  },
+  "colorsDark": {
+   "bg": "#1E1830",
+   "surface": "#2A2142",
+   "surface-tint": "#322850",
+   "text": "#F3EFFA",
+   "text-secondary": "#B8A9D9",
+   "border": "rgba(243, 239, 250, 0.10)",
+   "primary": "#9B7DFF",
+   "primary-soft": "#3D2E68",
+   "accent": "#FFA6B5",
+   "accent-soft": "#4A2E3C",
+   "primary-contrast": "#111111"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Nunito Sans",
+   "display": "Baloo 2"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Display: Baloo 2, Fredoka, Nunito. Body: Nunito Sans, Quicksand. Mono (rare): Space Mono.",
+  "fontSizes": {
+   "h1": "52px",
+   "h2": "36px",
+   "h3": "26px",
+   "h4": "20px",
+   "body": "16px",
+   "small": "14px",
+   "label": "12px"
+  },
+  "radius": {
+   "sm": "16px",
+   "md": "24px",
+   "lg": "32px",
+   "pill": "999px"
+  },
+  "shadows": {
+   "clay": "8px 8px 24px rgba(124, 92, 252, 0.18), -8px -8px 24px #FFFFFF,\n                 inset 0 2px 0 rgba(255, 255, 255, 0.7)",
+   "clay-sm": "4px 4px 12px rgba(124, 92, 252, 0.16), -4px -4px 12px #FFFFFF,\n                    inset 0 1px 0 rgba(255, 255, 255, 0.7)",
+   "btn": "inset 0 -4px 0 rgba(0, 0, 0, 0.18), 0 12px 24px rgba(124, 92, 252, 0.30)",
+   "btn-press": "inset 0 -1px 0 rgba(0, 0, 0, 0.18), 0 4px 8px rgba(124, 92, 252, 0.25)",
+   "inset": "inset 0 2px 6px rgba(45, 36, 56, 0.12)",
+   "focus": "0 0 0 4px var(--color-primary)"
+  },
+  "tokensCss": "/* 08 · Claymorphism — design tokens (canonical) */\n:root {\n  --color-bg: #F5F1FA;\n  --color-surface: #FFFFFF;\n  --color-surface-tint: #FBF9FE;\n  --color-text: #2D2438;\n  --color-text-secondary: #6B5E7F;\n  --color-border: rgba(45, 36, 56, 0.08);\n  --color-primary: #7052E8;\n  --color-primary-soft: #E6DEFF;\n  --color-primary-contrast: #FFFFFF;\n  --color-accent: #FF8FA3;\n  --color-accent-soft: #FFE3E9;\n  --color-success: #4ADE80;\n  --color-warning: #FBBF24;\n  --color-error: #F87171;\n\n  --font-sans: 'Nunito Sans', system-ui, sans-serif;\n  --font-display: 'Baloo 2', 'Nunito Sans', sans-serif;\n\n  --font-size-h1: 52px;\n  --font-size-h2: 36px;\n  --font-size-h3: 26px;\n  --font-size-h4: 20px;\n  --font-size-body: 16px;\n  --font-size-small: 14px;\n  --font-size-label: 12px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-20: 80px; --spacing-24: 96px;\n\n  --radius-sm: 16px; --radius-md: 24px; --radius-lg: 32px; --radius-pill: 999px;\n\n  --shadow-clay: 8px 8px 24px rgba(124, 92, 252, 0.18), -8px -8px 24px #FFFFFF,\n                 inset 0 2px 0 rgba(255, 255, 255, 0.7);\n  --shadow-clay-sm: 4px 4px 12px rgba(124, 92, 252, 0.16), -4px -4px 12px #FFFFFF,\n                    inset 0 1px 0 rgba(255, 255, 255, 0.7);\n  --shadow-btn: inset 0 -4px 0 rgba(0, 0, 0, 0.18), 0 12px 24px rgba(124, 92, 252, 0.30);\n  --shadow-btn-press: inset 0 -1px 0 rgba(0, 0, 0, 0.18), 0 4px 8px rgba(124, 92, 252, 0.25);\n  --shadow-inset: inset 0 2px 6px rgba(45, 36, 56, 0.12);\n  --shadow-focus: 0 0 0 4px var(--color-primary);\n\n  --container-width: 1140px;\n\n  --border-default: 2px solid var(--color-border);\n  --border-strong: 3px solid var(--color-text);\n\n  --motion-fast: 200ms;\n  --motion-normal: 300ms;\n  --motion-slow: 450ms;\n  --motion-ease: cubic-bezier(0.34, 1.56, 0.64, 1);\n}\n[data-theme=\"dark\"] {\n  --color-bg: #1E1830;\n  --color-surface: #2A2142;\n  --color-surface-tint: #322850;\n  --color-text: #F3EFFA;\n  --color-text-secondary: #B8A9D9;\n  --color-border: rgba(243, 239, 250, 0.10);\n  --color-primary: #9B7DFF;\n  --color-primary-soft: #3D2E68;\n  --color-accent: #FFA6B5;\n  --color-accent-soft: #4A2E3C;\n  --shadow-clay: 8px 8px 24px rgba(0, 0, 0, 0.45), -8px -8px 24px rgba(155, 125, 255, 0.07),\n                 inset 0 2px 0 rgba(255, 255, 255, 0.06);\n  --shadow-clay-sm: 4px 4px 12px rgba(0, 0, 0, 0.40), -4px -4px 12px rgba(155, 125, 255, 0.06),\n                    inset 0 1px 0 rgba(255, 255, 255, 0.06);\n  --shadow-btn: inset 0 -4px 0 rgba(0, 0, 0, 0.35), 0 12px 24px rgba(0, 0, 0, 0.45);\n  --shadow-btn-press: inset 0 -1px 0 rgba(0, 0, 0, 0.35), 0 4px 8px rgba(0, 0, 0, 0.40);\n  --shadow-inset: inset 0 2px 6px rgba(0, 0, 0, 0.35);\n  --color-primary-contrast: #111111;\n}",
+  "prompt": "Design a claymorphism landing page for Piggo, a pocket-money banking app\nfor kids. The whole page should feel like soft clay you could pinch:\ninflated white surfaces on a lilac #F5F1FA background, 24–32px radii,\ndual shadows (tinted drop + white inner top highlight), pill buttons that\nvisually press down on click. Baloo 2 headings + Nunito Sans body, deep\nplum text #2D2438, one saturated violet #7C5CFC reserved for actions.\nHierarchy: playful H1 → phone mockup card → CTA → 3 feature cards →\npricing → CTA band. Keep gaps generous so shadows never collide. No\nglassmorphism, no line icons, no photography, no neon. One self-contained\nHTML file, dark mode via prefers-color-scheme, reduced-motion reset.",
+  "image": "assets/styles/adt-08.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-09",
+  "num": "09",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/09-skeuomorphism-tactile",
+  "name": "Skeuomorphism / Tactile",
+  "tagline": "Looks like the real thing.",
+  "aliases": [
+   "skeuomorphic",
+   "tactile",
+   "realistic",
+   "material-mimicry",
+   "instrument-ui"
+  ],
+  "category": "UI / web",
+  "description": "The modern revival — not 2008 leather-stitching iOS, but believable physical controls: dials, switches, knobs, faders, embossed buttons. Born from audio hardware UIs (Teenage Engineering, Ableton, pro-audio apps) and premium finance products. Surfaces feel machined; controls feel like they'd clunk.",
+  "principles": "believable depth from light logic (top-lit) · real affordances (ridges, dials, notches, knurled textures) · matte materials, not glass · restrained palette around one material (aluminum, dark plastic, brass accent) · controls look pressable, everything else recedes.",
+  "signature": "A recessed well — inset shadow plus a hairline light edge along the bottom — that makes a display area look milled into the panel around it. Real light direction, consistently applied.",
+  "whenToUse": "Audio/music software, DJ tools, podcast apps, hardware product landing pages, premium finance dashboards (trading terminals, \"engine room\" money apps), automotive interfaces, simulators, engineer-audience dev tools.",
+  "recommendedFor": [
+   "audio-tools",
+   "finance-instruments",
+   "retro-tools",
+   "hardware-companions"
+  ],
+  "supporting": [
+   "ADT-10"
+  ],
+  "incompatible": [
+   "ADT-02",
+   "ADT-08"
+  ],
+  "do": [
+   "One light source: top. Every shadow follows it",
+   "Highlight/shadow edge pairs on every surface",
+   "Monospace tabular numerals for readouts",
+   "Engraved uppercase micro-labels (+0.15em)"
+  ],
+  "dont": [
+   "Leather, wood, stitching, paper textures (that's 2008, not the revival)",
+   "Rainbow neon glows on everything",
+   "Skeuomorph entire layouts — control zones only",
+   "Gradients that change hue (material gradients are neutral)"
+  ],
+  "colors": {
+   "bg": "#E8E9EB",
+   "panel": "#F2F3F4",
+   "well": "#D7D9DC",
+   "text": "#1F2328",
+   "text-secondary": "#5A6068",
+   "primary": "#2F6FED",
+   "primary-contrast": "#FFFFFF",
+   "action-hw": "#F25C05",
+   "readout": "#FFB000",
+   "led-ok": "#3DDC84",
+   "led-warn": "#FFB000",
+   "led-err": "#FF4D4D",
+   "success": "#2E9E5B",
+   "warning": "#B87400",
+   "error": "#C93A3A"
+  },
+  "colorsDark": {
+   "bg": "#14161A",
+   "panel": "#1E2126",
+   "well": "#0E1013",
+   "text": "#E8EAED",
+   "text-secondary": "#9AA0A6",
+   "primary": "#4F87FF",
+   "action-hw": "#FF6B14",
+   "readout": "#FFC133",
+   "primary-contrast": "#111111"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "IBM Plex Sans",
+   "display": "Space Grotesk",
+   "mono": "JetBrains Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Technical: Space Grotesk, IBM Plex Sans, Chivo Mono. Mono/labels: JetBrains Mono, IBM Plex Mono, Chivo Mono.",
+  "fontSizes": {
+   "h1": "48px",
+   "h2": "34px",
+   "h3": "24px",
+   "h4": "19px",
+   "body": "16px",
+   "small": "13px",
+   "label": "10px"
+  },
+  "radius": {
+   "xs": "4px",
+   "sm": "6px",
+   "md": "8px",
+   "lg": "12px"
+  },
+  "shadows": {
+   "raised": "0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.08),\n                   inset 0 1px 0 rgba(255, 255, 255, 0.7)",
+   "press": "inset 0 2px 5px rgba(0, 0, 0, 0.28)",
+   "well": "inset 0 2px 4px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(255, 255, 255, 0.5)",
+   "btn": "0 2px 0 rgba(0, 0, 0, 0.35), 0 4px 10px rgba(0, 0, 0, 0.15),\n                inset 0 1px 0 rgba(255, 255, 255, 0.35)",
+   "knob": "0 3px 8px rgba(0, 0, 0, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.55),\n                 inset 0 -2px 4px rgba(0, 0, 0, 0.25)",
+   "focus": "0 0 0 3px var(--color-primary)"
+  },
+  "tokensCss": "/* 09 · Skeuomorphism Tactile — design tokens (canonical) */\n:root {\n  --color-bg: #E8E9EB;\n  --color-panel: #F2F3F4;\n  --color-well: #D7D9DC;\n  --color-text: #1F2328;\n  --color-text-secondary: #5A6068;\n  --color-primary: #2F6FED;\n  --color-primary-contrast: #FFFFFF;\n  --color-action-hw: #F25C05;          /* hardware orange — one action hue */\n  --color-readout: #FFB000;            /* backlit amber */\n  --color-led-ok: #3DDC84;\n  --color-led-warn: #FFB000;\n  --color-led-err: #FF4D4D;\n  --color-success: #2E9E5B;\n  --color-warning: #B87400;\n  --color-error: #C93A3A;\n\n  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;\n  --font-display: 'Space Grotesk', 'IBM Plex Sans', sans-serif;\n  --font-mono: 'JetBrains Mono', monospace;\n\n  --font-size-h1: 48px;\n  --font-size-h2: 34px;\n  --font-size-h3: 24px;\n  --font-size-h4: 19px;\n  --font-size-body: 16px;\n  --font-size-small: 13px;\n  --font-size-label: 10px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-11: 44px; --spacing-14: 56px; --spacing-24: 96px;\n\n  --radius-xs: 4px; --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px;\n\n  /* light logic: top-lit always */\n  --edge-raised: 1px solid rgba(255, 255, 255, 0.80);\n  --edge-raised-dark: 1px solid rgba(0, 0, 0, 0.25);\n  --shadow-raised: 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.08),\n                   inset 0 1px 0 rgba(255, 255, 255, 0.7);\n  --shadow-press: inset 0 2px 5px rgba(0, 0, 0, 0.28);\n  --shadow-well: inset 0 2px 4px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(255, 255, 255, 0.5);\n  --shadow-btn: 0 2px 0 rgba(0, 0, 0, 0.35), 0 4px 10px rgba(0, 0, 0, 0.15),\n                inset 0 1px 0 rgba(255, 255, 255, 0.35);\n  --shadow-knob: 0 3px 8px rgba(0, 0, 0, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.55),\n                 inset 0 -2px 4px rgba(0, 0, 0, 0.25);\n  --shadow-focus: 0 0 0 3px var(--color-primary);\n  --texture-brushed: repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 3px);\n\n  --container-width: 1160px;\n\n  --border-default: 1px solid var(--color-border);\n  --border-strong: 2px solid var(--color-text);\n\n  --motion-fast: 150ms;\n  --motion-normal: 200ms;\n  --motion-clunk: cubic-bezier(0.2, 0.9, 0.3, 1.2);\n  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);\n}\n[data-theme=\"dark\"] {\n  --color-bg: #14161A;\n  --color-panel: #1E2126;\n  --color-well: #0E1013;\n  --color-text: #E8EAED;\n  --color-text-secondary: #9AA0A6;\n  --color-primary: #4F87FF;\n  --color-action-hw: #FF6B14;\n  --color-readout: #FFC133;\n  --edge-raised: 1px solid rgba(255, 255, 255, 0.14);\n  --edge-raised-dark: 1px solid rgba(0, 0, 0, 0.60);\n  --shadow-raised: 0 2px 2px rgba(0, 0, 0, 0.55), 0 4px 10px rgba(0, 0, 0, 0.35),\n                   inset 0 1px 0 rgba(255, 255, 255, 0.12);\n  --shadow-press: inset 0 2px 5px rgba(0, 0, 0, 0.60);\n  --shadow-well: inset 0 2px 4px rgba(0, 0, 0, 0.60), inset 0 -1px 0 rgba(255, 255, 255, 0.08);\n  --shadow-btn: 0 2px 0 rgba(0, 0, 0, 0.60), 0 4px 10px rgba(0, 0, 0, 0.40),\n                inset 0 1px 0 rgba(255, 255, 255, 0.18);\n  --shadow-knob: 0 3px 8px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.16),\n                 inset 0 -2px 4px rgba(0, 0, 0, 0.45);\n  --color-primary-contrast: #111111;\n}",
+  "prompt": "Design a landing page for TORSO FX-1, a hardware audio compressor, in the\nmodern skeuomorphic style of Teenage Engineering and pro-audio gear. The\npage itself should feel like a machined front panel: top-lit aluminum\nsurfaces, recessed wells, a hero console with believable dials (radial tick\nmarks, knurled edge), a toggle switch, and an amber backlit readout in\nJetBrains Mono tabular numerals. Space Grotesk headings, IBM Plex Sans body,\nengraved uppercase micro-labels. One action hue (hardware orange #F25C05)\nplus amber readouts and small LED status dots — nothing else colored.\nEvery control needs a real press state (inset + 1px shift, 200ms clunk\neasing). Deliver one self-contained HTML file, dark \"rack unit\" variant\nvia prefers-color-scheme, reduced-motion reset. No leather, no glass, no\nneon cyberpunk glow — restrained industrial realism only.",
+  "image": "assets/styles/adt-09.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-10",
+  "num": "10",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/10-swiss-international",
+  "name": "Swiss / International",
+  "tagline": "Grid, type, order.",
+  "aliases": [
+   "swiss",
+   "international",
+   "international-typographic-style",
+   "grid",
+   "helvetica",
+   "brockmann"
+  ],
+  "category": "UI / web",
+  "description": "The grid is the design. Rooted in Josef Müller-Brockmann's International Typographic Style: objective photography, flush-left ragged-right text, a mathematical grid, and a single loud accent — usually red — against near-monochrome.",
+  "principles": "strict modular grid · Helvetica-family grotesks · flush-left, ragged-right · red accent, used sparingly · asymmetric balance within the grid · objective, type-led hierarchy.",
+  "signature": "One saturated accent, classically red, used exactly once per screen against a black-and-white composition — on the element that matters most. Twice and the system collapses.",
+  "whenToUse": "Design studios, architecture, exhibitions, cultural institutions, engineering/industrial, type foundries, portfolios. Audience expects rigor and objectivity.",
+  "recommendedFor": [
+   "dev-tools",
+   "ai-platforms",
+   "agencies",
+   "architecture",
+   "editorial",
+   "corporate",
+   "analytics",
+   "developer-docs"
+  ],
+  "supporting": [
+   "ADT-01",
+   "ADT-09",
+   "ADT-04"
+  ],
+  "incompatible": [
+   "ADT-13",
+   "ADT-12"
+  ],
+  "do": [
+   "Snap every element to the grid",
+   "Flush-left, ragged-right text",
+   "One red accent for actions/highlights",
+   "Oversized grotesk headlines, tight leading"
+  ],
+  "dont": [
+   "Centered paragraphs or headings",
+   "Rounded radii > 4px",
+   "Gradients or second accent",
+   "Drop shadows"
+  ],
+  "colors": {
+   "bg": "#FFFFFF",
+   "surface": "#F4F4F2",
+   "text": "#111111",
+   "text-secondary": "#5C5C5C",
+   "border": "#D9D9D6",
+   "primary": "#111111",
+   "primary-contrast": "#FFFFFF",
+   "accent": "#E2231A",
+   "accent-contrast": "#FFFFFF",
+   "success": "#1A7A3C",
+   "warning": "#C77800",
+   "error": "#E2231A"
+  },
+  "colorsDark": {
+   "bg": "#0C0C0C",
+   "surface": "#171717",
+   "text": "#F2F2F0",
+   "text-secondary": "#9C9C98",
+   "border": "#2A2A2A",
+   "primary": "#F2F2F0",
+   "primary-contrast": "#0C0C0C"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Inter",
+   "display": "Inter Tight",
+   "mono": "IBM Plex Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Grotesk display: Inter Tight, Archivo (Helvetica surrogates). Text: Inter, Roboto. Mono (grid/annotation labels): IBM Plex Mono.",
+  "fontSizes": {
+   "h1": "64px",
+   "h2": "40px",
+   "h3": "28px",
+   "h4": "22px",
+   "h5": "18px",
+   "h6": "16px",
+   "body": "16px",
+   "small": "13px",
+   "label": "12px"
+  },
+  "radius": {
+   "sm": "0px",
+   "md": "2px",
+   "lg": "2px"
+  },
+  "shadows": {
+   "none": "none",
+   "focus": "0 0 0 3px var(--color-accent)"
+  },
+  "tokensCss": "/* 10 · Swiss International — design tokens (canonical) */\n:root {\n  --color-bg: #FFFFFF;\n  --color-surface: #F4F4F2;\n  --color-text: #111111;\n  --color-text-secondary: #5C5C5C;\n  --color-border: #D9D9D6;\n  --color-primary: #111111;\n  --color-primary-contrast: #FFFFFF;\n  --color-accent: #E2231A;\n  --color-accent-contrast: #FFFFFF;\n  --color-success: #1A7A3C;\n  --color-warning: #C77800;\n  --color-error: #E2231A;\n\n  --font-sans: 'Inter', system-ui, sans-serif;\n  --font-display: 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;\n  --font-mono: 'IBM Plex Mono', monospace;\n\n  --font-size-h1: 64px;\n  --font-size-h2: 40px;\n  --font-size-h3: 28px;\n  --font-size-h4: 22px;\n  --font-size-h5: 18px;\n  --font-size-h6: 16px;\n  --font-size-body: 16px;\n  --font-size-small: 13px;\n  --font-size-label: 12px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-sm: 0px; --radius-md: 2px; --radius-lg: 2px;\n  --shadow-none: none;\n  --shadow-focus: 0 0 0 3px var(--color-accent);\n\n  --border-default: 1px solid var(--color-border);\n  --border-strong: 1px solid var(--color-text);\n\n  --container-width: 1280px;\n\n  --motion-fast: 120ms;\n  --motion-normal: 200ms;\n  --motion-slow: 320ms;\n  --motion-ease: cubic-bezier(0.2, 0, 0, 1);\n}\n[data-theme=\"dark\"] {\n  --color-bg: #0C0C0C;\n  --color-surface: #171717;\n  --color-text: #F2F2F0;\n  --color-text-secondary: #9C9C98;\n  --color-border: #2A2A2A;\n  --color-primary: #F2F2F0;\n  --color-primary-contrast: #0C0C0C;\n}",
+  "prompt": "Design a Swiss International landing page for Rasterwerk, an architecture\nstudio. The grid is the design: decide column structure first, then place\ncontent — flush-left only, never centered. Use Inter Tight (700, 64px H1,\n-0.03em) + Inter body + IBM Plex Mono for uppercase index labels (\"01/\",\n\"Fig. 01\"). Near-monochrome with one Swiss red #E2231A on the primary CTA.\nHairline rules instead of shadows, sharp corners, rectangles only. Sections\n96–144px apart. Deliver as one self-contained HTML file with dark mode via\nprefers-color-scheme and a reduced-motion reset. If an element isn't\nstructural — grid, type, or red accent — remove it. No gradients, no glass,\nno invented testimonials.",
+  "image": "assets/styles/adt-10.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-11",
+  "num": "11",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/11-editorial-magazine",
+  "name": "Editorial / Magazine",
+  "tagline": "Reads like a magazine.",
+  "aliases": [
+   "editorial",
+   "magazine",
+   "print",
+   "long-form",
+   "publication"
+  ],
+  "category": "UI / web",
+  "description": "The page reads like a printed feature: a serif display face with real editorial contrast, drop caps opening body text, pull quotes breaking the column, and an asymmetric layout where images and text overlap the grid with intent.",
+  "principles": "magazine typography · serif display + readable serif body · drop caps and pull quotes · asymmetric, editorial grid · photography-led storytelling · hairline rules like a broadsheet.",
+  "signature": "An oversized display-serif headline breaking across a multi-column measure, with a dek in a contrasting size and weight directly beneath it. The break points are authored, not accidental.",
+  "whenToUse": "Media, journalism, culture, publishing, travel, food & wine, fashion editorial, long-form product storytelling, newsletters. Audience expects depth and craft.",
+  "recommendedFor": [
+   "media",
+   "blogs",
+   "long-form",
+   "luxury",
+   "restaurants",
+   "culture"
+  ],
+  "supporting": [
+   "ADT-06",
+   "ADT-10"
+  ],
+  "incompatible": [
+   "ADT-02",
+   "ADT-04"
+  ],
+  "do": [
+   "Drop cap on the opening paragraph",
+   "Pull quotes at column-breaking widths",
+   "Asymmetric 7/5 and offset layouts",
+   "Serif display with a sans for captions/UI"
+  ],
+  "dont": [
+   "Center long-form body text",
+   "Drop caps on every paragraph",
+   "Three type families or two serifs",
+   "Neon or cold-gray palettes"
+  ],
+  "colors": {
+   "bg": "#FDFBF7",
+   "surface": "#F4EFE6",
+   "text": "#1A1815",
+   "text-secondary": "#6B6259",
+   "border": "#E3DCD0",
+   "primary": "#1A1815",
+   "primary-contrast": "#FDFBF7",
+   "accent": "#8C2F1B",
+   "accent-contrast": "#FDFBF7",
+   "success": "#3E6B3A",
+   "warning": "#A86B1C",
+   "error": "#8C2F1B"
+  },
+  "colorsDark": {
+   "bg": "#14110E",
+   "surface": "#1F1B16",
+   "text": "#F2ECE2",
+   "text-secondary": "#A69C8E",
+   "border": "#35302A",
+   "primary": "#F2ECE2",
+   "primary-contrast": "#14110E"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "serif-body": "Source Serif 4",
+   "sans": "Inter",
+   "display": "Fraunces",
+   "mono": "IBM Plex Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Display serif: Fraunces, Playfair Display, Libre Caslon Text. Body serif: Source Serif 4, Newsreader, Lora. Sans for captions/UI: Inter.",
+  "fontSizes": {
+   "h1": "56px",
+   "h2": "40px",
+   "h3": "28px",
+   "h4": "22px",
+   "h5": "18px",
+   "h6": "16px",
+   "body": "18px",
+   "small": "14px",
+   "caption": "13px",
+   "label": "12px"
+  },
+  "radius": {
+   "sm": "2px",
+   "md": "2px",
+   "lg": "4px"
+  },
+  "shadows": {
+   "none": "none",
+   "paper": "0 8px 24px rgb(26 24 21 / 0.08)",
+   "focus": "0 0 0 3px var(--color-accent)"
+  },
+  "tokensCss": "/* 11 · Editorial Magazine — design tokens (canonical) */\n:root {\n  --color-bg: #FDFBF7;\n  --color-surface: #F4EFE6;\n  --color-text: #1A1815;\n  --color-text-secondary: #6B6259;\n  --color-border: #E3DCD0;\n  --color-primary: #1A1815;\n  --color-primary-contrast: #FDFBF7;\n  --color-accent: #8C2F1B;\n  --color-accent-contrast: #FDFBF7;\n  --color-success: #3E6B3A;\n  --color-warning: #A86B1C;\n  --color-error: #8C2F1B;\n\n  --font-serif-body: 'Source Serif 4', Georgia, serif;\n  --font-sans: 'Inter', system-ui, sans-serif;\n  --font-display: 'Fraunces', Georgia, serif;\n  --font-mono: 'IBM Plex Mono', monospace;\n\n  --font-size-h1: 56px;\n  --font-size-h2: 40px;\n  --font-size-h3: 28px;\n  --font-size-h4: 22px;\n  --font-size-h5: 18px;\n  --font-size-h6: 16px;\n  --font-size-body: 18px;\n  --font-size-small: 14px;\n  --font-size-caption: 13px;\n  --font-size-label: 12px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-sm: 2px; --radius-md: 2px; --radius-lg: 4px;\n  --shadow-none: none;\n  --shadow-paper: 0 8px 24px rgb(26 24 21 / 0.08);\n  --shadow-focus: 0 0 0 3px var(--color-accent);\n\n  --border-default: 1px solid var(--color-border);\n  --border-strong: 1px solid var(--color-text);\n\n  --container-width: 1200px;\n\n  --motion-fast: 150ms;\n  --motion-normal: 250ms;\n  --motion-slow: 400ms;\n  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);\n}\n[data-theme=\"dark\"] {\n  --color-bg: #14110E;\n  --color-surface: #1F1B16;\n  --color-text: #F2ECE2;\n  --color-text-secondary: #A69C8E;\n  --color-border: #35302A;\n  --color-primary: #F2ECE2;\n  --color-primary-contrast: #14110E;\n  --shadow-focus: 0 0 0 3px var(--color-text);\n}",
+  "prompt": "Design an editorial-magazine landing page for Fieldnotes, a slow-travel\njournal. Decide the cover first: kicker, huge Fraunces headline, italic\nserif deck, byline. Then long-form sections — 18px/1.7 Source Serif 4 body\nwith a 3-line drop cap opening each article block, asymmetric 7/5 splits,\none wide italic pull quote per screen. Warm paper bg (#FDFBF7), ink text,\nhairline rules (#E3DCD0), one deep red #8C2F1A used like an ink stamp on\nthe CTA and accents. Inter only for kickers, captions and UI. Deliver as\none self-contained HTML file with dark mode via prefers-color-scheme and a\nreduced-motion reset. No gradients, no glass, no centered body copy, no\ninvented statistics.",
+  "image": "assets/styles/adt-11.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-12",
+  "num": "12",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/12-maximalism",
+  "name": "Maximalism",
+  "tagline": "More is more.",
+  "aliases": [
+   "maximalist",
+   "layered",
+   "dense-decoration",
+   "more-is-more"
+  ],
+  "category": "UI / web",
+  "description": "More is more — but choreographed. Layered richness, pattern mixing, saturated color fields and dense ornament, all disciplined by a strict grid and a single dominant idea per screen. Controlled chaos: abundance in content, order in structure.",
+  "principles": "layered richness · pattern mixing · saturated color fields · ornamental density · oversized type · symmetry broken on purpose · chaos inside a grid.",
+  "signature": "A patterned or clashing background with every piece of text on a solid, high-contrast plate. The noise never touches the words — that restraint is what separates maximalism from mess.",
+  "whenToUse": "Youth brands, music/events/festivals, food & beverage, fashion drops, creator brands, gaming, D2C with attitude, cultural institutions. Audience expects personality and energy; conversion benefits from memorability over trust-signals.",
+  "recommendedFor": [
+   "fashion",
+   "events",
+   "culture",
+   "music",
+   "campaigns"
+  ],
+  "supporting": [
+   "ADT-13",
+   "ADT-08"
+  ],
+  "incompatible": [
+   "ADT-02",
+   "ADT-01",
+   "ADT-10"
+  ],
+  "do": [
+   "One dominant idea per screen; everything else supports it",
+   "Fill the grid, keep the grid",
+   "Max 3 fonts, contrast by classification",
+   "Hard offset shadows, never soft blur"
+  ],
+  "dont": [
+   "Loud everything — no typographic ranking",
+   "Random chaos with no underlying grid",
+   "Soft drop shadows or glassmorphism",
+   "More than 5 hues in a viewport"
+  ],
+  "colors": {
+   "bg": "#FDF6EC",
+   "surface": "#FFFFFF",
+   "surface-tint": "#FFE8CC",
+   "text": "#1A0B2E",
+   "text-secondary": "#5C4A72",
+   "border": "#1A0B2E",
+   "primary": "#CF3A26",
+   "primary-contrast": "#FDF6EC",
+   "accent-1": "#FFB000",
+   "accent-2": "#7B2FA0",
+   "accent-3": "#0FA3A3",
+   "success": "#1B8A3A",
+   "warning": "#E07B00",
+   "error": "#C22626"
+  },
+  "colorsDark": {
+   "bg": "#1A0B2E",
+   "surface": "#2A1745",
+   "surface-tint": "#3A2158",
+   "text": "#FDF6EC",
+   "text-secondary": "#B9A8D4",
+   "border": "#FDF6EC",
+   "primary": "#FFB000",
+   "primary-contrast": "#1A0B2E"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Archivo",
+   "display": "Fraunces",
+   "mono": "Space Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Display serif: Fraunces, Playfair Display, DM Serif Display. Grotesk: Archivo, Space Grotesk. Script/accent: Pacifico or Bungee (sparingly). Mono: Space Mono.",
+  "fontSizes": {
+   "h1": "72px",
+   "h2": "44px",
+   "h3": "30px",
+   "h4": "22px",
+   "h5": "18px",
+   "h6": "16px",
+   "body": "17px",
+   "small": "14px",
+   "label": "12px"
+  },
+  "radius": {
+   "none": "0px",
+   "pill": "999px",
+   "blob": "58% 42% 55% 45% / 45% 55% 45% 55%"
+  },
+  "shadows": {
+   "hard": "4px 4px 0 var(--color-border)",
+   "hard-lg": "8px 8px 0 var(--color-border)",
+   "focus": "0 0 0 3px var(--color-primary)"
+  },
+  "tokensCss": "/* 12 · Maximalism — design tokens (canonical) */\n:root {\n  --color-bg: #FDF6EC;\n  --color-surface: #FFFFFF;\n  --color-surface-tint: #FFE8CC;\n  --color-text: #1A0B2E;\n  --color-text-secondary: #5C4A72;\n  --color-border: #1A0B2E;\n  --color-primary: #CF3A26;\n  --color-primary-contrast: #FDF6EC;\n  --color-accent-1: #FFB000; /* marigold */\n  --color-accent-2: #7B2FA0; /* violet  */\n  --color-accent-3: #0FA3A3; /* teal    */\n  --color-success: #1B8A3A;\n  --color-warning: #E07B00;\n  --color-error: #C22626;\n\n  --font-sans: 'Archivo', system-ui, sans-serif;\n  --font-display: 'Fraunces', 'Playfair Display', serif;\n  --font-mono: 'Space Mono', monospace;\n\n  --font-size-h1: 72px;\n  --font-size-h2: 44px;\n  --font-size-h3: 30px;\n  --font-size-h4: 22px;\n  --font-size-h5: 18px;\n  --font-size-h6: 16px;\n  --font-size-body: 17px;\n  --font-size-small: 14px;\n  --font-size-label: 12px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-none: 0px;\n  --radius-pill: 999px;\n  --radius-blob: 58% 42% 55% 45% / 45% 55% 45% 55%;\n\n  --border-thick: 2px solid var(--color-border);\n  --shadow-hard: 4px 4px 0 var(--color-border);\n  --shadow-hard-lg: 8px 8px 0 var(--color-border);\n  --shadow-focus: 0 0 0 3px var(--color-primary);\n\n  --pattern-dots: radial-gradient(var(--color-border) 1.5px, transparent 1.5px);\n  --pattern-dots-size: 14px 14px;\n  --pattern-checker: repeating-conic-gradient(var(--color-surface-tint) 0% 25%, transparent 0% 50%);\n  --pattern-checker-size: 32px 32px;\n\n  --container-width: 1200px;\n\n  --motion-fast: 150ms;\n  --motion-normal: 250ms;\n  --motion-slow: 450ms;\n  --motion-ease: cubic-bezier(0.34, 1.56, 0.64, 1); /* spring */\n  --marquee-speed: 70px;\n\n  --decoration-max-per-component: 2;\n  --grid-breaks-per-section: 1;\n}\n[data-theme=\"dark\"] {\n  --color-bg: #1A0B2E;\n  --color-surface: #2A1745;\n  --color-surface-tint: #3A2158;\n  --color-text: #FDF6EC;\n  --color-text-secondary: #B9A8D4;\n  --color-border: #FDF6EC;\n  --color-primary: #FFB000;\n  --color-primary-contrast: #1A0B2E;\n}\n@media (prefers-reduced-motion: reduce) {\n  :root { --marquee-speed: 0px; --motion-ease: linear;\n}\n}",
+  "prompt": "Design a maximalist landing page for Cacophony, an indie music festival.\nMaximalism = abundance with discipline: saturated color fields as\nsection backgrounds, mixed patterns (checkerboard, halftone dots,\nzigzag borders — all in one shared palette), oversized Fraunces Black\ntype layered over imagery, rotated sticker badges, hard offset shadows\n(never soft blur). Every section has ONE dominant idea; density is\nranked (hero loudest, support quieter); exactly one element may break\nthe grid per section. Body text stays plain 17px Archivo for\nreadability. Three font families max, contrasted by classification.\nPalette: cream #FDF6EC, plum-black #1A0B2E, vermilion #E8442E +\nmax 3 accents. Deliver as one self-contained HTML file with dark mode,\npausing marquee, and a full prefers-reduced-motion reset. Do not use\nglass, gradient meshes, emoji decorations, or corporate stock photos.",
+  "image": "assets/styles/adt-12.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-13",
+  "num": "13",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/13-y2k-retrofuturism",
+  "name": "Y2K / Retrofuturism",
+  "tagline": "Chrome, bubble, optimism.",
+  "aliases": [
+   "y2k",
+   "retrofuturism",
+   "chrome",
+   "retro",
+   "2000s",
+   "frutiger"
+  ],
+  "category": "UI / web",
+  "description": "The future as imagined from 1999 — optimistic, glossy, bubbly. Chrome made of CSS gradients (never images), iridescent pastels, pill and bubble shapes, pixel-precise tech details. It believes technology is fun.",
+  "principles": "chrome & metallic sheen (CSS gradients only) · iridescence · bubble/pill geometry · retro-tech chrome (windows, bezels, LED dots) · optimistic pastels · glossy 3D-lite feel without 3D assets.",
+  "signature": "A chrome or iridescent element with a hard specular highlight, on a dark backing plate — so the metal reads as metal and the text stays legible against it.",
+  "whenToUse": "Consumer tech, music/audio apps, fashion/beauty drops with tech edge, crypto-lite/fintech-for-consumers (careful), gaming casual, event sites, anything targeting audiences nostalgic for 1998–2008 or younger audiences that read Y2K as retro-cool.",
+  "recommendedFor": [
+   "music",
+   "streetwear",
+   "gaming",
+   "events",
+   "drops"
+  ],
+  "supporting": [
+   "ADT-12"
+  ],
+  "incompatible": [
+   "ADT-01",
+   "ADT-10"
+  ],
+  "do": [
+   "Build chrome/iridescence with CSS gradients — never image files",
+   "Reserve chrome for H1 + primary CTA; keep panels matte",
+   "Pill everything: nav, buttons, badges, inputs",
+   "Bezel double-layers: border outside, inset highlight inside"
+  ],
+  "dont": [
+   "Chrome via embedded images or heavy textures",
+   "Gradient text on body copy",
+   "Hard offset shadows or brutalist borders",
+   "Matrix-green hacker palette"
+  ],
+  "colors": {
+   "bg": "#E8F1F8",
+   "surface": "#FFFFFF",
+   "text": "#1B2A3A",
+   "text-secondary": "#596F85",
+   "border": "#B9CCDD",
+   "primary": "#3B5BDB",
+   "primary-contrast": "#FFFFFF",
+   "accent-1": "#C77DFF",
+   "accent-2": "#64E0D4",
+   "accent-3": "#FFB8D1",
+   "success": "#1FA97C",
+   "warning": "#E0A010",
+   "error": "#E04060"
+  },
+  "colorsDark": {
+   "bg": "#0E1626",
+   "surface": "#1A2A44",
+   "text": "#E8F1F8",
+   "text-secondary": "#8FA6C4",
+   "border": "#34507A",
+   "primary": "#7AA8FF",
+   "primary-contrast": "#0E1626",
+   "accent-1": "#D9A8FF",
+   "accent-2": "#7CF0E4",
+   "accent-3": "#FFC4DC"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Space Grotesk",
+   "display": "Orbitron",
+   "mono": "Space Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Techno display: Orbitron, Michroma, Audiowide. Grotesk body: Space Grotesk. Mono/pixel: Space Mono, VT323 (display accents only).",
+  "fontSizes": {
+   "h1": "56px",
+   "h2": "38px",
+   "h3": "26px",
+   "h4": "20px",
+   "h5": "17px",
+   "h6": "15px",
+   "body": "16px",
+   "small": "13px",
+   "label": "12px"
+  },
+  "radius": {
+   "md": "16px",
+   "lg": "24px",
+   "xl": "32px",
+   "pill": "999px"
+  },
+  "shadows": {
+   "panel": "0 8px 24px rgb(27 42 58 / 0.10)",
+   "focus": "0 0 0 3px var(--color-primary)"
+  },
+  "tokensCss": "/* 13 · Y2K Retrofuturism — design tokens (canonical) */\n:root {\n  --color-bg: #E8F1F8;\n  --color-surface: #FFFFFF;\n  --color-text: #1B2A3A;\n  --color-text-secondary: #596F85;\n  --color-border: #B9CCDD;\n  --color-primary: #3B5BDB;\n  --color-primary-contrast: #FFFFFF;\n  --color-accent-1: #C77DFF; /* lilac */\n  --color-accent-2: #64E0D4; /* aqua  */\n  --color-accent-3: #FFB8D1; /* bubble pink */\n  --color-success: #1FA97C;\n  --color-warning: #E0A010;\n  --color-error: #E04060;\n\n  /* signature gradients — CSS only, never images */\n  --gradient-chrome: linear-gradient(180deg,#F5FAFF 0%,#C6D6E4 30%,#6E8497 55%,#EAF2F8 75%,#8FA6B8 100%);\n  --gradient-chrome-text: linear-gradient(180deg,#EAF6FF 0%,#9FB8CC 55%,#3A4A5C 100%);\n  --gradient-iridescent: linear-gradient(135deg,#FFB8D1 0%,#E3D0FF 35%,#A8E8FF 65%,#B8FFE3 100%);\n  --gradient-sky: linear-gradient(180deg,#DCEBFA 0%,#F3E9FA 55%,#FFE9F1 100%);\n  --gradient-glow: radial-gradient(circle, rgb(59 91 219 / 0.35) 0%, transparent 70%);\n\n  --font-sans: 'Space Grotesk', system-ui, sans-serif;\n  --font-display: 'Orbitron', 'Space Grotesk', sans-serif;\n  --font-mono: 'Space Mono', monospace;\n\n  --font-size-h1: 56px;\n  --font-size-h2: 38px;\n  --font-size-h3: 26px;\n  --font-size-h4: 20px;\n  --font-size-h5: 17px;\n  --font-size-h6: 15px;\n  --font-size-body: 16px;\n  --font-size-small: 13px;\n  --font-size-label: 12px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-md: 16px;\n  --radius-lg: 24px;\n  --radius-xl: 32px;\n  --radius-pill: 999px;\n\n  --bezel-highlight: inset 0 2px 2px rgb(255 255 255 / 0.8);\n  --bezel-shadow: inset 0 -3px 4px rgb(0 0 0 / 0.12);\n  --bezel: var(--bezel-highlight), var(--bezel-shadow);\n  --shadow-panel: 0 8px 24px rgb(27 42 58 / 0.10);\n  --shadow-focus: 0 0 0 3px var(--color-primary);\n\n  --container-width: 1200px;\n\n  --border-default: 2px solid var(--color-border);\n  --border-strong: 3px solid var(--color-text);\n\n  --motion-fast: 150ms;\n  --motion-normal: 200ms;\n  --motion-slow: 400ms;\n  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);\n  --ambient-bob: 6s;   /* float ±4px */\n  --shimmer-cycle: 4s; /* chrome CTA sweep */\n  --ambient-max: 2;    /* max ambient animations on screen */\n}\n[data-theme=\"dark\"] {\n  --color-bg: #0E1626;\n  --color-surface: #1A2A44;\n  --color-text: #E8F1F8;\n  --color-text-secondary: #8FA6C4;\n  --color-border: #34507A;\n  --color-primary: #7AA8FF;\n  --color-primary-contrast: #0E1626;\n  --color-accent-1: #D9A8FF;\n  --color-accent-2: #7CF0E4;\n  --color-accent-3: #FFC4DC;\n  --gradient-sky: linear-gradient(180deg,#1A2A44 0%,#241F44 55%,#2E1E38 100%);\n}\n@media (prefers-reduced-motion: reduce) {\n  :root { --ambient-bob: 0s; --shimmer-cycle: 0s; --motion-ease: linear; }\n}",
+  "prompt": "Design a Y2K retrofuturism landing page for Bloop, a consumer audio app.\nEra logic: optimistic 1999 tech — everything plastic-glossy, pill-shaped,\nbezelled. Build chrome and iridescence purely with CSS gradients (chrome\ntext = vertical metallic gradient with background-clip:text; iridescent\nsky = soft 4-stop pastel gradient). Use Orbitron (headings) + Space\nGrotesk (body) + Space Mono (uppercase system readouts, blinking-cursor\nlabels). Hierarchy rule: chrome on H1 and primary capsule CTA only;\nall cards/panels stay matte white with inset bezel highlights and 24px+\nradii. Layout: centered hero, bubble feature triads, device-panel mock\n(nested surface with dot-matrix header), pricing with iridescent\ngradient-border featured card, LED status-bar footer. Max 2 ambient\nanimations (6s bob, 4s shimmer), both disabled under\nprefers-reduced-motion. Deliver one self-contained HTML file with dark\nmode (deep navy sky, chrome value range preserved). No glass blur, no\nneon hacker green, no gradient body text, no image-based textures.",
+  "image": "assets/styles/adt-13.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-14",
+  "num": "14",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/14-3d-spatial-ui",
+  "name": "3D / Spatial UI",
+  "tagline": "Depth you can move through.",
+  "aliases": [
+   "3d",
+   "spatial",
+   "depth",
+   "webgl",
+   "immersive",
+   "z-space"
+  ],
+  "category": "UI / web",
+  "description": "Interfaces built in depth, not just on a plane. Content lives on layers in a shared perspective space — the camera (scroll/cursor) moves, and the interface moves with it. Depth is used to explain relationships: foreground = interactive, background = context.",
+  "principles": "real perspective · layered z-space · parallax storytelling · one vanishing point · depth through position not decoration · vanilla CSS 3D transforms (no libraries required) · motion serves spatial comprehension.",
+  "signature": "A single hero object at a fixed depth that responds to scroll or pointer, while every piece of text stays on a flat 2D plane in front of it. Depth for objects, flatness for words.",
+  "whenToUse": "Product launches (especially dev tools, AR/VR/spatial apps, hardware, mapping), interactive storytelling, portfolio hero moments, feature explanations where \"layers\" is literally the product story. Audience expects wow and will tolerate scroll friction.",
+  "recommendedFor": [
+   "web3",
+   "product-launches",
+   "immersive-tools",
+   "hardware"
+  ],
+  "supporting": [
+   "ADT-01",
+   "ADT-02"
+  ],
+  "incompatible": [
+   "ADT-11",
+   "ADT-10"
+  ],
+  "do": [
+   "One perspective per section; one shared vanishing logic per page",
+   "2–4 layers max, each with a reason to exist in Z",
+   "Depth reinforces hierarchy (front = action)",
+   "Real CSS: perspective, preserve-3d, translateZ, rotateY"
+  ],
+  "dont": [
+   "rotateX(45deg) walls of text",
+   "Depth for decoration with no informational meaning",
+   "Floating 3D stock blobs/illustrations pasted on a flat page",
+   "Parallax on body text or navigation"
+  ],
+  "colors": {
+   "bg": "#F4F4F0",
+   "surface": "#FFFFFF",
+   "text": "#101014",
+   "text-secondary": "#5A5A5E",
+   "border": "#E3E3DE",
+   "primary": "#101014",
+   "primary-contrast": "#FFFFFF",
+   "accent": "#4F46E5",
+   "accent-contrast": "#FFFFFF",
+   "success": "#16A34A",
+   "warning": "#D97706",
+   "error": "#DC2626",
+   "glow": "rgb(79 70 229 / 0.12)"
+  },
+  "colorsDark": {
+   "bg": "#060608",
+   "surface": "#101014",
+   "text": "#F2F2F0",
+   "text-secondary": "#8E8E94",
+   "border": "#1F1F26",
+   "primary": "#F2F2F0",
+   "primary-contrast": "#060608",
+   "accent": "#8B8BF5",
+   "accent-contrast": "#060608",
+   "glow": "rgb(139 139 245 / 0.14)"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Inter",
+   "display": "Space Grotesk",
+   "mono": "Space Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Display: Space Grotesk, Clash-adjacent — use Space Grotesk. Text: Inter. Mono: Space Mono, IBM Plex Mono.",
+  "fontSizes": {
+   "h1": "60px",
+   "h2": "42px",
+   "h3": "26px",
+   "h4": "21px",
+   "h5": "18px",
+   "h6": "16px",
+   "body": "17px",
+   "small": "14px",
+   "label": "11px"
+  },
+  "radius": {
+   "sm": "8px",
+   "md": "12px",
+   "lg": "16px"
+  },
+  "shadows": {
+   "plane": "0 24px 60px -24px rgb(16 16 20 / 0.25)",
+   "lift": "0 32px 72px -28px rgb(16 16 20 / 0.35)",
+   "focus": "0 0 0 3px var(--color-accent)"
+  },
+  "tokensCss": "/* 14 · 3D Spatial UI — design tokens (canonical) */\n:root {\n  --color-bg: #F4F4F0;\n  --color-surface: #FFFFFF;\n  --color-text: #101014;\n  --color-text-secondary: #5A5A5E;\n  --color-border: #E3E3DE;\n  --color-primary: #101014;\n  --color-primary-contrast: #FFFFFF;\n  --color-accent: #4F46E5;\n  --color-accent-contrast: #FFFFFF;\n  --color-success: #16A34A;\n  --color-warning: #D97706;\n  --color-error: #DC2626;\n  --color-glow: rgb(79 70 229 / 0.12);\n\n  --font-sans: 'Inter', system-ui, sans-serif;\n  --font-display: 'Space Grotesk', 'Inter', sans-serif;\n  --font-mono: 'Space Mono', 'IBM Plex Mono', monospace;\n\n  --font-size-h1: 60px;\n  --font-size-h2: 42px;\n  --font-size-h3: 26px;\n  --font-size-h4: 21px;\n  --font-size-h5: 18px;\n  --font-size-h6: 16px;\n  --font-size-body: 17px;\n  --font-size-small: 14px;\n  --font-size-label: 11px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px;\n\n  /* Depth system */\n  --perspective: 1200px;\n  --z-near: 80px;      /* interactive plane */\n  --z-mid: 0px;        /* content plane */\n  --z-far: -160px;     /* ambient/context plane */\n  --tilt-max: 6deg;    /* hover tilt cap */\n  --rot-y-max: 18deg;  /* composition rotation cap */\n\n  --shadow-plane: 0 24px 60px -24px rgb(16 16 20 / 0.25);\n  --shadow-lift: 0 32px 72px -28px rgb(16 16 20 / 0.35);\n  --shadow-focus: 0 0 0 3px var(--color-accent);\n\n  --border-default: 1px solid var(--color-border);\n  --border-strong: 1px solid var(--color-text);\n\n  --container-width: 1200px;\n\n  --motion-fast: 200ms;\n  --motion-normal: 350ms;\n  --motion-slow: 500ms;\n  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);\n}\n[data-theme=\"dark\"] {\n  --color-bg: #060608;\n  --color-surface: #101014;\n  --color-text: #F2F2F0;\n  --color-text-secondary: #8E8E94;\n  --color-border: #1F1F26;\n  --color-primary: #F2F2F0;\n  --color-primary-contrast: #060608;\n  --color-accent: #8B8BF5;\n  --color-accent-contrast: #060608;\n  --color-glow: rgb(139 139 245 / 0.14);\n  --shadow-plane: 0 24px 60px -20px rgb(0 0 0 / 0.7);\n  --shadow-lift: 0 32px 80px -24px rgb(0 0 0 / 0.85);\n}\n@media (prefers-reduced-motion: reduce) {\n  :root { --z-near: 0px; --z-far: 0px; --tilt-max: 0deg; --rot-y-max: 0deg; }\n}",
+  "prompt": "Design a spatial 3D landing page for Depthline, a 3D asset-review tool.\nDecide the depth logic first: every layer must answer \"why is THIS in\nfront/behind?\" — interactive content in front (translateZ 60–80px),\ncontext behind (translateZ -120px to -300px), max 4 layers per section,\none perspective: 1200px per section. Use only vanilla CSS 3D transforms\nand a small vanilla JS rAF loop for hero cursor-parallax (lerped, ±10px,\ndisabled on touch and reduced-motion). Space Grotesk + Inter + Space\nMono; dark palette (#060608 / #101014) with a single indigo accent\n(#8B8BF5). Depth cues: real Z-position, large soft shadows, slight\ndesaturation/blur on far layers. Pricing and nav stay flat. Deliver one\nself-contained HTML file with prefers-color-scheme support and a\ncomplete prefers-reduced-motion fallback where the scene collapses to\nflat, shadow-separated layers — that fallback must look good on its\nown. No floating stock 3D blobs, no scroll-jacking, no WebGL.",
+  "image": "assets/styles/adt-14.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-15",
+  "num": "15",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/15-expressive-kinetic-typography",
+  "name": "Expressive / Kinetic Typography",
+  "tagline": "Type as the interface.",
+  "aliases": [
+   "kinetic",
+   "kinetic-typography",
+   "expressive-type",
+   "variable-type",
+   "type-first"
+  ],
+  "category": "UI / web",
+  "description": "The type IS the interface. Words move, stretch, react and navigate — headlines tick like departure boards, variable font axes respond to cursor and scroll, and navigation can literally be typography. No animation libraries: pure CSS transitions/keyframes plus a small vanilla JS toolkit.",
+  "principles": "type as interface · variable-font axes (wght/wdth/opsz/SOFT) as material · motion with meaning · rhythm and repetition of words · one kinetic idea per screen · content remains readable without JS.",
+  "signature": "A display headline animating a variable-font axis (weight or width) on entry, freezing to a fully readable static state — and rendering in that static state directly under reduced motion.",
+  "whenToUse": "Creative portfolios, studios, events/festivals, music/culture, fashion, editorial, agency sites, brand campaigns — anywhere the words themselves are the product. Great on one-pagers.",
+  "recommendedFor": [
+   "portfolios",
+   "campaigns",
+   "motion-first-brands",
+   "agencies"
+  ],
+  "supporting": [
+   "ADT-01",
+   "ADT-06"
+  ],
+  "incompatible": [
+   "ADT-04"
+  ],
+  "do": [
+   "One kinetic idea per viewport",
+   "Animate only display type; body copy stays still",
+   "Use variable axes as the main expressive material",
+   "Set initial visible state in CSS/HTML; add motion in JS"
+  ],
+  "dont": [
+   "Animate paragraphs, prices while user reads, or nav dropdowns",
+   "Five animation techniques on one page",
+   "Motion that hides or moves content the user is trying to read",
+   "Decorative letter-by-letter chaos"
+  ],
+  "colors": {
+   "bg": "#FAF7F2",
+   "surface": "#FFFFFF",
+   "text": "#14120E",
+   "text-secondary": "#6B675F",
+   "border": "#E8E3DA",
+   "primary": "#14120E",
+   "primary-contrast": "#FAF7F2",
+   "accent": "#C24A27",
+   "accent-contrast": "#FAF7F2",
+   "success": "#16A34A",
+   "warning": "#D97706",
+   "error": "#DC2626"
+  },
+  "colorsDark": {
+   "bg": "#0D0C0A",
+   "surface": "#171512",
+   "text": "#F5F1E8",
+   "text-secondary": "#9B968B",
+   "border": "#262320",
+   "primary": "#F5F1E8",
+   "primary-contrast": "#0D0C0A",
+   "accent": "#FF6B3D",
+   "accent-contrast": "#0D0C0A"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Inter",
+   "display": "Fraunces",
+   "mono": "Space Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Variable display: Fraunces (SOFT/WONK/opsz — the most expressive on Google Fonts), Anybody (wdth), Bricolage Grotesque (wdth/opsz). Text: Inter, Instrument Sans. Mono: Space Mono, IBM Plex Mono.",
+  "fontSizes": {
+   "h1": "clamp(48px, 9vw, 96px)",
+   "h2": "42px",
+   "h3": "26px",
+   "h4": "21px",
+   "h5": "18px",
+   "h6": "16px",
+   "body": "17px",
+   "small": "14px",
+   "label": "12px",
+   "marquee": "clamp(24px, 4vw, 40px)"
+  },
+  "radius": {
+   "sm": "0px",
+   "md": "0px",
+   "lg": "0px"
+  },
+  "shadows": {
+   "none": "none",
+   "focus": "0 0 0 3px var(--color-accent)"
+  },
+  "tokensCss": "/* 15 · Expressive Kinetic Typography — design tokens (canonical) */\n:root {\n  --color-bg: #FAF7F2;\n  --color-surface: #FFFFFF;\n  --color-text: #14120E;\n  --color-text-secondary: #6B675F;\n  --color-border: #E8E3DA;\n  --color-primary: #14120E;\n  --color-primary-contrast: #FAF7F2;\n  --color-accent: #C24A27;\n  --color-accent-contrast: #FAF7F2;\n  --color-success: #16A34A;\n  --color-warning: #D97706;\n  --color-error: #DC2626;\n\n  --font-sans: 'Inter', system-ui, sans-serif;\n  --font-display: 'Fraunces', 'Inter', serif;\n  --font-mono: 'Space Mono', monospace;\n\n  /* Kinetic type scale — display sizes clamp to viewport */\n  --font-size-h1: clamp(48px, 9vw, 96px);\n  --font-size-h2: 42px;\n  --font-size-h3: 26px;\n  --font-size-h4: 21px;\n  --font-size-h5: 18px;\n  --font-size-h6: 16px;\n  --font-size-body: 17px;\n  --font-size-small: 14px;\n  --font-size-label: 12px;\n  --font-size-marquee: clamp(24px, 4vw, 40px);\n\n  /* Variable font axes (Fraunces: wght 100–900, SOFT 0–100, WONK 0–1, opsz 9–144) */\n  --vf-rest: 'wght' 560, 'SOFT' 0, 'WONK' 0;\n  --vf-hot: 'wght' 800, 'SOFT' 100, 'WONK' 1;\n  --vf-thin: 'wght' 300, 'SOFT' 0, 'WONK' 0;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-sm: 0px; --radius-md: 0px; --radius-lg: 0px;\n\n  --border-default: 1px solid var(--color-border);\n  --border-strong: 1px solid var(--color-text);\n  --rule: 2px solid var(--color-text);\n\n  --container-width: 1200px;\n\n  /* Kinetic motion */\n  --shadow-none: none;\n  --shadow-focus: 0 0 0 3px var(--color-accent);\n\n  --motion-hover: 250ms;\n  --motion-reveal: 700ms;\n  --motion-marquee: 42s;       /* full loop duration */\n  --motion-stagger: 60ms;      /* per line */\n  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);\n  --motion-board: steps(8, end); /* departure-board shuffle */\n}\n[data-theme=\"dark\"] {\n  --color-bg: #0D0C0A;\n  --color-surface: #171512;\n  --color-text: #F5F1E8;\n  --color-text-secondary: #9B968B;\n  --color-border: #262320;\n  --color-primary: #F5F1E8;\n  --color-primary-contrast: #0D0C0A;\n  --color-accent: #FF6B3D;\n  --color-accent-contrast: #0D0C0A;\n}\n/* Motion fallback: kinetic effects render in final state, marquees frozen */\n@media (prefers-reduced-motion: reduce) {\n  :root {\n    --motion-reveal: 0ms;\n    --motion-marquee: 999999s; /* effectively paused at first frame */\n    --vf-rest: 'wght' 700, 'SOFT' 0, 'WONK' 0;\n}\n}",
+  "prompt": "Design a kinetic-typography landing page for Pressform, an independent\ntype foundry. The words are the interface: hero headline in variable\nFraunces at ~90px spanning the viewport, one kinetic idea per viewport\n— a line-mask reveal on load, a variable-axis (wght) response on hover,\nthen stillness so people can read. Animate ONLY display type; body\ncopy never moves. Support all vanilla: CSS transitions/keyframes plus\nat most ~40 lines of vanilla JS (IntersectionObserver for scroll\nreveals, count-up numbers, letter shuffle for one word). Inter for\nbody, Space Mono for labels. Paper #FAF7F2 / ink #14120E / one accent\n#E4572E, high contrast, hairline rules, radius 0. Include a marquee\nthat pauses on hover. Deliver one self-contained HTML file. The\nprefers-reduced-motion version must render the complete page in final\nstate (reveals done, marquee stopped, counters at final values), and\nthe no-JS version must show all content — set animation initial states\nfrom JS, never in CSS.",
+  "image": "assets/styles/adt-15.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-16",
+  "num": "16",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/16-terminal-dev-dark",
+  "name": "Terminal / Dev Dark",
+  "tagline": "Signal on black.",
+  "aliases": [
+   "terminal",
+   "dev-dark",
+   "cli",
+   "console",
+   "monospace",
+   "hacker",
+   "dark-tech"
+  ],
+  "category": "UI / web",
+  "description": "The interface borrows the terminal's grammar: monospaced display type, a near-black canvas, one phosphor accent, and real commands where other sites put marketing copy. It reads as built by people who use the thing, which is the only credibility a developer audience extends on first contact.",
+  "principles": "dark-native canvas · monospace display, sans body · one phosphor accent for actions and success · real commands as content · hairline structure, no shadows · status-bar and changelog grammar · nothing decorative that cannot be copied.",
+  "signature": "The command line as the hero CTA — a single code-bg panel with an accent $ prompt, the real install command, a blinking block caret and a copy button. It replaces the \"Get started\" button; the command may return once at the end as the closing CTA.",
+  "whenToUse": "CLIs, SDKs, APIs, infrastructure and observability tools, AI-agent tooling, developer platforms, open-source project sites, changelogs and status pages. The audience lives in a terminal and evaluates by trying.",
+  "recommendedFor": [
+   "cli-tools",
+   "dev-tools",
+   "ai-agent-tooling",
+   "infrastructure",
+   "observability",
+   "api-products",
+   "open-source"
+  ],
+  "supporting": [
+   "ADT-10",
+   "ADT-04",
+   "ADT-01"
+  ],
+  "incompatible": [
+   "ADT-08",
+   "ADT-13",
+   "ADT-03"
+  ],
+  "do": [
+   "Make the install or run command the primary CTA, copyable",
+   "Show a real session, diff or product screen in the hero",
+   "Use mono for display and data, sans for prose",
+   "Keep one accent, reserved for actions and success"
+  ],
+  "dont": [
+   "Green-on-black body text",
+   "Glitch, scanline or matrix-rain effects",
+   "Typing animations that hide content",
+   "Fake commands that do not run"
+  ],
+  "colors": {
+   "bg": "#F6F6F3",
+   "surface": "#ECECE7",
+   "text": "#0C0E0F",
+   "text-secondary": "#50575E",
+   "border": "#D3D5D0",
+   "primary": "#0C0E0F",
+   "primary-contrast": "#F6F6F3",
+   "accent": "#0B6B33",
+   "accent-contrast": "#FFFFFF",
+   "success": "#0B6B33",
+   "warning": "#8A5A00",
+   "error": "#B42318",
+   "code-bg": "#ECECE7",
+   "diff-add": "rgb(11 107 51 / 0.12)",
+   "diff-del": "rgb(180 35 24 / 0.10)"
+  },
+  "colorsDark": {
+   "bg": "#0B0D0E",
+   "surface": "#131618",
+   "text": "#E7E9E6",
+   "text-secondary": "#949CA3",
+   "border": "#262B2F",
+   "primary": "#E7E9E6",
+   "primary-contrast": "#0B0D0E",
+   "accent": "#5BE08F",
+   "accent-contrast": "#04140A",
+   "success": "#5BE08F",
+   "warning": "#F2B84B",
+   "error": "#FF7A70",
+   "code-bg": "#0F1213",
+   "diff-add": "rgb(91 224 143 / 0.10)",
+   "diff-del": "rgb(255 122 112 / 0.10)"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "IBM Plex Sans",
+   "display": "JetBrains Mono",
+   "mono": "JetBrains Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Display + code: JetBrains Mono, IBM Plex Mono, Geist Mono. Text: IBM Plex Sans, Inter. Never more than one mono family per page.",
+  "fontSizes": {
+   "h1": "56px",
+   "h2": "36px",
+   "h3": "22px",
+   "h4": "18px",
+   "h5": "16px",
+   "h6": "14px",
+   "body": "16px",
+   "small": "14px",
+   "label": "12px"
+  },
+  "radius": {
+   "sm": "4px",
+   "md": "6px",
+   "lg": "8px"
+  },
+  "shadows": {
+   "none": "none",
+   "window": "0 0 0 1px var(--color-border)",
+   "focus": "0 0 0 2px var(--color-accent)"
+  },
+  "tokensCss": "/* 16 · Terminal / Dev Dark — design tokens (canonical)\n   Dark is the native theme: ship with <html data-theme=\"dark\">.\n   :root holds the light fallback for docs pages printed or read in daylight. */\n:root {\n  --color-bg: #F6F6F3;\n  --color-surface: #ECECE7;\n  --color-text: #0C0E0F;\n  --color-text-secondary: #50575E;\n  --color-border: #D3D5D0;\n  --color-primary: #0C0E0F;\n  --color-primary-contrast: #F6F6F3;\n  --color-accent: #0B6B33;\n  --color-accent-contrast: #FFFFFF;\n  --color-success: #0B6B33;\n  --color-warning: #8A5A00;\n  --color-error: #B42318;\n  --color-code-bg: #ECECE7;\n  --color-diff-add: rgb(11 107 51 / 0.12);\n  --color-diff-del: rgb(180 35 24 / 0.10);\n\n  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;\n  --font-display: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;\n  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;\n\n  --font-size-h1: 56px;\n  --font-size-h2: 36px;\n  --font-size-h3: 22px;\n  --font-size-h4: 18px;\n  --font-size-h5: 16px;\n  --font-size-h6: 14px;\n  --font-size-body: 16px;\n  --font-size-small: 14px;\n  --font-size-label: 12px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px;\n\n  --shadow-none: none;\n  --shadow-window: 0 0 0 1px var(--color-border);\n  --shadow-focus: 0 0 0 2px var(--color-accent);\n\n  --border-default: 1px solid var(--color-border);\n  --border-strong: 1px solid var(--color-text-secondary);\n\n  --container-width: 1200px;\n\n  --motion-fast: 80ms;\n  --motion-normal: 160ms;\n  --motion-slow: 240ms;\n  --motion-ease: cubic-bezier(0.2, 0, 0, 1);\n  --motion-caret: 1060ms;\n}\n[data-theme=\"dark\"] {\n  --color-bg: #0B0D0E;\n  --color-surface: #131618;\n  --color-text: #E7E9E6;\n  --color-text-secondary: #949CA3;\n  --color-border: #262B2F;\n  --color-primary: #E7E9E6;\n  --color-primary-contrast: #0B0D0E;\n  --color-accent: #5BE08F;\n  --color-accent-contrast: #04140A;\n  --color-success: #5BE08F;\n  --color-warning: #F2B84B;\n  --color-error: #FF7A70;\n  --color-code-bg: #0F1213;\n  --color-diff-add: rgb(91 224 143 / 0.10);\n  --color-diff-del: rgb(255 122 112 / 0.10);\n}\n",
+  "prompt": "Design a Terminal / Dev Dark landing page for tern, a CLI that makes agent\nruns replayable. The audience runs things before they believe them, so the\npage's content must be real: an install command they can copy, a session\nwith exit codes, a changelog with dates. Mono (JetBrains Mono) for display,\nlabels and data; IBM Plex Sans for prose. Near-black, never #000; one\nphosphor green #5BE08F reserved for actions and success. Hairlines instead\nof shadows, sections divided by 1px rules. Signature move: the command line\nas the hero CTA, once. Rule-break: one human sentence in large sans.\nDeliver one self-contained HTML file, dark by default with a light token\nset, reduced-motion reset, and visible 2px accent focus rings.",
+  "image": "assets/styles/adt-16.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "ADT-17",
+  "num": "17",
+  "source": "agent-design-taste",
+  "sourceUrl": "https://github.com/aievolutionpl/agent-design-taste/tree/main/styles/17-organic-natural",
+  "name": "Organic / Natural",
+  "tagline": "Warm, earthy, handmade.",
+  "aliases": [
+   "organic",
+   "natural",
+   "earthy",
+   "eco",
+   "botanical",
+   "handmade",
+   "craft",
+   "wabi-sabi"
+  ],
+  "category": "UI / web",
+  "description": "Warm paper tones, a soft serif, generous space and one irregular hand-cut shape per page. The style makes a product feel made by people, slowly, from real materials — it trades the precision of a grid for the reassurance of craft.",
+  "principles": "paper-warm canvas · soft serif display, humanist sans text · moss green for action, terracotta for one highlight · one hand-cut organic shape per page · wavy, not straight, section transitions · flat illustration in earth pigments · quiet paper grain.",
+  "signature": "One hand-cut organic shape — the hero image masked in an irregular blob (border-radius: 58% 42% 47% 53% / 52% 46% 54% 48%), with a single rotated stamp label overlapping its edge. Everything else on the page uses ordinary soft radii, which is what makes the blob read as deliberate.",
+  "whenToUse": "Food and beverage, bakeries and restaurants, farms and producers, skin care and wellness, hospitality, ceramics and craft, sustainability brands, local shops. Audiences who buy on origin, care and trust in the maker.",
+  "recommendedFor": [
+   "food-beverage",
+   "bakeries-restaurants",
+   "wellness",
+   "skincare",
+   "hospitality",
+   "craft-brands",
+   "sustainability"
+  ],
+  "supporting": [
+   "ADT-11",
+   "ADT-01",
+   "ADT-08"
+  ],
+  "incompatible": [
+   "ADT-16",
+   "ADT-13",
+   "ADT-14"
+  ],
+  "do": [
+   "Use one organic blob mask per page, on the hero image",
+   "Set headings in a soft serif, everything practical in sans",
+   "Keep moss for actions and terracotta for one highlight word or tag",
+   "Transition banded sections with a wave"
+  ],
+  "dont": [
+   "Script or handwritten heading fonts",
+   "Saturated \"eco\" greens or leaf emoji",
+   "Blobs on every card",
+   "Light beige text on cream"
+  ],
+  "colors": {
+   "bg": "#F6F1E7",
+   "surface": "#EDE5D4",
+   "text": "#2A271F",
+   "text-secondary": "#5C5647",
+   "border": "#DACFBA",
+   "primary": "#3D5638",
+   "primary-contrast": "#FFFFFF",
+   "accent": "#A44A26",
+   "accent-contrast": "#FFFFFF",
+   "success": "#3D5638",
+   "warning": "#8C5A12",
+   "error": "#A3271C",
+   "paper-grain": "rgb(42 39 31 / 0.05)"
+  },
+  "colorsDark": {
+   "bg": "#1B1A15",
+   "surface": "#25231C",
+   "text": "#EFE8D7",
+   "text-secondary": "#B5AD99",
+   "border": "#3A372C",
+   "primary": "#A9C49B",
+   "primary-contrast": "#1B1A15",
+   "accent": "#E39069",
+   "accent-contrast": "#1B1A15",
+   "paper-grain": "rgb(239 232 215 / 0.04)"
+  },
+  "paletteSource": "tokens",
+  "fonts": {
+   "sans": "Figtree",
+   "display": "Young Serif",
+   "mono": "IBM Plex Mono"
+  },
+  "fontsSource": "tokens",
+  "fontsRecommended": "Display: Young Serif, Fraunces (soft, low optical size), Gloock. Text: Figtree, Karla, DM Sans. Mono: rarely — IBM Plex Mono for batch numbers only.",
+  "fontSizes": {
+   "h1": "68px",
+   "h2": "44px",
+   "h3": "26px",
+   "h4": "21px",
+   "h5": "18px",
+   "h6": "16px",
+   "body": "18px",
+   "small": "15px",
+   "label": "13px"
+  },
+  "radius": {
+   "sm": "10px",
+   "md": "18px",
+   "lg": "28px",
+   "pill": "999px",
+   "organic": "58% 42% 47% 53% / 52% 46% 54% 48%"
+  },
+  "shadows": {
+   "soft": "0 10px 30px -18px rgb(61 46 20 / 0.35)",
+   "focus": "0 0 0 3px var(--color-primary)"
+  },
+  "tokensCss": "/* 17 · Organic / Natural — design tokens (canonical) */\n:root {\n  --color-bg: #F6F1E7;\n  --color-surface: #EDE5D4;\n  --color-text: #2A271F;\n  --color-text-secondary: #5C5647;\n  --color-border: #DACFBA;\n  --color-primary: #3D5638;\n  --color-primary-contrast: #FFFFFF;\n  --color-accent: #A44A26;\n  --color-accent-contrast: #FFFFFF;\n  --color-success: #3D5638;\n  --color-warning: #8C5A12;\n  --color-error: #A3271C;\n  --color-paper-grain: rgb(42 39 31 / 0.05);\n\n  --font-sans: 'Figtree', system-ui, sans-serif;\n  --font-display: 'Young Serif', Georgia, serif;\n  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;\n\n  --font-size-h1: 68px;\n  --font-size-h2: 44px;\n  --font-size-h3: 26px;\n  --font-size-h4: 21px;\n  --font-size-h5: 18px;\n  --font-size-h6: 16px;\n  --font-size-body: 18px;\n  --font-size-small: 15px;\n  --font-size-label: 13px;\n\n  --spacing-1: 4px;  --spacing-2: 8px;  --spacing-3: 12px;\n  --spacing-4: 16px; --spacing-6: 24px; --spacing-8: 32px;\n  --spacing-12: 48px; --spacing-16: 64px; --spacing-24: 96px;\n\n  --radius-sm: 10px; --radius-md: 18px; --radius-lg: 28px; --radius-pill: 999px;\n  --radius-organic: 58% 42% 47% 53% / 52% 46% 54% 48%;\n\n  --shadow-soft: 0 10px 30px -18px rgb(61 46 20 / 0.35);\n  --shadow-focus: 0 0 0 3px var(--color-primary);\n\n  --border-default: 1px solid var(--color-border);\n  --border-strong: 1.5px solid var(--color-text);\n\n  --container-width: 1180px;\n\n  --motion-fast: 180ms;\n  --motion-normal: 320ms;\n  --motion-slow: 600ms;\n  --motion-ease: cubic-bezier(0.33, 1, 0.68, 1);\n}\n[data-theme=\"dark\"] {\n  --color-bg: #1B1A15;\n  --color-surface: #25231C;\n  --color-text: #EFE8D7;\n  --color-text-secondary: #B5AD99;\n  --color-border: #3A372C;\n  --color-primary: #A9C49B;\n  --color-primary-contrast: #1B1A15;\n  --color-accent: #E39069;\n  --color-accent-contrast: #1B1A15;\n  --color-paper-grain: rgb(239 232 215 / 0.04);\n  --shadow-soft: 0 10px 30px -18px rgb(0 0 0 / 0.6);\n}\n",
+  "prompt": "Design an Organic / Natural landing page for Ziarno, a stone-milling bakery.\nWarmth must come from specifics — named grain, fermentation hours, real\nprices and opening hours — not from beige alone. Young Serif for headings,\nFigtree for everything practical. Moss green actions, one terracotta\nhighlight. Signature move: a single hand-cut blob mask on the hero image,\nused once; every other radius is an ordinary soft radius. Rule-break: the\nmenu and hours are set ruler-straight with hairlines. Deliver one\nself-contained HTML file with prefers-color-scheme dark tokens, a\nreduced-motion reset, and visible 3px moss focus rings.",
+  "image": "assets/styles/adt-17.webp",
+  "imageNote": "Zrzut example.html z repo agent-design-taste",
+  "imageW": 1440,
+  "imageH": 900
+ },
+ {
+  "id": "DT27-01",
+  "num": "01",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#01-handmade-analog",
+  "name": "Handmade / analog",
+  "tagline": "ciepło ręcznej pracy i materialne niedoskonałości.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "ciepło ręcznej pracy i materialne niedoskonałości.",
+  "whenToUse": "rzemiosło, gastronomia, marki autorskie.",
+  "composition": "jeden papierowy bohater i spokojny blok informacji.",
+  "colorText": "krem, grafit, ceglasty akcent.",
+  "typographyText": "ekspresyjny szeryf i prosty krój tekstowy.",
+  "materials": "autoryzowany papier, farba lub skan.",
+  "avoid": "nie sugeruj rzeczywistego rękodzieła przy syntetycznej fakturze.",
+  "palette": [
+   "#102F57",
+   "#E2CCAD",
+   "#B45226",
+   "#ECDABF",
+   "#A3441C",
+   "#C79C79"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Fraunces",
+   "sans": "Karla"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Handmade / analog. Zbuduj kompozycję: jeden papierowy bohater i spokojny blok informacji; zastosuj krem, grafit, ceglasty akcent; typografia: ekspresyjny szeryf i prosty krój tekstowy. Materiały: autoryzowany papier, farba lub skan. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie sugeruj rzeczywistego rękodzieła przy syntetycznej fakturze. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-01.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-02",
+  "num": "02",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#02-cute-character",
+  "name": "Cute character",
+  "tagline": "oryginalna przyjazna postać o spójnych proporcjach.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "oryginalna przyjazna postać o spójnych proporcjach.",
+  "whenToUse": "edukacja i onboarding.",
+  "composition": "postać obok wyraźnego działania, nie zamiast niego.",
+  "colorText": "krem, granat i koral.",
+  "typographyText": "zaokrąglony nagłówek, czytelny sans.",
+  "materials": "autorska ilustracja, zestaw mimiki i wersja monochromatyczna.",
+  "avoid": "nie zastępuj ostrzeżeń maskotką ani nie kopiuj cudzych postaci.",
+  "palette": [
+   "#635335",
+   "#BE8F53",
+   "#B3AEB2",
+   "#E3C3A8",
+   "#728B9B",
+   "#F9DCB2"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Fredoka",
+   "sans": "Nunito Sans"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Cute character. Zbuduj kompozycję: postać obok wyraźnego działania, nie zamiast niego; zastosuj krem, granat i koral; typografia: zaokrąglony nagłówek, czytelny sans. Materiały: autorska ilustracja, zestaw mimiki i wersja monochromatyczna. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie zastępuj ostrzeżeń maskotką ani nie kopiuj cudzych postaci. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-02.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-03",
+  "num": "03",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#03-process-imperfection",
+  "name": "Process / imperfection",
+  "tagline": "prawdziwe decyzje i ślady pracy.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "prawdziwe decyzje i ślady pracy.",
+  "whenToUse": "portfolio i studia przypadku z udokumentowanym procesem.",
+  "composition": "wynik przed trzema chronologicznymi etapami.",
+  "colorText": "złamana biel, grafit, niebieskie adnotacje.",
+  "typographyText": "redakcyjny szeryf i czytelne podpisy.",
+  "materials": "zatwierdzone szkice, notatki i fotografie.",
+  "avoid": "nie fabrykuj etapów ani nie ujawniaj poufnych materiałów.",
+  "palette": [
+   "#2F494E",
+   "#EBD6B8",
+   "#F0BD6F",
+   "#9F7C74",
+   "#B2B8A6",
+   "#7D5052"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Newsreader",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Process / imperfection. Zbuduj kompozycję: wynik przed trzema chronologicznymi etapami; zastosuj złamana biel, grafit, niebieskie adnotacje; typografia: redakcyjny szeryf i czytelne podpisy. Materiały: zatwierdzone szkice, notatki i fotografie. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie fabrykuj etapów ani nie ujawniaj poufnych materiałów. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-03.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-04",
+  "num": "04",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#04-found-real-textures",
+  "name": "Found real textures",
+  "tagline": "istotny dla opowieści rzeczywisty materiał.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "istotny dla opowieści rzeczywisty materiał.",
+  "whenToUse": "produkt tekstylny, miejsce, marka lokalna.",
+  "composition": "duże pole faktury obok gładkiego panelu tekstu.",
+  "colorText": "barwy materiału, kamień i ciemna zieleń.",
+  "typographyText": "mocny prosty nagłówek i czytelny tekst.",
+  "materials": "własna lub licencjonowana fotografia tkaniny, kamienia albo drewna.",
+  "avoid": "nie kładź drobnego tekstu na chaotycznej fakturze.",
+  "palette": [
+   "#826B57",
+   "#372617",
+   "#92816E",
+   "#574331",
+   "#6F5036",
+   "#AC9B89"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Anton",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Found real textures. Zbuduj kompozycję: duże pole faktury obok gładkiego panelu tekstu; zastosuj barwy materiału, kamień i ciemna zieleń; typografia: mocny prosty nagłówek i czytelny tekst. Materiały: własna lub licencjonowana fotografia tkaniny, kamienia albo drewna. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie kładź drobnego tekstu na chaotycznej fakturze. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-04.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-05",
+  "num": "05",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#05-surrealism",
+  "name": "Surrealism",
+  "tagline": "jedna niemożliwa zmiana skali, grawitacji lub kontekstu.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "jedna niemożliwa zmiana skali, grawitacji lub kontekstu.",
+  "whenToUse": "kampania ideowa i ilustracja redakcyjna.",
+  "composition": "jeden bohater z konsekwentną perspektywą, osobne pole komunikatu.",
+  "colorText": "jasne tło, ciemny atrament, jeden ciepły akcent.",
+  "typographyText": "prosty mocny sans bez konkurencji z obrazem.",
+  "materials": "licencjonowany kolaż lub oznaczony render.",
+  "avoid": "nie przedstawiaj fikcyjnej sceny jako dowodu cech produktu.",
+  "palette": [
+   "#30312E",
+   "#7E7C81",
+   "#705A4D",
+   "#4D535C",
+   "#B29E95",
+   "#E2C8AF"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Anton",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Surrealism. Zbuduj kompozycję: jeden bohater z konsekwentną perspektywą, osobne pole komunikatu; zastosuj jasne tło, ciemny atrament, jeden ciepły akcent; typografia: prosty mocny sans bez konkurencji z obrazem. Materiały: licencjonowany kolaż lub oznaczony render. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie przedstawiaj fikcyjnej sceny jako dowodu cech produktu. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-05.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-06",
+  "num": "06",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#06-expressive-typography",
+  "name": "Expressive typography",
+  "tagline": "liternictwo jako główny obraz.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "liternictwo jako główny obraz.",
+  "whenToUse": "krótkie hasło, plakat i identyfikacja wydarzenia.",
+  "composition": "wielki nagłówek i spokojna siatka szczegółów.",
+  "colorText": "biel, czerń, jeden elektryczny akcent.",
+  "typographyText": "charakterystyczny krój nagłówka i neutralny tekstowy.",
+  "materials": "licencjonowane fonty, edytowalny tekst, ewentualnie prosty wektor.",
+  "avoid": "nie poświęcaj polskich znaków, łamania ani czytelności.",
+  "palette": [
+   "#022835",
+   "#FDDCA3",
+   "#FC9F41",
+   "#4D4E46",
+   "#F75D2C",
+   "#AEAD87"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Bricolage Grotesque",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Expressive typography. Zbuduj kompozycję: wielki nagłówek i spokojna siatka szczegółów; zastosuj biel, czerń, jeden elektryczny akcent; typografia: charakterystyczny krój nagłówka i neutralny tekstowy. Materiały: licencjonowane fonty, edytowalny tekst, ewentualnie prosty wektor. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie poświęcaj polskich znaków, łamania ani czytelności. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-06.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-07",
+  "num": "07",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#07-deliberately-naive",
+  "name": "Deliberately naive",
+  "tagline": "świadoma zabawa prostotą i pozorną niezręcznością.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "świadoma zabawa prostotą i pozorną niezręcznością.",
+  "whenToUse": "wydarzenie społeczne, humor, niezależna kultura.",
+  "composition": "nieregularne dekoracje wokół uporządkowanych informacji.",
+  "colorText": "papierowy krem, czerwony i niebieski.",
+  "typographyText": "prosty systemowy sans, jeden nietypowy nagłówek.",
+  "materials": "autorski clip art i nieskomplikowane kształty.",
+  "avoid": "nie myl niedbałej użyteczności z zamierzoną ekspresją.",
+  "palette": [
+   "#785F62",
+   "#82A5A3",
+   "#D0D07A",
+   "#379CB5",
+   "#90C682",
+   "#DBDE95"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Rubik Mono One",
+   "sans": "Work Sans"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Deliberately naive. Zbuduj kompozycję: nieregularne dekoracje wokół uporządkowanych informacji; zastosuj papierowy krem, czerwony i niebieski; typografia: prosty systemowy sans, jeden nietypowy nagłówek. Materiały: autorski clip art i nieskomplikowane kształty. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie myl niedbałej użyteczności z zamierzoną ekspresją. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-07.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-08",
+  "num": "08",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#08-dynamic-materials",
+  "name": "Dynamic materials",
+  "tagline": "warstwowe półprzezroczyste powierzchnie podkreślające hierarchię.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "warstwowe półprzezroczyste powierzchnie podkreślające hierarchię.",
+  "whenToUse": "nawigacja i interfejs z wyraźnymi warstwami.",
+  "composition": "nieprzezroczysta treść i jeden unoszący się panel.",
+  "colorText": "jasne neutralne powierzchnie, ciemny tekst, niebieska akcja.",
+  "typographyText": "stabilny interfejsowy sans.",
+  "materials": "szkło cyfrowe, kontrolowane rozmycie, pełne tło zastępcze.",
+  "avoid": "nie rozmywaj wszystkiego i nie umieszczaj tekstu na zmiennym tle bez testu.",
+  "palette": [
+   "#966B71",
+   "#413135",
+   "#AC868D",
+   "#E79B83",
+   "#F5C996",
+   "#B49FA3"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Inter",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Dynamic materials. Zbuduj kompozycję: nieprzezroczysta treść i jeden unoszący się panel; zastosuj jasne neutralne powierzchnie, ciemny tekst, niebieska akcja; typografia: stabilny interfejsowy sans. Materiały: szkło cyfrowe, kontrolowane rozmycie, pełne tło zastępcze. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie rozmywaj wszystkiego i nie umieszczaj tekstu na zmiennym tle bez testu. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-08.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1600,
+  "imageH": 900
+ },
+ {
+  "id": "DT27-09",
+  "num": "09",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#09-expressive-geometry",
+  "name": "Expressive geometry",
+  "tagline": "powtarzalny system dwóch lub trzech form.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "powtarzalny system dwóch lub trzech form.",
+  "whenToUse": "rozpoznawalna identyfikacja i system kampanii.",
+  "composition": "siatka i jedna dominująca figura, reszta pomocnicza.",
+  "colorText": "kość słoniowa, atrament, turkusowy akcent.",
+  "typographyText": "geometryczny display i neutralny sans.",
+  "materials": "oryginalne wektory i czytelne konwencjonalne kontrolki.",
+  "avoid": "nie udawaj interakcji dekoracją ani nie koduj stanów tylko kolorem.",
+  "palette": [
+   "#090A0B",
+   "#C22406",
+   "#D0A354",
+   "#EACF9B",
+   "#72573C",
+   "#551C13"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Syne",
+   "sans": "DM Sans"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Expressive geometry. Zbuduj kompozycję: siatka i jedna dominująca figura, reszta pomocnicza; zastosuj kość słoniowa, atrament, turkusowy akcent; typografia: geometryczny display i neutralny sans. Materiały: oryginalne wektory i czytelne konwencjonalne kontrolki. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie udawaj interakcji dekoracją ani nie koduj stanów tylko kolorem. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-09.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-10",
+  "num": "10",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#10-purposeful-motion",
+  "name": "Purposeful motion",
+  "tagline": "ruch wyjaśnia zmianę, orientację lub reakcję.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "ruch wyjaśnia zmianę, orientację lub reakcję.",
+  "whenToUse": "interfejsy i narracja cyfrowa z uzasadnioną animacją.",
+  "composition": "najpierw pełny statyczny układ, potem jeden ruch znaczący.",
+  "colorText": "neutralna powierzchnia, ciemny tekst, akcent działania.",
+  "typographyText": "stabilny czytelny sans.",
+  "materials": "lekkie warstwy wektorowe, opcjonalnie licencjonowane media.",
+  "avoid": "nie ukrywaj treści za animacją; obsłuż ograniczenie ruchu.",
+  "palette": [
+   "#2E1F12",
+   "#9F7265",
+   "#EDA963",
+   "#503C2F",
+   "#77492B",
+   "#BC8F79"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Inter",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Purposeful motion. Zbuduj kompozycję: najpierw pełny statyczny układ, potem jeden ruch znaczący; zastosuj neutralna powierzchnia, ciemny tekst, akcent działania; typografia: stabilny czytelny sans. Materiały: lekkie warstwy wektorowe, opcjonalnie licencjonowane media. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie ukrywaj treści za animacją; obsłuż ograniczenie ruchu. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-10.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-11",
+  "num": "11",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#11-playful-retro-computing",
+  "name": "Playful retro computing",
+  "tagline": "estetyka dawnych interfejsów jako współczesna zabawa.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "estetyka dawnych interfejsów jako współczesna zabawa.",
+  "whenToUse": "technologia, kultura, wydarzenia.",
+  "composition": "okna i piksele jako ramy, realne działania wyraźnie odróżnione.",
+  "colorText": "krem, błękit i pomarańcz.",
+  "typographyText": "czytelny monospace w detalach, prosty tekst.",
+  "materials": "oryginalne ikony i pikselowe ornamenty.",
+  "avoid": "nie kopiuj znaków ani nie zamieniaj ozdobnych okien w fałszywe kontrolki.",
+  "palette": [
+   "#02131F",
+   "#523F76",
+   "#0D2550",
+   "#C37D70",
+   "#885274",
+   "#2A294C"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Space Mono",
+   "sans": "IBM Plex Sans"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Playful retro computing. Zbuduj kompozycję: okna i piksele jako ramy, realne działania wyraźnie odróżnione; zastosuj krem, błękit i pomarańcz; typografia: czytelny monospace w detalach, prosty tekst. Materiały: oryginalne ikony i pikselowe ornamenty. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie kopiuj znaków ani nie zamieniaj ozdobnych okien w fałszywe kontrolki. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-11.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-12",
+  "num": "12",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#12-quiet-editorial",
+  "name": "Quiet editorial",
+  "tagline": "spokój, rytm i dużo oddechu.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "spokój, rytm i dużo oddechu.",
+  "whenToUse": "długie czytanie i opowieści premium.",
+  "composition": "asymetryczna siatka, duże marginesy, jeden obraz.",
+  "colorText": "ciepła biel, grafit, przygaszona zieleń.",
+  "typographyText": "elegancki szeryf i oszczędny sans.",
+  "materials": "papier, autorska fotografia lub prosty render.",
+  "avoid": "nie stosuj zbyt małego tekstu ani pustki bez hierarchii.",
+  "palette": [
+   "#DBCDBD",
+   "#B7AC9F",
+   "#585249",
+   "#E7D9CA",
+   "#CFBBA7",
+   "#F0E4D4"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Newsreader",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Quiet editorial. Zbuduj kompozycję: asymetryczna siatka, duże marginesy, jeden obraz; zastosuj ciepła biel, grafit, przygaszona zieleń; typografia: elegancki szeryf i oszczędny sans. Materiały: papier, autorska fotografia lub prosty render. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie stosuj zbyt małego tekstu ani pustki bez hierarchii. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-12.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-13",
+  "num": "13",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#13-ornamental-maximalism",
+  "name": "Ornamental maximalism",
+  "tagline": "bogactwo ornamentu podporządkowane jednemu motywowi.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "bogactwo ornamentu podporządkowane jednemu motywowi.",
+  "whenToUse": "kultura, hotelarstwo i ekspresyjny produkt.",
+  "composition": "gęsta rama i spokojne centrum z komunikatem.",
+  "colorText": "głęboka czerwień, krem, metaliczny akcent.",
+  "typographyText": "dekoracyjny display i prosty krój szczegółów.",
+  "materials": "koronka, relief, srebro lub ich jawna cyfrowa interpretacja.",
+  "avoid": "nie zasłaniaj treści ornamentem i nie mnoż motywów bez reguł.",
+  "palette": [
+   "#3D311C",
+   "#88422A",
+   "#B1734C",
+   "#B19478",
+   "#7B6C48",
+   "#D7C0AB"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Playfair Display",
+   "sans": "Archivo"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Ornamental maximalism. Zbuduj kompozycję: gęsta rama i spokojne centrum z komunikatem; zastosuj głęboka czerwień, krem, metaliczny akcent; typografia: dekoracyjny display i prosty krój szczegółów. Materiały: koronka, relief, srebro lub ich jawna cyfrowa interpretacja. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie zasłaniaj treści ornamentem i nie mnoż motywów bez reguł. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-13.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-14",
+  "num": "14",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#14-data-poetry",
+  "name": "Data poetry",
+  "tagline": "estetyczna forma oparta na uczciwym przedstawieniu informacji.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "estetyczna forma oparta na uczciwym przedstawieniu informacji.",
+  "whenToUse": "artykuły i raporty z weryfikowalnymi danymi.",
+  "composition": "jedna czytelna wizualizacja z legendą i kontekstem.",
+  "colorText": "ciemny granat, jasne oznaczenia, pojedynczy akcent.",
+  "typographyText": "czytelny sans dla wartości i źródeł.",
+  "materials": "rzeczywiste dane z datą i źródłem albo wyraźnie oznaczony wzór dekoracyjny.",
+  "avoid": "nie prezentuj fikcyjnych punktów jako pomiarów.",
+  "palette": [
+   "#060D17",
+   "#3B3F3A",
+   "#0C161F",
+   "#646856",
+   "#242021",
+   "#B2A274"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Inter",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Data poetry. Zbuduj kompozycję: jedna czytelna wizualizacja z legendą i kontekstem; zastosuj ciemny granat, jasne oznaczenia, pojedynczy akcent; typografia: czytelny sans dla wartości i źródeł. Materiały: rzeczywiste dane z datą i źródłem albo wyraźnie oznaczony wzór dekoracyjny. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie prezentuj fikcyjnych punktów jako pomiarów. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-14.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1600,
+  "imageH": 900
+ },
+ {
+  "id": "DT27-15",
+  "num": "15",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#15-biomorphic-sculpture",
+  "name": "Biomorphic sculpture",
+  "tagline": "miękkie organiczne kształty jako rzeźbiarski język.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "miękkie organiczne kształty jako rzeźbiarski język.",
+  "whenToUse": "identyfikacja inspirowana naturą i opowieść produktowa.",
+  "composition": "jeden organiczny obiekt na spokojnym tle.",
+  "colorText": "ziemia, kość słoniowa i zgaszona zieleń.",
+  "typographyText": "prosty sans kontrastujący z miękką formą.",
+  "materials": "glina, drewno, autorska rzeźba lub oznaczony render.",
+  "avoid": "nie przypisuj syntetycznemu obiektowi rzeczywistego pochodzenia.",
+  "palette": [
+   "#7A6145",
+   "#594226",
+   "#917453",
+   "#BAA185",
+   "#A58764",
+   "#E3CAAA"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Inter",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Biomorphic sculpture. Zbuduj kompozycję: jeden organiczny obiekt na spokojnym tle; zastosuj ziemia, kość słoniowa i zgaszona zieleń; typografia: prosty sans kontrastujący z miękką formą. Materiały: glina, drewno, autorska rzeźba lub oznaczony render. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie przypisuj syntetycznemu obiektowi rzeczywistego pochodzenia. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-15.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-16",
+  "num": "16",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#16-monochrome-architecture",
+  "name": "Monochrome architecture",
+  "tagline": "rytm konstrukcji i światłocień w ograniczonej palecie.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "rytm konstrukcji i światłocień w ograniczonej palecie.",
+  "whenToUse": "editorial, architektura, odważna typografia.",
+  "composition": "mocna siatka i jeden strukturalny motyw.",
+  "colorText": "czerń, biel oraz szarości.",
+  "typographyText": "wyrazisty grotesk i prosty tekst pomocniczy.",
+  "materials": "licencjonowana fotografia architektury lub abstrakcyjny render.",
+  "avoid": "nie opieraj znaczenia wyłącznie na kolorze i nie przypisuj Bauhausowi monochromii.",
+  "palette": [
+   "#9C8F7E",
+   "#7D7365",
+   "#A89B89",
+   "#F3EADA",
+   "#D9CFC1",
+   "#BCB09E"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Anton",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Monochrome architecture. Zbuduj kompozycję: mocna siatka i jeden strukturalny motyw; zastosuj czerń, biel oraz szarości; typografia: wyrazisty grotesk i prosty tekst pomocniczy. Materiały: licencjonowana fotografia architektury lub abstrakcyjny render. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie opieraj znaczenia wyłącznie na kolorze i nie przypisuj Bauhausowi monochromii. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-16.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-17",
+  "num": "17",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#17-neo-brutalism",
+  "name": "Neo-Brutalism",
+  "tagline": "surowe bloki, grube obrysy i wyraziste cienie.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "surowe bloki, grube obrysy i wyraziste cienie.",
+  "whenToUse": "odważne kampanie, strony i produkty o nieformalnym tonie.",
+  "composition": "modułowa siatka, wyraźne obramowania, czytelne CTA.",
+  "colorText": "dwa lub trzy intensywne kolory oraz czarny tekst.",
+  "typographyText": "ciężki grotesk w nagłówku, neutralny sans w tekście.",
+  "materials": "płaskie wektory, ostre krawędzie, przesunięte twarde cienie.",
+  "avoid": "nie zakładaj dostępności bez pomiaru kontrastu i testu sterowania.",
+  "palette": [
+   "#291E33",
+   "#FEFEFE",
+   "#FDF331",
+   "#F33B9F",
+   "#001666",
+   "#C2B943"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Archivo Black",
+   "sans": "Space Grotesk"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Neo-Brutalism. Zbuduj kompozycję: modułowa siatka, wyraźne obramowania, czytelne CTA; zastosuj dwa lub trzy intensywne kolory oraz czarny tekst; typografia: ciężki grotesk w nagłówku, neutralny sans w tekście. Materiały: płaskie wektory, ostre krawędzie, przesunięte twarde cienie. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie zakładaj dostępności bez pomiaru kontrastu i testu sterowania. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-17.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-18",
+  "num": "18",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#18-risograph-layers",
+  "name": "Risograph Layers",
+  "tagline": "warstwy farb, raster i subtelne przesunięcie pasowania.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "warstwy farb, raster i subtelne przesunięcie pasowania.",
+  "whenToUse": "plakaty, zin i identyfikacja kulturalna.",
+  "composition": "dwie lub trzy warstwy z centralnym motywem i spokojnym blokiem tekstu.",
+  "colorText": "ograniczona paleta farb punktowych, np. niebieski i róż.",
+  "typographyText": "masywny nagłówek, mały tekst w jednej ciemnej farbie.",
+  "materials": "papier, półprzezroczyste nadruki, rastry; przy druku osobna separacja na farbę.",
+  "avoid": "nie nakładaj kilku farb na drobny tekst; uzgodnij specyfikację z drukarnią.",
+  "palette": [
+   "#245070",
+   "#F0D8AA",
+   "#F3B673",
+   "#B2B5A5",
+   "#A78288",
+   "#945468"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Archivo Black",
+   "sans": "Space Grotesk"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Risograph Layers. Zbuduj kompozycję: dwie lub trzy warstwy z centralnym motywem i spokojnym blokiem tekstu; zastosuj ograniczona paleta farb punktowych, np. niebieski i róż; typografia: masywny nagłówek, mały tekst w jednej ciemnej farbie. Materiały: papier, półprzezroczyste nadruki, rastry; przy druku osobna separacja na farbę. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie nakładaj kilku farb na drobny tekst; uzgodnij specyfikację z drukarnią. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-18.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-19",
+  "num": "19",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#19-cinematic-light-shadow",
+  "name": "Cinematic Light & Shadow",
+  "tagline": "kierunkowe światło i kontrolowany cień budują dramaturgię.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "kierunkowe światło i kontrolowany cień budują dramaturgię.",
+  "whenToUse": "kampania premium, portret, prezentacja produktu.",
+  "composition": "jeden punkt skupienia, światło boczne i czytelna przestrzeń na tekst.",
+  "colorText": "głębokie neutralne cienie i jeden ciepły lub chłodny akcent.",
+  "typographyText": "oszczędny wyrazisty nagłówek, spokojny tekst.",
+  "materials": "fotografia lub render, światło kluczowe i kontrolowane wypełnienie.",
+  "avoid": "nie gub detali produktu w czerni i nie twierdź, że render jest zdjęciem.",
+  "palette": [
+   "#0C0603",
+   "#1F1208",
+   "#311F0F",
+   "#E7C48C",
+   "#9B7753",
+   "#55391F"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Unbounded",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Cinematic Light & Shadow. Zbuduj kompozycję: jeden punkt skupienia, światło boczne i czytelna przestrzeń na tekst; zastosuj głębokie neutralne cienie i jeden ciepły lub chłodny akcent; typografia: oszczędny wyrazisty nagłówek, spokojny tekst. Materiały: fotografia lub render, światło kluczowe i kontrolowane wypełnienie. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie gub detali produktu w czerni i nie twierdź, że render jest zdjęciem. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-19.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-20",
+  "num": "20",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#20-soft-3d-clay",
+  "name": "Soft 3D / Clay",
+  "tagline": "zaokrąglone bryły o miękkim, matowym wykończeniu.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "zaokrąglone bryły o miękkim, matowym wykończeniu.",
+  "whenToUse": "przyjazne ilustracje, onboarding i opakowania.",
+  "composition": "jeden duży obiekt, kilka prostych elementów i wolna przestrzeń.",
+  "colorText": "stonowane pastele i ciemny kolor tekstu.",
+  "typographyText": "przyjazny display oraz czytelny sans.",
+  "materials": "glina lub render glinopodobny, rozproszone światło i miękkie cienie.",
+  "avoid": "nie myl syntetycznej faktury z prawdziwą gliną i nie używaj niskiego kontrastu.",
+  "palette": [
+   "#44361C",
+   "#725134",
+   "#986B4F",
+   "#F8B475",
+   "#D8926F",
+   "#70371A"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Fredoka",
+   "sans": "Nunito Sans"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Jesteś agentem projektowym. Przygotuj [FORMAT] dla [MARKA] do [CEL] dla [ODBIORCY] w stylu Soft 3D / Clay. Zbuduj kompozycję: jeden duży obiekt, kilka prostych elementów i wolna przestrzeń; zastosuj stonowane pastele i ciemny kolor tekstu; typografia: przyjazny display oraz czytelny sans. Materiały: glina lub render glinopodobny, rozproszone światło i miękkie cienie. Umieść [TREŚĆ] i [CTA] w czytelnej hierarchii, zachowaj zasady marki oraz wymagane wymiary. Używaj wyłącznie autoryzowanych zasobów, oznacz syntetyczne materiały, sprawdź kontrast, polskie znaki i czytelność w docelowym rozmiarze. Unikaj: nie myl syntetycznej faktury z prawdziwą gliną i nie używaj niskiego kontrastu. Dostarcz edytowalny projekt i eksport oraz wypisz rzeczywiście wykonane kontrole i ograniczenia.",
+  "image": "assets/styles/style-20.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-21",
+  "num": "21",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#21-botanical-x-ray",
+  "name": "Botanical X-ray",
+  "tagline": "półprzezroczysty motyw roślinny z widocznym unerwieniem.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "półprzezroczysty motyw roślinny z widocznym unerwieniem.",
+  "whenToUse": "redakcja naukowa i koncepty beauty.",
+  "composition": "jeden obiekt na ciemnym pustym tle.",
+  "colorText": "granat i chłodna biel.",
+  "typographyText": "precyzyjny prosty sans.",
+  "materials": "syntetyczna radiografia lub autoryzowany rzeczywisty skan.",
+  "avoid": "nie przedstawiaj ilustracji jako badania ani dowodu medycznego. Prześwietlenie tworzy wrażenie wewnętrznej struktury; nie jest zapisem naukowym.",
+  "palette": [
+   "#000C1A",
+   "#678EAD",
+   "#152E43",
+   "#000914",
+   "#000B17",
+   "#010C19"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Inter Tight",
+   "sans": "IBM Plex Mono"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Zaprojektuj [FORMAT] dla [MARKA], aby osiągnąć [CEL] wśród [ODBIORCY]. Wykorzystaj kierunek Botanical X-ray: półprzezroczysty motyw roślinny z widocznym unerwieniem; zastosuj kompozycję: jeden obiekt na ciemnym pustym tle, paletę: granat i chłodna biel oraz typografię: precyzyjny prosty sans. Uwzględnij [TREŚĆ] i [CTA], zachowując czytelny obszar informacji. Materiały: syntetyczna radiografia lub autoryzowany rzeczywisty skan; nie przedstawiaj ilustracji jako badania ani dowodu medycznego. Przygotuj rzeczywisty rezultat w wymaganym formacie, sprawdź prawa, polskie znaki, czytelność i kontrast w docelowym rozmiarze oraz oznacz elementy syntetyczne. Jeśli potrzebny jest ruch, zapewnij wersję statyczną. W raporcie odróżnij testy wykonane od niewykonanych.",
+  "image": "assets/styles/style-21.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-22",
+  "num": "22",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#22-topographic-paper-relief",
+  "name": "Topographic Paper Relief",
+  "tagline": "warstwowe wycinane kontury o przestrzennych krawędziach.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "warstwowe wycinane kontury o przestrzennych krawędziach.",
+  "whenToUse": "opakowania outdoor i okładki.",
+  "composition": "warstwice jako centralny relief i spokojny margines.",
+  "colorText": "indygo i pomarańcz.",
+  "typographyText": "mocny sans i proste podpisy.",
+  "materials": "papierowy model lub oznaczony render.",
+  "avoid": "nie przedstawiaj dekoracyjnych warstwic jako mapy terenu. Rytm warstw i cienie budują topografię, nie rzeczywiste dane.",
+  "palette": [
+   "#18283C",
+   "#7D2916",
+   "#D95D29",
+   "#C04B20",
+   "#4B4555",
+   "#E0793A"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Anton",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Zaprojektuj [FORMAT] dla [MARKA], aby osiągnąć [CEL] wśród [ODBIORCY]. Wykorzystaj kierunek Topographic Paper Relief: warstwowe wycinane kontury o przestrzennych krawędziach; zastosuj kompozycję: warstwice jako centralny relief i spokojny margines, paletę: indygo i pomarańcz oraz typografię: mocny sans i proste podpisy. Uwzględnij [TREŚĆ] i [CTA], zachowując czytelny obszar informacji. Materiały: papierowy model lub oznaczony render; nie przedstawiaj dekoracyjnych warstwic jako mapy terenu. Przygotuj rzeczywisty rezultat w wymaganym formacie, sprawdź prawa, polskie znaki, czytelność i kontrast w docelowym rozmiarze oraz oznacz elementy syntetyczne. Jeśli potrzebny jest ruch, zapewnij wersję statyczną. W raporcie odróżnij testy wykonane od niewykonanych.",
+  "image": "assets/styles/style-22.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-23",
+  "num": "23",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#23-cyanotype-specimens",
+  "name": "Cyanotype Specimens",
+  "tagline": "białe sylwetki roślin na błękicie pruskim.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "białe sylwetki roślin na błękicie pruskim.",
+  "whenToUse": "wydawnictwa botaniczne i opakowania.",
+  "composition": "jedna sylweta na równym polu z miejscem na tekst.",
+  "colorText": "błękit pruski i złamana biel.",
+  "typographyText": "oszczędny szeryf i czytelny sans.",
+  "materials": "rzeczywista cyjanotypia lub jawna symulacja.",
+  "avoid": "nie nazywaj symulacji ręcznie wykonanym odbitkiem. Od 21 różni się nieprzezroczystym fotogramem na papierze zamiast rentgenowskiej przezroczystości.",
+  "palette": [
+   "#0C3960",
+   "#042D54",
+   "#07345C",
+   "#315778",
+   "#CDCECC",
+   "#8C9DAA"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Newsreader",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Zaprojektuj [FORMAT] dla [MARKA], aby osiągnąć [CEL] wśród [ODBIORCY]. Wykorzystaj kierunek Cyanotype Specimens: białe sylwetki roślin na błękicie pruskim; zastosuj kompozycję: jedna sylweta na równym polu z miejscem na tekst, paletę: błękit pruski i złamana biel oraz typografię: oszczędny szeryf i czytelny sans. Uwzględnij [TREŚĆ] i [CTA], zachowując czytelny obszar informacji. Materiały: rzeczywista cyjanotypia lub jawna symulacja; nie nazywaj symulacji ręcznie wykonanym odbitkiem. Przygotuj rzeczywisty rezultat w wymaganym formacie, sprawdź prawa, polskie znaki, czytelność i kontrast w docelowym rozmiarze oraz oznacz elementy syntetyczne. Jeśli potrzebny jest ruch, zapewnij wersję statyczną. W raporcie odróżnij testy wykonane od niewykonanych.",
+  "image": "assets/styles/style-23.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-24",
+  "num": "24",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#24-jacquard-optics",
+  "name": "Jacquard Optics",
+  "tagline": "geometryczny wzór z czytelnym przeplotem osnowy i wątku.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "geometryczny wzór z czytelnym przeplotem osnowy i wątku.",
+  "whenToUse": "moda i wnętrza.",
+  "composition": "duży wzór i wydzielona strefa informacji.",
+  "colorText": "kobalt i limonka.",
+  "typographyText": "zwarty sans w kontrze do tekstury.",
+  "materials": "oryginalna tkanina żakardowa lub syntetyczna symulacja.",
+  "avoid": "nie obiecuj faktury fizycznej ani nie gub tekstu w splocie. Wzór powstaje z przeplotu włókien, a nie dekoracyjnego rysunku.",
+  "palette": [
+   "#92B92D",
+   "#0B2886",
+   "#173D92",
+   "#6E943C",
+   "#2F557A",
+   "#A7CC34"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Barlow Condensed",
+   "sans": "Barlow"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Zaprojektuj [FORMAT] dla [MARKA], aby osiągnąć [CEL] wśród [ODBIORCY]. Wykorzystaj kierunek Jacquard Optics: geometryczny wzór z czytelnym przeplotem osnowy i wątku; zastosuj kompozycję: duży wzór i wydzielona strefa informacji, paletę: kobalt i limonka oraz typografię: zwarty sans w kontrze do tekstury. Uwzględnij [TREŚĆ] i [CTA], zachowując czytelny obszar informacji. Materiały: oryginalna tkanina żakardowa lub syntetyczna symulacja; nie obiecuj faktury fizycznej ani nie gub tekstu w splocie. Przygotuj rzeczywisty rezultat w wymaganym formacie, sprawdź prawa, polskie znaki, czytelność i kontrast w docelowym rozmiarze oraz oznacz elementy syntetyczne. Jeśli potrzebny jest ruch, zapewnij wersję statyczną. W raporcie odróżnij testy wykonane od niewykonanych.",
+  "image": "assets/styles/style-24.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-25",
+  "num": "25",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#25-prismatic-foil-emboss",
+  "name": "Prismatic Foil Emboss",
+  "tagline": "wytłoczona folia z kierunkowym spektralnym połyskiem.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "wytłoczona folia z kierunkowym spektralnym połyskiem.",
+  "whenToUse": "limitowane edycje i opakowania.",
+  "composition": "jeden akcent foliowy na matowym polu.",
+  "colorText": "czarny i widmowe refleksy.",
+  "typographyText": "stonowany krój premium i czytelne dane.",
+  "materials": "próbka folii lub jawny render materiału.",
+  "avoid": "nie gwarantuj identycznego efektu w druku bez próby. W przeciwieństwie do 08 nacisk pada na nieprzezroczystą metaliczną folię.",
+  "palette": [
+   "#101010",
+   "#352E30",
+   "#171717",
+   "#221C1D",
+   "#594F48",
+   "#918964"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Cormorant Garamond",
+   "sans": "Manrope"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Zaprojektuj [FORMAT] dla [MARKA], aby osiągnąć [CEL] wśród [ODBIORCY]. Wykorzystaj kierunek Prismatic Foil Emboss: wytłoczona folia z kierunkowym spektralnym połyskiem; zastosuj kompozycję: jeden akcent foliowy na matowym polu, paletę: czarny i widmowe refleksy oraz typografię: stonowany krój premium i czytelne dane. Uwzględnij [TREŚĆ] i [CTA], zachowując czytelny obszar informacji. Materiały: próbka folii lub jawny render materiału; nie gwarantuj identycznego efektu w druku bez próby. Przygotuj rzeczywisty rezultat w wymaganym formacie, sprawdź prawa, polskie znaki, czytelność i kontrast w docelowym rozmiarze oraz oznacz elementy syntetyczne. Jeśli potrzebny jest ruch, zapewnij wersję statyczną. W raporcie odróżnij testy wykonane od niewykonanych.",
+  "image": "assets/styles/style-25.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-26",
+  "num": "26",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#26-exploded-blueprint",
+  "name": "Exploded Blueprint",
+  "tagline": "rozstrzelony schemat części z liniami konstrukcyjnymi.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "rozstrzelony schemat części z liniami konstrukcyjnymi.",
+  "whenToUse": "produkty techniczne i instrukcje koncepcyjne.",
+  "composition": "części wzdłuż osi i oddzielna legenda.",
+  "colorText": "kobalt i biel.",
+  "typographyText": "techniczny sans z czytelnymi podpisami.",
+  "materials": "zweryfikowany rysunek techniczny lub oznaczony koncept.",
+  "avoid": "nie używaj fikcyjnych części jako instrukcji serwisowej. Rysunek wyjaśnia relacje części, nie stanowi dekoracyjnej wizualizacji danych 14.",
+  "palette": [
+   "#004597",
+   "#054796",
+   "#3868A2",
+   "#18539A",
+   "#004394",
+   "#5D82B0"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Space Grotesk",
+   "sans": "IBM Plex Mono"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Zaprojektuj [FORMAT] dla [MARKA], aby osiągnąć [CEL] wśród [ODBIORCY]. Wykorzystaj kierunek Exploded Blueprint: rozstrzelony schemat części z liniami konstrukcyjnymi; zastosuj kompozycję: części wzdłuż osi i oddzielna legenda, paletę: kobalt i biel oraz typografię: techniczny sans z czytelnymi podpisami. Uwzględnij [TREŚĆ] i [CTA], zachowując czytelny obszar informacji. Materiały: zweryfikowany rysunek techniczny lub oznaczony koncept; nie używaj fikcyjnych części jako instrukcji serwisowej. Przygotuj rzeczywisty rezultat w wymaganym formacie, sprawdź prawa, polskie znaki, czytelność i kontrast w docelowym rozmiarze oraz oznacz elementy syntetyczne. Jeśli potrzebny jest ruch, zapewnij wersję statyczną. W raporcie odróżnij testy wykonane od niewykonanych.",
+  "image": "assets/styles/style-26.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-27",
+  "num": "27",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#27-false-colour-infrared",
+  "name": "False-Colour Infrared",
+  "tagline": "fałszywe kolory roślinności i tonalna fotografia krajobrazu.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "fałszywe kolory roślinności i tonalna fotografia krajobrazu.",
+  "whenToUse": "editorial i okładki muzyczne.",
+  "composition": "jeden spokojny krajobraz z wyraźnym horyzontem.",
+  "colorText": "róż roślinności i ciemny turkus.",
+  "typographyText": "neutralny sans bez efektów.",
+  "materials": "licencjonowane zdjęcie IR lub syntetyczna interpretacja.",
+  "avoid": "nie opisuj obrazu jako pomiaru temperatury. Obraz interpretuje podczerwień, nie jest rzeczywistym pomiarem.",
+  "palette": [
+   "#13424F",
+   "#172B32",
+   "#67626A",
+   "#927C81",
+   "#56474C",
+   "#BB9D9E"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Inter",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Zaprojektuj [FORMAT] dla [MARKA], aby osiągnąć [CEL] wśród [ODBIORCY]. Wykorzystaj kierunek False-Colour Infrared: fałszywe kolory roślinności i tonalna fotografia krajobrazu; zastosuj kompozycję: jeden spokojny krajobraz z wyraźnym horyzontem, paletę: róż roślinności i ciemny turkus oraz typografię: neutralny sans bez efektów. Uwzględnij [TREŚĆ] i [CTA], zachowując czytelny obszar informacji. Materiały: licencjonowane zdjęcie IR lub syntetyczna interpretacja; nie opisuj obrazu jako pomiaru temperatury. Przygotuj rzeczywisty rezultat w wymaganym formacie, sprawdź prawa, polskie znaki, czytelność i kontrast w docelowym rozmiarze oraz oznacz elementy syntetyczne. Jeśli potrzebny jest ruch, zapewnij wersję statyczną. W raporcie odróżnij testy wykonane od niewykonanych.",
+  "image": "assets/styles/style-27.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-28",
+  "num": "28",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#28-modern-stained-glass",
+  "name": "Modern Stained Glass",
+  "tagline": "kolorowe płaszczyzny szkła oddzielone ciemnymi szprosami.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "kolorowe płaszczyzny szkła oddzielone ciemnymi szprosami.",
+  "whenToUse": "plakaty kulturalne i grafiki przestrzeni.",
+  "composition": "kilka dużych pól z wyraźnym rytmem łączeń.",
+  "colorText": "rubin i ultramaryna.",
+  "typographyText": "prosty krój kontrastujący z geometrią.",
+  "materials": "autorskie szkło lub oznaczona cyfrowa interpretacja.",
+  "avoid": "nie kopiuj rozpoznawalnego zabytkowego wzoru. Od 08 różni się segmentacją nieprzezroczystymi łączeniami i światłem od tyłu.",
+  "palette": [
+   "#A90202",
+   "#001DA8",
+   "#170748",
+   "#AE9341",
+   "#251E47",
+   "#294E7E"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Inter",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Zaprojektuj [FORMAT] dla [MARKA], aby osiągnąć [CEL] wśród [ODBIORCY]. Wykorzystaj kierunek Modern Stained Glass: kolorowe płaszczyzny szkła oddzielone ciemnymi szprosami; zastosuj kompozycję: kilka dużych pól z wyraźnym rytmem łączeń, paletę: rubin i ultramaryna oraz typografię: prosty krój kontrastujący z geometrią. Uwzględnij [TREŚĆ] i [CTA], zachowując czytelny obszar informacji. Materiały: autorskie szkło lub oznaczona cyfrowa interpretacja; nie kopiuj rozpoznawalnego zabytkowego wzoru. Przygotuj rzeczywisty rezultat w wymaganym formacie, sprawdź prawa, polskie znaki, czytelność i kontrast w docelowym rozmiarze oraz oznacz elementy syntetyczne. Jeśli potrzebny jest ruch, zapewnij wersję statyczną. W raporcie odróżnij testy wykonane od niewykonanych.",
+  "image": "assets/styles/style-28.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-29",
+  "num": "29",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#29-pixel-sorted-portrait",
+  "name": "Pixel-Sorted Portrait",
+  "tagline": "portret z kontrolowanym cyfrowym rozciągnięciem pikseli.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "portret z kontrolowanym cyfrowym rozciągnięciem pikseli.",
+  "whenToUse": "muzyka i kampanie artystyczne.",
+  "composition": "rozpoznawalna twarz z efektem w wybranej strefie.",
+  "colorText": "czerń oraz kontrolowane rozdzielenie RGB.",
+  "typographyText": "czytelna typografia poza deformacją.",
+  "materials": "autoryzowany portret lub fikcyjny syntetyczny model.",
+  "avoid": "nie deformuj informacji ani twarzy osoby bez zgody. Efekt dotyczy cyfrowego rozpadu obrazu, a nie nostalgicznego interfejsu 11.",
+  "palette": [
+   "#000000",
+   "#553F3C",
+   "#1D0D0F",
+   "#958179",
+   "#000001",
+   "#0C0001"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Inter",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Zaprojektuj [FORMAT] dla [MARKA], aby osiągnąć [CEL] wśród [ODBIORCY]. Wykorzystaj kierunek Pixel-Sorted Portrait: portret z kontrolowanym cyfrowym rozciągnięciem pikseli; zastosuj kompozycję: rozpoznawalna twarz z efektem w wybranej strefie, paletę: czerń oraz kontrolowane rozdzielenie RGB oraz typografię: czytelna typografia poza deformacją. Uwzględnij [TREŚĆ] i [CTA], zachowując czytelny obszar informacji. Materiały: autoryzowany portret lub fikcyjny syntetyczny model; nie deformuj informacji ani twarzy osoby bez zgody. Przygotuj rzeczywisty rezultat w wymaganym formacie, sprawdź prawa, polskie znaki, czytelność i kontrast w docelowym rozmiarze oraz oznacz elementy syntetyczne. Jeśli potrzebny jest ruch, zapewnij wersję statyczną. W raporcie odróżnij testy wykonane od niewykonanych.",
+  "image": "assets/styles/style-29.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ },
+ {
+  "id": "DT27-30",
+  "num": "30",
+  "source": "design-trends-2027",
+  "sourceUrl": "https://github.com/aievolutionpl/design-trends-2027#30-solarized-duotone",
+  "name": "Solarized Duotone",
+  "tagline": "fotograficzna solaryzacja i tonalne odwrócenie krawędzi.",
+  "aliases": [],
+  "category": "Trend wizualny 2027",
+  "description": "fotograficzna solaryzacja i tonalne odwrócenie krawędzi.",
+  "whenToUse": "okładki i beauty editorial.",
+  "composition": "jeden przedmiot z kontrastową obwódką.",
+  "colorText": "kwasowy żółty i fiolet.",
+  "typographyText": "spokojny sans, informacja poza obrazem.",
+  "materials": "oryginalna fotografia lub wyraźnie oznaczony render.",
+  "avoid": "nie przedstawiaj kolorów produktu jako wiernych. To transformacja tonalna fotografii, a nie raster i separacje riso 18.",
+  "palette": [
+   "#FBF902",
+   "#503383",
+   "#B8A66F",
+   "#937E78",
+   "#E0D54F",
+   "#F6F221"
+  ],
+  "paletteSource": "sampled",
+  "fonts": {
+   "display": "Inter",
+   "sans": "Inter"
+  },
+  "fontsSource": "suggested",
+  "prompt": "Zaprojektuj [FORMAT] dla [MARKA], aby osiągnąć [CEL] wśród [ODBIORCY]. Wykorzystaj kierunek Solarized Duotone: fotograficzna solaryzacja i tonalne odwrócenie krawędzi; zastosuj kompozycję: jeden przedmiot z kontrastową obwódką, paletę: kwasowy żółty i fiolet oraz typografię: spokojny sans, informacja poza obrazem. Uwzględnij [TREŚĆ] i [CTA], zachowując czytelny obszar informacji. Materiały: oryginalna fotografia lub wyraźnie oznaczony render; nie przedstawiaj kolorów produktu jako wiernych. Przygotuj rzeczywisty rezultat w wymaganym formacie, sprawdź prawa, polskie znaki, czytelność i kontrast w docelowym rozmiarze oraz oznacz elementy syntetyczne. Jeśli potrzebny jest ruch, zapewnij wersję statyczną. W raporcie odróżnij testy wykonane od niewykonanych.",
+  "image": "assets/styles/style-30.webp",
+  "imageNote": "Wizualizacja AI z repo design-trends-2027 (syntetyczna interpretacja)",
+  "imageW": 1536,
+  "imageH": 1024
+ }
+]

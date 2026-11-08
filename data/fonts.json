@@ -1,0 +1,317 @@
+[
+ {
+  "name": "Inter",
+  "category": "sans",
+  "use": "Interfejsy, dashboardy, długie listy — neutralny i bardzo czytelny w małych rozmiarach.",
+  "pairing": "Z Fraunces lub Newsreader w nagłówkach.",
+  "url": "https://fonts.google.com/specimen/Inter"
+ },
+ {
+  "name": "Inter Tight",
+  "category": "sans",
+  "use": "Ciasne nagłówki w duchu szwajcarskim, logotypy tekstowe.",
+  "pairing": "Inter w tekście ciągłym.",
+  "url": "https://fonts.google.com/specimen/Inter+Tight"
+ },
+ {
+  "name": "Manrope",
+  "category": "sans",
+  "use": "Nowoczesne produkty SaaS, landingi tech.",
+  "pairing": "Z JetBrains Mono do etykiet.",
+  "url": "https://fonts.google.com/specimen/Manrope"
+ },
+ {
+  "name": "Plus Jakarta Sans",
+  "category": "sans",
+  "use": "Przyjazne startupy, aplikacje konsumenckie.",
+  "pairing": "Inter w treści, Jakarta w H1–H2.",
+  "url": "https://fonts.google.com/specimen/Plus+Jakarta+Sans"
+ },
+ {
+  "name": "DM Sans",
+  "category": "sans",
+  "use": "Geometryczny, ciepły — marki lifestyle i e-commerce.",
+  "pairing": "Z DM Serif Display.",
+  "url": "https://fonts.google.com/specimen/DM+Sans"
+ },
+ {
+  "name": "Figtree",
+  "category": "sans",
+  "use": "Miękki i przyjazny UI, onboarding.",
+  "pairing": "Z Young Serif w nagłówkach.",
+  "url": "https://fonts.google.com/specimen/Figtree"
+ },
+ {
+  "name": "Work Sans",
+  "category": "sans",
+  "use": "Uniwersalny krój do stron firmowych.",
+  "pairing": "Z Playfair Display.",
+  "url": "https://fonts.google.com/specimen/Work+Sans"
+ },
+ {
+  "name": "IBM Plex Sans",
+  "category": "sans",
+  "use": "Produkty techniczne, dokumentacja.",
+  "pairing": "Z IBM Plex Mono — jedna rodzina.",
+  "url": "https://fonts.google.com/specimen/IBM+Plex+Sans"
+ },
+ {
+  "name": "Nunito Sans",
+  "category": "sans",
+  "use": "Miękkie, zaokrąglone interfejsy, edukacja.",
+  "pairing": "Z Baloo 2 lub Fredoka.",
+  "url": "https://fonts.google.com/specimen/Nunito+Sans"
+ },
+ {
+  "name": "Karla",
+  "category": "sans",
+  "use": "Grotesk o lekko nieregularnym rysunku — marki autorskie.",
+  "pairing": "Z Fraunces.",
+  "url": "https://fonts.google.com/specimen/Karla"
+ },
+ {
+  "name": "Barlow",
+  "category": "sans",
+  "use": "Przemysłowy, techniczny charakter, sport.",
+  "pairing": "Barlow Condensed w nagłówkach.",
+  "url": "https://fonts.google.com/specimen/Barlow"
+ },
+ {
+  "name": "Archivo",
+  "category": "sans",
+  "use": "Grotesk do nagłówków i tekstu, substytut Helvetiki.",
+  "pairing": "Z Archivo Black.",
+  "url": "https://fonts.google.com/specimen/Archivo"
+ },
+ {
+  "name": "Space Grotesk",
+  "category": "sans",
+  "use": "Tech, Web3, neo-brutalizm.",
+  "pairing": "Z Space Mono do etykiet.",
+  "url": "https://fonts.google.com/specimen/Space+Grotesk"
+ },
+ {
+  "name": "Instrument Sans",
+  "category": "sans",
+  "use": "Minimalistyczne marki i portfolio.",
+  "pairing": "Z Instrument Serif.",
+  "url": "https://fonts.google.com/specimen/Instrument+Sans"
+ },
+ {
+  "name": "Bricolage Grotesque",
+  "category": "display",
+  "use": "Ekspresyjne nagłówki z charakterem (oś szerokości).",
+  "pairing": "Inter w treści.",
+  "url": "https://fonts.google.com/specimen/Bricolage+Grotesque"
+ },
+ {
+  "name": "Syne",
+  "category": "display",
+  "use": "Awangardowe marki kreatywne, galerie.",
+  "pairing": "Z DM Sans.",
+  "url": "https://fonts.google.com/specimen/Syne"
+ },
+ {
+  "name": "Unbounded",
+  "category": "display",
+  "use": "Szerokie, futurystyczne nagłówki.",
+  "pairing": "Z Inter lub Manrope.",
+  "url": "https://fonts.google.com/specimen/Unbounded"
+ },
+ {
+  "name": "Archivo Black",
+  "category": "display",
+  "use": "Krzykliwe nagłówki, plakaty, neo-brutalizm.",
+  "pairing": "Z Space Grotesk.",
+  "url": "https://fonts.google.com/specimen/Archivo+Black"
+ },
+ {
+  "name": "Anton",
+  "category": "display",
+  "use": "Wąskie, wysokie hasła na plakatach i miniaturach.",
+  "pairing": "Z Inter w treści.",
+  "url": "https://fonts.google.com/specimen/Anton"
+ },
+ {
+  "name": "Bebas Neue",
+  "category": "display",
+  "use": "Kondensowane nagłówki, sport, eventy.",
+  "pairing": "Z Montserrat lub Inter.",
+  "url": "https://fonts.google.com/specimen/Bebas+Neue"
+ },
+ {
+  "name": "Barlow Condensed",
+  "category": "display",
+  "use": "Wąskie nagłówki w systemach informacyjnych.",
+  "pairing": "Z Barlow.",
+  "url": "https://fonts.google.com/specimen/Barlow+Condensed"
+ },
+ {
+  "name": "Fredoka",
+  "category": "display",
+  "use": "Zaokrąglone, dziecięce i przyjazne marki.",
+  "pairing": "Z Nunito Sans.",
+  "url": "https://fonts.google.com/specimen/Fredoka"
+ },
+ {
+  "name": "Baloo 2",
+  "category": "display",
+  "use": "Claymorphism, gry, edukacja dla dzieci.",
+  "pairing": "Z Nunito Sans.",
+  "url": "https://fonts.google.com/specimen/Baloo+2"
+ },
+ {
+  "name": "Rubik Mono One",
+  "category": "display",
+  "use": "Mocne, retro-cyfrowe nagłówki.",
+  "pairing": "Z Work Sans.",
+  "url": "https://fonts.google.com/specimen/Rubik+Mono+One"
+ },
+ {
+  "name": "Fraunces",
+  "category": "serif",
+  "use": "Ekspresyjny szeryf redakcyjny (osie SOFT/WONK).",
+  "pairing": "Z Inter lub Karla.",
+  "url": "https://fonts.google.com/specimen/Fraunces"
+ },
+ {
+  "name": "Playfair Display",
+  "category": "serif",
+  "use": "Luksus, moda, magazyny.",
+  "pairing": "Z Work Sans lub Archivo.",
+  "url": "https://fonts.google.com/specimen/Playfair+Display"
+ },
+ {
+  "name": "Newsreader",
+  "category": "serif",
+  "use": "Długie czytanie, artykuły, raporty.",
+  "pairing": "Z Inter w podpisach.",
+  "url": "https://fonts.google.com/specimen/Newsreader"
+ },
+ {
+  "name": "Source Serif 4",
+  "category": "serif",
+  "use": "Tekst ciągły w editorialu.",
+  "pairing": "Z Fraunces w nagłówkach.",
+  "url": "https://fonts.google.com/specimen/Source+Serif+4"
+ },
+ {
+  "name": "Lora",
+  "category": "serif",
+  "use": "Blogi, książki, ciepły ton.",
+  "pairing": "Z Lato lub Inter.",
+  "url": "https://fonts.google.com/specimen/Lora"
+ },
+ {
+  "name": "Libre Caslon Text",
+  "category": "serif",
+  "use": "Klasyczny, książkowy charakter.",
+  "pairing": "Z Inter.",
+  "url": "https://fonts.google.com/specimen/Libre+Caslon+Text"
+ },
+ {
+  "name": "Cormorant Garamond",
+  "category": "serif",
+  "use": "Premium, kosmetyki, zaproszenia.",
+  "pairing": "Z Manrope.",
+  "url": "https://fonts.google.com/specimen/Cormorant+Garamond"
+ },
+ {
+  "name": "DM Serif Display",
+  "category": "serif",
+  "use": "Kontrastowe nagłówki o dużym kontraście.",
+  "pairing": "Z DM Sans.",
+  "url": "https://fonts.google.com/specimen/DM+Serif+Display"
+ },
+ {
+  "name": "Young Serif",
+  "category": "serif",
+  "use": "Organiczne, naturalne marki.",
+  "pairing": "Z Figtree.",
+  "url": "https://fonts.google.com/specimen/Young+Serif"
+ },
+ {
+  "name": "Gloock",
+  "category": "serif",
+  "use": "Mocny szeryf do haseł.",
+  "pairing": "Z Karla.",
+  "url": "https://fonts.google.com/specimen/Gloock"
+ },
+ {
+  "name": "Instrument Serif",
+  "category": "serif",
+  "use": "Eleganckie akcenty kursywą w nagłówkach.",
+  "pairing": "Z Instrument Sans.",
+  "url": "https://fonts.google.com/specimen/Instrument+Serif"
+ },
+ {
+  "name": "JetBrains Mono",
+  "category": "mono",
+  "use": "Kod, terminale, etykiety danych.",
+  "pairing": "Z IBM Plex Sans lub Inter.",
+  "url": "https://fonts.google.com/specimen/JetBrains+Mono"
+ },
+ {
+  "name": "IBM Plex Mono",
+  "category": "mono",
+  "use": "Dokumentacja, metryki, adnotacje siatki.",
+  "pairing": "Z IBM Plex Sans.",
+  "url": "https://fonts.google.com/specimen/IBM+Plex+Mono"
+ },
+ {
+  "name": "Space Mono",
+  "category": "mono",
+  "use": "Retro-tech, stemple, etykiety.",
+  "pairing": "Z Space Grotesk.",
+  "url": "https://fonts.google.com/specimen/Space+Mono"
+ },
+ {
+  "name": "Geist Mono",
+  "category": "mono",
+  "use": "Nowoczesny mono do UI deweloperskich.",
+  "pairing": "Z Inter.",
+  "url": "https://fonts.google.com/specimen/Geist+Mono"
+ },
+ {
+  "name": "Chivo Mono",
+  "category": "mono",
+  "use": "Techniczne etykiety w interfejsach skeuomorficznych.",
+  "pairing": "Z Space Grotesk.",
+  "url": "https://fonts.google.com/specimen/Chivo+Mono"
+ },
+ {
+  "name": "Caveat",
+  "category": "handwritten",
+  "use": "Notatki odręczne, adnotacje na mockupach.",
+  "pairing": "Z Inter — tylko akcenty.",
+  "url": "https://fonts.google.com/specimen/Caveat"
+ },
+ {
+  "name": "Kalam",
+  "category": "handwritten",
+  "use": "Swobodne dopiski, edukacja.",
+  "pairing": "Z Nunito Sans.",
+  "url": "https://fonts.google.com/specimen/Kalam"
+ },
+ {
+  "name": "Patrick Hand",
+  "category": "handwritten",
+  "use": "Komiksowe dymki, przyjazne instrukcje.",
+  "pairing": "Z Work Sans.",
+  "url": "https://fonts.google.com/specimen/Patrick+Hand"
+ },
+ {
+  "name": "Pacifico",
+  "category": "handwritten",
+  "use": "Retro skrypt do logotypów (oszczędnie).",
+  "pairing": "Z Archivo.",
+  "url": "https://fonts.google.com/specimen/Pacifico"
+ },
+ {
+  "name": "Dancing Script",
+  "category": "handwritten",
+  "use": "Zaproszenia, podpisy, gastronomia.",
+  "pairing": "Z Lora.",
+  "url": "https://fonts.google.com/specimen/Dancing+Script"
+ }
+]

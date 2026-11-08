@@ -308,6 +308,29 @@ function licenseSection(A) {
   s.appendChild(c);
 }
 
+
+/* ---------- liquid glass ---------- */
+function liquidSection() {
+  const s = section('liquid', 'Liquid Glass', 'Prawdziwa refrakcja tła: mapa przemieszczeń z prawa Snella wstrzyknięta w backdrop-filter, pierścienie światła Fresnela i dyspersja chromatyczna. Technika z quickLiquid (MIT), przepisana na vanilla JS — jeden plik, zero zależności.', 8);
+  const stage = el('div', 'lqstage');
+  stage.innerHTML = `
+    <div class="lqbg" aria-hidden="true"><span>LIQUID</span><span>GLASS</span></div>
+    <div class="lqrow">
+      <div class="lqitem lqnav" data-liquid='{"radius":999,"bezel":12,"thickness":9,"blur":4}'><a class="on" href="#">Przegląd</a><a href="#">Projekty</a><a href="#">Assety</a></div>
+      <div class="lqitem lqpill" data-liquid='{"radius":999,"bezel":10,"thickness":8,"blur":3}'>✦ Prominent</div>
+      <div class="lqitem lqpill" data-liquid='{"radius":999,"bezel":8,"thickness":6,"blur":2}'>Zwykły</div>
+    </div>
+    <div class="lqrow">
+      <div class="lqitem lqcard" style="flex:1 1 300px" data-liquid='{"radius":22,"bezel":20,"thickness":18,"blur":8}'><b>Karta z refrakcją</b><p>Tekst za szkłem ugina się na krawędzi — mapa przemieszczeń 1:1, nie rozmycie.</p></div>
+      <div class="lqitem lqcard" style="flex:0 1 220px" data-liquid='{"radius":22,"bezel":22,"thickness":20,"blur":6,"dispersion":0.6}'><b style="font-size:34px">72%</b><p>dyspersja 0.6</p></div>
+      <div class="lqitem lqcard" style="flex:0 1 240px" data-liquid='{"radius":22,"bezel":16,"thickness":14,"blur":5}'><b>Pole tekstowe</b><input placeholder="e-mail@firma.pl" aria-label="E-mail"></div>
+    </div>`;
+  s.appendChild(stage);
+  s.appendChild(el('div', 'chips', `<button class="chip" id="lqAll">Skopiuj implementację (JS)</button><a class="chip" href="liquid.html" style="text-decoration:none">Otwórz laboratorium z suwakami →</a>`));
+  s.querySelector('#lqAll').onclick = () => copy(`<script src="assets/liquid-glass/liquid.js"></script>\n\n<div class="glass" data-liquid='{"radius":22,"bezel":20,"thickness":18,"blur":8,"dispersion":0.5}'>Treść</div>\n\n<script>liquidGlassAll('[data-liquid]')</script>`, 'Skopiowano implementację');
+  requestAnimationFrame(() => window.liquidGlassAll && window.liquidGlassAll('[data-liquid]'));
+}
+
 /* ---------- filter + boot ---------- */
 function setupSearch() {
   const q = $('#q');
@@ -344,7 +367,7 @@ async function boot() {
   const totalColors = A.palettes.reduce((n, p) => n + p.colors.length, 0);
   $('#stats').innerHTML = [['Ikony', A.icons.length], ['Fonty', FONTS.length], ['Palety', A.palettes.length], ['Kolory', totalColors], ['Wzory', A.patterns.length], ['Ilustracje', ILL.length], ['Komponenty', COMPONENTS.length], ['Efekty', 10]]
     .map(([k, v]) => `<div class="stat"><b>${v.toLocaleString('pl-PL')}</b><span>${k}</span></div>`).join('');
-  iconsSection(A); illuSection(); patternSection(A); gradientSection(A); textureSection(); tokenSection(A); motionSection(A); fontSection(FONTS); paletteSection(A); kitSection(); effectSection(); licenseSection(A);
+  iconsSection(A); liquidSection(); illuSection(); patternSection(A); gradientSection(A); textureSection(); tokenSection(A); motionSection(A); fontSection(FONTS); paletteSection(A); kitSection(); effectSection(); licenseSection(A);
   setupSearch(); setupNav();
   document.body.dataset.ready = '1';
 }

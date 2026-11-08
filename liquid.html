@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liquid Glass — laboratorium · Design Canvas</title>
+<meta name="description" content="Prawdziwe szkło na webie: refrakcja tła przez soczewkę (Snell), pierścienie światła Fresnela i dyspersja chromatyczna. Implementacja techniki z quickLiquid, gotowa do skopiowania.">
+<meta name="theme-color" content="#E9EDF5">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Liquid Glass — laboratorium">
+<meta property="og:description" content="Szkło z prawdziwą refrakcją tła: SVG displacement map w backdrop-filter, pierścienie światła, dyspersja. Z suwakami na żywo.">
+<meta property="og:image" content="https://aievolutionpl.github.io/design-canvas/assets/og-boards.jpg">
+<meta property="og:url" content="https://aievolutionpl.github.io/design-canvas/liquid.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="liquid.css">
+</head>
+<body>
+<div class="scene" aria-hidden="true">
+  <span class="word w1">LIQUID</span><span class="word w2">GLASS</span><span class="word w3">2027</span>
+  <span class="blob" style="width:340px;height:340px;left:8%;top:52%;background:#FF9BC0"></span>
+  <span class="blob" style="width:260px;height:260px;right:18%;top:64%;background:#86C8FF"></span>
+  <span class="blob" style="width:200px;height:200px;right:6%;top:18%;background:#A8F0D2"></span>
+</div>
+
+<header class="top">
+  <a class="brand" href="./"><img src="assets/favicon.svg" alt="" width="24" height="24">Liquid Glass</a>
+  <nav class="nav"><a href="./">Biblioteka</a><a href="boards.html">Brand Boards</a><a href="assets.html">Assety</a><a class="on" href="liquid.html">Liquid Glass</a></nav>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow">Technika · quickLiquid (MIT) → Twój system</p>
+  <h1>Szkło, które naprawdę załamuje światło.</h1>
+  <p class="lead">Nie przezroczysty prostokąt z rozmyciem, tylko soczewka: mapa przemieszczeń liczona z prawa Snella, wstawiona w <code>backdrop-filter</code>. Krawędź ugina to, co jest za szkłem, pierścienie łapią światło z dwóch stron, a dyspersja rozdziela kolory na ramce. Suwaki po prawej zmieniają fizykę na żywo.</p>
+
+  <section class="stage" aria-label="Przykłady szkła">
+    <div class="row">
+      <div class="glass nav" data-liquid='{"radius":999,"bezel":12,"thickness":9,"blur":4}'><a href="#" class="on">Przegląd</a><a href="#">Projekty</a><a href="#">Assety</a><a href="#">Ustawienia</a></div>
+      <div class="glass pill" data-liquid='{"radius":999,"bezel":10,"thickness":8,"blur":3}'>✦ Prominent</div>
+      <div class="glass pill" data-liquid='{"radius":999,"bezel":8,"thickness":6,"blur":2}'>Zwykły</div>
+    </div>
+
+    <div class="row" style="align-items:stretch">
+      <div class="glass card" style="flex:1 1 320px" data-liquid='{"radius":22,"bezel":20,"thickness":18,"blur":8}'>
+        <h3>Karta z refrakcją</h3>
+        <p>Tekst za szkłem jest uginany na krawędzi — to nie filtr rozmywający, tylko mapa przemieszczeń 1:1.</p>
+        <div class="bar"><i></i></div>
+      </div>
+      <div class="glass card" style="flex:1 1 260px" data-liquid='{"radius":22,"bezel":22,"thickness":20,"blur":6,"dispersion":0.6}'>
+        <div class="big">72%</div>
+        <p>Postęp projektu · dyspersja 0.6</p>
+      </div>
+      <div class="glass card" style="flex:1 1 260px" data-liquid='{"radius":22,"bezel":16,"thickness":14,"blur":5}'>
+        <h3>Pole tekstowe</h3>
+        <input placeholder="Wpisz e-mail…" aria-label="E-mail">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="glass tabbar" data-liquid='{"radius":22,"bezel":14,"thickness":12,"blur":5}'>
+        <button class="on">◧<span>Pulpit</span></button>
+        <button>▤<span>Projekty</span></button>
+        <button>✦<span>Assety</span></button>
+        <button>⚙<span>Ustawienia</span></button>
+      </div>
+      <div class="glass" style="padding:14px 20px" data-liquid='{"radius":16,"bezel":12,"thickness":10,"blur":4}'>⌘ K &nbsp;Szukaj</div>
+    </div>
+  </section>
+
+  <section class="panel" aria-label="Parametry fizyki">
+    <label>Bezel (szerokość ramki) <input id="bezel" type="range" min="4" max="48" value="18"><output id="bezelO">18 px</output></label>
+    <label>Grubość soczewki <input id="thick" type="range" min="2" max="40" value="14"><output id="thickO">14 px</output></label>
+    <label>Współczynnik IOR <input id="ior" type="range" min="105" max="220" value="150"><output id="iorO">1.50</output></label>
+    <label>Rozmycie tła <input id="blur" type="range" min="0" max="18" value="6"><output id="blurO">6 px</output></label>
+    <label>Dyspersja <input id="disp" type="range" min="0" max="90" value="35"><output id="dispO">0.35</output></label>
+    <label>Siła refrakcji <input id="str" type="range" min="20" max="160" value="100"><output id="strO">1.00</output></label>
+  </section>
+  <p class="note">Zmiana suwaka przebudowuje mapę i filtr od zera — dokładnie tak, jak robi to silnik w <code>quick-liquid/core/engine.ts</code>.</p>
+
+  <pre aria-label="Kod użycia"><code><span class="c">&lt;!-- 1. jeden plik, zero zależności --&gt;</span>
+&lt;script src=<span class="s">"assets/liquid-glass/liquid.js"</span>&gt;&lt;/script&gt;
+
+<span class="c">&lt;!-- 2. dowolny element; zawartość zostaje nienaruszona --&gt;</span>
+&lt;div class=<span class="s">"glass"</span> data-liquid=<span class="s">'{"bezel":20,"thickness":16,"ior":1.5,"dispersion":0.4}'</span>&gt;
+  Twoja treść
+&lt;/div&gt;
+
+<span class="c">// 3. albo z kodu</span>
+<span class="k">liquidGlass</span>(document.querySelector(<span class="s">'.glass'</span>), { radius: 22, bezel: 18, thickness: 14, blur: 6, dispersion: .35 });</code></pre>
+</main>
+
+<footer class="ai"><span>Technika: <a href="https://github.com/amarnath3003/quickLiquid">quickLiquid</a> (MIT) — wyciągnięta optyka i pierścienie światła, przepisane na vanilla JS.</span><span>Serwis prowadzony przez agenta AI — weryfikuj sam.</span></footer>
+
+<script src="assets/liquid-glass/liquid.js"></script>
+<script>
+(() => {
+  const t = localStorage.getItem('lg-theme'); if (t) document.documentElement.dataset.theme = t;
+  const init = opts => window.liquidGlassAll('[data-liquid]', opts);
+  init({});
+  const P = { bezel: [4, 48, 'px', 18], thick: [2, 40, 'px', 14], ior: [105, 220, '', 150], blur: [0, 18, 'px', 6], disp: [0, 90, '', 35], str: [20, 160, '', 100] };
+  let raf;
+  const rebuild = () => {
+    document.querySelectorAll('[data-liquid]').forEach(el => {
+      const cfg = JSON.parse(el.dataset.liquid || '{}');
+      const lq = el.__lq; if (lq && lq.svg) lq.svg.remove();
+      el.classList.remove('lq'); el.removeAttribute('data-lq-ready');
+      el.querySelectorAll(':scope > .lq-lens, :scope > .lq-tint, :scope > .lq-rim, :scope > .lq-sheen').forEach(n => n.remove());
+      el.style.transform = ''; el.style.boxShadow = '';
+      window.liquidGlass(el, Object.assign({}, cfg, {
+        bezel: +document.getElementById('bezel').value,
+        thickness: +document.getElementById('thick').value,
+        ior: +document.getElementById('ior').value / 100,
+        blur: +document.getElementById('blur').value,
+        dispersion: +document.getElementById('disp').value / 100,
+        strength: +document.getElementById('str').value / 100
+      }));
+    });
+  };
+  Object.keys(P).forEach(id => {
+    const inp = document.getElementById(id), out = document.getElementById(id + 'O');
+    const show = () => {
+      const v = +inp.value;
+      out.textContent = id === 'ior' ? (v / 100).toFixed(2) : id === 'disp' ? (v / 100).toFixed(2) : id === 'str' ? (v / 100).toFixed(2) : v + ' px';
+      cancelAnimationFrame(raf); raf = requestAnimationFrame(rebuild);
+    };
+    inp.addEventListener('input', show); show();
+  });
+  document.body.dataset.ready = '1';
+})();
+</script>
+</body>
+</html>

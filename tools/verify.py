@@ -61,6 +61,15 @@ with sync_playwright() as p:
         need(f"{name} assets gradients {a['grads']}", a["grads"] == 30)
         need(f"{name} assets sections {a['secs']}", len(a["secs"]) == 12)
         need(f"{name} assets h-scroll", not pg.evaluate("document.documentElement.scrollWidth>innerWidth+2"))
+        need(f"{name} liquid card glass", pg.evaluate("document.querySelectorAll('#liquid .lq').length") == 6)
+
+        pg.goto(U + "liquid.html", wait_until="load"); pg.wait_for_selector("body[data-ready='1']", timeout=60000)
+        pg.wait_for_timeout(900)
+        lq = pg.evaluate("({glass:document.querySelectorAll('.lq').length, filters:document.querySelectorAll('svg filter').length, bf:getComputedStyle(document.querySelector('.lq-lens')).backdropFilter||''})")
+        need(f"{name} liquid glass {lq['glass']}", lq["glass"] == 8)
+        need(f"{name} liquid filters {lq['filters']}", lq["filters"] == 8)
+        need(f"{name} liquid backdrop url", "url(" in lq["bf"])
+        need(f"{name} liquid h-scroll", not pg.evaluate("document.documentElement.scrollWidth>innerWidth+2"))
         need(f"{name} errors {errs[:3]}", not errs)
     br.close()
 

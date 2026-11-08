@@ -346,16 +346,22 @@ function cull() {
   world.classList.toggle('far', s < 0.09);
   world.classList.toggle('vfar', s < 0.2);
   const rinv = 1 / s;
-  for (const t of titles) if (t.row) t.el.style.fontSize = Math.min(18 * rinv, 1000) + 'px';
+  for (const t of titles) if (t.row) {
+    t.el.style.fontSize = Math.min(12 * rinv, 180) + 'px';
+    t.el.style.maxWidth = '1100px';
+    t.el.style.overflow = 'hidden';
+    t.el.style.textOverflow = 'ellipsis';
+  }
   const mx = r.width / s * 0.35, my = r.height / s * 0.35;
   const vx1 = -cam.x / s - mx, vy1 = -cam.y / s - my, vx2 = (r.width - cam.x) / s + mx, vy2 = (r.height - cam.y) / s + my;
   for (const b of boards) {
     const vis = b.x < vx2 && b.x + b.w > vx1 && b.y < vy2 && b.y + b.h > vy1;
     const screenW = b.w * s;
-    const want = !vis ? (b.mode === 'full' && screenW > 0 ? 'lite' : (b.mode || 'none')) : (screenW >= 230 ? 'full' : 'lite');
-    if (!vis && b.mode === '') continue;                // never rendered and not visible: keep empty
-    if (want !== b.mode && want !== 'none') {
-      b.inner.innerHTML = want === 'full' ? b.full() : b.lite();
+    b.el.style.visibility = vis ? '' : 'hidden';
+    if (!vis) continue; // Keep cached contents; do not rebuild boards during every pan.
+    const want = screenW >= 230 ? 'full' : (screenW < 70 ? 'overview' : 'lite');
+    if (want !== b.mode) {
+      b.inner.innerHTML = want === 'full' ? b.full() : want === 'overview' ? '<div style="height:100%;background:var(--bg,#eef0f4);border:2px solid var(--ac,#d5d9e2)"></div>' : b.lite();
       b.mode = want;
     }
   }

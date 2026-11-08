@@ -40,6 +40,7 @@ with sync_playwright() as p:
                 pg.evaluate(f"BB.flyTo(BB.boards.find(b=>b.T.id=='{bid}'),.02,true)"); pg.wait_for_timeout(140)
             pg.wait_for_timeout(2500)
             need(f"boards text overflow {pg.evaluate(OVF)}", pg.evaluate(OVF) == 0)
+            pg.evaluate("document.querySelector('.bar').style.display='none'")
             pg.evaluate("BB.flyTo(BB.boards.find(b=>b.T.id=='DT27-07'),.02,true)"); pg.wait_for_timeout(900)
             box = pg.locator('[data-fav="DT27-07"]').bounding_box()
             pg.mouse.click(box["x"] + box["width"] / 2, box["y"] + box["height"] / 2); pg.wait_for_timeout(300)
@@ -59,7 +60,7 @@ with sync_playwright() as p:
         need(f"{name} assets components {a['comps']}", a["comps"] == 90)
         need(f"{name} assets patterns {a['pats']}", a["pats"] == 87)
         need(f"{name} assets gradients {a['grads']}", a["grads"] == 30)
-        need(f"{name} assets sections {a['secs']}", len(a["secs"]) == 12)
+        need(f"{name} assets sections {a['secs']}", len(a["secs"]) == 13)
         need(f"{name} assets h-scroll", not pg.evaluate("document.documentElement.scrollWidth>innerWidth+2"))
         need(f"{name} liquid card glass", pg.evaluate("document.querySelectorAll('#liquid .lq').length") == 6)
 

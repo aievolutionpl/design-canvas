@@ -5,8 +5,9 @@
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
-const BW = 3400, BH = 3120, GX = 420, GY = 560, COLS = 8;
+const BW = 3400, BH = 5240, GX = 420, GY = 560, COLS = 8;
 let world, vp, boards = [], groups = [], cam = { x: 0, y: 0, s: 0.1 }, MIN = 0.01, MAX = 2.5;
+let ICONS = {}, INAMES = [];
 let favs = new Set(JSON.parse(localStorage.getItem('bb-favs') || '[]'));
 let filter = 'all', stops = [], pres = false, pi = 0;
 
@@ -73,6 +74,25 @@ function mark(k, T, letter) {
   return `<svg viewBox="0 0 100 100" aria-hidden="true">${M[k % M.length]}</svg>`;
 }
 
+/* ---------- extra asset helpers ---------- */
+function hueTints(hex, n = 10) {
+  const [r0, g0, b0] = hex2rgb(hex);
+  const out = [];
+  for (let i = 0; i < n; i++) {
+    const t = i / (n - 1);
+    const to = t < .5 ? [255, 255, 255] : [17, 17, 17];
+    const k = t < .5 ? (0.5 - t) * 1.75 : (t - 0.5) * 1.9;
+    const c = [r0, g0, b0].map((v, j) => Math.round(v + (to[j] - v) * Math.min(k, 1)));
+    out.push('#' + c.map(v => Math.max(0, Math.min(255, v)).toString(16).padStart(2, '0')).join('').toUpperCase());
+  }
+  return out;
+}
+const iconSvg = name => ICONS[name] || '';
+function meshCss(T) {
+  return `background-color:${T.bg};background-image:radial-gradient(at 18% 22%,${T.acc} 0,transparent 55%),radial-gradient(at 82% 18%,${T.acc2} 0,transparent 55%),radial-gradient(at 60% 85%,${T.ink} 0,transparent 55%)`;
+}
+const dotCss = T => `background-color:${T.bg};background-image:radial-gradient(${T.ink}33 1.2px,transparent 1.3px);background-size:20px 20px`;
+const grainCss = T => `background-color:${T.paper.startsWith('color') ? '#EDEAE3' : T.paper};background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E")`;
 /* ---------- board markup ---------- */
 const tile = (x, y, w, h, inner, cls = '', st = '') => `<div class="t ${cls}" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;${st}">${inner}</div>`;
 const sec = (x, y, w, h, title, sub, body) => `<section class="sec" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px"><div class="sh"><b>${title}</b>${sub ? `<span>${esc(sub)}</span>` : ''}</div><div class="sb">${body}</div></section>`;
@@ -99,8 +119,9 @@ function boardHTML(T) {
     `<div class="hier" style="top:424px"><div class="h1">Jasność w decyzjach</div><div class="h2">Nagłówek sekcji w kroju ${esc(T.body)}</div><p>Zażółć gęślą jaźń. Tekst główny pokazuje rytm, szarość kolumny i polskie znaki — ten krój niesie długie akapity bez zmęczenia.</p><div class="mono">H1 64 · H2 32 · body 21 · label 15</div></div>`);
   // colour
   const pal = T.pal.slice(0, 8);
-  const color = sec(2520, 260, 880, 1000, 'Kolor', `${pal.length} odcieni · klik = kopiuj HEX`,
-    `<div class="stripes" style="bottom:276px">${pal.map(p => `<button data-copy="${p.h}" style="background:${p.h};color:${onC(p.h)}" title="Kopiuj ${p.h}"><small>${esc(p.n)}</small>${p.h}</button>`).join('')}</div>` +
+  const color = sec(2520, 260, 880, 1000, 'Kolor', `${pal.length} odcieni + skala 10 stopni · klik = kopiuj HEX`,
+    `<div class="stripes" style="bottom:390px">${pal.map(p => `<button data-copy="${p.h}" style="background:${p.h};color:${onC(p.h)}" title="Kopiuj ${p.h}"><small>${esc(p.n)}</small>${p.h}</button>`).join('')}</div>` +
+    `<div class="ramp" style="bottom:300px">${hueTints(T.acc, 10).map(h => `<button data-copy="${h}" style="background:${h}" title="${h}"></button>`).join('')}</div>` +
     `<div class="ratio" style="height:256px">${T.contrast ? T.contrast.map(c => `<div style="background:${c.bg};color:${c.fg}">${c.ratio}:1 · ${esc(c.grade)}<small>${esc(c.label)}</small></div>`).join('')
       : [['60%', T.bg, onC(T.bg), 'tło / przestrzeń'], ['30%', T.acc, accT, 'akcent'], ['10%', T.ink, onC(T.ink), 'tekst / detale']].map(([p, b, f, l]) => `<div style="background:${b};color:${f}">${p} · ${cr(b, f).toFixed(1)}:1<small>${l}</small></div>`).join('')}</div>`);
   // mockups
@@ -139,8 +160,54 @@ function boardHTML(T) {
     [T.ink, onC(T.ink), `<div class="in" style="justify-content:center;align-items:center;text-align:center"><div style="width:16cqw;height:16cqw">${mark(s + 3, { ...T, ink: onC(T.ink) }, L)}</div><h6 style="font-size:7cqw;margin-top:3cqw">Dziękuję</h6><small style="margin-top:2cqw">${esc(T.name)}</small></div>`]
   ];
   S.forEach(([bg, fg, inner], n) => sl.push(tile((n % 6) * (W + gp), Math.floor(n / 6) * (H + gp), W, H, `<span class="no">${String(n + 1).padStart(2, '0')}</span>${inner}`, 'sl', `background:${bg};color:${fg}`)));
-  const slides = sec(0, 2380, BW, 740, 'Warianty slajdu', '„Clarity for Complex Decisions” · 12 układów', sl.join(''));
-  return head + concept + typo + color + mock + logo + slides;
+
+  /* ---- C: nowe assety ---- */
+  const ic = INAMES.length ? INAMES : ['star', 'heart', 'check', 'search'];
+  const pickIcons = Array.from({ length: 12 }, (_, n) => ic[(s + n * 7) % ic.length]);
+  const icTiles = pickIcons.map((n, k) => {
+    const col = k % 4, row = Math.floor(k / 4);
+    return tile(col * 280, row * 330, 260, 310,
+      `<span class="ii" style="color:${k === 0 ? T.acc : T.ink}">${iconSvg(n)}</span><em>${esc(n)}</em>`, 'lg icb');
+  }).join('');
+  const iconsSec = sec(0, 3200, 1100, 1000, 'Ikony', 'Lucide · ISC · klik = kopiuj SVG', icTiles);
+
+  const bgTiles = [
+    [`background:${meshCss(T)}`, 'Mesh gradient'],
+    [`${dotCss(T)}`, 'Siatka punktów'],
+    [`${grainCss(T)}`, 'Ziarno / papier'],
+    [`background:linear-gradient(135deg,${T.acc} 0%,${T.acc2} 100%)`, 'Gradient liniowy'],
+  ].map(([css, lab], k) => {
+    const col = k % 2, row = Math.floor(k / 2);
+    return tile(col * 560, row * 490, 540, 470, `<span class="bl">${esc(lab)}</span>`, 'bgx', css);
+  }).join('');
+  const bgSec = sec(1160, 3200, 1100, 1000, 'Tła i tekstury', 'CSS gotowy do skopiowania', bgTiles);
+
+  const det = `
+    <div class="dt">
+      <div class="dt-row">
+        <button class="b-btn" style="background:${T.acc};color:${accT}">Główny</button>
+        <button class="b-btn" style="background:transparent;color:${T.ink};border:2px solid ${T.ink}">Drugi</button>
+        <span class="b-chip" style="background:${T.ink};color:${onC(T.ink)}">Nowe</span>
+      </div>
+      <div class="dt-row"><input class="b-in" placeholder="e-mail@firma.pl" style="border-color:${T.ink}55;color:${T.ink};background:${T.paper.startsWith('color') ? '#fff' : T.paper}"></div>
+      <div class="dt-row">
+        <span class="b-sw" style="background:${T.acc}"><i style="background:${accT}"></i></span>
+        <span class="b-sw" style="background:${T.ink}33"><i style="background:${T.ink}"></i></span>
+        <span class="b-av" style="background:${T.acc};color:${accT}">AN</span>
+        <span class="b-av" style="background:${T.ink};color:${onC(T.ink)}">MK</span>
+      </div>
+      <div class="dt-card" style="background:${T.paper.startsWith('color') ? '#fff' : T.paper};color:${T.ink};border-color:${T.ink}22">
+        <b>Plan Studio</b><small>Dla zespołów do 10 osób</small>
+        <div class="dt-pr"><i style="background:${T.acc};width:68%"></i></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:10px"><span style="font:800 34px/1 ${T.disp}">149 zł</span><span class="b-chip" style="background:${T.acc};color:${accT}">/mies.</span></div>
+      </div>
+      <div class="dt-toast" style="background:${T.ink};color:${onC(T.ink)}"><i style="background:${T.acc}"></i>Zapisano zmiany</div>
+      <div class="dt-note" style="color:${T.ink};opacity:.65">Tokeny: radius 10 · spacing 8/16/24 · shadow 0 12px 32px</div>
+    </div>`;
+  const detSec = sec(2320, 3200, 1080, 1000, 'Detale UI', 'komponenty w palecie marki', det);
+
+  const slides = sec(0, 4480, BW, 740, 'Warianty slajdu', '„Clarity for Complex Decisions” · 12 układów', sl.join(''));
+  return head + concept + typo + color + mock + logo + iconsSec + bgSec + detSec + slides;
 }
 function phHTML(T) {
   return `<div class="ph">${T.img ? `<img src="${T.imgSm || T.img}" alt="" loading="lazy" decoding="async">` : `<div style="position:absolute;inset:0;display:grid;grid-template-columns:3fr 2fr 1fr"><div style="background:${T.bg}"></div><div style="background:${T.acc}"></div><div style="background:${T.ink}"></div></div>`}<b style="font-family:${T.disp},var(--ui)">${esc(T.name)}</b></div>`;
@@ -258,7 +325,7 @@ function applyFilter() {
 }
 function buildStops() {
   stops = [];
-  const SEC = [['Koncepcja', 0, 260, 1500, 1000], ['Typografia', 1560, 260, 900, 1000], ['Kolor', 2520, 260, 880, 1000], ['Mockupy', 0, 1320, 2340, 1000], ['Logo', 2400, 1320, 1000, 1000], ['Slajdy', 0, 2380, 3400, 740]];
+  const SEC = [['Koncepcja', 0, 260, 1500, 1000], ['Typografia', 1560, 260, 900, 1000], ['Kolor', 2520, 260, 880, 1000], ['Mockupy', 0, 1320, 2340, 1000], ['Logo', 2400, 1320, 1000, 1000], ['Ikony', 0, 3200, 1100, 1000], ['Tła', 1160, 3200, 1100, 1000], ['Detale UI', 2320, 3200, 1080, 1000], ['Slajdy', 0, 4480, 3400, 740]];
   for (const b of boards) { if (b.el.classList.contains('dim')) continue;
     stops.push({ r: b, t: `${b.T.id} · ${b.T.name}` });
     for (const [n, x, y, w, h] of SEC) stops.push({ r: { x: b.x + x, y: b.y + y, w, h }, t: `${b.T.id} · ${b.T.name} — ${n}` }); }
@@ -285,7 +352,8 @@ async function boot() {
   const t = localStorage.getItem('bb-theme'); if (t) document.documentElement.dataset.theme = t;
   world = $('#world'); vp = $('#vp');
   const get = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });
-  const [STY, DOS, FC] = await Promise.all([get('data/styles.json'), get('data/designer-os.json'), get('data/font-check.json')]);
+  const [STY, DOS, FC, ICO] = await Promise.all([get('data/styles.json'), get('data/designer-os.json'), get('data/font-check.json'), get('data/icon-inline.json').catch(() => ({}))]);
+  ICONS = ICO; INAMES = Object.keys(ICO);
   const list = [...DOS.palettes.map(fromDOS), ...STY.filter(s => s.source === 'agent-design-taste').map(fromADT), ...STY.filter(s => s.source !== 'agent-design-taste').map(fromDT)];
   const fams = [...new Set(list.flatMap(T => [T.disp, T.body, T.mono]))];
   const specs = [...FC.specs, ...DOS.fontSpecs];
@@ -294,7 +362,7 @@ async function boot() {
   layout(list); setupInput(); setupUI(); buildStops();
   const h = decodeURIComponent(location.hash.slice(1)); const hb = boards.find(b => b.T.id === h);
   if (hb) flyTo(hb, .03, true); else fitAll(true);
-  window.BB = { cam, boards, stops, flyTo, fitAll, toggleFav, count: () => ({ boards: boards.length, full: boards.filter(b => b.full).length, dos: boards.filter(b => b.T.grp === 'dos').length, adt: boards.filter(b => b.T.grp === 'adt').length, dt: boards.filter(b => b.T.grp === 'dt').length, stops: stops.length, fonts: fams.length }) };
+  window.BB = { cam, boards, stops, flyTo, fitAll, toggleFav, count: () => ({ boards: boards.length, full: boards.filter(b => b.full).length, dos: boards.filter(b => b.T.grp === 'dos').length, adt: boards.filter(b => b.T.grp === 'adt').length, dt: boards.filter(b => b.T.grp === 'dt').length, stops: stops.length, fonts: fams.length, icons: INAMES.length }) };
   document.body.dataset.ready = '1';
 }
 boot().catch(e => { console.error(e); document.body.insertAdjacentHTML('beforeend', `<p style="position:fixed;inset:45% 0 auto;text-align:center">Błąd ładowania: ${esc(e.message)}</p>`); });

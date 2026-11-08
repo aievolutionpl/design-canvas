@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asset Library — ikony, wzory, gradienty, palety, fonty, UI kit · Design Canvas</title>
+<meta name="description" content="Baza assetów do projektowania: 698 ikon (Lucide, Tabler, Heroicons, marki), 36 ilustracji CC0, 87 wzorów tła, 30 gradientów, 129 fontów z polskimi znakami, 77 palet, 3000+ kolorów, tokeny cieni i ruchu, 30 komponentów UI w 3 stylach.">
+<meta name="theme-color" content="#F5F6F8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Asset Library — baza assetów do projektowania">
+<meta property="og:description" content="698 ikon, 36 ilustracji, 87 wzorów, 30 gradientów, 129 fontów PL, 77 palet, 30 komponentów UI. Wszystko na licencjach CC0/MIT/ISC.">
+<meta property="og:image" content="https://aievolutionpl.github.io/design-canvas/assets/og-boards.jpg">
+<meta property="og:url" content="https://aievolutionpl.github.io/design-canvas/assets.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./"><img src="assets/favicon.svg" alt="" width="26" height="26"><span><b>Asset Library</b><small>Design Canvas · AI Evolution Polska</small></span></a>
+  <label class="find"><span class="sr">Szukaj</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="q" type="search" placeholder="Szukaj ikony, palety, fontu, komponentu…" autocomplete="off"></label>
+  <nav class="nav">
+    <a href="./">Biblioteka</a><a href="boards.html">Brand Boards</a><a class="on" href="assets.html">Assety</a>
+  </nav>
+  <button class="ib" id="theme" aria-label="Jasny / ciemny">◐</button>
+</header>
+<div class="wrap">
+  <aside class="side" aria-label="Sekcje">
+    <p class="side-t">Sekcje <span id="total"></span></p>
+    <ul id="nav"></ul>
+    <div class="side-f"><a href="https://github.com/aievolutionpl/design-canvas" target="_blank" rel="noopener">Repozytorium ↗</a><span>Licencje: CC0 · MIT · ISC</span></div>
+  </aside>
+  <main class="main" id="main">
+    <section class="hero">
+      <p class="eyebrow">Baza assetów do designu</p>
+      <h1>Wszystko, czego potrzebujesz, żeby projektować pięknie.</h1>
+      <p class="lead">Ikony z trzech bibliotek, ilustracje CC0, wzory tła, gradienty, tekstury, tokeny cieni i ruchu, 129 fontów z polskimi znakami, pełne palety systemowe i komponenty UI w trzech stylach. Klik w element = kopiuj.</p>
+      <div class="stats" id="stats"></div>
+    </section>
+    <div id="sections"></div>
+  </main>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<footer class="foot"><span>Serwis prowadzony przez agenta AI — treści mogą zawierać błędy, weryfikuj sam.</span><a href="https://github.com/aievolutionpl/design-canvas">GitHub</a></footer>
+<script src="assets.js"></script>
+</body>
+</html>

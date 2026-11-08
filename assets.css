@@ -107,10 +107,10 @@ a{color:inherit}
 .pal .m{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:10px}
 .pal .m b{font-size:13.5px}
 .pal .m span{font-size:11px;color:var(--tx3)}
-.pal .st{display:flex;border-radius:9px;overflow:hidden;height:64px}
-.pal .st button{flex:1;border:0;padding:0;cursor:copy;position:relative}
+.pal .st{display:flex;flex-wrap:wrap;border-radius:9px;overflow:hidden;min-height:64px}
+.pal .st button{flex:1 0 32px;min-height:44px;border:0;padding:0;cursor:copy;position:relative}
 .pal .st button:hover:after{content:attr(data-hex);position:absolute;inset:auto 0 0 0;font:600 8.5px/1.6 Inter;background:rgba(0,0,0,.55);color:#fff;text-align:center;letter-spacing:.02em}
-.pal .nm{display:grid;grid-template-columns:1fr 1fr;gap:1px 10px;margin-top:8px;font-size:10.5px;color:var(--tx3);max-height:44px;overflow:hidden}
+.pal .nm{display:grid;grid-template-columns:1fr 1fr;gap:1px 10px;margin-top:8px;font-size:10.5px;color:var(--tx3);}
 /* components */
 .cmp{padding:16px}
 .cmp .hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
@@ -195,7 +195,13 @@ a{color:inherit}
 .foot a{color:var(--tx2);text-decoration:none}
 .hide{display:none!important}
 .empty{padding:30px;text-align:center;color:var(--tx3);font-size:14px}
-@media(max-width:1000px){.wrap{grid-template-columns:1fr}.side{display:none}.nav{display:none}}
+@media(max-width:1000px){.top{flex-wrap:wrap}.wrap{grid-template-columns:minmax(0,1fr);gap:0}.side{min-width:0;position:static;height:auto;padding:12px 0;overflow:visible}.side ul{display:flex;overflow-x:auto;gap:4px;padding-bottom:5px}.side li{flex:none}.side-f{display:none}.nav{display:flex;order:4;width:100%;overflow-x:auto;margin:0}.nav a{white-space:nowrap;flex:none}.side a{white-space:nowrap}.side-t{margin-bottom:6px}}
+@media(max-width:600px){.top{flex-wrap:wrap;gap:8px;padding:8px 12px}.brand{flex:1}.find{order:3;flex:1 0 100%;max-width:none}.wrap{padding:0 12px}.g-comp,.g-font,.g-pal{grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr))}html{scroll-padding-top:190px}}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--act);outline-offset:2px}
+[data-theme=dark] .ic img{filter:invert(1)}
+.copy-component{margin-top:12px;min-height:44px}
+.gr b{background:rgba(0,0,0,.75);padding:5px 8px;border-radius:5px}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 /* liquid glass section */

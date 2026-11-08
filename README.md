@@ -9,13 +9,15 @@
 
 </div>
 
-![Design Studio — rzeczywisty widok biblioteki stylów](docs/images/studio.png)
+![Kanwa stylów: Liquid Glass, Bento Grid i Neo-Brutalism — koncepcja, typografia, kolory i mockupy](docs/images/app-canvas.webp)
+
+*Porównuj kierunki obok siebie: od koncepcji i krojów pisma po paletę oraz zastosowania w interfejsie.*
 
 Nie zaczynaj kolejnego projektu od „zrób mi ładną stronę”. Wybierz styl, obejrzyj jego paletę i typografię, a następnie przekaż agentowi gotowy kontekst: **co budować, jak komponować i czego unikać**.
 
 Design Studio łączy bibliotekę inspiracji, zasoby do skopiowania i wizualne tablice projektowe. Człowiek podejmuje decyzje estetyczne. Agent dostaje dane, źródła i ograniczenia zamiast zgadywać intencję.
 
-> **Status tej gałęzi:** dashboard `studio.html` i rozszerzona biblioteka są wersją rozwojową. Publiczne demo może pokazywać wcześniejszą wersję. Poniższe zrzuty pochodzą z rzeczywistej aplikacji uruchomionej lokalnie, nie z makiet. Pełna integracja modułów i końcowa weryfikacja pozostają w toku.
+> **Zobacz aplikację w użyciu:** wszystkie screenshoty poniżej pochodzą od autora projektu i przedstawiają rzeczywiste ekrany aplikacji. Nie są makietami. Widoczne w niej ilustracje stylów mogą być generowane przez AI. Pełna integracja modułów i końcowa weryfikacja pozostają w toku.
 
 ## Od inspiracji do projektu
 
@@ -51,20 +53,21 @@ Minimalizm, układy Bento, kierunki redakcyjne, brutalizm, interfejsy techniczne
 
 Każdy kierunek ma własny identyfikator. Próbkowane kolory, sugerowane fonty i autorskie kompozycje nie są przedstawiane jako oficjalne tokeny cudzych marek. Prognoza trendu to inspiracja, nie gwarancja przyszłej popularności.
 
-### Gradienty i tła — zobacz, kliknij, wykorzystaj
+![Szczegóły stylów Surrealism i Expressive typography: wizualizacja, kroje pisma i paleta](docs/images/app-style-detail.png)
 
-![Prawdziwe podglądy gradientów z biblioteki](docs/images/gradients.png)
+*Przybliż wybrany kierunek, aby obejrzeć ilustrację stylu, przykłady typografii i kolory.*
+
+### Palety, które stają się kodem
+
+![Paleta Claymorphism: kolory HEX i zmienne CSS w panelu szczegółów](docs/images/app-palette-css.webp)
+
+*Wybierz paletę, sprawdź role kolorów i wykorzystaj zmienne CSS w swoim projekcie lub briefie dla agenta.*
+
+### Gradienty i tła — zobacz, kliknij, wykorzystaj
 
 Kliknięcie gradientu kopiuje CSS. Wzory i tekstury pomagają zbudować tło dla interfejsu, sekcji lub prezentacji. Kopiowany zasób jest punktem wyjścia — dopasuj go do treści i sprawdź kontrast.
 
 ### Ikony i paczki open source
-
-<details>
-<summary><strong>Zobacz bibliotekę ikon</strong></summary>
-
-![Biblioteka ikon](docs/images/icons.png)
-
-</details>
 
 - **Lucide, Tabler, Heroicons i Simple Icons** — katalog ikon; prawa do znaków marek nie znikają wraz z licencją plików.
 - **Hero Patterns** — powtarzalne wzory tła.
@@ -78,11 +81,17 @@ Lista źródeł podstawowej biblioteki: [`data/assets.json`](data/assets.json), 
 
 ### Liquid Glass — materiał, nie przezroczysty prostokąt
 
-![Laboratorium Liquid Glass](docs/images/liquid.png)
-
 Laboratorium pozwala zmieniać parametry soczewki i obserwować załamanie tła. Implementacja bazuje na technice z [quickLiquid](https://github.com/amarnath3003/quickLiquid): mapa przemieszczeń, filtr SVG i warstwy światła.
 
 **Przykłady użycia:** pływająca nawigacja, przyciski nad zdjęciem, kontrolki na mapie, karty nad kolorowym tłem. Podgląd szkła na tablicy jest ilustracją kierunku; działający efekt znajduje się w laboratorium i bibliotece. Zachowanie filtrów może różnić się między przeglądarkami — sprawdzaj docelowe urządzenia.
+
+## Tablice stylów i tryb prezentacji
+
+![Brand Boards w ciemnym motywie: galeria kierunków wizualnych i sterowanie prezentacją](docs/images/app-brand-boards.png)
+
+*Przeglądaj kolekcję wizualnie, filtruj kierunki i przybliżaj tablice. Tryb prezentacji pomaga omówić wybrane przykłady podczas wspólnej pracy.*
+
+[Otwórz Brand Boards →](https://aievolutionpl.github.io/design-canvas/boards.html)
 
 ## Człowiek + agent: wspólny język designu
 
@@ -123,7 +132,6 @@ Wymagania: Git, Python 3 i współczesna przeglądarka. Bez bundlera i instalowa
 ```bash
 git clone https://github.com/aievolutionpl/design-canvas.git
 cd design-canvas
-git switch work/design-studio-audit
 python3 -m http.server 8000
 ```
 

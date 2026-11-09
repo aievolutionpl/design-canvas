@@ -68,6 +68,317 @@
       "license_spdx": "CC0-1.0",
       "license_sha256": "6d489af6292662d9e36d34ce49423784984a5f6e41d7b58f49b01264df59fa03",
       "role": "research reference; no source files redistributed"
+    },
+    {
+      "repo": "https://github.com/saadeghi/daisyui",
+      "revision": "f832adddd5c2b458bda4b0da8816b31a5b17731e",
+      "license_path": "LICENSE",
+      "license_url": "https://raw.githubusercontent.com/saadeghi/daisyui/f832adddd5c2b458bda4b0da8816b31a5b17731e/LICENSE",
+      "license_spdx": "MIT",
+      "license_sha256": "8709e3ac65c84637c422dc8082b893d9997fce093751c77b2f1983bf29dbf9ea",
+      "local_license": "assets/vendor/daisyui/LICENSE",
+      "role": "curated source pack",
+      "files": [
+        {
+          "source": "packages/daisyui/src/themes/light.css",
+          "local": "assets/vendor/daisyui/themes/light.css",
+          "sha256": "6384d462b607629485ba26fa7d65af21b50bd1f844d4e5733bae2dd4f56201f2"
+        },
+        {
+          "source": "packages/daisyui/src/themes/dark.css",
+          "local": "assets/vendor/daisyui/themes/dark.css",
+          "sha256": "832bfbb806b81e5bac0355c42b389c7ff1321589e70292eb1cb037e248b490d1"
+        },
+        {
+          "source": "packages/daisyui/src/themes/cupcake.css",
+          "local": "assets/vendor/daisyui/themes/cupcake.css",
+          "sha256": "bfe678477ffbcce3e547ba181b3162113c88eba5a1a22c3d94ac5bdd5810463d"
+        },
+        {
+          "source": "packages/daisyui/src/themes/cyberpunk.css",
+          "local": "assets/vendor/daisyui/themes/cyberpunk.css",
+          "sha256": "fd1fb1c545fc8d00a1a364d4b502dafc9387edef130f46241912f8cd1cc4190e"
+        },
+        {
+          "source": "packages/daisyui/src/themes/forest.css",
+          "local": "assets/vendor/daisyui/themes/forest.css",
+          "sha256": "898a92314f899e41fa78639286f35ae6af9d5f48a7e3ab60acb864a1c39a88c4"
+        },
+        {
+          "source": "packages/daisyui/src/themes/nord.css",
+          "local": "assets/vendor/daisyui/themes/nord.css",
+          "sha256": "0ebf108d5a09146cd0307023175179dc16602b8d79a572cd63dc05a24d2932af"
+        },
+        {
+          "source": "packages/daisyui/src/themes/sunset.css",
+          "local": "assets/vendor/daisyui/themes/sunset.css",
+          "sha256": "b9430a01d11f8551ae10af79ed22ddb3e817c5124db2145053fa5a5039fef124"
+        },
+        {
+          "source": "packages/daisyui/src/themes/wireframe.css",
+          "local": "assets/vendor/daisyui/themes/wireframe.css",
+          "sha256": "2e8abc31b7a5613e8abfb78069d119828029fbf57c35d849563aefdbc68daace"
+        }
+      ],
+      "file_count": 8
+    },
+    {
+      "repo": "https://github.com/n3r4zzurr0/svg-spinners",
+      "revision": "abfa05c49acf005b8b1e0ef8eb25a67a7057eb20",
+      "license_path": "LICENSE",
+      "license_url": "https://raw.githubusercontent.com/n3r4zzurr0/svg-spinners/abfa05c49acf005b8b1e0ef8eb25a67a7057eb20/LICENSE",
+      "license_spdx": "MIT",
+      "license_sha256": "712f8f614e9a23cc754a21d72ea443f1166077e4ee0e6c3b6f9fa576a6d37254",
+      "local_license": "assets/vendor/svg-spinners/LICENSE",
+      "role": "curated source pack",
+      "files": [
+        {
+          "source": "svg-smil/180-ring.svg",
+          "local": "assets/icons/curated/svg-spinners/180-ring.svg",
+          "sha256": "23a010281ff20ac2c4b31b6aaac0fd186f26b67ff85652d479713cab241d8c5c"
+        },
+        {
+          "source": "svg-smil/3-dots-bounce.svg",
+          "local": "assets/icons/curated/svg-spinners/3-dots-bounce.svg",
+          "sha256": "a2196be643bb50defcfb4a29a5b038c7cfabff200c4bb4946caff5a56cb841c6"
+        },
+        {
+          "source": "svg-smil/3-dots-fade.svg",
+          "local": "assets/icons/curated/svg-spinners/3-dots-fade.svg",
+          "sha256": "036dcb2316d939d148c7b965c1eb33596805052f93b856b2dd2e9b16127e7b7d"
+        },
+        {
+          "source": "svg-smil/3-dots-scale.svg",
+          "local": "assets/icons/curated/svg-spinners/3-dots-scale.svg",
+          "sha256": "9a57b6b885d24f1ce3b282009145594e1d3cb71df322fb5ba370f92deb6c0d95"
+        },
+        {
+          "source": "svg-smil/6-dots-rotate.svg",
+          "local": "assets/icons/curated/svg-spinners/6-dots-rotate.svg",
+          "sha256": "ca57f8e28db596838007478493f57939897c57bd99c1369578e79dfb52cc0452"
+        },
+        {
+          "source": "svg-smil/8-dots-rotate.svg",
+          "local": "assets/icons/curated/svg-spinners/8-dots-rotate.svg",
+          "sha256": "3001587021baad0c70fbd1c77f82aebe27b133d6c4129945f53236acb5c58fea"
+        },
+        {
+          "source": "svg-smil/90-ring.svg",
+          "local": "assets/icons/curated/svg-spinners/90-ring.svg",
+          "sha256": "2d1d1e7412354a29b8d9b799964e1aa4668d036df844f0cef4c68f2b7bb4794d"
+        },
+        {
+          "source": "svg-smil/blocks-shuffle-3.svg",
+          "local": "assets/icons/curated/svg-spinners/blocks-shuffle-3.svg",
+          "sha256": "ae294c905ebc6ee39c729dbfb9571da3763328b4455d2ee91bb62debeaecd333"
+        }
+      ],
+      "file_count": 8
+    },
+    {
+      "repo": "https://github.com/boringdesigners/boring-avatars",
+      "revision": "d0ff2582a8921b643a89de4a4912be28938a828b",
+      "license_path": "LICENSE",
+      "license_url": "https://raw.githubusercontent.com/boringdesigners/boring-avatars/d0ff2582a8921b643a89de4a4912be28938a828b/LICENSE",
+      "license_spdx": "MIT",
+      "license_sha256": "528d05b9822f5bfe55d99d68521d12e79fb02cbf40909402fd1c11a488831ecc",
+      "local_license": "assets/vendor/boring-avatars/LICENSE",
+      "role": "curated source pack",
+      "files": [
+        {
+          "source": "src/lib/index.tsx",
+          "local": "assets/icons/curated/boring-avatars/beam-01.svg",
+          "sha256": "236cee2fc3ba5b7e0118965a8adef99e0427fd31e6ede4977a410e32c7523af9",
+          "recipe": {
+            "variant": "beam",
+            "name": "beam-01",
+            "size": 128,
+            "colors": "library defaults",
+            "title": false,
+            "react": "19.2.6",
+            "react_dom": "19.2.6",
+            "esbuild": "0.25.12",
+            "render": "renderToStaticMarkup with per-file identifierPrefix"
+          }
+        },
+        {
+          "source": "src/lib/index.tsx",
+          "local": "assets/icons/curated/boring-avatars/beam-02.svg",
+          "sha256": "46d4165aa995ca12b028125d8fb3284232b3a6e21b43d9745b5d363d800252e2",
+          "recipe": {
+            "variant": "beam",
+            "name": "beam-02",
+            "size": 128,
+            "colors": "library defaults",
+            "title": false,
+            "react": "19.2.6",
+            "react_dom": "19.2.6",
+            "esbuild": "0.25.12",
+            "render": "renderToStaticMarkup with per-file identifierPrefix"
+          }
+        },
+        {
+          "source": "src/lib/index.tsx",
+          "local": "assets/icons/curated/boring-avatars/bauhaus-01.svg",
+          "sha256": "887d0bc295078affe21d44f843553929a48125998f29ff272bc1aad5262212fc",
+          "recipe": {
+            "variant": "bauhaus",
+            "name": "bauhaus-01",
+            "size": 128,
+            "colors": "library defaults",
+            "title": false,
+            "react": "19.2.6",
+            "react_dom": "19.2.6",
+            "esbuild": "0.25.12",
+            "render": "renderToStaticMarkup with per-file identifierPrefix"
+          }
+        },
+        {
+          "source": "src/lib/index.tsx",
+          "local": "assets/icons/curated/boring-avatars/bauhaus-02.svg",
+          "sha256": "ea07ea8a5d84b2aa3b1f19bdfa299112be967f6518e881147d1e3f33a46edf8f",
+          "recipe": {
+            "variant": "bauhaus",
+            "name": "bauhaus-02",
+            "size": 128,
+            "colors": "library defaults",
+            "title": false,
+            "react": "19.2.6",
+            "react_dom": "19.2.6",
+            "esbuild": "0.25.12",
+            "render": "renderToStaticMarkup with per-file identifierPrefix"
+          }
+        },
+        {
+          "source": "src/lib/index.tsx",
+          "local": "assets/icons/curated/boring-avatars/ring-01.svg",
+          "sha256": "1d761d326a30e35d036e763cf45f55fbce3e2519d6946a8bc2b49a04b295343c",
+          "recipe": {
+            "variant": "ring",
+            "name": "ring-01",
+            "size": 128,
+            "colors": "library defaults",
+            "title": false,
+            "react": "19.2.6",
+            "react_dom": "19.2.6",
+            "esbuild": "0.25.12",
+            "render": "renderToStaticMarkup with per-file identifierPrefix"
+          }
+        },
+        {
+          "source": "src/lib/index.tsx",
+          "local": "assets/icons/curated/boring-avatars/ring-02.svg",
+          "sha256": "009a5802be1f8beb8f56107b9e5606365ad8c3fa8aa7617b8fe1bc34ed8940da",
+          "recipe": {
+            "variant": "ring",
+            "name": "ring-02",
+            "size": 128,
+            "colors": "library defaults",
+            "title": false,
+            "react": "19.2.6",
+            "react_dom": "19.2.6",
+            "esbuild": "0.25.12",
+            "render": "renderToStaticMarkup with per-file identifierPrefix"
+          }
+        },
+        {
+          "source": "src/lib/index.tsx",
+          "local": "assets/icons/curated/boring-avatars/pixel-01.svg",
+          "sha256": "ee32bb1e72794ba44f15d89fe57cb0049215fbc1a650ad59b5d887495b4b12a5",
+          "recipe": {
+            "variant": "pixel",
+            "name": "pixel-01",
+            "size": 128,
+            "colors": "library defaults",
+            "title": false,
+            "react": "19.2.6",
+            "react_dom": "19.2.6",
+            "esbuild": "0.25.12",
+            "render": "renderToStaticMarkup with per-file identifierPrefix"
+          }
+        },
+        {
+          "source": "src/lib/index.tsx",
+          "local": "assets/icons/curated/boring-avatars/pixel-02.svg",
+          "sha256": "198ce3d7d629f1e8cee1d5745d20cee4446f113db6b8a034ee2f1d466aa8d418",
+          "recipe": {
+            "variant": "pixel",
+            "name": "pixel-02",
+            "size": 128,
+            "colors": "library defaults",
+            "title": false,
+            "react": "19.2.6",
+            "react_dom": "19.2.6",
+            "esbuild": "0.25.12",
+            "render": "renderToStaticMarkup with per-file identifierPrefix"
+          }
+        },
+        {
+          "source": "src/lib/index.tsx",
+          "local": "assets/icons/curated/boring-avatars/sunset-01.svg",
+          "sha256": "14f660cff89b37d439584ae284dfcfd20fd0f499513ee716deea2af6d00fb078",
+          "recipe": {
+            "variant": "sunset",
+            "name": "sunset-01",
+            "size": 128,
+            "colors": "library defaults",
+            "title": false,
+            "react": "19.2.6",
+            "react_dom": "19.2.6",
+            "esbuild": "0.25.12",
+            "render": "renderToStaticMarkup with per-file identifierPrefix"
+          }
+        },
+        {
+          "source": "src/lib/index.tsx",
+          "local": "assets/icons/curated/boring-avatars/sunset-02.svg",
+          "sha256": "b264dafb41767a2326d60f60eec170c7836dcd3f2ecc047f2bddcf586b80014e",
+          "recipe": {
+            "variant": "sunset",
+            "name": "sunset-02",
+            "size": 128,
+            "colors": "library defaults",
+            "title": false,
+            "react": "19.2.6",
+            "react_dom": "19.2.6",
+            "esbuild": "0.25.12",
+            "render": "renderToStaticMarkup with per-file identifierPrefix"
+          }
+        },
+        {
+          "source": "src/lib/index.tsx",
+          "local": "assets/icons/curated/boring-avatars/marble-01.svg",
+          "sha256": "9f49f88c467d6a50f0cf9cc68b40fdac33b70053a5892b57261230c6f3525c49",
+          "recipe": {
+            "variant": "marble",
+            "name": "marble-01",
+            "size": 128,
+            "colors": "library defaults",
+            "title": false,
+            "react": "19.2.6",
+            "react_dom": "19.2.6",
+            "esbuild": "0.25.12",
+            "render": "renderToStaticMarkup with per-file identifierPrefix"
+          }
+        },
+        {
+          "source": "src/lib/index.tsx",
+          "local": "assets/icons/curated/boring-avatars/marble-02.svg",
+          "sha256": "1471dc8ec5d7dfdac3f001812aa4873151f4feecaf3e3f895a6395b48eceabb7",
+          "recipe": {
+            "variant": "marble",
+            "name": "marble-02",
+            "size": 128,
+            "colors": "library defaults",
+            "title": false,
+            "react": "19.2.6",
+            "react_dom": "19.2.6",
+            "esbuild": "0.25.12",
+            "render": "renderToStaticMarkup with per-file identifierPrefix"
+          }
+        }
+      ],
+      "file_count": 12
     }
   ],
   "original_style_ids": [

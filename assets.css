@@ -226,3 +226,8 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(-
 .kit-add{min-height:40px;border:1px solid #c6cad2;border-radius:8px;background:#fff;color:#322b92;padding:6px;cursor:pointer}.kit-add:focus-visible{outline:3px solid #5145c8}
 
 .kit-item{display:flex;flex-direction:column;min-width:0;gap:4px}.kit-item>button:first-child{width:100%;flex:1}.kit-item.hide{display:none}
+
+/* Curated previews: avatars need space; spinners start only on request. */
+.ic[data-lib="boring-avatars"] img{width:64px;height:64px}
+.ic[data-lib="svg-spinners"] img,.spinner-static{width:32px;height:32px;font-size:30px;line-height:32px}
+.spinner-toggle{min-height:40px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);cursor:pointer}

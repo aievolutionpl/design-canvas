@@ -84,7 +84,7 @@ function paletteOf(st) {
     for (const [k, v] of Object.entries(st.colors)) { if (isHex(v) && !seen.has(v.toUpperCase()) && !/contrast/.test(k)) { seen.add(v.toUpperCase()); out.push({ name: k, hex: v.toUpperCase() }); } }
     return out;
   }
-  return st.palette.map((h, i) => ({ name: 'próbka ' + (i + 1), hex: h }));
+  return st.palette.map((h, i) => ({ name: (st.paletteSource === 'sampled' ? 'próbka ' : 'kolor ') + (i + 1), hex: h }));
 }
 
 /* ---------------- deterministic SVG marks ---------------- */
@@ -123,7 +123,7 @@ const R = {
     const t = tokens(st);
     return `<div class="concept"><div class="txt"><div class="eyebrow">${esc(st.id)} · ${esc(st.category)}</div><h1>${esc(st.name)}</h1><div class="tagline">${esc(st.tagline)}</div><div class="desc">${esc(st.description)}${st.principles ? ' — ' + esc(st.principles) : ''}</div><div class="when"><b>Kiedy używać</b>${esc(st.whenToUse)}</div></div><figure class="img" style="margin:0"><img src="${st.image}" alt="${esc(st.name)} — ${esc(st.imageNote)}" loading="lazy" decoding="async" width="${st.imageW}" height="${st.imageH}"><figcaption class="fine">${esc(st.imageNote)}</figcaption></figure></div>`;
   },
-  conceptLite(st) { return `<div class="concept"><div class="txt"><h1>${esc(st.name)}</h1></div><div class="img"><img src="${st.image.replace('.webp', '-sm.webp')}" alt="" loading="lazy" decoding="async"></div></div>`; },
+  conceptLite(st) { return `<div class="concept"><div class="txt"><h1>${esc(st.name)}</h1></div><div class="img"><img src="${(st.image || '').replace('.webp', '-sm.webp')}" alt="" loading="lazy" decoding="async"></div></div>`; },
   typo(st) {
     const t = tokens(st);
     const src = st.fontsSource === 'tokens' ? 'z tokens.json' : 'dobór sugerowany (repo opisuje typografię słownie: „' + esc(st.typographyText) + '”)';
@@ -132,13 +132,13 @@ const R = {
   typoLite(st) { return `<div class="typo"><div class="big">Aa</div></div>`; },
   colour(st) {
     const pal = paletteOf(st).slice(0, 9);
-    const note = st.paletteSource === 'tokens' ? 'Źródło: tokens.json (light). Kliknij blok, aby skopiować HEX.' : 'Próbkowane z wizualizacji AI (median-cut) · opis koloru w repo: „' + esc(st.colorText) + '”. Kliknij, aby skopiować.';
+    const note = 'Pochodzenie palety: ' + esc(st.paletteSource || 'nie podano') + '. Kliknij, aby skopiować.';
     return `<div class="colour"><h3>Kolor</h3><div class="blocks">${pal.map(c => `<button class="cblock" data-copy="${c.hex}" style="background:${c.hex};color:${onColor(c.hex)}"><span>${c.hex}<small>${esc(c.name)}</small></span></button>`).join('')}</div><div class="foot">${note}</div></div>`;
   },
   colourLite(st) { const pal = paletteOf(st).slice(0, 9); return `<div class="colour" style="padding:56px"><div class="blocks" style="grid-row:1/-1">${pal.map(c => `<div class="cblock" style="background:${c.hex}"></div>`).join('')}</div></div>`; },
   mock(st) {
     const t = tokens(st), m = marks(st)[0];
-    const img = st.image.replace('.webp', '-sm.webp');
+    const img = (st.image || '').replace('.webp', '-sm.webp');
     return `<div class="mock">
 <div class="mk-card">${m}<div><div class="nm">AI Evolution</div><div class="rl">Studio projektowe · ${esc(st.name)}</div></div><div class="ct">hello@przyklad.pl<br>+48 000 000 000</div></div>
 <div class="mk-poster" style="background-image:url('${img}')"><div class="k">Plakat · 2027</div><h4>${esc(st.name)}</h4><div class="d">Wystawa · warsztat · premiera</div></div>
@@ -146,14 +146,14 @@ const R = {
 <div class="mk-ui"><nav><span class="lg">${m}Marka</span><span>Produkt</span><span>Cennik</span><span class="btn sm">Zacznij</span></nav><div class="hero"><div class="eyebrow" style="font-size:13px">Landing hero</div><h4>${esc(VAR_TITLE)}</h4><p>Przykładowa sekcja hero, przycisk, karty i nawigacja zbudowane tokenami tego stylu.</p><div class="cta"><span class="btn">Wypróbuj</span><span class="btn sec">Zobacz demo</span></div></div><div class="cards"><div><b>24</b>szablony</div><div><b>3×</b>szybciej</div><div><b>PL</b>polskie znaki</div></div></div>
 </div><div class="src-note fine">Mockupy HTML/CSS z tokenów stylu · treść demonstracyjna</div>`;
   },
-  mockLite(st) { return `<div class="mock"><div class="mk-card"></div><div class="mk-poster" style="background-image:url('${st.image.replace('.webp', '-sm.webp')}')"></div><div class="mk-broch"></div><div class="mk-ui"></div></div>`; },
+  mockLite(st) { return `<div class="mock"><div class="mk-card"></div><div class="mk-poster" style="background-image:url('${(st.image || '').replace('.webp', '-sm.webp')}')"></div><div class="mk-broch"></div><div class="mk-ui"></div></div>`; },
   logos(st) {
     const t = tokens(st), sw = parseFloat(t.r) <= 2 ? 2.4 : 1.8;
     return `<div class="logos"><h3>Logo / ikony</h3><div class="marks">${marks(st).map(s => `<div>${s}</div>`).join('')}</div><div class="marks">${marks(st).map(s => `<div style="background:${t.tx}">${s.replaceAll(t.tx, t.bg)}</div>`).join('')}</div><div class="icons">${ICONS.map(p => `<svg viewBox="0 0 24 24" style="stroke-width:${sw}">${p}</svg>`).join('')}</div><div class="foot fine">Znaki koncepcyjne wygenerowane w kodzie z palety stylu — nie są logo z repozytoriów.</div></div>`;
   },
   logosLite(st) { return `<div class="logos"><div class="marks">${marks(st).map(s => `<div>${s}</div>`).join('')}</div></div>`; },
   vars(st) {
-    const im = `style="background-image:url('${st.image.replace('.webp', '-sm.webp')}')"`;
+    const im = `style="background-image:url('${(st.image || '').replace('.webp', '-sm.webp')}')"`;
     const T = esc(VAR_TITLE), S = 'Jeden ekran, jasna decyzja.';
     return `<div class="vars"><h3>Warianty slajdu · „${T}”</h3><div class="grid">
 <div class="vs v1"><div class="k">01 · centrum</div><div class="t">${T}</div><div class="s">${S}</div></div>
@@ -211,10 +211,12 @@ function layout() {
   // Styles in 3 columns: ADT (17), DT27 01-15, DT27 16-30
   const adt = STY.filter(s => s.source === 'agent-design-taste');
   const dt = STY.filter(s => s.source === 'design-trends-2027');
+  const curated = STY.filter(s => s.source !== 'agent-design-taste' && s.source !== 'design-trends-2027');
   const cols = [
     { name: 'Style UI', sub: 'agent-design-taste · ' + adt.length + ' stylów', list: adt, sec: 'adt' },
     { name: 'Trendy 2027', sub: 'design-trends-2027 · 01–15', list: dt.slice(0, 15), sec: 'dt27' },
     { name: 'Trendy 2027', sub: 'design-trends-2027 · 16–30', list: dt.slice(15), sec: 'dt27b' },
+    { name: 'Pozostałe style', sub: 'Kuracje i inspiracje · źródła w szczegółach', list: curated, sec: 'curated' },
   ];
   const y0 = dosRes.bottom + 3200;
   cols.forEach((c, ci) => {
@@ -233,9 +235,9 @@ function layout() {
       });
     });
     const h = c.list.length * (ROW_H + ROW_GAP);
-    if (ci !== 2) sections.push({ id: c.sec, name: c.name + (ci === 1 ? ' (01–30)' : ''), x: x0, y: y0 - 1600, w: ci === 1 ? ROW_W * 2 + COL_GAP : ROW_W, h: h + 1600, count: ci === 1 ? dt.length : adt.length });
+    if (ci !== 2) sections.push({ id: c.sec, name: c.name + (ci === 1 ? ' (01–30)' : ''), x: x0, y: y0 - 1600, w: ci === 1 ? ROW_W * 2 + COL_GAP : ROW_W, h: h + 1600, count: ci === 1 ? dt.length : c.list.length });
   });
-  const stylesBottom = y0 + Math.max(adt.length, 15) * (ROW_H + ROW_GAP);
+  const stylesBottom = y0 + Math.max(adt.length, 15, curated.length) * (ROW_H + ROW_GAP);
 
   // band 1: FONTY / KOLORY / TŁA
   let by = stylesBottom + 2600;
@@ -251,7 +253,7 @@ function layout() {
   sections.push({ id: 'fonts', name: 'Fonty', x: fx, y: by - 1600, w: g.w, h: g.h + 1600, count: FONTS.length });
 
   const kx = fx + g.w + 2400;
-  const pals = STY.map(st => ({ id: st.id, name: st.id + ' · ' + st.name, note: st.paletteSource === 'tokens' ? 'tokens.json · agent-design-taste' : 'próbkowane z wizualizacji · design-trends-2027', colors: paletteOf(st).slice(0, 9) }));
+  const pals = STY.map(st => ({ id: st.id, name: st.id + ' · ' + st.name, note: `${st.paletteSource || 'pochodzenie niepodane'} · ${st.source}`, colors: paletteOf(st).slice(0, 9) }));
   pals.push({ id: 'DT27-site', name: 'design-trends-2027 · strona', note: 'DESIGN.md repo design-trends-2027', colors: [['papier', '#F6F5EE'], ['atrament', '#202621'], ['limonka', '#D9F356'], ['niebieski', '#BDD7F4'], ['róż', '#F0A8B9'], ['koral', '#F16B55']].map(([n, h]) => ({ name: n, hex: h })) });
   pals.push({ id: 'apple-clarity', name: 'Apple Clarity · tokeny kandydackie', note: 'skill apple-clarity (propozycja, nie pomiar)', colors: [['canvas', '#F5F6F8'], ['surface', '#FFFFFF'], ['text', '#17191D'], ['secondary', '#525866'], ['border', '#E2E5EA'], ['action', '#2457D6'], ['success', '#167044']].map(([n, h]) => ({ name: n, hex: h })) });
   titles.push({ x: kx, y: by - 1500, html: `Kolory<small>${pals.length} palet</small>`, cls: 'sec-title' });
@@ -587,17 +589,17 @@ function openDetail(b) {
   else if (b.st) {
     const st = b.st, t = tokens(st); title = st.name;
     const fonts = [t.fd, t.fs, t.fm].filter((v, i, a) => a.indexOf(v) === i); loadDetailFonts(fonts);
-    const varsCss = st.source === 'agent-design-taste' ? st.tokensCss : `:root{\n  /* paleta próbkowana z wizualizacji, role UI wyprowadzone automatycznie */\n  --color-bg:${t.bg};\n  --color-surface:${t.sf};\n  --color-text:${t.tx};\n  --color-text-secondary:${t.mu};\n  --color-border:${t.bd};\n  --color-accent:${t.ac};\n  --font-display:'${t.fd}', serif;\n  --font-sans:'${t.fs}', system-ui, sans-serif;\n}`;
+    const varsCss = st.source === 'agent-design-taste' ? st.tokensCss : `:root{\n  /* role UI wyprowadzone automatycznie z palety źródłowej */\n  --color-bg:${t.bg};\n  --color-surface:${t.sf};\n  --color-text:${t.tx};\n  --color-text-secondary:${t.mu};\n  --color-border:${t.bd};\n  --color-accent:${t.ac};\n  --font-display:'${t.fd}', serif;\n  --font-sans:'${t.fs}', system-ui, sans-serif;\n}`;
     h += `${favBtn}<button class="copy-btn" data-kit-style="${esc(st.id)}">Dodaj styl do zestawu</button> <a class="copy-btn" href="${st.sourceUrl}" target="_blank" rel="noopener">Źródło ↗</a>
 <p class="muted" style="margin-top:12px">${esc(st.id)} · ${esc(st.category)} · ${esc(st.source)}</p>
-<img src="${st.image.replace('.webp', '-sm.webp')}" alt="${esc(st.imageNote)}" loading="lazy"><p class="muted">${esc(st.imageNote)}</p>
+<img src="${(st.image || '').replace('.webp', '-sm.webp')}" alt="${esc(st.imageNote)}" loading="lazy"><p class="muted">${esc(st.imageNote)}</p>
 <p><b>${esc(st.tagline)}</b></p><p>${esc(st.description)}</p>
 ${st.signature ? `<h3>Signature move</h3><p>${esc(st.signature)}</p>` : ''}
 <h3>Kiedy używać</h3><p>${esc(st.whenToUse)}</p>
 ${st.composition ? `<h3>Kompozycja</h3><p>${esc(st.composition)}</p><h3>Materiały</h3><p>${esc(st.materials)}</p><h3>Unikać</h3><p>${esc(st.avoid)}</p>` : ''}
 ${st.do?.length ? `<h3>Do / Don't</h3><p>✓ ${st.do.map(esc).join('<br>✓ ')}</p><p>✕ ${st.dont.map(esc).join('<br>✕ ')}</p>` : ''}
-<h3>Paleta ${st.paletteSource === 'sampled' ? '(próbkowana z obrazu)' : '(tokens.json)'}</h3>${swatchesHTML(paletteOf(st))}
-<h3>Fonty ${st.fontsSource === 'suggested' ? '(dobór sugerowany)' : '(tokens.json)'}</h3>${codeBlock(`font-family: '${t.fd}', serif;   /* nagłówki */\nfont-family: '${t.fs}', system-ui, sans-serif;   /* tekst */\n\n<link rel="stylesheet" href="${fontLink(fonts)}">`, 'Kopiuj font-family + link')}
+<h3>Paleta ${'(' + (st.paletteSource || 'pochodzenie niepodane') + ')'}</h3>${swatchesHTML(paletteOf(st))}
+<h3>Fonty ${'(' + (st.fontsSource || 'pochodzenie niepodane') + ')'}</h3>${codeBlock(`font-family: '${t.fd}', serif;   /* nagłówki */\nfont-family: '${t.fs}', system-ui, sans-serif;   /* tekst */\n\n<link rel="stylesheet" href="${fontLink(fonts)}">`, 'Kopiuj font-family + link')}
 ${st.fontsRecommended ? `<p class="muted">Rekomendacje repo: ${esc(st.fontsRecommended)}</p>` : ''}
 <h3>Zmienne CSS</h3>${codeBlock(varsCss, 'Kopiuj CSS vars')}
 <h3>Prompt dla agenta</h3>${codeBlock(st.prompt, 'Kopiuj prompt')}

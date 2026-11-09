@@ -222,3 +222,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(-
 .lqnav a{padding:8px 13px;border-radius:999px;text-decoration:none;color:var(--tx);opacity:.75;font:600 12.5px Inter}
 .lqnav a.on{background:rgba(255,255,255,.55);opacity:1}
 .lqpill{border-radius:999px}
+
+.kit-add{min-height:40px;border:1px solid #c6cad2;border-radius:8px;background:#fff;color:#322b92;padding:6px;cursor:pointer}.kit-add:focus-visible{outline:3px solid #5145c8}
+
+.kit-item{display:flex;flex-direction:column;min-width:0;gap:4px}.kit-item>button:first-child{width:100%;flex:1}.kit-item.hide{display:none}

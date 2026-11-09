@@ -8,7 +8,7 @@ const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 const BW = 3400, BH = 5240, GX = 420, GY = 560, COLS = 8;
 let world, vp, boards = [], groups = [], cam = { x: 0, y: 0, s: 0.1 }, MIN = 0.01, MAX = 2.5;
 let ICONS = {}, INAMES = [];
-let favs = new Set(JSON.parse(localStorage.getItem('bb-favs') || '[]'));
+let favs = window.DesignFavourites.read();
 let filter = 'all', stops = [], pres = false, pi = 0;
 
 /* ---------- colour helpers ---------- */
@@ -331,7 +331,7 @@ function tap(t) {
 }
 function copy(v) { (navigator.clipboard ? navigator.clipboard.writeText(v) : Promise.reject()).then(() => toast('Skopiowano ' + v), () => toast(v)); }
 let tt; function toast(m) { const el = $('#toast'); el.textContent = m; el.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => el.classList.remove('show'), 1600); }
-function toggleFav(id) { favs.has(id) ? favs.delete(id) : favs.add(id); localStorage.setItem('bb-favs', JSON.stringify([...favs]));
+function toggleFav(id) { favs.has(id) ? favs.delete(id) : favs.add(id); window.DesignFavourites.save(favs);
   document.querySelectorAll(`[data-fav="${CSS.escape(id)}"]`).forEach(b => { b.classList.toggle('on', favs.has(id)); b.setAttribute('aria-pressed', favs.has(id)); });
   $('#favN').textContent = favs.size; toast(favs.has(id) ? '♥ Dodano do ulubionych' : 'Usunięto z ulubionych'); if (filter === 'fav') applyFilter(); }
 
@@ -373,9 +373,6 @@ async function boot() {
   ICONS = ICO; INAMES = Object.keys(ICO);
   const list = [...DOS.palettes.map(fromDOS), ...STY.filter(s => s.source === 'agent-design-taste').map(fromADT), ...STY.filter(s => s.source !== 'agent-design-taste' && s.source !== 'liquid-glass').map(fromDT), ...STY.filter(s => s.source === 'liquid-glass').map(fromLG)];
   const fams = [...new Set(list.flatMap(T => [T.disp, T.body, T.mono]))];
-  const specs = [...FC.specs, ...DOS.fontSpecs];
-  const q = fams.map(f => specs.find(s => s.split(':')[0] === f) || f).map(s => 'family=' + s.replace(/ /g, '+'));
-  for (let i = 0; i < q.length; i += 12) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://fonts.googleapis.com/css2?' + q.slice(i, i + 12).join('&') + '&display=swap'; document.head.appendChild(l); }
   layout(list); setupInput(); setupUI(); buildStops();
   const h = decodeURIComponent(location.hash.slice(1)); const hb = boards.find(b => b.T.id === h);
   if (hb) flyTo(hb, .03, true); else fitAll(true);

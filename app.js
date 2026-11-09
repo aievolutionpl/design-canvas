@@ -26,7 +26,7 @@ const titles = [];          // row / section titles
 const sections = [];        // {id,name,x,y,w,h,count}
 const cam = { x: 0, y: 0, s: 0.1 };
 let world, vp, minimap, mctx, bounds = { x: 0, y: 0, w: 1, h: 1 };
-let favs = new Set(JSON.parse(localStorage.getItem('dc-favs') || '[]'));
+let favs = new Set([...window.DesignFavourites.read()].map(x=>x.includes(':')?x:'style:'+x));
 let filterCat = 'all', query = '';
 let presenting = false, presIdx = 0, presList = [];
 let selected = null;
@@ -522,7 +522,7 @@ function presGo(i) {
 }
 
 /* ---------------- favourites ---------------- */
-function saveFavs() { localStorage.setItem('dc-favs', JSON.stringify([...favs])); }
+function saveFavs() { window.DesignFavourites.save(new Set([...favs].map(x=>x.startsWith('style:')?x.slice(6):x))); }
 function toggleFav(key) {
   favs.has(key) ? favs.delete(key) : favs.add(key); saveFavs(); syncFavUI();
   toast(favs.has(key) ? 'Dodano do ulubionych' : 'Usunięto z ulubionych');
@@ -576,6 +576,8 @@ function exportJSON() {
 function codeBlock(txt, label = 'Kopiuj') { const id = 'c' + Math.random().toString(36).slice(2, 8); CODES[id] = txt; return `<div class="code">${esc(txt)}</div><button class="copy-btn" data-code="${id}">⧉ ${esc(label)}</button>`; }
 const CODES = {};
 function swatchesHTML(pal) { return `<div class="swatches">${pal.map(c => `<button class="swatch" data-copy="${c.hex}"><i style="background:${c.hex}"></i><span>${c.hex}</span><small>${esc(c.name)}</small></button>`).join('')}</div>`; }
+const loadedFonts=new Set();
+function loadDetailFonts(names){const fresh=names.filter(x=>x&&!loadedFonts.has(x));if(!fresh.length)return;fresh.forEach(x=>loadedFonts.add(x));const link=document.createElement('link');link.rel='stylesheet';link.href=fontLink(fresh);document.head.appendChild(link)}
 function openDetail(b) {
   if (!b) return; selected = b;
   boards.forEach(x => x.el.classList.remove('hit')); b.el.classList.add('hit');
@@ -584,9 +586,9 @@ function openDetail(b) {
   if (b.detail) { title = b.detailTitle || b.label; h = favBtn + b.detail(); }
   else if (b.st) {
     const st = b.st, t = tokens(st); title = st.name;
-    const fonts = [t.fd, t.fs, t.fm].filter((v, i, a) => a.indexOf(v) === i);
+    const fonts = [t.fd, t.fs, t.fm].filter((v, i, a) => a.indexOf(v) === i); loadDetailFonts(fonts);
     const varsCss = st.source === 'agent-design-taste' ? st.tokensCss : `:root{\n  /* paleta próbkowana z wizualizacji, role UI wyprowadzone automatycznie */\n  --color-bg:${t.bg};\n  --color-surface:${t.sf};\n  --color-text:${t.tx};\n  --color-text-secondary:${t.mu};\n  --color-border:${t.bd};\n  --color-accent:${t.ac};\n  --font-display:'${t.fd}', serif;\n  --font-sans:'${t.fs}', system-ui, sans-serif;\n}`;
-    h += `${favBtn}<a class="copy-btn" href="${st.sourceUrl}" target="_blank" rel="noopener">Źródło ↗</a>
+    h += `${favBtn}<button class="copy-btn" data-kit-style="${esc(st.id)}">Dodaj styl do zestawu</button> <a class="copy-btn" href="${st.sourceUrl}" target="_blank" rel="noopener">Źródło ↗</a>
 <p class="muted" style="margin-top:12px">${esc(st.id)} · ${esc(st.category)} · ${esc(st.source)}</p>
 <img src="${st.image.replace('.webp', '-sm.webp')}" alt="${esc(st.imageNote)}" loading="lazy"><p class="muted">${esc(st.imageNote)}</p>
 <p><b>${esc(st.tagline)}</b></p><p>${esc(st.description)}</p>
@@ -601,7 +603,7 @@ ${st.fontsRecommended ? `<p class="muted">Rekomendacje repo: ${esc(st.fontsRecom
 <h3>Prompt dla agenta</h3>${codeBlock(st.prompt, 'Kopiuj prompt')}
 ${st.aliases?.length ? `<h3>Aliasy</h3><div class="tagrow">${st.aliases.map(a => `<span class="tag">${esc(a)}</span>`).join('')}</div>` : ''}`;
   } else if (b.f) {
-    const f = b.f, c = fontCard(f);
+    const f = b.f, c = fontCard(f); loadDetailFonts([f.name]);
     h += `${favBtn}<a class="copy-btn" href="${f.url}" target="_blank" rel="noopener">Google Fonts ↗</a><p style="font-family:${esc(c.ff)};font-size:34px;line-height:1.2;margin-top:14px">${PL}<br>${PL_ALL}</p><p>${esc(f.use)}</p><p class="muted">Para: ${esc(f.pairing)}</p><h3>CSS</h3>${codeBlock(`<link rel="stylesheet" href="${fontLink([f.name])}">\n\nfont-family: ${c.ff};`, 'Kopiuj link + font-family')}`;
   } else if (b.b) {
     h += `${favBtn}<div style="height:180px;border-radius:12px;border:1px solid var(--c-border);margin:12px 0;${esc(Object.entries(b.b.style).map(([k, v]) => k.replace(/[A-Z]/g, m => '-' + m.toLowerCase()) + ':' + v).join(';'))}"></div><p class="muted">Tło generowane w CSS/SVG (bez plików), licencja: własny kod repo.</p><h3>CSS</h3>${codeBlock(b.b.css, 'Kopiuj CSS')}`;
@@ -685,6 +687,7 @@ function setupUI() {
   $('#expJson').onclick = () => favs.size ? copyText(exportJSON(), 'JSON skopiowany') : toast('Najpierw dodaj ulubione ♥');
   $('#favClear').onclick = () => { if (favs.size && confirm('Usunąć wszystkie ulubione?')) { favs.clear(); saveFavs(); syncFavUI(); } };
   document.addEventListener('click', e => {
+    const kit=e.target.closest('[data-kit-style]'); if(kit){if(window.DesignKit){DesignKit.setStyle(kit.dataset.kitStyle);toast('Styl dodany do zestawu')}else toast('Zestaw jest niedostępny');return;}
     const c = e.target.closest('[data-code]'); if (c) { copyText(CODES[c.dataset.code], 'Skopiowano'); return; }
     const sw = e.target.closest('.panel [data-copy]'); if (sw) { copyText(sw.dataset.copy, 'Skopiowano ' + sw.dataset.copy); return; }
     const fv = e.target.closest('.panel [data-fav]'); if (fv) { toggleFav(fv.dataset.fav); if (selected) openDetail(selected); return; }
@@ -702,9 +705,6 @@ async function boot() {
   [STY, FONTS, BGS, GAL] = await Promise.all(['data/styles.json', 'data/fonts.json', 'data/backgrounds.json', 'data/gallery.json'].map(get));
   SPECS = (await get('data/font-check.json')).specs;
   try { DOS = await get('data/designer-os.json'); } catch (e) { console.warn('Designer OS data missing', e); }
-  if (DOS) { const d = document.createElement('link'); d.rel = 'stylesheet'; d.href = 'https://fonts.googleapis.com/css2?' + DOS.fontSpecs.map(s => 'family=' + s.replace(/ /g, '+')).join('&') + '&display=swap'; document.head.appendChild(d); }
-  // Google Fonts: all families in one stylesheet (glyph files load lazily per unicode-range/use)
-  const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = fontLink(SPECS.map(s => s.split(':')[0])); document.head.appendChild(l);
   layout(); build(); setupMinimap(); setupInput(); setupSidebar(); setupUI();
   const hash = decodeURIComponent(location.hash.slice(1));
   if (hash && boards.find(b => b.id === hash || b.favKey === hash)) { fitAll(true); goKey(hash); }

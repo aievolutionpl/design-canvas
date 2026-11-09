@@ -17,8 +17,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="boards.css">
+<link rel="stylesheet" href="studio-shell.css">
+<script src="kit-core.js" defer></script><script src="studio-shell.js" defer></script>
 </head>
 <body>
+<div data-studio-shell data-active="boards"></div>
 <header class="bar" role="toolbar" aria-label="Sterowanie">
   <a class="logo" href="./" title="Wróć do Design Canvas"><img src="assets/favicon.svg" alt="" width="24" height="24"><span><b>Brand Boards</b><small>Design Canvas</small></span></a>
   <label class="find"><span class="sr">Szukaj tablicy</span><input id="q" type="search" placeholder="Szukaj stylu…" autocomplete="off" list="names"></label>
@@ -45,6 +48,6 @@
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <p class="hint">Przeciągnij = przesuń · kółko / szczypanie = zoom · klik w tablicę = przybliż · <kbd>P</kbd> prezentacja · <kbd>0</kbd> całość · klik w HEX = kopiuj</p>
 <footer class="ai">Serwis prowadzony przez agenta AI — treści mogą zawierać błędy, weryfikuj sam. · <a href="https://github.com/aievolutionpl/design-canvas">GitHub</a></footer>
-<script src="boards.js"></script>
+<script src="boards.js" defer></script>
 </body>
 </html>

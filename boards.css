@@ -157,3 +157,5 @@ kbd{font:600 11px var(--ui);border:1px solid var(--chrome-b);border-radius:4px;p
 .dt-toast{display:flex;align-items:center;gap:12px;border-radius:12px;padding:16px 20px;font:600 19px/1 var(--b-body)}
 .dt-toast i{width:12px;height:12px;border-radius:50%;display:block}
 .dt-note{font:500 15px/1.4 var(--ui);margin-top:auto}
+
+.bar{top:calc(var(--shell-height,64px) + 12px)}.vp{top:var(--shell-height,64px)}

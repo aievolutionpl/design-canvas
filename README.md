@@ -31,7 +31,7 @@ Design Studio łączy bibliotekę inspiracji, zasoby do skopiowania i wizualne t
 
 Nie potrzeba konta ani klucza API do przeglądania biblioteki. Ulubione dashboardu są przechowywane lokalnie w przeglądarce — nie synchronizują się między urządzeniami.
 
-## Jedno repozytorium, pięć przestrzeni pracy
+## Jedno repozytorium, sześć przestrzeni pracy
 
 | Moduł | Do czego służy | Plik |
 |---|---|---|
@@ -40,6 +40,7 @@ Nie potrzeba konta ani klucza API do przeglądania biblioteki. Ulubione dashboar
 | **Tablice stylów** | Koncepcja, typografia, kolor, mockupy, ikony i detale UI w jednym kontekście | [`boards.html`](boards.html) |
 | **Biblioteka assetów** | Kopiowanie SVG, CSS, kolorów i przykładów komponentów | [`assets.html`](assets.html) |
 | **Laboratorium Liquid Glass** | Regulacja parametrów szkła i podgląd refrakcji na żywo | [`liquid.html`](liquid.html) |
+| **Mój zestaw** | Własny brief, paleta, fonty, porównanie stylów i eksport ZIP | [`kit.html`](kit.html) |
 
 Linki do plików powyżej pokazują kod na GitHubie. Interaktywne strony otworzysz przez lokalny serwer opisany niżej.
 
@@ -93,6 +94,25 @@ Laboratorium pozwala zmieniać parametry soczewki i obserwować załamanie tła.
 
 [Otwórz Brand Boards →](https://aievolutionpl.github.io/design-canvas/boards.html)
 
+## Mój zestaw: od wyboru do plików
+
+W [kompozytorze zestawu](https://aievolutionpl.github.io/design-canvas/kit.html) wpisz nazwę projektu i własny nagłówek. Dobierz styl, paletę, fonty oraz zasoby. Porównuj kierunki na tej samej treści, przełączaj widok mobilny i sprawdzaj kontrast akcentu.
+
+Zestaw zapisuje się lokalnie. Eksport ZIP zawiera JSON projektu, brief Markdown, tokeny CSS, wybrane zasoby i ich pochodzenie. Pliki fontów nie są dołączane. Import JSON pozwala przenieść zestaw do innej przeglądarki — nie ma synchronizacji konta. [Opis kompozytora](docs/KIT.md).
+
+### CLI dla agentów
+
+Node.js pozwala odczytać katalog i przetworzyć zaakceptowany zestaw bez sterowania przeglądarką:
+
+```bash
+node tools/design-cli.mjs search minimal --json
+node tools/design-cli.mjs style ADT-01 --json
+node tools/design-cli.mjs kit validate project.json
+node tools/design-cli.mjs kit export project.json --out ./moj-zestaw
+```
+
+`project.json` pochodzi z rozpakowanego ZIP-a. Katalog docelowy musi być nowy. Wyszukiwanie jest tekstowe, bez wywołania modelu. [Dokumentacja CLI](docs/CLI.md).
+
 ## Człowiek + agent: wspólny język designu
 
 ```text
@@ -123,7 +143,7 @@ Gdy zmieniasz regułę stylu, krótko wyjaśnij dlaczego.
 
 **Dla agentów pracujących z repozytorium:** zacznij od [`AGENTS.md`](AGENTS.md). Pełna procedura i format eksportu: [`docs/AGENT-WORKFLOW.md`](docs/AGENT-WORKFLOW.md).
 
-To **biblioteka przyjazna agentom**, nie automatyczny generator stron ani zainstalowana wtyczka MCP. Współpraca działa przez zwykły tekst, eksport JSON i pliki repozytorium; agent nie musi korzystać z konkretnego dostawcy modelu.
+To **biblioteka przyjazna agentom**, nie automatyczny generator stron ani zainstalowana wtyczka MCP. Współpraca działa przez CLI, zwykły tekst, eksport ZIP/JSON i pliki repozytorium; agent nie musi korzystać z konkretnego dostawcy modelu.
 
 ## Uruchom lokalnie
 
@@ -150,6 +170,8 @@ Fonty z Google wymagają internetu. Część efektów korzysta z nowoczesnych fu
 Nie dodawaj kluczy API, danych klientów, materiałów bez prawa redystrybucji ani samych dekoracyjnych kafli bez użytecznego zasobu.
 
 ## Jakość i ograniczenia
+
+Pełną bieżącą regresję uruchamia `python3 tools/check_workspace.py`: testy Node, przeglądarka oraz eksport przeglądarkowy odczytywany przez CLI. Zależności testowe: `npm ci`, `pip install playwright==1.61.0`, `python3 -m playwright install chromium` i `npx playwright install chromium`. GitHub Actions uruchamia tę samą bramkę przy PR i zmianie `main`.
 
 Testy przeglądarkowe znajdują się w `tools/`. `tools/audit_assets.py` sprawdza bibliotekę assetów, w tym renderowanie skopiowanych fragmentów. Starszy `tools/verify.py` zawiera założenia dotyczące wcześniejszych liczebności — nie traktuj go jako aktualnej bramki całego Studio bez aktualizacji.
 

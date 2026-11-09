@@ -37,9 +37,9 @@ function fromDT(st) {
   if (cr(bg, ink) < 4.5) ink = onC(bg);
   const rest = p.filter(h => h !== byL[0] && h !== byL[byL.length - 1]).sort((a, b) => sat(b) - sat(a));
   const acc = rest.find(h => cr(h, bg) >= 1.8) || rest[0] || ink, acc2 = rest.find(h => h !== acc) || byL[1] || acc;
-  return { id: st.id, grp: st.source === 'aie-original' ? 'aie' : 'dt', name: st.name, tag: st.tagline || '', desc: st.description, when: st.whenToUse, src: st.source === 'aie-original' ? 'AI Evolution Polska · autorska kompozycja' : 'design-trends-2027', cat: st.category,
+  return { id: st.id, grp: st.source === 'aie-original' ? 'aie' : st.source === 'daisyui' ? 'daisy' : 'dt', name: st.name, tag: st.tagline || '', desc: st.description, when: st.whenToUse, src: st.source === 'aie-original' ? 'AI Evolution Polska · autorska kompozycja' : st.source === 'daisyui' ? 'daisyUI · kuracja inspirowana motywami' : st.source, cat: st.category,
     bg, surf: `color-mix(in srgb, ${bg} 82%, ${ink})`, paper: bg, ink, acc, acc2,
-    pal: p.map(h => ({ h, n: 'próbka' })), disp: st.fonts.display || 'Inter', body: st.fonts.sans || 'Inter', mono: 'JetBrains Mono',
+    pal: p.map(h => ({ h, n: st.paletteSource === 'sampled' ? 'próbka' : 'kolor' })), disp: st.fonts.display || 'Inter', body: st.fonts.sans || 'Inter', mono: 'JetBrains Mono',
     img: st.image, imgSm: st.image && st.image.replace('.webp', '-sm.webp'), url: st.sourceUrl, extra: [st.composition, st.typographyText].filter(Boolean).join(' · ') };
 }
 function fromLG(st) {
@@ -228,7 +228,7 @@ function phHTML(T) {
 
 /* ---------- layout ---------- */
 function layout(list) {
-  const G = [['aie', 'AI Evolution Polska', 'autorskie kompozycje · źródła i tokeny w Design Studio'], ['lg', 'Liquid Glass', 'materiał · refrakcja Snella · rim Fresnela · dyspersja'], ['dos', 'Designer OS v3', '14 palet · palettes.json · fonty display + body · kontrast WCAG'], ['adt', 'Style UI', 'agent-design-taste · 17 stylów z tokenami'], ['dt', 'Trendy 2027', 'design-trends-2027 · 30 kierunków z wizualizacjami']];
+  const G = [['daisy', 'daisyUI', 'kuracja inspirowana motywami · nieoficjalne kompozycje'], ['aie', 'AI Evolution Polska', 'autorskie kompozycje · źródła i tokeny w Design Studio'], ['lg', 'Liquid Glass', 'materiał · refrakcja Snella · rim Fresnela · dyspersja'], ['dos', 'Designer OS v3', '14 palet · palettes.json · fonty display + body · kontrast WCAG'], ['adt', 'Style UI', 'agent-design-taste · 17 stylów z tokenami'], ['dt', 'Trendy 2027', 'design-trends-2027 · 30 kierunków z wizualizacjami']];
   let y = 0;
   for (const [g, title, sub] of G) {
     const items = list.filter(t => t.grp === g); if (!items.length) continue;

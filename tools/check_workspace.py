@@ -19,11 +19,12 @@ class QuietHandler(SimpleHTTPRequestHandler):
 
 
 def main():
+    subprocess.run([sys.executable, str(ROOT / "tests/test-curated-data.py")], cwd=ROOT, check=True)
     node_tests = sorted((ROOT / "tests").glob("test-*.mjs")) + sorted((ROOT / "tests").glob("test-*.js"))
     if not node_tests:
         raise RuntimeError("No Node regression tests found")
     subprocess.run(["node", "--test", *map(str, node_tests)], cwd=ROOT, check=True)
-    browser_tests = [ROOT / "tools/verify_workspace_shell.py", ROOT / "tools/verify_kit.py", ROOT / "tools/verify_workspace_integration.py"]
+    browser_tests = [ROOT / "tools/verify_workspace_shell.py", ROOT / "tools/verify_kit.py", ROOT / "tools/verify_workspace_integration.py", ROOT / "tools/verify_curated_pack.py"]
     for test in browser_tests:
         if not test.is_file():
             raise RuntimeError(f"Required browser test missing: {test.name}")

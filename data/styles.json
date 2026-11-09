@@ -3206,5 +3206,573 @@
     "image": null,
     "imageNote": "Oryginalna kompozycja; wskazane repozytorium jest źródłem inspiracji, nie wzorem do kopiowania.",
     "prompt": "Stwórz oryginalny system „Industrial Index”, nie kopię wskazanego repozytorium. Cel: Katalogi komponentów, logistyka, systemy produkcyjne. Układ: Gęsta siatka z silnymi separatorami; fotografia produktu na neutralnym tle; parametry w tabeli; wyraźna dostępność. Typografia: Fira Sans Condensed dla nagłówków i danych nawigacji; Fira Sans dla instrukcji; Sometype Mono dla SKU. Paleta: #F2F1EB, #FFFFFF, #202A2C, #69716F, #A64B28, #D5D5C8. Zaprojektuj responsywny widok desktop i mobile, skalę odstępów 4/8/16/24/32/48 px, widoczne stany hover, focus i disabled oraz semantyczną nawigację klawiaturą. Zadbaj o kontrast tekstu co najmniej WCAG AA; nie koduj informacji samym kolorem. Dodaj realistyczną polską treść z ąćęłńóśźż, a nie lorem ipsum. Unikaj: Nie zmniejszaj tekstu poniżej czytelnego rozmiaru i nie zastępuj tekstu samymi ikonami."
+  },
+  {
+    "id": "DAISY-01",
+    "num": "01",
+    "source": "daisyui",
+    "sourceUrl": "https://github.com/saadeghi/daisyui/blob/f832adddd5c2b458bda4b0da8816b31a5b17731e/packages/daisyui/src/themes/light.css",
+    "name": "daisyUI light",
+    "tagline": "daisyUI theme",
+    "category": "UI / web",
+    "description": "Motyw daisyUI light; paleta pochodzi z tokenów źródłowych.",
+    "whenToUse": "Interfejsy korzystające z motywu daisyUI.",
+    "colors": {
+      "bg": "#FFFFFF",
+      "surface": "#F8F8F8",
+      "text": "#18181B",
+      "text-secondary": "#18181B",
+      "border": "#EEEEEE",
+      "primary": "#422AD5",
+      "primary-contrast": "#E0E7FF",
+      "accent": "#00D3BB",
+      "accent-contrast": "#084D49",
+      "success": "#00D390",
+      "warning": "#FCB700",
+      "error": "#FF627D"
+    },
+    "palette": [
+      "#FFFFFF",
+      "#F8F8F8",
+      "#18181B",
+      "#422AD5",
+      "#00D3BB",
+      "#EEEEEE"
+    ],
+    "paletteSource": "derived from daisyUI OKLCH tokens; clipped sRGB conversion",
+    "fonts": {
+      "sans": "system-ui",
+      "display": "system-ui",
+      "mono": "monospace"
+    },
+    "fontsSource": "generic fallback; not specified by the theme",
+    "radius": {
+      "sm": "0.25rem",
+      "md": "0.5rem",
+      "lg": "0.5rem"
+    },
+    "prompt": "Użyj motywu daisyUI light i zachowaj czytelność oraz kontrast.",
+    "image": null,
+    "aliases": [
+      "light"
+    ],
+    "principles": "Tokeny kolorów i promieni z motywu daisyUI.",
+    "signature": "Kolory i promienie motywu light.",
+    "recommendedFor": [
+      "Interfejsy internetowe"
+    ],
+    "supporting": [],
+    "incompatible": [],
+    "do": [
+      "Sprawdź kontrast po konwersji do sRGB."
+    ],
+    "dont": [
+      "Nie traktuj fontów zapasowych jako oficjalnych fontów daisyUI."
+    ],
+    "colorsDark": {},
+    "fontsRecommended": "system-ui, monospace (fallback)",
+    "fontSizes": {},
+    "shadows": {},
+    "tokensCss": "--color-base-100: oklch(100% 0 0);\n--color-base-200: oklch(98% 0 0);\n--color-base-300: oklch(95% 0 0);\n--color-base-content: oklch(21% 0.006 285.885);\n--color-primary: oklch(45% 0.24 277.023);\n--color-primary-content: oklch(93% 0.034 272.788);\n--color-secondary: oklch(65% 0.241 354.308);\n--color-secondary-content: oklch(94% 0.028 342.258);\n--color-accent: oklch(77% 0.152 181.912);\n--color-accent-content: oklch(38% 0.063 188.416);\n--color-neutral: oklch(14% 0.005 285.823);\n--color-neutral-content: oklch(92% 0.004 286.32);\n--color-info: oklch(74% 0.16 232.661);\n--color-info-content: oklch(29% 0.066 243.157);\n--color-success: oklch(76% 0.177 163.223);\n--color-success-content: oklch(37% 0.077 168.94);\n--color-warning: oklch(82% 0.189 84.429);\n--color-warning-content: oklch(41% 0.112 45.904);\n--color-error: oklch(71% 0.194 13.428);\n--color-error-content: oklch(27% 0.105 12.094);\n--radius-selector: 0.5rem;\n--radius-field: 0.25rem;\n--radius-box: 0.5rem;\n--size-selector: 0.25rem;\n--size-field: 0.25rem;\n--border: 1px;\n--depth: 1;\n--noise: 0;",
+    "imageNote": "Brak podglądu.",
+    "imageW": 0,
+    "imageH": 0
+  },
+  {
+    "id": "DAISY-02",
+    "num": "02",
+    "source": "daisyui",
+    "sourceUrl": "https://github.com/saadeghi/daisyui/blob/f832adddd5c2b458bda4b0da8816b31a5b17731e/packages/daisyui/src/themes/dark.css",
+    "name": "daisyUI dark",
+    "tagline": "daisyUI theme",
+    "category": "UI / web",
+    "description": "Motyw daisyUI dark; paleta pochodzi z tokenów źródłowych.",
+    "whenToUse": "Interfejsy korzystające z motywu daisyUI.",
+    "colors": {
+      "bg": "#1D232A",
+      "surface": "#191E24",
+      "text": "#ECF9FF",
+      "text-secondary": "#ECF9FF",
+      "border": "#15191E",
+      "primary": "#605DFF",
+      "primary-contrast": "#EDF1FE",
+      "accent": "#00D3BB",
+      "accent-contrast": "#084D49",
+      "success": "#00D390",
+      "warning": "#FCB700",
+      "error": "#FF627D"
+    },
+    "palette": [
+      "#1D232A",
+      "#191E24",
+      "#ECF9FF",
+      "#605DFF",
+      "#00D3BB",
+      "#15191E"
+    ],
+    "paletteSource": "derived from daisyUI OKLCH tokens; clipped sRGB conversion",
+    "fonts": {
+      "sans": "system-ui",
+      "display": "system-ui",
+      "mono": "monospace"
+    },
+    "fontsSource": "generic fallback; not specified by the theme",
+    "radius": {
+      "sm": "0.25rem",
+      "md": "0.5rem",
+      "lg": "0.5rem"
+    },
+    "prompt": "Użyj motywu daisyUI dark i zachowaj czytelność oraz kontrast.",
+    "image": null,
+    "aliases": [
+      "dark"
+    ],
+    "principles": "Tokeny kolorów i promieni z motywu daisyUI.",
+    "signature": "Kolory i promienie motywu dark.",
+    "recommendedFor": [
+      "Interfejsy internetowe"
+    ],
+    "supporting": [],
+    "incompatible": [],
+    "do": [
+      "Sprawdź kontrast po konwersji do sRGB."
+    ],
+    "dont": [
+      "Nie traktuj fontów zapasowych jako oficjalnych fontów daisyUI."
+    ],
+    "colorsDark": {},
+    "fontsRecommended": "system-ui, monospace (fallback)",
+    "fontSizes": {},
+    "shadows": {},
+    "tokensCss": "--color-base-100: oklch(25.33% 0.016 252.42);\n--color-base-200: oklch(23.26% 0.014 253.1);\n--color-base-300: oklch(21.15% 0.012 254.09);\n--color-base-content: oklch(97.807% 0.029 256.847);\n--color-primary: oklch(58% 0.233 277.117);\n--color-primary-content: oklch(96% 0.018 272.314);\n--color-secondary: oklch(65% 0.241 354.308);\n--color-secondary-content: oklch(94% 0.028 342.258);\n--color-accent: oklch(77% 0.152 181.912);\n--color-accent-content: oklch(38% 0.063 188.416);\n--color-neutral: oklch(14% 0.005 285.823);\n--color-neutral-content: oklch(92% 0.004 286.32);\n--color-info: oklch(74% 0.16 232.661);\n--color-info-content: oklch(29% 0.066 243.157);\n--color-success: oklch(76% 0.177 163.223);\n--color-success-content: oklch(37% 0.077 168.94);\n--color-warning: oklch(82% 0.189 84.429);\n--color-warning-content: oklch(41% 0.112 45.904);\n--color-error: oklch(71% 0.194 13.428);\n--color-error-content: oklch(27% 0.105 12.094);\n--radius-selector: 0.5rem;\n--radius-field: 0.25rem;\n--radius-box: 0.5rem;\n--size-selector: 0.25rem;\n--size-field: 0.25rem;\n--border: 1px;\n--depth: 1;\n--noise: 0;",
+    "imageNote": "Brak podglądu.",
+    "imageW": 0,
+    "imageH": 0
+  },
+  {
+    "id": "DAISY-03",
+    "num": "03",
+    "source": "daisyui",
+    "sourceUrl": "https://github.com/saadeghi/daisyui/blob/f832adddd5c2b458bda4b0da8816b31a5b17731e/packages/daisyui/src/themes/cupcake.css",
+    "name": "daisyUI cupcake",
+    "tagline": "daisyUI theme",
+    "category": "UI / web",
+    "description": "Motyw daisyUI cupcake; paleta pochodzi z tokenów źródłowych.",
+    "whenToUse": "Interfejsy korzystające z motywu daisyUI.",
+    "colors": {
+      "bg": "#FAF7F5",
+      "surface": "#EFEAE6",
+      "text": "#291334",
+      "text-secondary": "#291334",
+      "border": "#E7E2DF",
+      "primary": "#44EBD3",
+      "primary-contrast": "#005D58",
+      "accent": "#FFD6A7",
+      "accent-contrast": "#9F2D00",
+      "success": "#00BA7B",
+      "warning": "#EEAF00",
+      "error": "#FE1C55"
+    },
+    "palette": [
+      "#FAF7F5",
+      "#EFEAE6",
+      "#291334",
+      "#44EBD3",
+      "#FFD6A7",
+      "#E7E2DF"
+    ],
+    "paletteSource": "derived from daisyUI OKLCH tokens; clipped sRGB conversion",
+    "fonts": {
+      "sans": "system-ui",
+      "display": "system-ui",
+      "mono": "monospace"
+    },
+    "fontsSource": "generic fallback; not specified by the theme",
+    "radius": {
+      "sm": "2rem",
+      "md": "1rem",
+      "lg": "1rem"
+    },
+    "prompt": "Użyj motywu daisyUI cupcake i zachowaj czytelność oraz kontrast.",
+    "image": null,
+    "aliases": [
+      "cupcake"
+    ],
+    "principles": "Tokeny kolorów i promieni z motywu daisyUI.",
+    "signature": "Kolory i promienie motywu cupcake.",
+    "recommendedFor": [
+      "Interfejsy internetowe"
+    ],
+    "supporting": [],
+    "incompatible": [],
+    "do": [
+      "Sprawdź kontrast po konwersji do sRGB."
+    ],
+    "dont": [
+      "Nie traktuj fontów zapasowych jako oficjalnych fontów daisyUI."
+    ],
+    "colorsDark": {},
+    "fontsRecommended": "system-ui, monospace (fallback)",
+    "fontSizes": {},
+    "shadows": {},
+    "tokensCss": "--color-base-100: oklch(97.788% 0.004 56.375);\n--color-base-200: oklch(93.982% 0.007 61.449);\n--color-base-300: oklch(91.586% 0.006 53.44);\n--color-base-content: oklch(23.574% 0.066 313.189);\n--color-primary: oklch(85% 0.138 181.071);\n--color-primary-content: oklch(43% 0.078 188.216);\n--color-secondary: oklch(89% 0.061 343.231);\n--color-secondary-content: oklch(45% 0.187 3.815);\n--color-accent: oklch(90% 0.076 70.697);\n--color-accent-content: oklch(47% 0.157 37.304);\n--color-neutral: oklch(27% 0.006 286.033);\n--color-neutral-content: oklch(92% 0.004 286.32);\n--color-info: oklch(68% 0.169 237.323);\n--color-info-content: oklch(29% 0.066 243.157);\n--color-success: oklch(69% 0.17 162.48);\n--color-success-content: oklch(26% 0.051 172.552);\n--color-warning: oklch(79% 0.184 86.047);\n--color-warning-content: oklch(28% 0.066 53.813);\n--color-error: oklch(64% 0.246 16.439);\n--color-error-content: oklch(27% 0.105 12.094);\n--radius-selector: 1rem;\n--radius-field: 2rem;\n--radius-box: 1rem;\n--size-selector: 0.25rem;\n--size-field: 0.25rem;\n--border: 2px;\n--depth: 1;\n--noise: 0;",
+    "imageNote": "Brak podglądu.",
+    "imageW": 0,
+    "imageH": 0
+  },
+  {
+    "id": "DAISY-04",
+    "num": "04",
+    "source": "daisyui",
+    "sourceUrl": "https://github.com/saadeghi/daisyui/blob/f832adddd5c2b458bda4b0da8816b31a5b17731e/packages/daisyui/src/themes/cyberpunk.css",
+    "name": "daisyUI cyberpunk",
+    "tagline": "daisyUI theme",
+    "category": "UI / web",
+    "description": "Motyw daisyUI cyberpunk; paleta pochodzi z tokenów źródłowych.",
+    "whenToUse": "Interfejsy korzystające z motywu daisyUI.",
+    "colors": {
+      "bg": "#FFF248",
+      "surface": "#F7E83A",
+      "text": "#000000",
+      "text-secondary": "#000000",
+      "border": "#E3D40E",
+      "primary": "#FF6596",
+      "primary-contrast": "#180408",
+      "accent": "#CE74FF",
+      "accent-contrast": "#0F0517",
+      "success": "#00A96E",
+      "warning": "#FFBE00",
+      "error": "#FF5861"
+    },
+    "palette": [
+      "#FFF248",
+      "#F7E83A",
+      "#000000",
+      "#FF6596",
+      "#CE74FF",
+      "#E3D40E"
+    ],
+    "paletteSource": "derived from daisyUI OKLCH tokens; clipped sRGB conversion",
+    "fonts": {
+      "sans": "system-ui",
+      "display": "system-ui",
+      "mono": "monospace"
+    },
+    "fontsSource": "generic fallback; not specified by the theme",
+    "radius": {
+      "sm": "0rem",
+      "md": "0rem",
+      "lg": "0rem"
+    },
+    "prompt": "Użyj motywu daisyUI cyberpunk i zachowaj czytelność oraz kontrast.",
+    "image": null,
+    "aliases": [
+      "cyberpunk"
+    ],
+    "principles": "Tokeny kolorów i promieni z motywu daisyUI.",
+    "signature": "Kolory i promienie motywu cyberpunk.",
+    "recommendedFor": [
+      "Interfejsy internetowe"
+    ],
+    "supporting": [],
+    "incompatible": [],
+    "do": [
+      "Sprawdź kontrast po konwersji do sRGB."
+    ],
+    "dont": [
+      "Nie traktuj fontów zapasowych jako oficjalnych fontów daisyUI."
+    ],
+    "colorsDark": {},
+    "fontsRecommended": "system-ui, monospace (fallback)",
+    "fontSizes": {},
+    "shadows": {},
+    "tokensCss": "--color-base-100: oklch(94.51% 0.179 104.32);\n--color-base-200: oklch(91.51% 0.179 104.32);\n--color-base-300: oklch(85.51% 0.179 104.32);\n--color-base-content: oklch(0% 0 0);\n--color-primary: oklch(74.22% 0.209 6.35);\n--color-primary-content: oklch(14.844% 0.041 6.35);\n--color-secondary: oklch(83.33% 0.184 204.72);\n--color-secondary-content: oklch(16.666% 0.036 204.72);\n--color-accent: oklch(71.86% 0.217 310.43);\n--color-accent-content: oklch(14.372% 0.043 310.43);\n--color-neutral: oklch(23.04% 0.065 269.31);\n--color-neutral-content: oklch(94.51% 0.179 104.32);\n--color-info: oklch(72.06% 0.191 231.6);\n--color-info-content: oklch(0% 0 0);\n--color-success: oklch(64.8% 0.15 160);\n--color-success-content: oklch(0% 0 0);\n--color-warning: oklch(84.71% 0.199 83.87);\n--color-warning-content: oklch(0% 0 0);\n--color-error: oklch(71.76% 0.221 22.18);\n--color-error-content: oklch(0% 0 0);\n--radius-selector: 0rem;\n--radius-field: 0rem;\n--radius-box: 0rem;\n--size-selector: 0.25rem;\n--size-field: 0.25rem;\n--border: 1px;\n--depth: 0;\n--noise: 0;",
+    "imageNote": "Brak podglądu.",
+    "imageW": 0,
+    "imageH": 0
+  },
+  {
+    "id": "DAISY-05",
+    "num": "05",
+    "source": "daisyui",
+    "sourceUrl": "https://github.com/saadeghi/daisyui/blob/f832adddd5c2b458bda4b0da8816b31a5b17731e/packages/daisyui/src/themes/forest.css",
+    "name": "daisyUI forest",
+    "tagline": "daisyUI theme",
+    "category": "UI / web",
+    "description": "Motyw daisyUI forest; paleta pochodzi z tokenów źródłowych.",
+    "whenToUse": "Interfejsy korzystające z motywu daisyUI.",
+    "colors": {
+      "bg": "#1B1717",
+      "surface": "#161212",
+      "text": "#CAC9C9",
+      "text-secondary": "#CAC9C9",
+      "border": "#110D0D",
+      "primary": "#1FB854",
+      "primary-contrast": "#000000",
+      "accent": "#1FB8AB",
+      "accent-contrast": "#010C0B",
+      "success": "#00A96E",
+      "warning": "#FFBE00",
+      "error": "#FF5861"
+    },
+    "palette": [
+      "#1B1717",
+      "#161212",
+      "#CAC9C9",
+      "#1FB854",
+      "#1FB8AB",
+      "#110D0D"
+    ],
+    "paletteSource": "derived from daisyUI OKLCH tokens; clipped sRGB conversion",
+    "fonts": {
+      "sans": "system-ui",
+      "display": "system-ui",
+      "mono": "monospace"
+    },
+    "fontsSource": "generic fallback; not specified by the theme",
+    "radius": {
+      "sm": "2rem",
+      "md": "1rem",
+      "lg": "1rem"
+    },
+    "prompt": "Użyj motywu daisyUI forest i zachowaj czytelność oraz kontrast.",
+    "image": null,
+    "aliases": [
+      "forest"
+    ],
+    "principles": "Tokeny kolorów i promieni z motywu daisyUI.",
+    "signature": "Kolory i promienie motywu forest.",
+    "recommendedFor": [
+      "Interfejsy internetowe"
+    ],
+    "supporting": [],
+    "incompatible": [],
+    "do": [
+      "Sprawdź kontrast po konwersji do sRGB."
+    ],
+    "dont": [
+      "Nie traktuj fontów zapasowych jako oficjalnych fontów daisyUI."
+    ],
+    "colorsDark": {},
+    "fontsRecommended": "system-ui, monospace (fallback)",
+    "fontSizes": {},
+    "shadows": {},
+    "tokensCss": "--color-base-100: oklch(20.84% 0.008 17.911);\n--color-base-200: oklch(18.522% 0.007 17.911);\n--color-base-300: oklch(16.203% 0.007 17.911);\n--color-base-content: oklch(83.768% 0.001 17.911);\n--color-primary: oklch(68.628% 0.185 148.958);\n--color-primary-content: oklch(0% 0 0);\n--color-secondary: oklch(69.776% 0.135 168.327);\n--color-secondary-content: oklch(13.955% 0.027 168.327);\n--color-accent: oklch(70.628% 0.119 185.713);\n--color-accent-content: oklch(14.125% 0.023 185.713);\n--color-neutral: oklch(30.698% 0.039 171.364);\n--color-neutral-content: oklch(86.139% 0.007 171.364);\n--color-info: oklch(72.06% 0.191 231.6);\n--color-info-content: oklch(0% 0 0);\n--color-success: oklch(64.8% 0.15 160);\n--color-success-content: oklch(0% 0 0);\n--color-warning: oklch(84.71% 0.199 83.87);\n--color-warning-content: oklch(0% 0 0);\n--color-error: oklch(71.76% 0.221 22.18);\n--color-error-content: oklch(0% 0 0);\n--radius-selector: 1rem;\n--radius-field: 2rem;\n--radius-box: 1rem;\n--size-selector: 0.25rem;\n--size-field: 0.25rem;\n--border: 1px;\n--depth: 0;\n--noise: 0;",
+    "imageNote": "Brak podglądu.",
+    "imageW": 0,
+    "imageH": 0
+  },
+  {
+    "id": "DAISY-06",
+    "num": "06",
+    "source": "daisyui",
+    "sourceUrl": "https://github.com/saadeghi/daisyui/blob/f832adddd5c2b458bda4b0da8816b31a5b17731e/packages/daisyui/src/themes/nord.css",
+    "name": "daisyUI nord",
+    "tagline": "daisyUI theme",
+    "category": "UI / web",
+    "description": "Motyw daisyUI nord; paleta pochodzi z tokenów źródłowych.",
+    "whenToUse": "Interfejsy korzystające z motywu daisyUI.",
+    "colors": {
+      "bg": "#ECEFF4",
+      "surface": "#E5E9F0",
+      "text": "#2E3440",
+      "text-secondary": "#2E3440",
+      "border": "#D8DEE9",
+      "primary": "#5E81AC",
+      "primary-contrast": "#03060B",
+      "accent": "#88C0D0",
+      "accent-contrast": "#070D10",
+      "success": "#A3BE8D",
+      "warning": "#EBCB8B",
+      "error": "#BF616A"
+    },
+    "palette": [
+      "#ECEFF4",
+      "#E5E9F0",
+      "#2E3440",
+      "#5E81AC",
+      "#88C0D0",
+      "#D8DEE9"
+    ],
+    "paletteSource": "derived from daisyUI OKLCH tokens; clipped sRGB conversion",
+    "fonts": {
+      "sans": "system-ui",
+      "display": "system-ui",
+      "mono": "monospace"
+    },
+    "fontsSource": "generic fallback; not specified by the theme",
+    "radius": {
+      "sm": "0.25rem",
+      "md": "1rem",
+      "lg": "0.5rem"
+    },
+    "prompt": "Użyj motywu daisyUI nord i zachowaj czytelność oraz kontrast.",
+    "image": null,
+    "aliases": [
+      "nord"
+    ],
+    "principles": "Tokeny kolorów i promieni z motywu daisyUI.",
+    "signature": "Kolory i promienie motywu nord.",
+    "recommendedFor": [
+      "Interfejsy internetowe"
+    ],
+    "supporting": [],
+    "incompatible": [],
+    "do": [
+      "Sprawdź kontrast po konwersji do sRGB."
+    ],
+    "dont": [
+      "Nie traktuj fontów zapasowych jako oficjalnych fontów daisyUI."
+    ],
+    "colorsDark": {},
+    "fontsRecommended": "system-ui, monospace (fallback)",
+    "fontSizes": {},
+    "shadows": {},
+    "tokensCss": "--color-base-100: oklch(95.127% 0.007 260.731);\n--color-base-200: oklch(93.299% 0.01 261.788);\n--color-base-300: oklch(89.925% 0.016 262.749);\n--color-base-content: oklch(32.437% 0.022 264.182);\n--color-primary: oklch(59.435% 0.077 254.027);\n--color-primary-content: oklch(11.887% 0.015 254.027);\n--color-secondary: oklch(69.651% 0.059 248.687);\n--color-secondary-content: oklch(13.93% 0.011 248.687);\n--color-accent: oklch(77.464% 0.062 217.469);\n--color-accent-content: oklch(15.492% 0.012 217.469);\n--color-neutral: oklch(45.229% 0.035 264.131);\n--color-neutral-content: oklch(89.925% 0.016 262.749);\n--color-info: oklch(69.207% 0.062 332.664);\n--color-info-content: oklch(13.841% 0.012 332.664);\n--color-success: oklch(76.827% 0.074 131.063);\n--color-success-content: oklch(15.365% 0.014 131.063);\n--color-warning: oklch(85.486% 0.089 84.093);\n--color-warning-content: oklch(17.097% 0.017 84.093);\n--color-error: oklch(60.61% 0.12 15.341);\n--color-error-content: oklch(12.122% 0.024 15.341);\n--radius-selector: 1rem;\n--radius-field: 0.25rem;\n--radius-box: 0.5rem;\n--size-selector: 0.25rem;\n--size-field: 0.25rem;\n--border: 1px;\n--depth: 0;\n--noise: 0;",
+    "imageNote": "Brak podglądu.",
+    "imageW": 0,
+    "imageH": 0
+  },
+  {
+    "id": "DAISY-07",
+    "num": "07",
+    "source": "daisyui",
+    "sourceUrl": "https://github.com/saadeghi/daisyui/blob/f832adddd5c2b458bda4b0da8816b31a5b17731e/packages/daisyui/src/themes/sunset.css",
+    "name": "daisyUI sunset",
+    "tagline": "daisyUI theme",
+    "category": "UI / web",
+    "description": "Motyw daisyUI sunset; paleta pochodzi z tokenów źródłowych.",
+    "whenToUse": "Interfejsy korzystające z motywu daisyUI.",
+    "colors": {
+      "bg": "#121C22",
+      "surface": "#0E171E",
+      "text": "#9FB9D0",
+      "text-secondary": "#9FB9D0",
+      "border": "#091319",
+      "primary": "#FF865B",
+      "primary-contrast": "#160603",
+      "accent": "#B387FA",
+      "accent-contrast": "#0C0615",
+      "success": "#ADDFAD",
+      "warning": "#F1C892",
+      "error": "#FFBBBD"
+    },
+    "palette": [
+      "#121C22",
+      "#0E171E",
+      "#9FB9D0",
+      "#FF865B",
+      "#B387FA",
+      "#091319"
+    ],
+    "paletteSource": "derived from daisyUI OKLCH tokens; clipped sRGB conversion",
+    "fonts": {
+      "sans": "system-ui",
+      "display": "system-ui",
+      "mono": "monospace"
+    },
+    "fontsSource": "generic fallback; not specified by the theme",
+    "radius": {
+      "sm": "0.5rem",
+      "md": "1rem",
+      "lg": "1rem"
+    },
+    "prompt": "Użyj motywu daisyUI sunset i zachowaj czytelność oraz kontrast.",
+    "image": null,
+    "aliases": [
+      "sunset"
+    ],
+    "principles": "Tokeny kolorów i promieni z motywu daisyUI.",
+    "signature": "Kolory i promienie motywu sunset.",
+    "recommendedFor": [
+      "Interfejsy internetowe"
+    ],
+    "supporting": [],
+    "incompatible": [],
+    "do": [
+      "Sprawdź kontrast po konwersji do sRGB."
+    ],
+    "dont": [
+      "Nie traktuj fontów zapasowych jako oficjalnych fontów daisyUI."
+    ],
+    "colorsDark": {},
+    "fontsRecommended": "system-ui, monospace (fallback)",
+    "fontSizes": {},
+    "shadows": {},
+    "tokensCss": "--color-base-100: oklch(22% 0.019 237.69);\n--color-base-200: oklch(20% 0.019 237.69);\n--color-base-300: oklch(18% 0.019 237.69);\n--color-base-content: oklch(77.383% 0.043 245.096);\n--color-primary: oklch(74.703% 0.158 39.947);\n--color-primary-content: oklch(14.94% 0.031 39.947);\n--color-secondary: oklch(72.537% 0.177 2.72);\n--color-secondary-content: oklch(14.507% 0.035 2.72);\n--color-accent: oklch(71.294% 0.166 299.844);\n--color-accent-content: oklch(14.258% 0.033 299.844);\n--color-neutral: oklch(26% 0.019 237.69);\n--color-neutral-content: oklch(70% 0.019 237.69);\n--color-info: oklch(85.559% 0.085 206.015);\n--color-info-content: oklch(17.111% 0.017 206.015);\n--color-success: oklch(85.56% 0.085 144.778);\n--color-success-content: oklch(17.112% 0.017 144.778);\n--color-warning: oklch(85.569% 0.084 74.427);\n--color-warning-content: oklch(17.113% 0.016 74.427);\n--color-error: oklch(85.511% 0.078 16.886);\n--color-error-content: oklch(17.102% 0.015 16.886);\n--radius-selector: 1rem;\n--radius-field: 0.5rem;\n--radius-box: 1rem;\n--size-selector: 0.25rem;\n--size-field: 0.25rem;\n--border: 1px;\n--depth: 0;\n--noise: 0;",
+    "imageNote": "Brak podglądu.",
+    "imageW": 0,
+    "imageH": 0
+  },
+  {
+    "id": "DAISY-08",
+    "num": "08",
+    "source": "daisyui",
+    "sourceUrl": "https://github.com/saadeghi/daisyui/blob/f832adddd5c2b458bda4b0da8816b31a5b17731e/packages/daisyui/src/themes/wireframe.css",
+    "name": "daisyUI wireframe",
+    "tagline": "daisyUI theme",
+    "category": "UI / web",
+    "description": "Motyw daisyUI wireframe; paleta pochodzi z tokenów źródłowych.",
+    "whenToUse": "Interfejsy korzystające z motywu daisyUI.",
+    "colors": {
+      "bg": "#FFFFFF",
+      "surface": "#F5F5F5",
+      "text": "#161616",
+      "text-secondary": "#161616",
+      "border": "#EBEBEB",
+      "primary": "#D4D4D4",
+      "primary-contrast": "#242424",
+      "accent": "#D4D4D4",
+      "accent-contrast": "#242424",
+      "success": "#006044",
+      "warning": "#963B00",
+      "error": "#9D0410"
+    },
+    "palette": [
+      "#FFFFFF",
+      "#F5F5F5",
+      "#161616",
+      "#D4D4D4",
+      "#D4D4D4",
+      "#EBEBEB"
+    ],
+    "paletteSource": "derived from daisyUI OKLCH tokens; clipped sRGB conversion",
+    "fonts": {
+      "sans": "system-ui",
+      "display": "system-ui",
+      "mono": "monospace"
+    },
+    "fontsSource": "generic fallback; not specified by the theme",
+    "radius": {
+      "sm": "0.25rem",
+      "md": "0rem",
+      "lg": "0.25rem"
+    },
+    "prompt": "Użyj motywu daisyUI wireframe i zachowaj czytelność oraz kontrast.",
+    "image": null,
+    "aliases": [
+      "wireframe"
+    ],
+    "principles": "Tokeny kolorów i promieni z motywu daisyUI.",
+    "signature": "Kolory i promienie motywu wireframe.",
+    "recommendedFor": [
+      "Interfejsy internetowe"
+    ],
+    "supporting": [],
+    "incompatible": [],
+    "do": [
+      "Sprawdź kontrast po konwersji do sRGB."
+    ],
+    "dont": [
+      "Nie traktuj fontów zapasowych jako oficjalnych fontów daisyUI."
+    ],
+    "colorsDark": {},
+    "fontsRecommended": "system-ui, monospace (fallback)",
+    "fontSizes": {},
+    "shadows": {},
+    "tokensCss": "--color-base-100: oklch(100% 0 0);\n--color-base-200: oklch(97% 0 0);\n--color-base-300: oklch(94% 0 0);\n--color-base-content: oklch(20% 0 0);\n--color-primary: oklch(87% 0 0);\n--color-primary-content: oklch(26% 0 0);\n--color-secondary: oklch(87% 0 0);\n--color-secondary-content: oklch(26% 0 0);\n--color-accent: oklch(87% 0 0);\n--color-accent-content: oklch(26% 0 0);\n--color-neutral: oklch(87% 0 0);\n--color-neutral-content: oklch(26% 0 0);\n--color-info: oklch(44% 0.11 240.79);\n--color-info-content: oklch(90% 0.058 230.902);\n--color-success: oklch(43% 0.095 166.913);\n--color-success-content: oklch(90% 0.093 164.15);\n--color-warning: oklch(47% 0.137 46.201);\n--color-warning-content: oklch(92% 0.12 95.746);\n--color-error: oklch(44% 0.177 26.899);\n--color-error-content: oklch(88% 0.062 18.334);\n--radius-selector: 0rem;\n--radius-field: 0.25rem;\n--radius-box: 0.25rem;\n--size-selector: 0.25rem;\n--size-field: 0.25rem;\n--border: 1px;\n--depth: 0;\n--noise: 0;",
+    "imageNote": "Brak podglądu.",
+    "imageW": 0,
+    "imageH": 0
   }
 ]

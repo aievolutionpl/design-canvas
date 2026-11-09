@@ -6,7 +6,7 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const el = (t, c, h) => { const n = document.createElement(t); if (c) n.className = c; if (h != null) n.innerHTML = h; return n; };
 const CAT_PL = { 'strzałki': 'Strzałki', 'akcje': 'Akcje', 'media': 'Media', 'pliki': 'Pliki', 'handel': 'Handel', 'komunikacja': 'Komunikacja', 'ludzie': 'Ludzie', 'pogoda': 'Pogoda', 'czas': 'Czas', 'technologia': 'Technologia', 'layout': 'Layout', 'status': 'Status', 'jedzenie': 'Jedzenie', 'dom': 'Dom', 'transport': 'Transport', 'edukacja': 'Edukacja', 'bezpieczeństwo': 'Bezpieczeństwo', 'zdrowie': 'Zdrowie', 'social': 'Social', 'marki': 'Marki' };
-const LIB_PL = { lucide: 'Lucide', tabler: 'Tabler', 'tabler-filled': 'Tabler filled', heroicons: 'Heroicons', 'heroicons-solid': 'Heroicons solid', brands: 'Marki' };
+const LIB_PL = { lucide: 'Lucide', tabler: 'Tabler', 'tabler-filled': 'Tabler filled', heroicons: 'Heroicons', 'heroicons-solid': 'Heroicons solid', brands: 'Marki', 'svg-spinners': 'SVG Spinners', 'boring-avatars': 'Boring Avatars' };
 let toastT;
 function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 1800); }
 async function copy(text, label) {
@@ -29,7 +29,7 @@ function refreshFilters() {
   const query = $('#q').value.trim().toLowerCase();
   document.querySelectorAll('#sections > .sec').forEach(sec => {
     const items = [...sec.querySelectorAll('[data-s]')]; let count = 0;
-    items.forEach(c => { const ok = (!query || c.dataset.s.includes(query)) && c.dataset.filtered !== '1'; c.classList.toggle('hide', !ok); if(c.parentElement.classList.contains('kit-item')) c.parentElement.classList.toggle('hide', !ok); if (ok) count++; });
+    items.forEach(c => { const ok = (!query || c.dataset.s.includes(query)) && c.dataset.filtered !== '1'; c.classList.toggle('hide', !ok); if(c.parentElement.classList.contains('kit-item')) { c.parentElement.classList.toggle('hide', !ok); if (!ok) c.parentElement.querySelector('.spinner-toggle')?._stop(); } if (ok) count++; });
     sec.classList.toggle('hide', !!query && count === 0);
     if (items.length && sec.querySelector('.n')) sec.querySelector('.n').textContent = count;
   });
@@ -112,7 +112,7 @@ function kitButton(parent,type,id,palette=false){
 
 /* ---------- icons ---------- */
 function iconsSection(A, S) {
-  const s = section('ikony', 'Ikony', 'Trzy biblioteki w jednym miejscu: Lucide (ISC), Tabler (MIT), Heroicons (MIT) oraz loga marek z Simple Icons (CC0). Klik kopiuje SVG, przytrzymaj Alt, aby pobrać plik.', A.icons.length);
+  const s = section('ikony', 'Ikony', 'Ikony i awatary z otwartych bibliotek — szczegóły w sekcji Licencje. Klik kopiuje SVG, Alt pobiera plik. Animacje uruchamiaj osobno.', A.icons.length);
   const libs = ['all', ...new Set(A.icons.map(i => i.lib))];
   const cats = ['all', ...Object.keys(CAT_PL).filter(c => A.icons.some(i => i.cat === c))];
   s.appendChild(el('div', 'chips', libs.map(l => `<button class="chip ${l === 'all' ? 'on' : ''}" data-lib="${l}">${LABP(l)} <i style="opacity:.55;font-style:normal">${l === 'all' ? A.icons.length : A.icons.filter(i => i.lib === l).length}</i></button>`).join('')));
@@ -121,17 +121,29 @@ function iconsSection(A, S) {
   for (const i of A.icons) {
     const c = el('button', 'ic'); c.dataset.lib = i.lib; c.dataset.cat = i.cat; c.dataset.s = (i.name + ' ' + i.lib + ' ' + (CAT_PL[i.cat] || '')).toLowerCase();
     c.title = `${i.name} · ${LABP(i.lib)} · klik = kopiuj SVG, Alt = pobierz`;
-    c.innerHTML = `<img src="${i.src}" alt="" loading="lazy" width="24" height="24"><span>${esc(i.name)}</span>`;
+    c.innerHTML = `${i.lib === 'svg-spinners' ? '<span class="spinner-static" aria-hidden="true">◌</span>' : `<img src="${esc(i.src)}" alt="" loading="lazy" width="24" height="24">`}<span>${esc(i.name)}</span>`;
     c.addEventListener('click', async e => {
       let svg; try { const r = await fetch(i.src); if (!r.ok) throw new Error(r.status); svg = await r.text(); if (!svg.includes('<svg')) throw new Error('invalid SVG'); } catch { toast('Nie udało się pobrać ikony: ' + i.name); return; }
       if (e.altKey) { const a = document.createElement('a'); a.href = i.src; a.download = i.name + '.svg'; a.click(); toast('Pobrano ' + i.name + '.svg'); }
       else copy(svg, 'Skopiowano SVG: ' + i.name);
     });
     grid.appendChild(c); kitButton(c,'icons',i.lib+':'+i.name);
+    if (i.lib === 'svg-spinners') {
+      const toggle = el('button', 'spinner-toggle'); toggle.type = 'button';
+      const stop = () => { const img = c.querySelector('img'); if (img) img.replaceWith(el('span', 'spinner-static', '◌')); toggle.textContent = 'Uruchom animację'; toggle.setAttribute('aria-pressed', 'false'); };
+      stop(); toggle.onclick = () => { if (toggle.getAttribute('aria-pressed') === 'true') { stop(); return; }
+        const img = document.createElement('img'); img.src = i.src; img.alt = ''; c.querySelector('.spinner-static').replaceWith(img);
+        toggle.textContent = 'Zatrzymaj animację'; toggle.setAttribute('aria-pressed', 'true'); };
+      c.parentElement.appendChild(toggle);
+      document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
+      toggle._stop = stop;
+      const observer = new IntersectionObserver(entries => { if (!entries[0].isIntersecting) stop(); });
+      observer.observe(c);
+    }
   }
   s.appendChild(grid);
   let lib = 'all', cat = 'all';
-  const apply = () => { let n = 0; grid.querySelectorAll('.ic').forEach(c => { const ok = (lib === 'all' || c.dataset.lib === lib) && (cat === 'all' || c.dataset.cat === cat); c.dataset.filtered = ok ? '0' : '1'; if (ok) n++; }); refreshFilters(); };
+  const apply = () => { let n = 0; grid.querySelectorAll('.ic').forEach(c => { const ok = (lib === 'all' || c.dataset.lib === lib) && (cat === 'all' || c.dataset.cat === cat); c.dataset.filtered = ok ? '0' : '1'; if (!ok) c.parentElement.querySelector('.spinner-toggle')?._stop(); if (ok) n++; }); refreshFilters(); };
   s.querySelectorAll('.chip[data-lib]').forEach(b => b.onclick = () => { lib = b.dataset.lib; s.querySelectorAll('.chip[data-lib]').forEach(x => x.classList.toggle('on', x === b)); apply(); });
   s.querySelectorAll('.chip[data-cat]').forEach(b => b.onclick = () => { cat = b.dataset.cat; s.querySelectorAll('.chip[data-cat]').forEach(x => x.classList.toggle('on', x === b)); apply(); });
   return { s, apply: () => { } };
@@ -270,7 +282,7 @@ function fontSection(FONTS) {
   document.fonts.ready.then(fit); addEventListener('resize', fit);
   s.querySelectorAll('[data-fc]').forEach(b => b.onclick = () => {
     const k = b.dataset.fc; s.querySelectorAll('[data-fc]').forEach(x => x.classList.toggle('on', x === b));
-    let n = 0; g.querySelectorAll('.fo').forEach(c => { const ok = k === 'all' || c.dataset.cat === k; c.dataset.filtered = ok ? '0' : '1'; if (ok) n++; });
+    let n = 0; g.querySelectorAll('.fo').forEach(c => { const ok = k === 'all' || c.dataset.cat === k; c.dataset.filtered = ok ? '0' : '1'; if (!ok) c.parentElement.querySelector('.spinner-toggle')?._stop(); if (ok) n++; });
     refreshFilters();
   });
 }
@@ -292,7 +304,7 @@ function paletteSection(A) {
   s.appendChild(g);
   s.querySelectorAll('[data-pg]').forEach(b => b.onclick = () => {
     const k = b.dataset.pg; s.querySelectorAll('[data-pg]').forEach(x => x.classList.toggle('on', x === b));
-    let n = 0; g.querySelectorAll('.pal').forEach(c => { const ok = k === 'all' || c.dataset.g === k; c.dataset.filtered = ok ? '0' : '1'; if (ok) n++; });
+    let n = 0; g.querySelectorAll('.pal').forEach(c => { const ok = k === 'all' || c.dataset.g === k; c.dataset.filtered = ok ? '0' : '1'; if (!ok) c.parentElement.querySelector('.spinner-toggle')?._stop(); if (ok) n++; });
     refreshFilters();
   });
 }

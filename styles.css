@@ -292,3 +292,5 @@ body.presenting .viewport{left:0}
 }
 @media (max-width:420px){ #fitAll{display:none} .zoom-val{min-width:48px} }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.sidebar{top:var(--shell-height,64px)}.viewport{top:var(--shell-height,64px)}.toolbar{top:calc(var(--shell-height,64px) + 14px)}.panel{top:calc(var(--shell-height,64px) + 70px)}

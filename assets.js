@@ -29,7 +29,7 @@ function refreshFilters() {
   const query = $('#q').value.trim().toLowerCase();
   document.querySelectorAll('#sections > .sec').forEach(sec => {
     const items = [...sec.querySelectorAll('[data-s]')]; let count = 0;
-    items.forEach(c => { const ok = (!query || c.dataset.s.includes(query)) && c.dataset.filtered !== '1'; c.classList.toggle('hide', !ok); if (ok) count++; });
+    items.forEach(c => { const ok = (!query || c.dataset.s.includes(query)) && c.dataset.filtered !== '1'; c.classList.toggle('hide', !ok); if(c.parentElement.classList.contains('kit-item')) c.parentElement.classList.toggle('hide', !ok); if (ok) count++; });
     sec.classList.toggle('hide', !!query && count === 0);
     if (items.length && sec.querySelector('.n')) sec.querySelector('.n').textContent = count;
   });
@@ -104,6 +104,11 @@ function section(id, title, sub, count) {
   $('#sections').appendChild(s); SECTIONS.push({ id, title, count }); return s;
 }
 const scroll = () => { };
+function kitButton(parent,type,id,palette=false){
+ const b=el('button','kit-add');b.type='button';b.textContent='＋ Do zestawu';b.setAttribute('aria-label','Dodaj do zestawu: '+id);
+ b.onclick=e=>{e.stopPropagation();if(!window.DesignKit){toast('Zestaw jest niedostępny');return}if(palette) DesignKit.update({paletteId:id});else DesignKit.addAsset({type,id:String(id)});toast('Dodano do zestawu: '+id)};
+ if(parent.tagName==='BUTTON'){const wrap=el('div','kit-item');parent.replaceWith(wrap);wrap.append(parent,b)}else parent.appendChild(b);
+}
 
 /* ---------- icons ---------- */
 function iconsSection(A, S) {
@@ -122,7 +127,7 @@ function iconsSection(A, S) {
       if (e.altKey) { const a = document.createElement('a'); a.href = i.src; a.download = i.name + '.svg'; a.click(); toast('Pobrano ' + i.name + '.svg'); }
       else copy(svg, 'Skopiowano SVG: ' + i.name);
     });
-    grid.appendChild(c);
+    grid.appendChild(c); kitButton(c,'icons',i.lib+':'+i.name);
   }
   s.appendChild(grid);
   let lib = 'all', cat = 'all';
@@ -156,7 +161,7 @@ function patternSection(A) {
     c.style.cssText = `background-image:${p.light};background-color:#F7F7F5`;
     c.innerHTML = `<b>${esc(p.name)}</b>`;
     c.onclick = () => copy(`background-color:#F7F7F5;background-image:${p.light};background-size:32px 32px;`, 'Skopiowano CSS wzoru: ' + p.name);
-    g.appendChild(c);
+    g.appendChild(c); kitButton(c,'patterns',p.key || p.id || p.name);
   });
   s.appendChild(g);
 }
@@ -168,7 +173,7 @@ function gradientSection(A) {
     c.style.backgroundImage = standalone(x.value);
     c.innerHTML = `<b>${esc(x.name)}</b>`;
     c.onclick = () => copy('background-image:' + standalone(x.value) + ';', 'Skopiowano ' + x.name);
-    g.appendChild(c);
+    g.appendChild(c); kitButton(c,'gradients',x.key || x.id || x.name);
   });
   s.appendChild(g);
 }
@@ -280,6 +285,7 @@ function paletteSection(A) {
   A.palettes.forEach(p => {
     const c = el('div', 'card pal'); c.dataset.g = p.group; c.dataset.s = (p.name + ' ' + p.group + ' paleta kolory').toLowerCase();
     c.innerHTML = `<div class="m"><b>${esc(p.name)}</b><span>${p.colors.length} kolorów</span></div><div class="st">${p.colors.map(x => `<button data-hex="${esc(x.hex)}" style="background:${x.hex}" aria-label="${esc(x.name + ' ' + x.hex)}"></button>`).join('')}</div><div class="nm">${p.colors.map(x => `<span>${esc(x.name)} · ${esc(x.hex)}</span>`).join('')}</div>`;
+    kitButton(c,'palettes',p.name,true);
     c.querySelectorAll('[data-hex]').forEach(b => b.onclick = () => copy(b.dataset.hex, 'Skopiowano ' + b.dataset.hex));
     g.appendChild(c);
   });

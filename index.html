@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pl" data-theme="light">
 <head>
+<script>if(matchMedia("(max-width: 720px)").matches&&!new URLSearchParams(location.search).has("canvas")) location.replace("studio.html");</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Design Canvas — biblioteka assetów projektowych · AI Evolution Polska</title>
@@ -18,8 +19,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="designer-os.css">
+<link rel="stylesheet" href="studio-shell.css">
+<script src="kit-core.js" defer></script><script src="studio-shell.js" defer></script>
 </head>
 <body>
+<div data-studio-shell data-active="canvas"></div>
 <a class="skip" href="#sidebar">Przejdź do nawigacji</a>
 
 <aside id="sidebar" class="sidebar" aria-label="Nawigacja po płótnie">

@@ -9,6 +9,9 @@ Pomagaj człowiekowi wybierać i stosować kierunek wizualny stron i aplikacji. 
 - `data/assets.json`: ikony, wzory, gradienty, palety, tokeny oraz `licenses`.
 - `data/source-ledger.json` i `docs/SOURCES.md`: pochodzenie nowych zasobów.
 - `docs/AGENT-WORKFLOW.md`: współpraca i format eksportu.
+- `docs/CLI.md`: rzeczywiste polecenia `node tools/design-cli.mjs` do wyszukiwania, odczytu, walidacji i eksportu. To CLI, nie MCP.
+- `kit.html`: zestaw projektowy w przeglądarce. `project.json` z ZIP-a jest kontraktem wyborów człowieka. Nie zamieniaj identyfikatorów bez jego decyzji.
+- `python3 tools/check_workspace.py`: bieżąca regresja Node + Playwright, w tym eksport z przeglądarki przetwarzany CLI.
 
 ## Procedura
 1. Poznaj cel, odbiorcę, treści i najważniejszą akcję. Nie zgaduj brakujących faktów biznesowych.

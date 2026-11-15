@@ -21,3 +21,7 @@ Na kanwie wyszukaj nazwę lub HEX, otwórz paletę i skopiuj zmienne CSS. W bibl
 Kolory mają neutralne nazwy color-1…color-6: kolejność referencji nie oznacza ról UI. Dobierz tło, tekst i akcent do projektu, sprawdź kontrast konkretnej pary. Nie zakładaj, że białe napisy są czytelne na każdym kolorze.
 
 Dane źródłowe: `data/reference-palettes.json`. Generator `tools/build_assets.js` dołącza je do katalogu assetów. Przy zmianie palet aktualizuj oba pliki danych.
+
+## Wygodniejsza praca z paletami
+
+Karty biblioteki mają akcje „Kopiuj HEX” i „Kopiuj CSS”; pochodzenie i uwagi są rozwijane. W „Moim zestawie” próbki palety ustawiają kolor akcentu jednym kliknięciem. Podgląd dopasowuje tekst do kontrastu co najmniej 4,5:1, jeśli kolor źródłowy nie spełnia tego progu. Korekta jest oznaczona przy podglądzie i nie zmienia danych palety. Uwagi źródłowe trafiają również do briefu w ZIP.

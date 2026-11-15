@@ -46,7 +46,7 @@ Linki do plików powyżej pokazują kod na GitHubie. Interaktywne strony otworzy
 
 ## Co znajdziesz w środku?
 
-Stan danych tej wersji: **56 stylów · 147 rodzin fontów · 698 ikon · 87 wzorów · 30 gradientów · 82 palety**. To liczby rekordów katalogów, nie deklaracja przetestowania każdego możliwego połączenia.
+Stan danych tej wersji: **64 style · 147 rodzin fontów · 718 ikon · 87 wzorów · 30 gradientów · 82 palety**. To liczby rekordów katalogów, nie deklaracja przetestowania każdego możliwego połączenia.
 
 ### Style, które można przekazać agentowi
 

@@ -19,7 +19,7 @@ function sat(h) { const c = hexRgb(h); if (!c) return 0; const mx = Math.max(...
 const isHex = v => !!hexRgb(v);
 
 /* ---------------- state ---------------- */
-let STY = [], FONTS = [], BGS = [], GAL = [], SPECS = [], DOS = null;
+let STY = [], FONTS = [], BGS = [], GAL = [], SPECS = [], DOS = null, REFERENCE_PALETTES = [];
 const CK = {};   // copy-text registry for on-canvas copy buttons
 const boards = [];          // every artboard on the canvas
 const titles = [];          // row / section titles
@@ -256,6 +256,7 @@ function layout() {
   const pals = STY.map(st => ({ id: st.id, name: st.id + ' · ' + st.name, note: `${st.paletteSource || 'pochodzenie niepodane'} · ${st.source}`, colors: paletteOf(st).slice(0, 9) }));
   pals.push({ id: 'DT27-site', name: 'design-trends-2027 · strona', note: 'DESIGN.md repo design-trends-2027', colors: [['papier', '#F6F5EE'], ['atrament', '#202621'], ['limonka', '#D9F356'], ['niebieski', '#BDD7F4'], ['róż', '#F0A8B9'], ['koral', '#F16B55']].map(([n, h]) => ({ name: n, hex: h })) });
   pals.push({ id: 'apple-clarity', name: 'Apple Clarity · tokeny kandydackie', note: 'skill apple-clarity (propozycja, nie pomiar)', colors: [['canvas', '#F5F6F8'], ['surface', '#FFFFFF'], ['text', '#17191D'], ['secondary', '#525866'], ['border', '#E2E5EA'], ['action', '#2457D6'], ['success', '#167044']].map(([n, h]) => ({ name: n, hex: h })) });
+  pals.unshift(...REFERENCE_PALETTES);
   titles.push({ x: kx, y: by - 1500, html: `Kolory<small>${pals.length} palet</small>`, cls: 'sec-title' });
   g = grid(pals, kx, by, 1300, 620, 6, 90, (p, x, y, w, h) => {
     addBoard({ id: 'pal:' + p.id, kind: 'palette', p, x, y, w, h, label: p.name, sub: 'paleta', favKey: 'pal:' + p.id, cat: 'colour', cls: 'palcard',
@@ -557,7 +558,7 @@ function exportMD() {
   const ds = grp('dos', 'Designer OS'); ds && ds.forEach(i => L.push(`### ${i.title}`, '', '```text', i.dos.copyText || i.title, '```', ''));
   const st = grp('style', 'Style'); st && st.forEach(i => { const t = tokens(i.st); L.push(`### ${i.st.id} · ${i.st.name}`, '', i.st.description, '', `- Kiedy: ${i.st.whenToUse}`, `- Fonty: ${t.fd} (nagłówki), ${t.fs} (tekst)${i.st.fontsSource === 'suggested' ? ' — dobór sugerowany' : ''}`, `- Paleta: ${paletteOf(i.st).slice(0, 9).map(c => c.name + ' ' + c.hex).join(', ')}${i.st.paletteSource === 'sampled' ? ' (próbkowana z wizualizacji)' : ''}`, `- Źródło: ${i.st.sourceUrl}`, '', '```text', i.st.prompt, '```', ''); });
   const fo = grp('font', 'Fonty'); fo && (fo.forEach(i => L.push(`- **${i.f.name}** (${catPL(i.f.category)}) — ${i.f.use} Para: ${i.f.pairing}`)), L.push('', '`<link rel="stylesheet" href="' + fontLink(fo.map(i => i.f.name)) + '">`', ''));
-  const pa = grp('pal', 'Palety'); pa && pa.forEach(i => L.push(`- **${i.p.name}**: ${i.p.colors.map(c => c.hex).join(' ')}`)); pa && L.push('');
+  const pa = grp('pal', 'Palety'); pa && pa.forEach(i => L.push(`- **${i.p.name}**: ${i.p.colors.map(c => c.hex).join(' ')}${i.p.note ? ' · ' + i.p.note : ''}`)); pa && L.push('');
   const bg = grp('bg', 'Tła'); bg && bg.forEach(i => L.push(`### ${i.b.name}`, '```css', i.b.css, '```', ''));
   const co = grp('comp', 'Zestawy komponentów'); co && co.forEach(i => L.push(`- ${i.st.name} (${i.st.id}) — tokeny: ${i.st.sourceUrl}`)); co && L.push('');
   const ga = grp('gal', 'Wizualizacje'); ga && ga.forEach(i => L.push(`- ${i.g.name}: https://aievolutionpl.github.io/design-canvas/${i.g.image}`));
@@ -568,7 +569,7 @@ function exportJSON() {
     if (i.st) { const t = tokens(i.st); return { type: i.type, id: i.st.id, name: i.st.name, source: i.st.sourceUrl, fonts: { display: t.fd, text: t.fs, mono: t.fm, source: i.st.fontsSource }, palette: paletteOf(i.st), paletteSource: i.st.paletteSource, cssVars: t.vars, prompt: i.st.prompt }; }
     if (i.f) return { type: 'font', ...i.f, cssLink: fontLink([i.f.name]) };
     if (i.b) return { type: 'background', id: i.b.id, name: i.b.name, css: i.b.css };
-    if (i.p) return { type: 'palette', id: i.p.id, name: i.p.name, colors: i.p.colors };
+    if (i.p) return { type: 'palette', id: i.p.id, name: i.p.name, colors: i.p.colors, source: i.p.source, note: i.p.note };
     if (i.dos) return { type: 'designer-os', id: i.key, title: i.title, palette: i.dos.dosPal ? { id: i.dos.dosPal.id, primary: i.dos.dosPal.primary, secondary: i.dos.dosPal.secondary, textOnPrimary: i.dos.dosPal.recommended_text_on_primary, textOnSecondary: i.dos.dosPal.recommended_text_on_secondary, display: i.dos.dosPal.display, body: i.dos.dosPal.body, contrast: i.dos.dosPal.contrast } : undefined, text: i.dos.copyText };
     if (i.g) return { type: 'image', id: i.g.id, url: 'https://aievolutionpl.github.io/design-canvas/' + i.g.image };
   }), null, 2);
@@ -705,6 +706,7 @@ async function boot() {
   world = $('#world'); vp = $('#viewport'); minimap = $('#minimap'); mctx = minimap.getContext('2d');
   const get = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });
   [STY, FONTS, BGS, GAL] = await Promise.all(['data/styles.json', 'data/fonts.json', 'data/backgrounds.json', 'data/gallery.json'].map(get));
+  REFERENCE_PALETTES = await get('data/reference-palettes.json');
   SPECS = (await get('data/font-check.json')).specs;
   try { DOS = await get('data/designer-os.json'); } catch (e) { console.warn('Designer OS data missing', e); }
   layout(); build(); setupMinimap(); setupInput(); setupSidebar(); setupUI();

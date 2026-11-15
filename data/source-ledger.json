@@ -434,5 +434,11 @@
       "https://fonts.googleapis.com/css2?family=Vollkorn:wght@400"
     ],
     "note": "Google Fonts are linked rather than bundled; consult each family licence before redistribution."
+  },
+  "reference_palettes": {
+    "file": "data/reference-palettes.json",
+    "source": "User-supplied reference images signed @uiuxaadi",
+    "method": "Transcribed HEX labels; original images not redistributed",
+    "notes": "Berry Rose #243A66 retained literally despite pink visual swatch. Palette names assigned locally."
   }
 }

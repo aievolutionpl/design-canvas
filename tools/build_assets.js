@@ -146,6 +146,8 @@ for (const b of BRANDS) {
   // Apple Clarity + AI Evolution brand tokens (our own system)
   palettes.push({ name: 'Apple Clarity · AIEP UI', group: 'AI Evolution', colors: [['canvas', '#F5F6F8'], ['surface', '#FFFFFF'], ['text', '#17191D'], ['secondary', '#525866'], ['border', '#E2E5EA'], ['action', '#2457D6'], ['success', '#167044'], ['warning', '#B45309'], ['error', '#B42318']].map(([name, hex]) => ({ name, hex })) });
 
+  palettes.push(...JSON.parse(fs.readFileSync(path.join(D, 'reference-palettes.json'), 'utf8')));
+
   const out = { generated: new Date().toISOString().slice(0, 10), icons, patterns, gradients, shadows, radii, easings, animations: anims, sizes, fontStacks, palettes,
     licenses: [
       ['Lucide', 'ISC', 'https://github.com/lucide-icons/lucide'], ['Tabler Icons', 'MIT', 'https://github.com/tabler/tabler-icons'],

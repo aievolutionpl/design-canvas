@@ -1,0 +1,167 @@
+[
+  {
+    "id": "ref-ocean-teal",
+    "name": "Ocean Teal",
+    "group": "Referencje · uiuxaadi",
+    "source": "Referencje użytkownika · @uiuxaadi",
+    "note": "HEX przepisane z etykiet referencji użytkownika, podpisanej @uiuxaadi. Nazwa katalogowa nadana w Design Studio.",
+    "colors": [
+      {
+        "name": "color-1",
+        "hex": "#05161A"
+      },
+      {
+        "name": "color-2",
+        "hex": "#072E33"
+      },
+      {
+        "name": "color-3",
+        "hex": "#0C7075"
+      },
+      {
+        "name": "color-4",
+        "hex": "#0F969C"
+      },
+      {
+        "name": "color-5",
+        "hex": "#6DA5C0"
+      },
+      {
+        "name": "color-6",
+        "hex": "#294D61"
+      }
+    ]
+  },
+  {
+    "id": "ref-violet-glow",
+    "name": "Violet Glow",
+    "group": "Referencje · uiuxaadi",
+    "source": "Referencje użytkownika · @uiuxaadi",
+    "note": "HEX przepisane z etykiet referencji użytkownika, podpisanej @uiuxaadi. Nazwa katalogowa nadana w Design Studio.",
+    "colors": [
+      {
+        "name": "color-1",
+        "hex": "#0B0720"
+      },
+      {
+        "name": "color-2",
+        "hex": "#25134D"
+      },
+      {
+        "name": "color-3",
+        "hex": "#6A2FC8"
+      },
+      {
+        "name": "color-4",
+        "hex": "#9D71E8"
+      },
+      {
+        "name": "color-5",
+        "hex": "#D1B8FF"
+      },
+      {
+        "name": "color-6",
+        "hex": "#F2E9FF"
+      }
+    ]
+  },
+  {
+    "id": "ref-forest-mint",
+    "name": "Forest Mint",
+    "group": "Referencje · uiuxaadi",
+    "source": "Referencje użytkownika · @uiuxaadi",
+    "note": "HEX przepisane z etykiet referencji użytkownika, podpisanej @uiuxaadi. Nazwa katalogowa nadana w Design Studio.",
+    "colors": [
+      {
+        "name": "color-1",
+        "hex": "#051F20"
+      },
+      {
+        "name": "color-2",
+        "hex": "#0B2B26"
+      },
+      {
+        "name": "color-3",
+        "hex": "#163832"
+      },
+      {
+        "name": "color-4",
+        "hex": "#235347"
+      },
+      {
+        "name": "color-5",
+        "hex": "#8EB69B"
+      },
+      {
+        "name": "color-6",
+        "hex": "#DAF1DE"
+      }
+    ]
+  },
+  {
+    "id": "ref-berry-rose",
+    "name": "Berry Rose",
+    "group": "Referencje · uiuxaadi",
+    "source": "Referencje użytkownika · @uiuxaadi",
+    "note": "HEX przepisane z etykiet referencji użytkownika, podpisanej @uiuxaadi. Nazwa katalogowa nadana w Design Studio. Uwaga: #243A66 to granat, choć próbka na referencji jest różowa. Zachowano kod z etykiety, bez zgadywania korekty.",
+    "colors": [
+      {
+        "name": "color-1",
+        "hex": "#800021"
+      },
+      {
+        "name": "color-2",
+        "hex": "#881144"
+      },
+      {
+        "name": "color-3",
+        "hex": "#243A66"
+      },
+      {
+        "name": "color-4",
+        "hex": "#C24366"
+      },
+      {
+        "name": "color-5",
+        "hex": "#FF69B4"
+      },
+      {
+        "name": "color-6",
+        "hex": "#FFE4D8"
+      }
+    ]
+  },
+  {
+    "id": "ref-graphite",
+    "name": "Graphite",
+    "group": "Referencje · uiuxaadi",
+    "source": "Referencje użytkownika · @uiuxaadi",
+    "note": "HEX przepisane z etykiet referencji użytkownika, podpisanej @uiuxaadi. Nazwa katalogowa nadana w Design Studio.",
+    "colors": [
+      {
+        "name": "color-1",
+        "hex": "#0B0B0B"
+      },
+      {
+        "name": "color-2",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "color-3",
+        "hex": "#333333"
+      },
+      {
+        "name": "color-4",
+        "hex": "#6B6B6B"
+      },
+      {
+        "name": "color-5",
+        "hex": "#D9D9D9"
+      },
+      {
+        "name": "color-6",
+        "hex": "#FFFFFF"
+      }
+    ]
+  }
+]

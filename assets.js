@@ -295,8 +295,9 @@ function paletteSection(A) {
   s.appendChild(el('div', 'chips', groups.map((g, i) => `<button class="chip ${i === 0 ? 'on' : ''}" data-pg="${g}">${g === 'all' ? 'Wszystkie' : g} <i style="opacity:.55;font-style:normal">${g === 'all' ? A.palettes.length : A.palettes.filter(p => p.group === g).length}</i></button>`).join('')));
   const g = el('div', 'grid g-pal');
   A.palettes.forEach(p => {
-    const c = el('div', 'card pal'); c.dataset.g = p.group; c.dataset.s = (p.name + ' ' + p.group + ' paleta kolory').toLowerCase();
+    const c = el('div', 'card pal'); c.dataset.g = p.group; c.dataset.s = (p.name + ' ' + p.group + ' ' + p.colors.map(x => x.hex).join(' ') + ' paleta kolory').toLowerCase();
     c.innerHTML = `<div class="m"><b>${esc(p.name)}</b><span>${p.colors.length} kolorów</span></div><div class="st">${p.colors.map(x => `<button data-hex="${esc(x.hex)}" style="background:${x.hex}" aria-label="${esc(x.name + ' ' + x.hex)}"></button>`).join('')}</div><div class="nm">${p.colors.map(x => `<span>${esc(x.name)} · ${esc(x.hex)}</span>`).join('')}</div>`;
+    if (p.note) c.appendChild(el('p', 'nm', esc(p.note)));
     kitButton(c,'palettes',p.name,true);
     c.querySelectorAll('[data-hex]').forEach(b => b.onclick = () => copy(b.dataset.hex, 'Skopiowano ' + b.dataset.hex));
     g.appendChild(c);

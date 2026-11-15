@@ -15,3 +15,7 @@ Nie włączono unDraw. Ikony Phosphor w `assets/vendor` nie zostały dodane do k
 - [Boring Avatars](https://github.com/boringdesigners/boring-avatars) — MIT; 12 samodzielnych SVG wygenerowanych ze źródłowej biblioteki React, bez zależności runtime. Receptury, commity, SHA-256 wszystkich wyników i licencji: ledger. Licencje dołączono w `assets/vendor/<nazwa>/LICENSE`.
 
 Powtórzenie importu: `python3 tools/import_curated_pack.py` (wymaga sieci, Node i npm; paczki budujące instalowane są w katalogu tymczasowym, poza repo). Weryfikacja: `python3 tests/test-curated-data.py`. Kolory w przestrzeni poza sRGB mogą ulec zmianie przez clipping; to nie jest CSS gamut mapping.
+
+## Palety z referencji użytkownika
+
+Pięć zestawów HEX z plansz podpisanych @uiuxaadi. Tylko wartości kolorów i atrybucja, bez kopii grafik. [Szczegóły i rozbieżność Berry Rose](REFERENCE-PALETTES.md).
